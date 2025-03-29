@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -61,7 +57,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -97,5 +93,38 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
   }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+  
+  .highlight {
+    @apply text-primary font-medium;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition duration-300;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary/10 transition duration-300;
+  }
+  
+  .skill-badge {
+    @apply px-4 py-2 bg-secondary text-foreground rounded-full text-sm;
+  }
+  
+  section {
+    @apply opacity-0;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  section:nth-child(1) { animation-delay: 0.1s; }
+  section:nth-child(2) { animation-delay: 0.3s; }
+  section:nth-child(3) { animation-delay: 0.5s; }
+  section:nth-child(4) { animation-delay: 0.7s; }
+  section:nth-child(5) { animation-delay: 0.9s; }
 }
