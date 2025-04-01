@@ -20,17 +20,28 @@ export const translations = {
     aboutMe: "About Me",
     aboutDescription: "A brief introduction about who I am and what I do",
     myStory: "My Story",
-    storyText: "I am an iOS developer. I graduated from the TBC IT Academy's iOS course with a perfect score. Since then, I have participated in multiple hackathons.",
-    downloadResume: "Download Resume",
+    
+    // Category-specific stories
+    iosStory: "I am an iOS developer. I graduated from the TBC IT Academy's iOS course with a perfect score. Since then, I have participated in multiple hackathons.",
+    campsStory: "Since childhood, I have been actively involved in informal education and have participated in various camps.",
+    roboticsStory: "I am passionate about robotics and automation. I've worked on several projects that combine hardware and software to create innovative solutions.",
+    startupsStory: "I'm an entrepreneur at heart with experience in developing and launching innovative products. I enjoy turning ideas into viable businesses.",
+    
+    // Stats
     experience: "Years of Experience",
+    yearsExperience: "Years of Experience",
     projectsCompleted: "Projects Completed",
     happyClients: "Happy Clients",
     awardsWon: "Awards Won",
+    campsAttended: "Camps Attended",
+    campsLed: "Camps Led",
+    downloadResume: "Download Resume",
     
     // Skills section
     mySkills: "My Skills",
     skillsDescription: "Here are some of my skills and expertise",
     technicalSkills: "Technical Skills",
+    hardSkills: "Hard Skills",
     softSkills: "Soft Skills",
     
     // Category section
@@ -48,6 +59,11 @@ export const translations = {
     web: "Web",
     app: "App",
     design: "Design",
+    hardware: "Hardware",
+    campParticipation: "Camp Participation",
+    professional: "Professional",
+    startup: "Startup",
+    hackathon: "Hackathon",
     livePreview: "Live preview",
     noProjectsFound: "No projects found in this category and filter combination",
     
@@ -58,20 +74,44 @@ export const translations = {
     instagramCloneTitle: "InstagramClone",
     instagramCloneDescription: "A team project developed as part of a TBC collaboration assignment.",
     
+    manageSubscriptionsTitle: "Manage Subscriptions",
+    manageSubscriptionsDescription: "Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with.",
+    
     // Project descriptions - Camps
-    anakliaTitle: "Anaklia",
+    youngLeadersTitle: "Young Leaders' School",
+    youngLeadersDescription: "Kutaisi Municipality Project – 2023, 2025",
+    
+    anakliaTitle: "Anaklia Youth Camp",
     anakliaDescription: "Summer camp organized in Anaklia, focusing on outdoor activities and team building exercises.",
     
-    icsuTitle: "ICSU",
-    icsuDescription: "International Computer Science camp organized for university students.",
+    gitaTitle: "GITA Innovation & Startup Camp",
+    gitaDescription: "Spring acceleration camp focused on innovation and startups – 2023",
+    
+    icsuTitle: "ICSU Camp",
+    icsuDescription: "International Computer Science camp organized for university students – 2021",
+    
+    kiuAmbassadorTitle: "KIU Ambassador",
+    kiuAmbassadorDescription: "Conducting introduction tours for prospective students (2022 - present)",
+    
+    kiuAssistantTitle: "Student Assistant in Computer Architecture",
+    kiuAssistantDescription: "Served as a Student Assistant in Computer Architecture at KIU – 2023",
     
     // Project descriptions - Robotics
     roboticsProject1Title: "Robotics Project 1",
     roboticsProject1Description: "An innovative robotics project focusing on automation and AI integration.",
     
     // Project descriptions - Startups
-    startupsProject1Title: "Startup Project 1",
-    startupsProject1Description: "A venture focusing on innovative solutions for everyday problems.",
+    subscriptionProjectTitle: "Banking Subscription Functionality",
+    subscriptionProjectDescription: "Subscription Functionality Development for Mobile Banking (2025)",
+    
+    tbcCrossCollabTitle: "TBC Cross Collab",
+    tbcCrossCollabDescription: "Worked with various technology teams in the TBC Cross Collaboration project (2024)",
+    
+    campsideStartupTitle: "Campside Startup",
+    campsideStartupDescription: "Co-founder & iOS Developer of the Campside application that helps organize and discover outdoor activities.",
+    
+    nasaSpaceAppsTitle: "NASA Space Apps Challenge",
+    nasaSpaceAppsDescription: "Second Place Winner in the NASA Space Apps Challenge Hackathon (2023)",
     
     // Contact section
     getInTouch: "Get In Touch",
@@ -112,17 +152,28 @@ export const translations = {
     aboutMe: "ჩემ შესახებ",
     aboutDescription: "მოკლე შესავალი ჩემ შესახებ და რას ვაკეთებ",
     myStory: "ჩემი ისტორია",
-    storyText: "მე ვარ iOS დეველოპერი. დავამთავრე TBC IT აკადემიის iOS კურსი საუკეთესო შეფასებით. მას შემდეგ მონაწილეობა მივიღე სხვადასხვა ჰაკათონებში.",
-    downloadResume: "რეზიუმეს ჩამოტვირთვა",
+    
+    // Category-specific stories
+    iosStory: "მე ვარ iOS დეველოპერი. დავამთავრე TBC IT აკადემიის iOS კურსი საუკეთესო შეფასებით. მას შემდეგ მონაწილეობა მივიღე სხვადასხვა ჰაკათონებში.",
+    campsStory: "ბავშვობიდან აქტიურად ვარ ჩართული არაფორმალურ განათლებაში და მონაწილეობა მივიღე სხვადასხვა ბანაკებში.",
+    roboticsStory: "მე ვარ რობოტიკის და ავტომატიზაციის ენთუზიასტი. მუშაობა მქონდა რამდენიმე პროექტზე, რომლებიც აერთიანებდა აპარატურას და პროგრამულ უზრუნველყოფას ინოვაციური გადაწყვეტილებების შესაქმნელად.",
+    startupsStory: "მე ვარ მეწარმე გულით და მაქვს გამოცდილება ინოვაციური პროდუქტების შემუშავებასა და გაშვებაში. მომწონს იდეების სიცოცხლისუნარიან ბიზნესად გარდაქმნა.",
+    
+    // Stats
     experience: "წლის გამოცდილება",
+    yearsExperience: "წლის გამოცდილება",
     projectsCompleted: "დასრულებული პროექტი",
     happyClients: "კმაყოფილი კლიენტი",
     awardsWon: "მოგებული ჯილდო",
+    campsAttended: "მონაწილეობა ბანაკებში",
+    campsLed: "ხელმძღვანელობა",
+    downloadResume: "რეზიუმეს ჩამოტვირთვა",
     
     // Skills section
     mySkills: "ჩემი უნარები",
     skillsDescription: "აქ არის ჩემი უნარები და გამოცდილება",
     technicalSkills: "ტექნიკური უნარები",
+    hardSkills: "ტექნიკური უნარები",
     softSkills: "სოციალური უნარები",
     
     // Category section
@@ -140,6 +191,11 @@ export const translations = {
     web: "ვები",
     app: "აპლიკაცია",
     design: "დიზაინი",
+    hardware: "აპარატურა",
+    campParticipation: "ბანაკებში მონაწილეობა",
+    professional: "პროფესიული",
+    startup: "სტარტაპი",
+    hackathon: "ჰაკათონი",
     livePreview: "პირდაპირი ხედი",
     noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
     
@@ -150,20 +206,44 @@ export const translations = {
     instagramCloneTitle: "InstagramClone",
     instagramCloneDescription: "გუნდური პროექტი, რომელიც შექმნილია TBC თანამშრომლობის დავალების ფარგლებში.",
     
+    manageSubscriptionsTitle: "გამოწერების მართვა",
+    manageSubscriptionsDescription: "აცნობეთ ხალხს, რა შეუძლია თქვენს პროექტს კონკრეტულად. მიაწოდეთ კონტექსტი და დაამატეთ ბმული ნებისმიერ მითითებაზე, რომელიც შეიძლება უცნობი იყოს ვიზიტორებისთვის.",
+    
     // Project descriptions - Camps
-    anakliaTitle: "ანაკლია",
+    youngLeadersTitle: "ახალგაზრდა ლიდერების სკოლა",
+    youngLeadersDescription: "ქუთაისის მუნიციპალიტეტის პროექტი – 2023, 2025",
+    
+    anakliaTitle: "ანაკლიის ახალგაზრდული ბანაკი",
     anakliaDescription: "ზაფხულის ბანაკი ორგანიზებული ანაკლიაში, ფოკუსირებული ღია ცის ქვეშ აქტივობებსა და გუნდური მუშაობის სავარჯიშოებზე.",
     
-    icsuTitle: "ICSU",
-    icsuDescription: "კომპიუტერული მეცნიერების საერთაშორისო ბანაკი ორგანიზებული უნივერსიტეტის სტუდენტებისთვის.",
+    gitaTitle: "GITA ინოვაციური & სტარტაპების ბანაკი",
+    gitaDescription: "საგაზაფხულო აქსელერაციის ბანაკი, ფოკუსირებული ინოვაციებზე და სტარტაპებზე – 2023",
+    
+    icsuTitle: "ICSU ბანაკი",
+    icsuDescription: "კომპიუტერული მეცნიერების საერთაშორისო ბანაკი ორგანიზებული უნივერსიტეტის სტუდენტებისთვის – 2021",
+    
+    kiuAmbassadorTitle: "KIU ელჩი",
+    kiuAmbassadorDescription: "პოტენციური სტუდენტებისთვის გაცნობითი ტურების ჩატარება (2022 - დღემდე)",
+    
+    kiuAssistantTitle: "კომპიუტერული არქიტექტურის სტუდენტი ასისტენტი",
+    kiuAssistantDescription: "სტუდენტი ასისტენტი კომპიუტერულ არქიტექტურაში KIU-ში – 2023",
     
     // Project descriptions - Robotics
     roboticsProject1Title: "რობოტიკის პროექტი 1",
     roboticsProject1Description: "ინოვაციური რობოტიკის პროექტი, რომელიც ფოკუსირებულია ავტომატიზაციასა და AI ინტეგრაციაზე.",
     
     // Project descriptions - Startups
-    startupsProject1Title: "სტარტაპის პროექტი 1",
-    startupsProject1Description: "ვენჩურა, რომელიც ფოკუსირებულია ყოველდღიური პრობლემების ინოვაციურ გადაწყვეტებზე.",
+    subscriptionProjectTitle: "საბანკო გამოწერის ფუნქციონალი",
+    subscriptionProjectDescription: "მობილური ბანკინგისთვის გამოწერის ფუნქციონალის განვითარება (2025)",
+    
+    tbcCrossCollabTitle: "TBC ჯვარედინი თანამშრომლობა",
+    tbcCrossCollabDescription: "მუშაობა სხვადასხვა ტექნოლოგიურ გუნდებთან TBC ჯვარედინი თანამშრომლობის პროექტში (2024)",
+    
+    campsideStartupTitle: "Campside სტარტაპი",
+    campsideStartupDescription: "თანადამფუძნებელი და iOS დეველოპერი Campside აპლიკაციის, რომელიც ეხმარება გარე აქტივობების ორგანიზებასა და აღმოჩენას.",
+    
+    nasaSpaceAppsTitle: "NASA Space Apps Challenge",
+    nasaSpaceAppsDescription: "მეორე ადგილის მფლობელი NASA Space Apps Challenge ჰაკათონზე (2023)",
     
     // Contact section
     getInTouch: "დამიკავშირდი",
