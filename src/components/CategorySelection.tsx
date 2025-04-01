@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Smartphone, Tent, Robot, Rocket } from "lucide-react";
+import { Smartphone, Tent, Cpu, Rocket } from "lucide-react";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
@@ -23,7 +23,7 @@ const CategorySelection: React.FC = () => {
     {
       id: "robotics",
       name: t("robotics"),
-      icon: <Robot className="h-10 w-10" />,
+      icon: <Cpu className="h-10 w-10" />,
     },
     {
       id: "startups",
