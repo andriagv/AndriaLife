@@ -1,8 +1,10 @@
 
 import React from "react";
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   const scrollToTop = () => {
@@ -18,13 +20,13 @@ const Footer: React.FC = () => {
               Portfolio<span className="text-primary">.</span>
             </h3>
             <p className="text-muted-foreground mt-2">
-              Creating exceptional digital experiences
+              iOS Developer
             </p>
           </div>
           
           <div className="flex space-x-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/andriagv" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2 border border-border rounded-full hover:text-primary hover:border-primary transition-colors"
@@ -55,7 +57,7 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            &copy; {currentYear} Your Name. All rights reserved.
+            &copy; {currentYear} Andria. {t('rights')}
           </p>
           
           <button 
@@ -63,7 +65,7 @@ const Footer: React.FC = () => {
             className="mt-4 md:mt-0 flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
             aria-label="Scroll to top"
           >
-            Back to top <ArrowUp size={16} className="ml-1" />
+            {t('backToTop')} <ArrowUp size={16} className="ml-1" />
           </button>
         </div>
       </div>

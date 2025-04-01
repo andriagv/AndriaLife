@@ -1,10 +1,14 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +19,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: t('home'), href: "#hero" },
+    { name: t('about'), href: "#about" },
+    { name: t('skills'), href: "#skills" },
+    { name: t('projects'), href: "#projects" },
+    { name: t('contact'), href: "#contact" },
   ];
 
   return (
@@ -33,8 +37,8 @@ const Navbar: React.FC = () => {
           Portfolio<span className="text-primary">.</span>
         </a>
         
-        <nav className="hidden md:block">
-          <ul className="flex space-x-8">
+        <nav className="hidden md:flex items-center">
+          <ul className="flex space-x-8 mr-4">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
@@ -46,15 +50,24 @@ const Navbar: React.FC = () => {
               </li>
             ))}
           </ul>
+          
+          <div className="flex items-center space-x-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </nav>
 
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-2">
+          <LanguageToggle />
+          <ThemeToggle />
+          <button
+            className="text-foreground"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

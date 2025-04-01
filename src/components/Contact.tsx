@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -42,10 +44,10 @@ const Contact: React.FC = () => {
     <section id="contact" className="section-padding">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{t('getInTouch')}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to contact me!
+            {t('contactDescription')}
           </p>
         </div>
 
@@ -55,8 +57,8 @@ const Contact: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <MapPin className="text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Address</h3>
-              <p className="text-muted-foreground">Your City, Country</p>
+              <h3 className="text-lg font-semibold mb-2">{t('address')}</h3>
+              <p className="text-muted-foreground">{t('location')}</p>
             </CardContent>
           </Card>
 
@@ -65,7 +67,7 @@ const Contact: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Mail className="text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Email</h3>
+              <h3 className="text-lg font-semibold mb-2">{t('email')}</h3>
               <a href="mailto:your.email@example.com" className="text-primary hover:underline">
                 your.email@example.com
               </a>
@@ -77,20 +79,20 @@ const Contact: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Phone className="text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Phone</h3>
-              <p className="text-muted-foreground">+1 (123) 456-7890</p>
+              <h3 className="text-lg font-semibold mb-2">{t('phone')}</h3>
+              <p className="text-muted-foreground">+995 555 12 34 56</p>
             </CardContent>
           </Card>
         </div>
 
         <Card className="mt-12">
           <CardContent className="p-8">
-            <h3 className="text-2xl font-semibold mb-6 text-center">Send a Message</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-center">{t('sendMessage')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    Your Name
+                    {t('yourName')}
                   </label>
                   <Input
                     id="name"
@@ -103,7 +105,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
-                    Your Email
+                    {t('yourEmail')}
                   </label>
                   <Input
                     id="email"
@@ -118,12 +120,12 @@ const Contact: React.FC = () => {
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Your Message
+                  {t('yourMessage')}
                 </label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('messagePlaceholder')}
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
@@ -135,7 +137,7 @@ const Contact: React.FC = () => {
                 className="w-full"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? t('sending') : t('send')}
               </Button>
             </form>
           </CardContent>
