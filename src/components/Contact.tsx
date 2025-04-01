@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -51,14 +51,14 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <Card>
             <CardContent className="p-6 flex flex-col items-center text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <MapPin className="text-primary" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{t('address')}</h3>
-              <p className="text-muted-foreground">{t('location')}</p>
+              <p className="text-muted-foreground">Kutaisi, Akhalgazrdobis 5 Lane (KIU)</p>
             </CardContent>
           </Card>
 
@@ -68,8 +68,8 @@ const Contact: React.FC = () => {
                 <Mail className="text-primary" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{t('email')}</h3>
-              <a href="mailto:your.email@example.com" className="text-primary hover:underline">
-                your.email@example.com
+              <a href="mailto:gvaramiaandria1@gmail.com" className="text-primary hover:underline">
+                gvaramiaandria1@gmail.com
               </a>
             </CardContent>
           </Card>
@@ -77,10 +77,34 @@ const Contact: React.FC = () => {
           <Card>
             <CardContent className="p-6 flex flex-col items-center text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Phone className="text-primary" />
+                <Linkedin className="text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{t('phone')}</h3>
-              <p className="text-muted-foreground">+995 555 12 34 56</p>
+              <h3 className="text-lg font-semibold mb-2">LinkedIn</h3>
+              <a 
+                href="https://www.linkedin.com/in/andria-gvaramia" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary hover:underline"
+              >
+                Andria Gvaramia
+              </a>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Github className="text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">GitHub</h3>
+              <a 
+                href="https://github.com/andriagv" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary hover:underline"
+              >
+                andriagv
+              </a>
             </CardContent>
           </Card>
         </div>
