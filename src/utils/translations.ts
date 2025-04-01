@@ -33,6 +33,14 @@ export const translations = {
     technicalSkills: "Technical Skills",
     softSkills: "Soft Skills",
     
+    // Category section
+    selectCategory: "Select Category",
+    categoryDescription: "Choose an area to explore my projects and expertise",
+    iosDeveloper: "iOS Developer",
+    camps: "Camps",
+    robotics: "Robotics",
+    startups: "Startups",
+    
     // Projects section
     myProjects: "My Projects",
     projectsDescription: "Check out some of my recent work",
@@ -41,13 +49,29 @@ export const translations = {
     app: "App",
     design: "Design",
     livePreview: "Live preview",
+    noProjectsFound: "No projects found in this category and filter combination",
     
-    // Project descriptions
+    // Project descriptions - iOS
     campsideTitle: "Campside",
     campsideDescription: "An iOS application that brings together various hiking trips, camps, and tourism events. The app allows users to search for events, apply filters, manage favorites, and book tickets.",
     
     instagramCloneTitle: "InstagramClone",
     instagramCloneDescription: "A team project developed as part of a TBC collaboration assignment.",
+    
+    // Project descriptions - Camps
+    anakliaTitle: "Anaklia",
+    anakliaDescription: "Summer camp organized in Anaklia, focusing on outdoor activities and team building exercises.",
+    
+    icsuTitle: "ICSU",
+    icsuDescription: "International Computer Science camp organized for university students.",
+    
+    // Project descriptions - Robotics
+    roboticsProject1Title: "Robotics Project 1",
+    roboticsProject1Description: "An innovative robotics project focusing on automation and AI integration.",
+    
+    // Project descriptions - Startups
+    startupsProject1Title: "Startup Project 1",
+    startupsProject1Description: "A venture focusing on innovative solutions for everyday problems.",
     
     // Contact section
     getInTouch: "Get In Touch",
@@ -101,6 +125,14 @@ export const translations = {
     technicalSkills: "ტექნიკური უნარები",
     softSkills: "სოციალური უნარები",
     
+    // Category section
+    selectCategory: "აირჩიეთ კატეგორია",
+    categoryDescription: "აირჩიეთ სფერო ჩემი პროექტებისა და გამოცდილების გასაცნობად",
+    iosDeveloper: "iOS დეველოპერი",
+    camps: "ბანაკები",
+    robotics: "რობოტიკა",
+    startups: "სტარტაპები",
+    
     // Projects section
     myProjects: "ჩემი პროექტები",
     projectsDescription: "გაეცანით ჩემს ბოლო ნამუშევრებს",
@@ -109,13 +141,29 @@ export const translations = {
     app: "აპლიკაცია",
     design: "დიზაინი",
     livePreview: "პირდაპირი ხედი",
+    noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
     
-    // Project descriptions
+    // Project descriptions - iOS
     campsideTitle: "Campside",
     campsideDescription: "iOS აპლიკაცია, რომელიც აერთიანებს სხვადასხვა ლაშქრობებს, ბანაკებსა და ტურისტულ ღონისძიებებს. აპლიკაცია საშუალებას აძლევს მომხმარებლებს მოძებნონ ღონისძიებები, გამოიყენონ ფილტრები, მართონ ფავორიტები და დაჯავშნონ ბილეთები.",
     
     instagramCloneTitle: "InstagramClone",
     instagramCloneDescription: "გუნდური პროექტი, რომელიც შექმნილია TBC თანამშრომლობის დავალების ფარგლებში.",
+    
+    // Project descriptions - Camps
+    anakliaTitle: "ანაკლია",
+    anakliaDescription: "ზაფხულის ბანაკი ორგანიზებული ანაკლიაში, ფოკუსირებული ღია ცის ქვეშ აქტივობებსა და გუნდური მუშაობის სავარჯიშოებზე.",
+    
+    icsuTitle: "ICSU",
+    icsuDescription: "კომპიუტერული მეცნიერების საერთაშორისო ბანაკი ორგანიზებული უნივერსიტეტის სტუდენტებისთვის.",
+    
+    // Project descriptions - Robotics
+    roboticsProject1Title: "რობოტიკის პროექტი 1",
+    roboticsProject1Description: "ინოვაციური რობოტიკის პროექტი, რომელიც ფოკუსირებულია ავტომატიზაციასა და AI ინტეგრაციაზე.",
+    
+    // Project descriptions - Startups
+    startupsProject1Title: "სტარტაპის პროექტი 1",
+    startupsProject1Description: "ვენჩურა, რომელიც ფოკუსირებულია ყოველდღიური პრობლემების ინოვაციურ გადაწყვეტებზე.",
     
     // Contact section
     getInTouch: "დამიკავშირდი",
