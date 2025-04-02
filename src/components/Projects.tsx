@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Gitlab } from "lucide-react";
+import { ExternalLink, Github, Gitlab, Award } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCategory } from "@/contexts/CategoryContext";
 
@@ -17,6 +16,7 @@ interface Project {
   githubUrl?: string;
   gitlabUrl?: string;
   liveUrl?: string;
+  certificateUrl?: string;
 }
 
 const Projects: React.FC = () => {
@@ -33,6 +33,16 @@ const Projects: React.FC = () => {
       setFilter("all");
     }
   }, [category]);
+
+  // Get section title based on category
+  const getSectionTitle = () => {
+    switch (category) {
+      case "camps":
+        return t("campParticipation");
+      default:
+        return t("myProjects");
+    }
+  };
   
   // All projects across categories
   const allProjects: Project[] = [
@@ -113,6 +123,25 @@ const Projects: React.FC = () => {
       description: t('kiuAssistantDescription'),
       imageUrl: "https://placehold.co/600x400?text=KIU+SA",
     },
+    // Camp certificates
+    {
+      id: 101,
+      title: t('campCertificate1Title'),
+      category: "camps",
+      subcategory: "certificate",
+      description: t('campCertificate1Description'),
+      imageUrl: "https://placehold.co/600x400?text=Camp+Certificate+1",
+      certificateUrl: "https://example.com/certificate1",
+    },
+    {
+      id: 102,
+      title: t('campCertificate2Title'),
+      category: "camps",
+      subcategory: "certificate",
+      description: t('campCertificate2Description'),
+      imageUrl: "https://placehold.co/600x400?text=Camp+Certificate+2",
+      certificateUrl: "https://example.com/certificate2",
+    },
     // Academic achievements (formerly Robotics)
     {
       id: 10,
@@ -189,7 +218,8 @@ const Projects: React.FC = () => {
     camps: [
       { id: "all", label: t('all') },
       { id: "participation", label: t('campParticipation') },
-      { id: "professional", label: t('professional') }
+      { id: "professional", label: t('professional') },
+      { id: "certificate", label: t('certificates') }
     ],
     academic: [
       { id: "all", label: t('all') },
@@ -223,10 +253,10 @@ const Projects: React.FC = () => {
     <section id="projects" className="bg-secondary/30 section-padding">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">{t('myProjects')}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{getSectionTitle()}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t('projectsDescription')}
+            {category === "camps" ? t('campsDescription') : t('projectsDescription')}
           </p>
         </div>
 
@@ -305,6 +335,16 @@ const Projects: React.FC = () => {
                         className="text-sm flex items-center text-primary hover:underline"
                       >
                         {t('livePreview')} <ExternalLink className="ml-1" size={14} />
+                      </a>
+                    )}
+                    {project.certificateUrl && (
+                      <a 
+                        href={project.certificateUrl}
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-sm flex items-center text-primary hover:underline"
+                      >
+                        {t('viewCertificate')} <Award className="ml-1" size={14} />
                       </a>
                     )}
                   </div>

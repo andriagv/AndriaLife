@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     // Navigation
@@ -55,6 +54,8 @@ export const translations = {
     // Projects section
     myProjects: "My Projects",
     projectsDescription: "Check out some of my recent work",
+    campsDescription: "Camps I've participated in and certificates I've earned",
+    campParticipation: "Participation in Camps",
     all: "All",
     web: "Web",
     app: "App",
@@ -62,12 +63,19 @@ export const translations = {
     hardware: "Hardware",
     education: "Education",
     work: "Work Experience",
-    campParticipation: "Camp Participation",
     professional: "Professional",
     startup: "Startup",
     hackathon: "Hackathon",
+    certificates: "Certificates",
+    viewCertificate: "View Certificate",
     livePreview: "Live preview",
     noProjectsFound: "No projects found in this category and filter combination",
+    
+    // Certificate titles and descriptions
+    campCertificate1Title: "Camp Leadership Certificate",
+    campCertificate1Description: "Certificate of completion for camp leadership training",
+    campCertificate2Title: "Youth Development Certificate",
+    campCertificate2Description: "Recognition for contribution to youth development programs",
     
     // Project descriptions - iOS
     campsideTitle: "Campside",
@@ -207,6 +215,8 @@ export const translations = {
     // Projects section
     myProjects: "ჩემი პროექტები",
     projectsDescription: "გაეცანით ჩემს ბოლო ნამუშევრებს",
+    campsDescription: "ბანაკები, რომლებშიც მონაწილეობა მივიღე და სერტიფიკატები, რომლებიც მოვიპოვე",
+    campParticipation: "ბანაკებში მონაწილეობა",
     all: "ყველა",
     web: "ვები",
     app: "აპლიკაცია",
@@ -214,12 +224,19 @@ export const translations = {
     hardware: "აპარატურა",
     education: "განათლება",
     work: "სამუშაო გამოცდილება",
-    campParticipation: "ბანაკებში მონაწილეობა",
     professional: "პროფესიული",
     startup: "სტარტაპი",
     hackathon: "ჰაკათონი",
+    certificates: "სერტიფიკატები",
+    viewCertificate: "სერტიფიკატის ნახვა",
     livePreview: "პირდაპირი ხედი",
     noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
+    
+    // Certificate titles and descriptions
+    campCertificate1Title: "ბანაკის ლიდერობის სერტიფიკატი",
+    campCertificate1Description: "ბანაკის ლიდერობის ტრენინგის დასრულების სერტიფიკატი",
+    campCertificate2Title: "ახალგაზრდების განვითარების სერტიფიკატი",
+    campCertificate2Description: "აღიარება ახალგაზრდული განვითარების პროგრამებში შეტანილი წვლილისთვის",
     
     // Project descriptions - iOS
     campsideTitle: "Campside",
