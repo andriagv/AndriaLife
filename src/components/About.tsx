@@ -23,7 +23,7 @@ const About: React.FC = () => {
       { value: "10", label: t("campsAttended") },
       { value: "0", label: t("campsLed") }
     ],
-    robotics: [
+    academic: [
       { value: "2+", label: t("experience") },
       { value: "5+", label: t("projectsCompleted") },
       { value: "10+", label: t("happyClients") },

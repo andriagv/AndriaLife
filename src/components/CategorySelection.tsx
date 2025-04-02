@@ -21,8 +21,8 @@ const CategorySelection: React.FC = () => {
       icon: <Tent className="h-10 w-10" />,
     },
     {
-      id: "robotics",
-      name: t("robotics"),
+      id: "academic",
+      name: t("academic"),
       icon: <Cpu className="h-10 w-10" />,
     },
     {

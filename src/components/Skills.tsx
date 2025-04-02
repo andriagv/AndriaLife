@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
       { name: "Presentation Skills", level: 85 },
       { name: "Negotiation Skills", level: 75 },
     ],
-    robotics: [
+    academic: [
       { name: "Python", level: 85 },
       { name: "Arduino", level: 80 },
       { name: "Electronics", level: 75 },
@@ -63,7 +63,7 @@ const Skills: React.FC = () => {
       "Prioritization Skills",
       "Adaptability",
     ],
-    robotics: [
+    academic: [
       "Teamwork",
       "Problem-solving",
       "Attention to Detail",
