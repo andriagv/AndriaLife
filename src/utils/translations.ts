@@ -24,7 +24,7 @@ export const translations = {
     // Category-specific stories
     iosStory: "I am an iOS developer. I graduated from the TBC IT Academy's iOS course with a perfect score. Since then, I have participated in multiple hackathons.",
     campsStory: "Since childhood, I have been actively involved in informal education and have participated in various camps.",
-    roboticsStory: "I am passionate about robotics and automation. I've worked on several projects that combine hardware and software to create innovative solutions.",
+    academicStory: "I am pursuing education in Computer Science at Kutaisi International University, focusing on building a strong foundation in technology and innovation.",
     startupsStory: "I'm an entrepreneur at heart with experience in developing and launching innovative products. I enjoy turning ideas into viable businesses.",
     
     // Stats
@@ -49,7 +49,7 @@ export const translations = {
     categoryDescription: "Choose an area to explore my projects and expertise",
     iosDeveloper: "iOS Developer",
     camps: "Camps",
-    robotics: "Robotics",
+    academic: "Academic Achievements",
     startups: "Startups",
     
     // Projects section
@@ -60,6 +60,8 @@ export const translations = {
     app: "App",
     design: "Design",
     hardware: "Hardware",
+    education: "Education",
+    work: "Work Experience",
     campParticipation: "Camp Participation",
     professional: "Professional",
     startup: "Startup",
@@ -96,19 +98,37 @@ export const translations = {
     kiuAssistantTitle: "Student Assistant in Computer Architecture",
     kiuAssistantDescription: "Served as a Student Assistant in Computer Architecture at KIU – 2023",
     
-    // Project descriptions - Robotics
-    roboticsProject1Title: "Robotics Project 1",
-    roboticsProject1Description: "An innovative robotics project focusing on automation and AI integration.",
+    // Project descriptions - Academic Achievements
+    kiuEducationTitle: "Kutaisi International University (KIU)",
+    kiuEducationDescription: "Computer Science (2022 - Present)",
     
-    // Project descriptions - Startups
-    subscriptionProjectTitle: "Banking Subscription Functionality",
-    subscriptionProjectDescription: "Subscription Functionality Development for Mobile Banking (2025)",
+    komarovSchoolTitle: "Vladimir Komarov Physics-Mathematics N199 School",
+    komarovSchoolDescription: "Physics-Mathematics specialized education (2016 - 2022)",
     
-    tbcCrossCollabTitle: "TBC Cross Collab",
-    tbcCrossCollabDescription: "Worked with various technology teams in the TBC Cross Collaboration project (2024)",
+    // Project descriptions - Startups/Work Experience
+    mathTutorTitle: "Mathematics Tutor",
+    mathTutorDescription: "Teaching children mathematics since 2020",
+    
+    kiuAmbassadorWorkTitle: "Ambassador of Kutaisi International University",
+    kiuAmbassadorWorkDescription: "Sep 2022 - Present · 2 yrs 8 mos",
+    
+    labTutorTitle: "Student Tutor in Laboratory: Computer Organization",
+    labTutorDescription: "Jan 2023 - Jun 2023 · 6 mos",
+    
+    architectureTutorTitle: "Student Tutor in Computer Architecture",
+    architectureTutorDescription: "Sep 2022 - Dec 2022 · 4 mos",
     
     campsideStartupTitle: "Campside Startup",
     campsideStartupDescription: "Co-founder & iOS Developer of the Campside application that helps organize and discover outdoor activities.",
+    
+    // CampSide info block
+    campsideInfoTitle: "About CampSide",
+    campsideGreeting: "Greetings! We are CampSide – an innovative startup aiming to introduce new standards in the educational field. Our team strives to create a platform that will simplify finding and planning desired activities for any user and save you valuable time (you'll understand what we mean by \"desired activities\" in the next part of this post). Whether you're a student, pupil, or anyone else, we're here to help.",
+    campsideWhy: "Why CampSide❓",
+    campsideMission: "CampSide is the place where innovation and education meet. Our mission is to support the entertainment/education of children and young people, help them find adventures, and simplify their planning. Our goal is to create a product that will allow people to easily access the camp of their choice, according to their standards.",
+    campsideJoin: "A good question: How can you join CampSide?",
+    campsideContact: "If you want to join us and become part of our innovative and dynamic team, please send us your CV or contact information to: campsidege@gmail.com",
+    campsideOutro: "We eagerly look forward to collaborating with you! 🤗",
     
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
     nasaSpaceAppsDescription: "Second Place Winner in the NASA Space Apps Challenge Hackathon (2023)",
@@ -156,7 +176,7 @@ export const translations = {
     // Category-specific stories
     iosStory: "მე ვარ iOS დეველოპერი. დავამთავრე TBC IT აკადემიის iOS კურსი საუკეთესო შეფასებით. მას შემდეგ მონაწილეობა მივიღე სხვადასხვა ჰაკათონებში.",
     campsStory: "ბავშვობიდან აქტიურად ვარ ჩართული არაფორმალურ განათლებაში და მონაწილეობა მივიღე სხვადასხვა ბანაკებში.",
-    roboticsStory: "მე ვარ რობოტიკის და ავტომატიზაციის ენთუზიასტი. მუშაობა მქონდა რამდენიმე პროექტზე, რომლებიც აერთიანებდა აპარატურას და პროგრამულ უზრუნველყოფას ინოვაციური გადაწყვეტილებების შესაქმნელად.",
+    academicStory: "მე ვსწავლობ კომპიუტერულ მეცნიერებებს ქუთაისის საერთაშორისო უნივერსიტეტში, ფოკუსირებული ვარ ტექნოლოგიებისა და ინოვაციების მყარი საფუძვლის შექმნაზე.",
     startupsStory: "მე ვარ მეწარმე გულით და მაქვს გამოცდილება ინოვაციური პროდუქტების შემუშავებასა და გაშვებაში. მომწონს იდეების სიცოცხლისუნარიან ბიზნესად გარდაქმნა.",
     
     // Stats
@@ -181,7 +201,7 @@ export const translations = {
     categoryDescription: "აირჩიეთ სფერო ჩემი პროექტებისა და გამოცდილების გასაცნობად",
     iosDeveloper: "iOS დეველოპერი",
     camps: "ბანაკები",
-    robotics: "რობოტიკა",
+    academic: "აკადემიური მიღწევები",
     startups: "სტარტაპები",
     
     // Projects section
@@ -192,6 +212,8 @@ export const translations = {
     app: "აპლიკაცია",
     design: "დიზაინი",
     hardware: "აპარატურა",
+    education: "განათლება",
+    work: "სამუშაო გამოცდილება",
     campParticipation: "ბანაკებში მონაწილეობა",
     professional: "პროფესიული",
     startup: "სტარტაპი",
@@ -228,19 +250,37 @@ export const translations = {
     kiuAssistantTitle: "კომპიუტერული არქიტექტურის სტუდენტი ასისტენტი",
     kiuAssistantDescription: "სტუდენტი ასისტენტი კომპიუტერულ არქიტექტურაში KIU-ში – 2023",
     
-    // Project descriptions - Robotics
-    roboticsProject1Title: "რობოტიკის პროექტი 1",
-    roboticsProject1Description: "ინოვაციური რობოტიკის პროექტი, რომელიც ფოკუსირებულია ავტომატიზაციასა და AI ინტეგრაციაზე.",
+    // Project descriptions - Academic Achievements
+    kiuEducationTitle: "ქუთაისის საერთაშორისო უნივერსიტეტი (KIU)",
+    kiuEducationDescription: "კომპიუტერული მეცნიერებები (2022 - დღემდე)",
     
-    // Project descriptions - Startups
-    subscriptionProjectTitle: "საბანკო გამოწერის ფუნქციონალი",
-    subscriptionProjectDescription: "მობილური ბანკინგისთვის გამოწერის ფუნქციონალის განვითარება (2025)",
+    komarovSchoolTitle: "ვლადიმირ კომაროვის ფიზიკა-მათემატიკის N199 სკოლა",
+    komarovSchoolDescription: "ფიზიკა-მათემატიკის სპეციალიზებული განათლება (2016 - 2022)",
     
-    tbcCrossCollabTitle: "TBC ჯვარედინი თანამშრომლობა",
-    tbcCrossCollabDescription: "მუშაობა სხვადასხვა ტექნოლოგიურ გუნდებთან TBC ჯვარედინი თანამშრომლობის პროექტში (2024)",
+    // Project descriptions - Startups/Work Experience
+    mathTutorTitle: "მათემატიკის რეპეტიტორი",
+    mathTutorDescription: "ბავშვებს ვასწავლი მათემატიკას 2020 წლიდან",
+    
+    kiuAmbassadorWorkTitle: "ქუთაისის საერთაშორისო უნივერსიტეტის ელჩი",
+    kiuAmbassadorWorkDescription: "სექ. 2022 - დღემდე · 2 წელი 8 თვე",
+    
+    labTutorTitle: "სტუდენტი ტუტორი ლაბორატორიაში: კომპიუტერის ორგანიზაცია",
+    labTutorDescription: "იან. 2023 - ივნ. 2023 · 6 თვე",
+    
+    architectureTutorTitle: "სტუდენტი ტუტორი კომპიუტერულ არქიტექტურაში",
+    architectureTutorDescription: "სექ. 2022 - დეკ. 2022 · 4 თვე",
     
     campsideStartupTitle: "Campside სტარტაპი",
     campsideStartupDescription: "თანადამფუძნებელი და iOS დეველოპერი Campside აპლიკაციის, რომელიც ეხმარება გარე აქტივობების ორგანიზებასა და აღმოჩენას.",
+    
+    // CampSide info block
+    campsideInfoTitle: "CampSide-ის შესახებ",
+    campsideGreeting: "მოგესალმებით! ჩვენ ვართ CampSide – ინოვაციური სტარტაპი, რომელიც მიზნად ისახავს საგანმანათლებლო სფეროში ახალი სტანდარტების დანერგვას. ჩვენი გუნდი ცდილობს შექმნას პლატფორმა, რომელიც გაამარტივებს ნებისმიერი მომხმარებლისთვის სასურველი აქტივობების მოძიებასა და დაგეგმვას და დაზოგავს თქვენს ძვირფას დროს (თქვენ გაიგებთ, რას ვგულისხმობთ „სასურველ აქტივობებში" ამ პოსტის შემდეგ ნაწილში). იქნებით თქვენ სტუდენტი, მოსწავლე თუ სხვა, ჩვენ აქ ვართ დასახმარებლად.",
+    campsideWhy: "რატომ CampSide❓",
+    campsideMission: "CampSide არის ადგილი, სადაც ინოვაცია და განათლება ხვდება ერთმანეთს. ჩვენი მისიაა მხარი დავუჭიროთ ბავშვებისა და ახალგაზრდების გართობას/განათლებას, დავეხმაროთ მათ თავგადასავლების პოვნასა და დაგეგმვის გამარტივებაში. ჩვენი მიზანია შევქმნათ პროდუქტი, რომელიც საშუალებას მისცემს ხალხს ადვილად მიიღოს ბანაკი საკუთარი არჩევანის მიხედვით, თავიანთი სტანდარტების შესაბამისად.",
+    campsideJoin: "კარგი კითხვა: როგორ შეგიძლიათ შეუერთდეთ CampSide-ს?",
+    campsideContact: "თუ გსურთ ჩვენთან შემოერთება და გახდეთ ჩვენი ინოვაციური და დინამიური გუნდის ნაწილი, გთხოვთ, გამოგვიგზავნოთ თქვენი CV ან საკონტაქტო ინფორმაცია მისამართზე: campsidege@gmail.com",
+    campsideOutro: "ჩვენ მოუთმენლად ველით თქვენთან თანამშრომლობას! 🤗",
     
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
     nasaSpaceAppsDescription: "მეორე ადგილის მფლობელი NASA Space Apps Challenge ჰაკათონზე (2023)",

@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Gitlab } from "lucide-react";
@@ -23,6 +23,16 @@ const Projects: React.FC = () => {
   const { t } = useLanguage();
   const { category } = useCategory();
   const [filter, setFilter] = useState("all");
+  
+  // Reset filter when category changes
+  useEffect(() => {
+    // For iOS, set filter to "app" by default
+    if (category === "ios") {
+      setFilter("app");
+    } else {
+      setFilter("all");
+    }
+  }, [category]);
   
   // All projects across categories
   const allProjects: Project[] = [
@@ -103,44 +113,66 @@ const Projects: React.FC = () => {
       description: t('kiuAssistantDescription'),
       imageUrl: "https://placehold.co/600x400?text=KIU+SA",
     },
-    // Robotics projects (placeholders)
+    // Academic achievements (formerly Robotics)
     {
       id: 10,
-      title: t('roboticsProject1Title'),
-      category: "robotics",
-      subcategory: "web",
-      description: t('roboticsProject1Description'),
-      imageUrl: "https://placehold.co/600x400?text=Robotics+Project+1",
-      githubUrl: "#",
+      title: t('kiuEducationTitle'),
+      category: "academic",
+      subcategory: "education",
+      description: t('kiuEducationDescription'),
+      imageUrl: "https://placehold.co/600x400?text=KIU+Education",
+    },
+    {
+      id: 11,
+      title: t('komarovSchoolTitle'),
+      category: "academic",
+      subcategory: "education",
+      description: t('komarovSchoolDescription'),
+      imageUrl: "https://placehold.co/600x400?text=Komarov+School",
     },
     // Startups projects
     {
-      id: 11,
-      title: t('subscriptionProjectTitle'),
-      category: "startups",
-      subcategory: "professional",
-      description: t('subscriptionProjectDescription'),
-      imageUrl: "https://placehold.co/600x400?text=Subscription+Project",
-    },
-    {
       id: 12,
-      title: t('tbcCrossCollabTitle'),
+      title: t('mathTutorTitle'),
       category: "startups",
-      subcategory: "professional",
-      description: t('tbcCrossCollabDescription'),
-      imageUrl: "https://placehold.co/600x400?text=TBC+Cross+Collab",
+      subcategory: "work",
+      description: t('mathTutorDescription'),
+      imageUrl: "https://placehold.co/600x400?text=Math+Tutor",
     },
     {
       id: 13,
+      title: t('kiuAmbassadorWorkTitle'),
+      category: "startups",
+      subcategory: "work",
+      description: t('kiuAmbassadorWorkDescription'),
+      imageUrl: "https://scontent.ftbs6-2.fna.fbcdn.net/v/t39.30808-6/481664531_982427847356852_5400299080596096216_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=70TWeE0-1jUQ7kNvgH0W7E0&_nc_oc=AdkxYGpl6cped6Hhg__olbjjQyp_62MqGf4SRzyGlldiVj3DqMOG6rOT5KPkhQO4SXQ&_nc_zt=23&_nc_ht=scontent.ftbs6-2.fna&_nc_gid=E6Wlx2y8IqmU2_CiYk24wg&oh=00_AYGunW_At-JhYoml-CTE83y7XVdhzuYnXspMx0U-joc1yQ&oe=67F29EC0",
+    },
+    {
+      id: 14,
+      title: t('labTutorTitle'),
+      category: "startups",
+      subcategory: "work",
+      description: t('labTutorDescription'),
+      imageUrl: "https://placehold.co/600x400?text=Lab+Tutor",
+    },
+    {
+      id: 15,
+      title: t('architectureTutorTitle'),
+      category: "startups",
+      subcategory: "work",
+      description: t('architectureTutorDescription'),
+      imageUrl: "https://placehold.co/600x400?text=Architecture+Tutor",
+    },
+    {
+      id: 16,
       title: t('campsideStartupTitle'),
       category: "startups",
       subcategory: "startup",
       description: t('campsideStartupDescription'),
       imageUrl: "https://private-user-images.githubusercontent.com/20245584/408812148-f281e523-ea4a-44e6-8750-3f7169912803.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM1NzI3MDYsIm5iZiI6MTc0MzU3MjQwNiwicGF0aCI6Ii8yMDI0NTU4NC80MDg4MTIxNDgtZjI4MWU1MjMtZWE0YS00NGU2LTg3NTAtM2Y3MTY5OTEyODAzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDAyVDA1NDAwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI4ZmYwOGZlM2M4ODUwZWU1MWVhN2Q5ZTk0ZjliZDcwOTg5ZmM2NDhmY2YwNThlNTk0MzY3NmE2ZjVkOGFiZWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Ho80fN92or2uyiZQldqu2V5Fs3v89XSdvjxiVPJ4b_A",
-      githubUrl: "https://github.com/andriagv/TbcIosFinalProject",
     },
     {
-      id: 14,
+      id: 17,
       title: t('nasaSpaceAppsTitle'),
       category: "startups",
       subcategory: "hackathon",
@@ -152,23 +184,20 @@ const Projects: React.FC = () => {
   // Category-specific filter buttons
   const filterCategories = {
     ios: [
-      { id: "all", label: t('all') },
-      { id: "app", label: t('app') },
-      { id: "design", label: t('design') }
+      { id: "app", label: t('app') }
     ],
     camps: [
       { id: "all", label: t('all') },
       { id: "participation", label: t('campParticipation') },
       { id: "professional", label: t('professional') }
     ],
-    robotics: [
+    academic: [
       { id: "all", label: t('all') },
-      { id: "web", label: t('web') },
-      { id: "hardware", label: t('hardware') }
+      { id: "education", label: t('education') }
     ],
     startups: [
       { id: "all", label: t('all') },
-      { id: "professional", label: t('professional') },
+      { id: "work", label: t('work') },
       { id: "startup", label: t('startup') },
       { id: "hackathon", label: t('hackathon') }
     ]
@@ -185,6 +214,11 @@ const Projects: React.FC = () => {
   // Get category-specific filters
   const currentFilters = filterCategories[category] || [];
 
+  // Special rendering for CampSide startup info when viewing startups category with startup filter
+  const showCampsideInfo = category === "startups" && 
+    (filter === "startup" || filter === "all") && 
+    filteredProjects.some(p => p.title === t('campsideStartupTitle'));
+
   return (
     <section id="projects" className="bg-secondary/30 section-padding">
       <div className="container mx-auto">
@@ -196,17 +230,33 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
-          {currentFilters.map((filterOption) => (
-            <Button 
-              key={filterOption.id}
-              variant={filter === filterOption.id ? "default" : "outline"} 
-              onClick={() => setFilter(filterOption.id)}
-            >
-              {filterOption.label}
-            </Button>
-          ))}
-        </div>
+        {currentFilters.length > 1 && (
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            {currentFilters.map((filterOption) => (
+              <Button 
+                key={filterOption.id}
+                variant={filter === filterOption.id ? "default" : "outline"} 
+                onClick={() => setFilter(filterOption.id)}
+              >
+                {filterOption.label}
+              </Button>
+            ))}
+          </div>
+        )}
+
+        {showCampsideInfo && (
+          <div className="bg-primary/10 p-6 rounded-lg mb-8">
+            <h3 className="text-2xl font-bold mb-4">{t('campsideInfoTitle')}</h3>
+            <div className="text-left space-y-4">
+              <p>{t('campsideGreeting')}</p>
+              <p className="font-semibold">{t('campsideWhy')}</p>
+              <p>{t('campsideMission')}</p>
+              <p className="font-semibold">{t('campsideJoin')}</p>
+              <p>{t('campsideContact')}</p>
+              <p>{t('campsideOutro')}</p>
+            </div>
+          </div>
+        )}
 
         {filteredProjects.length === 0 ? (
           <div className="text-center py-20">
