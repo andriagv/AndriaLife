@@ -28,6 +28,14 @@ const Projects: React.FC = () => {
         return t("campParticipation");
       case "ios":
         return t("iosDeveloper");
+      case "photography":
+        return t("photography");
+      case "robotics":
+        return t("robotics");
+      case "mathematics":
+        return t("mathematics");
+      case "sports":
+        return t("sports");
       default:
         return t("myProjects");
     }
@@ -57,6 +65,22 @@ const Projects: React.FC = () => {
       { id: "work", label: t('work') },
       { id: "startup", label: t('startup') },
       { id: "hackathon", label: t('hackathon') }
+    ],
+    photography: [
+      { id: "all", label: t('all') },
+      { id: "photos", label: t('photos') }
+    ],
+    robotics: [
+      { id: "all", label: t('all') },
+      { id: "projects", label: t('myProjects') }
+    ],
+    mathematics: [
+      { id: "all", label: t('all') },
+      { id: "topics", label: t('topics') }
+    ],
+    sports: [
+      { id: "all", label: t('all') },
+      { id: "achievements", label: t('achievements') }
     ]
   };
 
@@ -85,7 +109,12 @@ const Projects: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold">{getSectionTitle()}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {category === "camps" ? t('campsDescription') : t('projectsDescription')}
+            {category === "camps" ? t('campsDescription') :
+             category === "photography" ? t('photographyDescription') :
+             category === "robotics" ? t('roboticsDescription') :
+             category === "mathematics" ? t('mathematicsDescription') :
+             category === "sports" ? t('sportsDescription') :
+             t('projectsDescription')}
           </p>
         </div>
 

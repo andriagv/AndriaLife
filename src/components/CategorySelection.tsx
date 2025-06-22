@@ -1,9 +1,8 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Smartphone, Tent, GraduationCap, Rocket } from "lucide-react";
+import { Smartphone, Tent, GraduationCap, Rocket, Camera, Bot, Sigma, Trophy } from "lucide-react";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
@@ -30,6 +29,26 @@ const CategorySelection: React.FC = () => {
       name: t("startups"),
       icon: <Rocket className="h-10 w-10" />,
     },
+    {
+      id: "photography",
+      name: t("photography"),
+      icon: <Camera className="h-10 w-10" />,
+    },
+    {
+      id: "robotics",
+      name: t("robotics"),
+      icon: <Bot className="h-10 w-10" />,
+    },
+    {
+      id: "mathematics",
+      name: t("mathematics"),
+      icon: <Sigma className="h-10 w-10" />,
+    },
+    {
+      id: "sports",
+      name: t("sports"),
+      icon: <Trophy className="h-10 w-10" />,
+    },
   ];
 
   return (
@@ -43,7 +62,7 @@ const CategorySelection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
           {categories.map((cat) => (
             <Card
               key={cat.id}

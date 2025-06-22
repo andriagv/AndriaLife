@@ -90,7 +90,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "certificate",
     description: t('codecademyCertificateDescription'),
-    imageUrl: "/photos/ios-developer/certificate/Codecademy_ios.png",
+    imageUrl: "/photos/ios-developer/Codecademy_ios.png",
   },
   {
     id: 24,
@@ -270,4 +270,40 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     description: t('nasaSpaceAppsDescription'),
     imageUrl: "https://placehold.co/600x400?text=NASA+Space+Apps",
   },
+  // Photography Projects
+  {
+    id: 24,
+    title: t('samplePhotoTitle'),
+    category: "photography",
+    subcategory: "photos",
+    description: t('samplePhotoDescription'),
+    imageUrl: "https://picsum.photos/seed/sunset/800/600",
+  },
+  // Robotics Projects
+  {
+    id: 25,
+    title: t('sampleRoboticsTitle'),
+    category: "robotics",
+    subcategory: "projects",
+    description: t('sampleRoboticsDescription'),
+    imageUrl: "https://picsum.photos/seed/robot/800/600",
+  },
+  // Mathematics Projects
+  {
+    id: 26,
+    title: t('sampleMathTitle'),
+    category: "mathematics",
+    subcategory: "topics",
+    description: t('sampleMathDescription'),
+    imageUrl: "https://picsum.photos/seed/fractal/800/600",
+  },
+  // Sports Projects
+  {
+    id: 28,
+    title: t('sampleSportTitle'),
+    category: "sports",
+    subcategory: "achievements",
+    description: t('sampleSportDescription'),
+    imageUrl: "https://picsum.photos/seed/chess/800/600",
+  }
 ]; 

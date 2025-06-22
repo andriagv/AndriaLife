@@ -84,7 +84,7 @@ export const translations = {
     campsideDescription: "An iOS application that brings together various hiking trips, camps, and tourism events. The app allows users to search for events, apply filters, manage favorites, and book tickets.",
     
     instagramCloneTitle: "InstagramClone",
-    instagramCloneDescription: "A team project whose goal was to write an application as close to Instagram as possible as a team.",
+    instagramCloneDescription: "An Instagram clone with features like story sharing, direct messaging, and post liking/commenting.",
     
     manageSubscriptionsTitle: "Manage Subscriptions",
     manageSubscriptionsDescription: "Is a specific feature for internet banks that allows the user to unite their subscriptions in one space and easily manage them.",
@@ -162,6 +162,35 @@ export const translations = {
     // Footer
     rights: "All rights reserved.",
     backToTop: "Back to Top",
+    photography: "Photography",
+    robotics: "Robotics",
+    mathematics: "Mathematics",
+    photographyDescription: "A collection of my favorite shots and photo series.",
+    roboticsDescription: "Projects and experiments in the world of robotics.",
+    mathematicsDescription: "Exploring mathematical concepts, problems, and visualizations.",
+    sports: "Sports",
+    sportsDescription: "A showcase of my athletic activities and achievements.",
+    // New sub-category filters
+    photos: "Photos",
+    topics: "Topics",
+    achievements: "Achievements",
+    // Placeholder project titles and descriptions
+    samplePhotoTitle: "Sunset Over the City",
+    samplePhotoDescription: "A breathtaking view of the city skyline during sunset.",
+    sampleRoboticsTitle: "Line Follower Robot",
+    sampleRoboticsDescription: "A simple robot that follows a black line on a white surface.",
+    sampleMathTitle: "The Beauty of Fractals",
+    sampleMathDescription: "An exploration of Mandelbrot and Julia sets.",
+    sampleSportTitle: "Chess Champion",
+    sampleSportDescription: "Won the university chess tournament.",
+    profilePageTitle: "User Profile Page",
+    profilePageDescription: "A simple user profile page to display user information.",
+    timerTitle: "Countdown Timer",
+    timerDescription: "A timer application with start, stop, and reset functionality.",
+    musicPlayerTitle: "Music Player",
+    musicPlayerDescription: "A simple music player interface.",
+    emojiGuessingTitle: "Emoji Guessing Game",
+    emojiGuessingDescription: "A fun game where you guess the word or phrase from a set of emojis.",
   },
   ka: {
     // Navigation
@@ -173,7 +202,7 @@ export const translations = {
     
     // Hero section
     hello: "გამარჯობა, მე ვარ",
-    name: "ანდრია",
+    name: "ანდრია გურამი",
     role: "iOS დეველოპერი",
     heroDescription: "კეთილი იყოს თქვენი მობრძანება ჩემს ციფრულ სივრცეში - ადგილი, სადაც ვაერთიანებ ჩემს ნამუშევარს, იდეებსა და ღირებულებებს - ყველაფერს, რაც ქმნის ჩემს პროფესიულ იდენტობას. ჩემი მიზანია შევქმნა გადაწყვეტილებები, რომლებიც ნამდვილად ეხმარება ადამიანებს და ცხოვრებას უფრო მარტივსა და ლამაზს ხდის.",
     contactMe: "დამიკავშირდი",
@@ -248,7 +277,7 @@ export const translations = {
     campsideDescription: "iOS აპლიკაცია, რომელიც აერთიანებს სხვადასხვა ლაშქრობებს, ბანაკებსა და ტურისტულ ღონისძიებებს. აპლიკაცია საშუალებას აძლევს მომხმარებლებს მოძებნონ ღონისძიებები, გამოიყენონ ფილტრები, მართონ ფავორიტები და დაჯავშნონ ბილეთები.",
     
     instagramCloneTitle: "InstagramClone",
-    instagramCloneDescription: "გუნდური პროექტი, რომლის მიზანი იყო გუნდურად დაგვეწერა ინსტაგრამთან მაქსიმალურად მიახლოებული აპლიკაცია.",
+    instagramCloneDescription: "ინსტაგრამის კლონი ისეთი ფუნქციებით, როგორიცაა სთორის გაზიარება, პირადი შეტყობინებები და პოსტების მოწონება/კომენტარები.",
     
     manageSubscriptionsTitle: "გამოწერების მართვა",
     manageSubscriptionsDescription: "წარმოადგენს სპეციფიკურ ფუნქციას ინტერნეტ ბანკებისთვის, რომელიც მომხმარებელს საშუალებას აძლევს, გააერთიანოს თავისი გამოწერები ერთ სივრცეში და მარტივად მართოს ისინი.",
@@ -258,9 +287,9 @@ export const translations = {
     newsAppTitle: "ახალი ამბების აპლიკაცია",
     newsAppDescription: "აპლიკაცია გვაწვდის რეალურ სიახლეებს NewsAPI-ის მეშვეობით. პროექტი აგებულია მოდულურ სტრუქტურაზე, რაც უზრუნველყოფს კოდის მარტივ გაფართოებასა და შენარჩუნებას. მონაცემები მოიპოვება ქსელური ზარების საშუალებით და ინფორმაცია გამოისახება ისეთ ფორმატში, რომელიც ადვილად წასაკითხი და მოსახერხებელია მომხმარებლისთვის.",
     quizAppTitle: "ქვიზის აპლიკაცია",
-    quizAppDescription: "ინტერაქტიული ქვიზის აპლიკაცია, სადაც მომხმარებლებს შეუძლიათ გაიარონ ავტორიზაცია, უპასუხონ კითხვების სერიებს სხვადასხვა თემაზე და დააგროვონ ქულები სწორი პასუხებისთვის. აპლიკაცია ქმნის მოტივაციას სწავლისა და გართობის კომბინაციით — მომხმარებლები ცდილობენ დააგროვონ მაქსიმალური ქულები და გააუმჯობესეთ საკუთარი შედეგი ყოველ სესიაზე.",
+    quizAppDescription: "ინტერაქტიული ქვიზის აპლიკაცია, სადაც მომხმარებლებს შეუძლიათ გაიარონ ავტორიზაცია, უპასუხონ კითხვების სერიებს სხვადასხვა თემაზე და დააგროვონ ქულები სწორი პასუხებისთვის. აპლიკაცია ქმნის მოტივაციას სწავლისა და გართობის კომბინაციით — მომხმარებლები ცდილობენ დააგროვონ მაქსიმალური ქულები და გააუმჯობესე საკუთარი შედეგი ყოველ სესიაზე.",
     catchTheBananaTitle: "დაიჭირე ბანანი",
-    catchTheBananaDescription: "არის მარტივი, მაგრამ ძალიან სახალისო და დინამიური თამაში, სადაც მოთამაშის მიზანია შეაგროვოს რაც შეიძლება მეტი ბანანი, სანამ ერთი ბანანი მაინც დაეცემა ძირს. გამოიყენეთ სწრაფი რეაქცია და ყურადღება, შეაგროვეთ ბანანები მაქსიმალურად, დააგროვეთ მაღალი ქულები და გააუმჯობესეთ საკუთარი შედეგი ყოველ თამაშზე.",
+    catchTheBananaDescription: "არის მარტივი, მაგრამ ძალიან სახალისო და დინამიური თამაში, სადაც მოთამაშის მიზანია შეაგროვოს რაც შეიძლება მეტი ბანანი, სანამ მინიმუმ ერთი ბანანი ძირს დავარდება. გამოიყენე სწრაფი რეაქცია და ყურადღება, მაქსიმალურად შეაგროვე ბანანი, დააგროვე მაღალი ქულები და გააუმჯობესე საკუთარი შედეგი ყოველ თამაშზე.",
     
     // Certificate Titles & Descriptions (iOS)
     tbcAcademyCertificateTitle: "TBC IT აკადემია - iOS დეველოპმენტი",
@@ -326,14 +355,35 @@ export const translations = {
     // Footer
     rights: "ყველა უფლება დაცულია.",
     backToTop: "დაბრუნება თავში",
-    profilePageTitle: "პროფილის გვერდი",
-    profilePageDescription: "ეს აპლიკაცია დაგეხმარებათ თქვენი გამოცდილების ორგანიზებაში. აქ შეგიძლიათ იხილოთ ყველა გამოცდილება და დაამატოთ ახალი.",
-    timerTitle: "ტაიმერი",
-    timerDescription: "ინოვაციური ტაიმერი SwiftUI-ზე, რომელიც ყოველდღიურ დროის მართვას უფრო ეფექტურს ხდის. სრული კონტროლი - შექმნა, პაუზა, განულება და წაშლა. ინტეგრირებული აუდიო და ვიბრაციის შეტყობინებები, ასევე დეტალური ისტორია თქვენი პროდუქტიულობის გასაკონტროლებლად.",
+    profilePageTitle: "მომხმარებლის პროფილის გვერდი",
+    profilePageDescription: "მომხმარებლის პროფილის მარტივი გვერდი მომხმარებლის ინფორმაციის საჩვენებლად.",
+    timerTitle: "უკუმთვლელი ტაიმერი",
+    timerDescription: "ტაიმერის აპლიკაცია დაწყების, გაჩერების და გადატვირთვის ფუნქციებით.",
     musicPlayerTitle: "მუსიკალური პლეერი",
-    musicPlayerDescription: "მინიმალისტური მუსიკალური პლეერი ყველაზე საჭირო კონტროლებით - დაკვრა, პაუზა, ტრეკებს შორის ნავიგაცია და გამეორების რეჟიმი. აპლიკაცია საშუალებას გაძლევთ მოუსმინოთ როგორც ცალკეულ კომპოზიციებს, ასევე დაათვალიეროთ თქვენი საყვარელი შემსრულებლების მთელი კოლექციები.",
-    emojiGuessingTitle: "ემოჯი გამოცნობის თამაში",
-    emojiGuessingDescription: "ციფრული გამოცნობა ემოჯის ფორმატში - თქვენი ინტუიციისა და ლოგიკის ტესტი. დაშიფრული მინიშნებები, რომლებიც სიმბოლოების სახით წარმოაჩენს ცნობილ სათაურებს სხვადასხვა ჟანრისა და თემის მიხედვით.",
+    musicPlayerDescription: "მუსიკალური პლეერის მარტივი ინტერფეისი.",
+    emojiGuessingTitle: "ემოჯის გამოცნობის თამაში",
+    emojiGuessingDescription: "სახალისო თამაში, სადაც თქვენ უნდა გამოიცნოთ სიტყვა ან ფრაზა ემოჯების ნაკრებიდან.",
+    photography: "ფოტოგრაფია",
+    robotics: "რობოტიქსი",
+    mathematics: "მათემატიკა",
+    photographyDescription: "ჩემი საყვარელი კადრებისა და ფოტოსერიების კოლექცია.",
+    roboticsDescription: "პროექტები და ექსპერიმენტები რობოტიკის სამყაროში.",
+    mathematicsDescription: "მათემატიკური კონცეფციების, პრობლემებისა და ვიზუალიზაციების კვლევა.",
+    sports: "სპორტი",
+    sportsDescription: "ჩემი სპორტული აქტივობებისა და მიღწევების ჩვენება.",
+    // New sub-category filters
+    photos: "ფოტოები",
+    topics: "თემები",
+    achievements: "მიღწევები",
+    // Placeholder project titles and descriptions
+    samplePhotoTitle: "მზის ჩასვლა ქალაქზე",
+    samplePhotoDescription: "ქალაქის ჰორიზონტის თვალწარმტაცი ხედი მზის ჩასვლისას.",
+    sampleRoboticsTitle: "ხაზის მიმყოლი რობოტი",
+    sampleRoboticsDescription: "მარტივი რობოტი, რომელიც მიჰყვება შავ ხაზს თეთრ ზედაპირზე.",
+    sampleMathTitle: "ფრაქტალების სილამაზე",
+    sampleMathDescription: "მანდელბროტისა და ჯულიას სიმრავლეების კვლევა.",
+    sampleSportTitle: "ჭადრაკის ჩემპიონი",
+    sampleSportDescription: "გავიმარჯვე უნივერსიტეტის ჭადრაკის ტურნირში.",
   },
 };
 
