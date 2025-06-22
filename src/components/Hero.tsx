@@ -1,7 +1,8 @@
 import React from "react";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import MediumIcon from "@/components/icons/MediumIcon";
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -49,10 +50,26 @@ const Hero: React.FC = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:your.email@example.com" 
+                href="mailto:gvaramiaandria1@gmail.com" 
                 className="p-2 border border-border rounded-full hover:text-primary hover:border-primary transition-colors"
               >
                 <Mail size={20} />
+              </a>
+              <a 
+                href="https://www.facebook.com/andria361791/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 border border-border rounded-full hover:text-primary hover:border-primary transition-colors"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://medium.com/@gvaramiaandria1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 border border-border rounded-full hover:text-primary hover:border-primary transition-colors"
+              >
+                <MediumIcon className="h-5 w-5" />
               </a>
             </div>
           </div>
