@@ -13,7 +13,6 @@ const Projects: React.FC = () => {
   const { category } = useCategory();
   const [filter, setFilter] = useState("all");
   const [activeModalId, setActiveModalId] = useState<number | null>(null);
-  const [showAllIosApps, setShowAllIosApps] = useState(false);
   
   // Reset filter when category changes
   useEffect(() => {
@@ -112,9 +111,6 @@ const Projects: React.FC = () => {
           const showApps = filter === 'all' || filter === 'app';
           const showCerts = filter === 'all' || filter === 'certificate';
 
-          // Show only first 4 apps unless showAllIosApps is true
-          const visibleIosApps = showAllIosApps ? iosApps : iosApps.slice(0, 4);
-
           return (
             <div>
               {/* Projects Section */}
@@ -122,7 +118,7 @@ const Projects: React.FC = () => {
                 <div className="mb-16">
                   <h3 className="text-3xl font-bold text-center mb-12">{t('myProjects')}</h3>
                   <div className="space-y-12">
-                    {visibleIosApps.map((project) => (
+                    {iosApps.map((project) => (
                       <div 
                         key={project.id} 
                         className="flex flex-col md:flex-row items-center gap-8"
@@ -172,13 +168,6 @@ const Projects: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                  {iosApps.length > 4 && (
-                    <div className="flex justify-center mt-8">
-                      <Button variant="outline" onClick={() => setShowAllIosApps(v => !v)}>
-                        {showAllIosApps ? t('showLess') || 'Show Less' : t('showMore') || 'Show More'}
-                      </Button>
-                    </div>
-                  )}
                 </div>
               )}
 
