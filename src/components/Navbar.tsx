@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -23,7 +22,6 @@ const Navbar: React.FC = () => {
     { name: t('about'), href: "#about" },
     { name: t('skills'), href: "#skills" },
     { name: t('projects'), href: "#projects" },
-    { name: t('contact'), href: "#contact" },
   ];
 
   return (

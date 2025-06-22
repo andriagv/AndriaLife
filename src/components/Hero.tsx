@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,14 +22,6 @@ const Hero: React.FC = () => {
               {t('heroDescription')}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button 
-                className="group"
-                size="lg"
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                {t('contactMe')}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
               <Button 
                 variant="outline" 
                 size="lg"

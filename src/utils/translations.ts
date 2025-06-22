@@ -141,24 +141,9 @@ export const translations = {
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
     nasaSpaceAppsDescription: "Second Place Winner in the NASA Space Apps Challenge Hackathon (2023)",
     
-    // Contact section
-    getInTouch: "Get In Touch",
-    contactDescription: "Have a question or want to work together? Feel free to contact me!",
-    address: "Address",
-    location: "Kutaisi, Georgia",
-    email: "Email",
-    phone: "Phone",
-    sendMessage: "Send a Message",
-    yourName: "Your Name",
-    yourEmail: "Your Email",
-    yourMessage: "Your Message",
-    messagePlaceholder: "Tell me about your project...",
-    sending: "Sending...",
-    send: "Send Message",
-    
     // Footer
     rights: "All rights reserved.",
-    backToTop: "Back to top",
+    backToTop: "Back to Top",
   },
   ka: {
     // Navigation
@@ -301,21 +286,6 @@ export const translations = {
     
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
     nasaSpaceAppsDescription: "მეორე ადგილის მფლობელი NASA Space Apps Challenge ჰაკათონზე (2023)",
-    
-    // Contact section
-    getInTouch: "დამიკავშირდი",
-    contactDescription: "გაქვს კითხვა ან გინდა ერთად ვიმუშაოთ? ნუ მოგერიდება, დამიკავშირდი!",
-    address: "მისამართი",
-    location: "ქუთაისი, საქართველო",
-    email: "იმეილი",
-    phone: "ტელეფონი",
-    sendMessage: "გამომიგზავნე წერილი",
-    yourName: "შენი სახელი",
-    yourEmail: "შენი იმეილი",
-    yourMessage: "შენი შეტყობინება",
-    messagePlaceholder: "მომიყევი შენი პროექტის შესახებ...",
-    sending: "იგზავნება...",
-    send: "შეტყობინების გაგზავნა",
     
     // Footer
     rights: "ყველა უფლება დაცულია.",
