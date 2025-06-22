@@ -13,15 +13,11 @@ const Projects: React.FC = () => {
   const { category } = useCategory();
   const [filter, setFilter] = useState("all");
   const [activeModalId, setActiveModalId] = useState<number | null>(null);
+  const [showAllIosApps, setShowAllIosApps] = useState(false);
   
   // Reset filter when category changes
   useEffect(() => {
-    // For iOS, set filter to "app" by default
-    if (category === "ios") {
-      setFilter("app");
-    } else {
-      setFilter("all");
-    }
+    setFilter("all");
   }, [category]);
 
   const allProjects = getAllProjects(t, language);
@@ -31,6 +27,8 @@ const Projects: React.FC = () => {
     switch (category) {
       case "camps":
         return t("campParticipation");
+      case "ios":
+        return t("iosDeveloper");
       default:
         return t("myProjects");
     }
@@ -41,7 +39,9 @@ const Projects: React.FC = () => {
   // Category-specific filter buttons
   const filterCategories = {
     ios: [
-      { id: "app", label: t('app') }
+      { id: "all", label: t('all') },
+      { id: "app", label: t('myProjects') },
+      { id: "certificate", label: t('certificates') }
     ],
     camps: [
       { id: "all", label: t('all') },
@@ -105,59 +105,120 @@ const Projects: React.FC = () => {
         )}
 
         {/* Custom layout for iOS category */}
-        {category === 'ios' && (
-          <div className="space-y-12">
-            {filteredProjects.map((project) => (
-              <div 
-                key={project.id} 
-                className="flex flex-col md:flex-row items-center gap-8"
-              >
-                {/* Image */}
-                <div className="w-full md:w-1/6">
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title}
-                    className="w-full h-auto object-contain rounded-md"
-                  />
-                </div>
+        {category === 'ios' && (() => {
+          const iosApps = categoryProjects.filter(p => p.subcategory === 'app');
+          const iosCertificates = categoryProjects.filter(p => p.subcategory === 'certificate');
 
-                {/* Content */}
-                <div className="w-full md:w-5/6 text-center md:text-left">
-                  <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                  <p className="text-muted-foreground mb-6">{project.description}</p>
-                  
-                  {/* Tags */}
-                  <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
-                    {project.tags?.map(tag => (
-                      <span key={tag} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        {tag}
-                      </span>
+          const showApps = filter === 'all' || filter === 'app';
+          const showCerts = filter === 'all' || filter === 'certificate';
+
+          // Show only first 4 apps unless showAllIosApps is true
+          const visibleIosApps = showAllIosApps ? iosApps : iosApps.slice(0, 4);
+
+          return (
+            <div>
+              {/* Projects Section */}
+              {showApps && iosApps.length > 0 && (
+                <div className="mb-16">
+                  <h3 className="text-3xl font-bold text-center mb-12">{t('myProjects')}</h3>
+                  <div className="space-y-12">
+                    {visibleIosApps.map((project) => (
+                      <div 
+                        key={project.id} 
+                        className="flex flex-col md:flex-row items-center gap-8"
+                      >
+                        {/* Image */}
+                        <div className="w-full md:w-1/6">
+                          <img 
+                            src={project.imageUrl} 
+                            alt={project.title}
+                            className="w-full h-auto object-contain rounded-md"
+                          />
+                        </div>
+
+                        {/* Content */}
+                        <div className="w-full md:w-5/6 text-center md:text-left">
+                          <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
+                          <p className="text-muted-foreground mb-6">{project.description}</p>
+                          
+                          {/* Tags */}
+                          <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
+                            {project.tags?.map(tag => (
+                              <span key={tag} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Buttons */}
+                          <div className="flex justify-center md:justify-start gap-4">
+                            {project.githubUrl && (
+                              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="default" size="lg">GitHub <Github className="ml-2" size={18} /></Button>
+                              </a>
+                            )}
+                            {project.gitlabUrl && (
+                              <a href={project.gitlabUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="default" size="lg">GitLab <Gitlab className="ml-2" size={18} /></Button>
+                              </a>
+                            )}
+                            {project.liveUrl && (
+                              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline" size="lg">{t('livePreview')} <ExternalLink className="ml-2" size={18} /></Button>
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
+                  {iosApps.length > 4 && (
+                    <div className="flex justify-center mt-8">
+                      <Button variant="outline" onClick={() => setShowAllIosApps(v => !v)}>
+                        {showAllIosApps ? t('showLess') || 'Show Less' : t('showMore') || 'Show More'}
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              )}
 
-                  {/* Buttons */}
-                  <div className="flex justify-center md:justify-start gap-4">
-                    {project.githubUrl && (
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Button variant="default" size="lg">GitHub <Github className="ml-2" size={18} /></Button>
-                      </a>
-                    )}
-                     {project.gitlabUrl && (
-                      <a href={project.gitlabUrl} target="_blank" rel="noopener noreferrer">
-                        <Button variant="default" size="lg">GitLab <Gitlab className="ml-2" size={18} /></Button>
-                      </a>
-                    )}
-                    {project.liveUrl && (
-                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" size="lg">{t('livePreview')} <ExternalLink className="ml-2" size={18} /></Button>
-                      </a>
-                    )}
+              {/* Certificates Section */}
+              {showCerts && iosCertificates.length > 0 && (
+                <div>
+                  <h3 className="text-3xl font-bold text-center mb-12">{t('certificatesSectionTitle')}</h3>
+                  <div className="space-y-12">
+                    {iosCertificates.map((cert) => (
+                      <div 
+                        key={cert.id} 
+                        className="flex flex-col md:flex-row items-center gap-8"
+                      >
+                        {/* Image */}
+                        <div className="w-full md:w-1/4">
+                          <img 
+                            src={cert.imageUrl} 
+                            alt={cert.title}
+                            className="w-full h-auto object-contain rounded-md shadow-lg"
+                          />
+                        </div>
+                        {/* Content */}
+                        <div className="w-full md:w-3/4 text-center md:text-left">
+                          <h3 className="text-2xl font-bold mb-4">{cert.title}</h3>
+                          <p className="text-muted-foreground">{cert.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              )}
+              
+              {filteredProjects.length === 0 && (
+                <div className="text-center py-20">
+                  <p className="text-xl text-muted-foreground">{t('noProjectsFound')}</p>
+                </div>
+              )}
+            </div>
+          )
+        })()}
 
         {/* Default grid layout for other categories */}
         {category !== 'ios' && (

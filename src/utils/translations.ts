@@ -11,7 +11,7 @@ export const translations = {
     hello: "Hello, I'm",
     name: "Andria",
     role: "iOS Developer",
-    heroDescription: "I design and develop exceptional iOS applications that are simple, beautiful, and user-friendly. I'm focused on building accessible, human-centered products.",
+    heroDescription: "Welcome to my digital space - a place where I combine my work, ideas and values - everything that creates my professional identity. My goal is to create solutions that really help people and make life simpler and more beautiful.",
     contactMe: "Contact Me",
     viewWork: "View My Work",
     
@@ -70,6 +70,8 @@ export const translations = {
     viewCertificate: "View Certificate",
     livePreview: "Live preview",
     noProjectsFound: "No projects found in this category and filter combination",
+    showMore: "Show More",
+    showLess: "Show Less",
     
     // Certificate titles and descriptions
     campCertificate1Title: "Camp Leadership Certificate",
@@ -82,10 +84,26 @@ export const translations = {
     campsideDescription: "An iOS application that brings together various hiking trips, camps, and tourism events. The app allows users to search for events, apply filters, manage favorites, and book tickets.",
     
     instagramCloneTitle: "InstagramClone",
-    instagramCloneDescription: "A team project developed as part of a TBC collaboration assignment.",
+    instagramCloneDescription: "A team project whose goal was to write an application as close to Instagram as possible as a team.",
     
     manageSubscriptionsTitle: "Manage Subscriptions",
-    manageSubscriptionsDescription: "Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with.",
+    manageSubscriptionsDescription: "Is a specific feature for internet banks that allows the user to unite their subscriptions in one space and easily manage them.",
+    
+    calculatorAppTitle: "Calculator App",
+    calculatorAppDescription: "The application is built using Storyboard and includes all basic arithmetic functionality. The user can easily perform mathematical operations and also view the history of actions by tapping the history button in the top left, while the interface theme can be switched between light and dark mode, which improves the user experience.",
+    newsAppTitle: "News App",
+    newsAppDescription: "The application provides real news through NewsAPI. The project is built on a modular structure, which ensures easy code expansion and maintenance. Data is retrieved through network calls and information is displayed in a format that is easy to read and convenient for the user.",
+    quizAppTitle: "Quiz App",
+    quizAppDescription: "An interactive quiz application where users can go through authorization, answer question series on various topics and accumulate points for correct answers. The application creates motivation through a combination of learning and entertainment — users try to accumulate maximum points and improve their own results in each session.",
+    catchTheBananaTitle: "Catch the Banana",
+    catchTheBananaDescription: "Is a simple but very fun and dynamic game where the player's goal is to collect as many bananas as possible before at least one banana falls to the ground. Use quick reaction and attention, collect bananas to the maximum, accumulate high scores and improve your own result with each game.",
+    
+    // Certificate Titles & Descriptions (iOS)
+    tbcAcademyCertificateTitle: "TBC IT Academy - iOS Development",
+    tbcAcademyCertificateDescription: "In 2024, I successfully completed the TBC IT Academy iOS development course with the best grade. During this intensive program, I deeply studied the fundamental principles and modern approaches of iOS application development.",
+    codecademyCertificateTitle: "Codecademy - Build a Social Media iOS App",
+    codecademyCertificateDescription: "I completed a specialized course on Codecademy 'Build a Social Media iOS App with Firebase and SwiftUI', which enriched my knowledge in the field of backend integration and modern SwiftUI technologies. This course was particularly valuable for implementing real social platform functionalities.",
+    certificatesSectionTitle: "Certificates",
     
     // Project descriptions - Camps
     youngLeadersTitle: "Young Leaders' School",
@@ -157,7 +175,7 @@ export const translations = {
     hello: "გამარჯობა, მე ვარ",
     name: "ანდრია",
     role: "iOS დეველოპერი",
-    heroDescription: "მე ვქმნი გამორჩეულ iOS აპლიკაციებს, რომლებიც არის მარტივი, ლამაზი და მომხმარებლისთვის მოსახერხებელი. ჩემი ფოკუსია ხელმისაწვდომი, ადამიანზე ორიენტირებული პროდუქტების შექმნა.",
+    heroDescription: "კეთილი იყოს თქვენი მობრძანება ჩემს ციფრულ სივრცეში - ადგილი, სადაც ვაერთიანებ ჩემს ნამუშევარს, იდეებსა და ღირებულებებს - ყველაფერს, რაც ქმნის ჩემს პროფესიულ იდენტობას. ჩემი მიზანია შევქმნა გადაწყვეტილებები, რომლებიც ნამდვილად ეხმარება ადამიანებს და ცხოვრებას უფრო მარტივსა და ლამაზს ხდის.",
     contactMe: "დამიკავშირდი",
     viewWork: "ნახე ჩემი ნამუშევრები",
     
@@ -216,6 +234,8 @@ export const translations = {
     viewCertificate: "სერტიფიკატის ნახვა",
     livePreview: "პირდაპირი ხედი",
     noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
+    showMore: "მეტის ნახვა",
+    showLess: "ნაკლების ნახვა",
     
     // Certificate titles and descriptions
     campCertificate1Title: "ბანაკის ლიდერობის სერტიფიკატი",
@@ -228,11 +248,27 @@ export const translations = {
     campsideDescription: "iOS აპლიკაცია, რომელიც აერთიანებს სხვადასხვა ლაშქრობებს, ბანაკებსა და ტურისტულ ღონისძიებებს. აპლიკაცია საშუალებას აძლევს მომხმარებლებს მოძებნონ ღონისძიებები, გამოიყენონ ფილტრები, მართონ ფავორიტები და დაჯავშნონ ბილეთები.",
     
     instagramCloneTitle: "InstagramClone",
-    instagramCloneDescription: "გუნდური პროექტი, რომელიც შექმნილია TBC თანამშრომლობის დავალების ფარგლებში.",
+    instagramCloneDescription: "გუნდური პროექტი, რომლის მიზანი იყო გუნდურად დაგვეწერა ინსტაგრამთან მაქსიმალურად მიახლოებული აპლიკაცია.",
     
     manageSubscriptionsTitle: "გამოწერების მართვა",
-    manageSubscriptionsDescription: "აცნობეთ ხალხს, რა შეუძლია თქვენს პროექტს კონკრეტულად. მიაწოდეთ კონტექსტი და დაამატეთ ბმული ნებისმიერ მითითებაზე, რომელიც შეიძლება უცნობი იყოს ვიზიტორებისთვის.",
+    manageSubscriptionsDescription: "წარმოადგენს სპეციფიკურ ფუნქციას ინტერნეტ ბანკებისთვის, რომელიც მომხმარებელს საშუალებას აძლევს, გააერთიანოს თავისი გამოწერები ერთ სივრცეში და მარტივად მართოს ისინი.",
+
+    calculatorAppTitle: "კალკულატორის აპლიკაცია",
+    calculatorAppDescription: "აპლიკაცია შექმნილია Storyboard-ის გამოყენებით და მოიცავს ყველა საბაზისო არითმეტიკულ ფუნქციონალს. მომხმარებელს შეუძლია მარტივად შეასრულოს მათემატიკური ოპერაციები და ასევე იხილოს მოქმედებების ისტორია ზედა მარცხენა კუთხეში არსებულ ისტორიის ღილაკზე დაჭერით, ხოლო ინტერფეისის თემის გადართვა შესაძლებელია ღია და ბნელ რეჟიმებს შორის, რაც აუმჯობესებს მომხმარებლის გამოცდილებას.",
+    newsAppTitle: "ახალი ამბების აპლიკაცია",
+    newsAppDescription: "აპლიკაცია გვაწვდის რეალურ სიახლეებს NewsAPI-ის მეშვეობით. პროექტი აგებულია მოდულურ სტრუქტურაზე, რაც უზრუნველყოფს კოდის მარტივ გაფართოებასა და შენარჩუნებას. მონაცემები მოიპოვება ქსელური ზარების საშუალებით და ინფორმაცია გამოისახება ისეთ ფორმატში, რომელიც ადვილად წასაკითხი და მოსახერხებელია მომხმარებლისთვის.",
+    quizAppTitle: "ქვიზის აპლიკაცია",
+    quizAppDescription: "ინტერაქტიული ქვიზის აპლიკაცია, სადაც მომხმარებლებს შეუძლიათ გაიარონ ავტორიზაცია, უპასუხონ კითხვების სერიებს სხვადასხვა თემაზე და დააგროვონ ქულები სწორი პასუხებისთვის. აპლიკაცია ქმნის მოტივაციას სწავლისა და გართობის კომბინაციით — მომხმარებლები ცდილობენ დააგროვონ მაქსიმალური ქულები და გააუმჯობესეთ საკუთარი შედეგი ყოველ სესიაზე.",
+    catchTheBananaTitle: "დაიჭირე ბანანი",
+    catchTheBananaDescription: "არის მარტივი, მაგრამ ძალიან სახალისო და დინამიური თამაში, სადაც მოთამაშის მიზანია შეაგროვოს რაც შეიძლება მეტი ბანანი, სანამ ერთი ბანანი მაინც დაეცემა ძირს. გამოიყენეთ სწრაფი რეაქცია და ყურადღება, შეაგროვეთ ბანანები მაქსიმალურად, დააგროვეთ მაღალი ქულები და გააუმჯობესეთ საკუთარი შედეგი ყოველ თამაშზე.",
     
+    // Certificate Titles & Descriptions (iOS)
+    tbcAcademyCertificateTitle: "TBC IT აკადემია - iOS დეველოპმენტი",
+    tbcAcademyCertificateDescription: "2024 წელს წარმატებით დავასრულე TBC IT აკადემიის iOS დეველოპმენტის კურსი საუკეთესო შეფასებით. ამ ინტენსიური პროგრამის განმავლობაში, ღრმად შევისწავლე iOS აპლიკაციების შემუშავების ფუნდამენტური პრინციპები და თანამედროვე მიდგომები.",
+    codecademyCertificateTitle: "Codecademy - შექმენი სოციალური მედიის iOS აპლიკაცია",
+    codecademyCertificateDescription: "დავასრულე სპეციალიზებული კურსი Codecademy-ზე „შექმენი სოციალური მედიის iOS აპლიკაცია Firebase-ისა და SwiftUI-ის გამოყენებით“, რამაც გაამდიდრა ჩემი ცოდნა ბექენდის ინტეგრაციისა და თანამედროვე SwiftUI ტექნოლოგიების სფეროში. ეს კურსი განსაკუთრებით ღირებული იყო რეალური სოციალური პლატფორმის ფუნქციონალების შესამუშავებლად.",
+    certificatesSectionTitle: "სერთიფიკატები",
+
     // Project descriptions - Camps
     youngLeadersTitle: "ახალგაზრდა ლიდერების სკოლა",
     youngLeadersDescription: "ქუთაისის მუნიციპალიტეტის პროექტი – 2023, 2025",
@@ -261,34 +297,45 @@ export const translations = {
     
     // Project descriptions - Startups/Work Experience
     mathTutorTitle: "მათემატიკის რეპეტიტორი",
-    mathTutorDescription: "ბავშვებს ვასწავლი მათემატიკას 2020 წლიდან",
+    mathTutorDescription: "Teaching children mathematics since 2020",
     
     kiuAmbassadorWorkTitle: "ქუთაისის საერთაშორისო უნივერსიტეტის ელჩი",
-    kiuAmbassadorWorkDescription: "სექ. 2022 - დღემდე · 2 წელი 8 თვე",
+    kiuAmbassadorWorkDescription: "Sep 2022 - Present · 2 yrs 8 mos",
     
-    labTutorTitle: "სტუდენტი ტუტორი ლაბორატორიაში: კომპიუტერის ორგანიზაცია",
-    labTutorDescription: "იან. 2023 - ივნ. 2023 · 6 თვე",
+    labTutorTitle: "Student Tutor in Laboratory: Computer Organization",
+    labTutorDescription: "Jan 2023 - Jun 2023 · 6 mos",
     
-    architectureTutorTitle: "სტუდენტი ტუტორი კომპიუტერულ არქიტექტურაში",
-    architectureTutorDescription: "სექ. 2022 - დეკ. 2022 · 4 თვე",
+    architectureTutorTitle: "Student Tutor in Computer Architecture",
+    architectureTutorDescription: "Sep 2022 - Dec 2022 · 4 mos",
     
-    campsideStartupTitle: "Campside სტარტაპი",
-    campsideStartupDescription: "თანადამფუძნებელი და iOS დეველოპერი Campside აპლიკაციის, რომელიც ეხმარება გარე აქტივობების ორგანიზებასა და აღმოჩენას.",
+    campsideStartupTitle: "Campside Startup",
+    campsideStartupDescription: "Co-founder & iOS Developer of the Campside application that helps organize and discover outdoor activities.",
     
     // CampSide info block
-    campsideInfoTitle: "CampSide-ის შესახებ",
-    campsideGreeting: "მოგესალმებით! ჩვენ ვართ CampSide – ინოვაციური სტარტაპი, რომელიც მიზნად ისახავს საგანმანათლებლო სფეროში ახალი სტანდარტების დანერგვას. ჩვენი გუნდი ცდილობს შექმნას პლატფორმა, რომელიც გაამარტივებს ნებისმიერი მომხმარებლისთვის სასურველი აქტივობების მოძიებასა და დაგეგმვას და დაზოგავს თქვენს ძვირფას დროს (თქვენ გაიგებთ, რას ვგულისხმობთ \"სასურველ აქტივობებში\" ამ პოსტის შემდეგ ნაწილში). იქნებით თქვენ სტუდენტი, მოსწავლე თუ სხვა, ჩვენ აქ ვართ დასახმარებლად.",
-    campsideWhy: "რატომ CampSide❓",
-    campsideMission: "CampSide არის ადგილი, სადაც ინოვაცია და განათლება ხვდება ერთმანეთს. ჩვენი მისიაა მხარი დავუჭიროთ ბავშვებისა და ახალგაზრდების გართობას/განათლებას, დავეხმაროთ მათ თავგადასავლების პოვნასა და დაგეგმვის გამარტივებაში. ჩვენი მიზანია შევქმნათ პროდუქტი, რომელიც საშუალებას მისცემს ხალხს ადვილად მიიღოს ბანაკი საკუთარი არჩევანის მიხედვით, თავიანთი სტანდარტების შესაბამისად.",
-    campsideJoin: "კარგი კითხვა: როგორ შეგიძლიათ შეუერთდეთ CampSide-ს?",
-    campsideContact: "თუ გსურთ ჩვენთან შემოერთება და გახდეთ ჩვენი ინოვაციური და დინამიური გუნდის ნაწილი, გთხოვთ, გამოგვიგზავნოთ თქვენი CV ან საკონტაქტო ინფორმაცია მისამართზე: campsidege@gmail.com",
-    campsideOutro: "ჩვენ მოუთმენლად ველით თქვენთან თანამშრომლობას! 🤗",
+    campsideInfoTitle: "About CampSide",
+    campsideGreeting: "Greetings! We are CampSide – an innovative startup aiming to introduce new standards in the educational field. Our team strives to create a platform that will simplify finding and planning desired activities for any user and save you valuable time (you'll understand what we mean by \"desired activities\" in the next part of this post). Whether you're a student, pupil, or anyone else, we're here to help.",
+    campsideWhy: "Why CampSide❓",
+    campsideMission: "CampSide is the place where innovation and education meet. Our mission is to support the entertainment/education of children and young people, help them find adventures, and simplify their planning. Our goal is to create a product that will allow people to easily access the camp of their choice, according to their standards.",
+    campsideJoin: "A good question: How can you join CampSide?",
+    campsideContact: "If you want to join us and become part of our innovative and dynamic team, please send us your CV or contact information to: campsidege@gmail.com",
+    campsideOutro: "We eagerly look forward to collaborating with you! 🤗",
     
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
-    nasaSpaceAppsDescription: "მეორე ადგილის მფლობელი NASA Space Apps Challenge ჰაკათონზე (2023)",
+    nasaSpaceAppsDescription: "Second Place Winner in the NASA Space Apps Challenge Hackathon (2023)",
     
     // Footer
     rights: "ყველა უფლება დაცულია.",
     backToTop: "დაბრუნება თავში",
+    profilePageTitle: "პროფილის გვერდი",
+    profilePageDescription: "ეს აპლიკაცია დაგეხმარებათ თქვენი გამოცდილების ორგანიზებაში. აქ შეგიძლიათ იხილოთ ყველა გამოცდილება და დაამატოთ ახალი.",
+    timerTitle: "ტაიმერი",
+    timerDescription: "ინოვაციური ტაიმერი SwiftUI-ზე, რომელიც ყოველდღიურ დროის მართვას უფრო ეფექტურს ხდის. სრული კონტროლი - შექმნა, პაუზა, განულება და წაშლა. ინტეგრირებული აუდიო და ვიბრაციის შეტყობინებები, ასევე დეტალური ისტორია თქვენი პროდუქტიულობის გასაკონტროლებლად.",
+    musicPlayerTitle: "მუსიკალური პლეერი",
+    musicPlayerDescription: "მინიმალისტური მუსიკალური პლეერი ყველაზე საჭირო კონტროლებით - დაკვრა, პაუზა, ტრეკებს შორის ნავიგაცია და გამეორების რეჟიმი. აპლიკაცია საშუალებას გაძლევთ მოუსმინოთ როგორც ცალკეულ კომპოზიციებს, ასევე დაათვალიეროთ თქვენი საყვარელი შემსრულებლების მთელი კოლექციები.",
+    emojiGuessingTitle: "ემოჯი გამოცნობის თამაში",
+    emojiGuessingDescription: "ციფრული გამოცნობა ემოჯის ფორმატში - თქვენი ინტუიციისა და ლოგიკის ტესტი. დაშიფრული მინიშნებები, რომლებიც სიმბოლოების სახით წარმოაჩენს ცნობილ სათაურებს სხვადასხვა ჟანრისა და თემის მიხედვით.",
   },
 };
+
+// Add this type export at the end of the file for explicit key support
+export type TranslationKey = keyof typeof translations.en;
