@@ -216,6 +216,7 @@ export const translations = {
     kiuCupModal: "For the first time in the spring semester of 2024-2025, a tournament was held within the university walls.",
     novaCampTitle: "Nova Camp",
     novaCampDescription: "I was commissioned to create a poster for advertising.",
+    photoContestExhibit: "In 2024 I participated in a photo contest held at KIU where 4 of my works were exhibited.",
   },
   ka: {
     // Navigation
@@ -426,6 +427,7 @@ export const translations = {
     kiuCupModal: "პირველად 2024-2025 წლის გაზაფხულის სემესტრში უნივერსიტეტის კედლებში ჩატარდა ტურნირი.",
     novaCampTitle: "Nova Camp",
     novaCampDescription: "მომავალმა დამიკვეთეს სარეკლამო პოსტერის შექმნა.",
+    photoContestExhibit: "2024 წელს მონაწილეობა მივიღე KIU-ში გამართულ ფოტოკონკურსში, სადაც ჩემი 4 ნამუშევარი გამოიფინა.",
   },
 };
 

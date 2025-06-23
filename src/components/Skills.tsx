@@ -8,8 +8,8 @@ const Skills: React.FC = () => {
   const { t } = useLanguage();
   const { category } = useCategory();
   
-  // Do not render anything for the Design category
-  if (category === 'design') return null;
+  // Do not render anything for the Design or Photography category
+  if (category === 'design' || category === 'photography') return null;
   
   // Category-specific technical skills
   const technicalSkillsByCategory = {

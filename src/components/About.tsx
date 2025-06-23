@@ -24,6 +24,24 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Photography contest info (only for photos category) */}
+        {category === 'photography' && (
+          <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
+            <div className="w-full md:w-1/3 flex justify-start">
+              <img 
+                src="/photos/photography/certificate/phcer.jpeg" 
+                alt="Photography Certificate" 
+                className="w-full max-w-xs rounded shadow-lg object-cover"
+              />
+            </div>
+            <div className="w-full md:w-2/3 text-center md:text-left">
+              <p className="text-lg font-medium">
+                {t('photoContestExhibit')}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

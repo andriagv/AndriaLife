@@ -131,6 +131,28 @@ const Projects: React.FC = () => {
           </div>
         )}
 
+        {/* Custom layout for Photography category */}
+        {category === 'photography' && (
+          <div className="album w-full mx-auto max-w-6xl">
+            <div className="responsive-container-block bg flex flex-row flex-wrap justify-between">
+              <div className="responsive-container-block img-cont flex flex-col max-w-[33.3%] w-full">
+                <img className="img w-full mb-5" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.4.svg" alt="photo1" />
+                <img className="img w-full mb-5" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.5.svg" alt="photo2" />
+                <img className="img img-last w-full" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.6.svg" alt="photo3" />
+              </div>
+              <div className="responsive-container-block img-cont flex flex-col max-w-[33.3%] w-full">
+                <img className="img img-big w-full mb-4" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.11.svg" alt="photo4" />
+                <img className="img img-big img-last w-full" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.10.svg" alt="photo5" />
+              </div>
+              <div className="responsive-container-block img-cont flex flex-col max-w-[33.3%] w-full">
+                <img className="img w-full mb-5" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.7.svg" alt="photo6" />
+                <img className="img w-full mb-5" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.8.svg" alt="photo7" />
+                <img className="img w-full" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/PP5.9.svg" alt="photo8" />
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Custom layout for iOS category */}
         {category === 'ios' && (() => {
           const iosApps = categoryProjects.filter(p => p.subcategory === 'app');
