@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-export type Category = "ios" | "camps" | "academic" | "startups" | "photography" | "robotics" | "mathematics" | "sports";
+export type Category = "ios" | "camps" | "academic" | "design" | "photography" | "robotics" | "mathematics" | "sports";
 
 interface CategoryContextType {
   category: Category;

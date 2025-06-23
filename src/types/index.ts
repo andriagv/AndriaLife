@@ -12,4 +12,8 @@ export interface Project {
   certificateUrl?: string;
   facebookUrl?: string;
   linkedinUrl?: string;
+  modal?: {
+    content: string;
+    images?: string[];
+  };
 } 

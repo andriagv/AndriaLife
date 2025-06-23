@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -8,6 +7,9 @@ import { useCategory } from "@/contexts/CategoryContext";
 const Skills: React.FC = () => {
   const { t } = useLanguage();
   const { category } = useCategory();
+  
+  // Do not render anything for the Design category
+  if (category === 'design') return null;
   
   // Category-specific technical skills
   const technicalSkillsByCategory = {
@@ -39,54 +41,19 @@ const Skills: React.FC = () => {
       { name: "Pitch Deck Creation", level: 85 },
       { name: "MVP Development", level: 90 },
     ],
+    sports: [
+      { name: t("football"), level: 100 },
+      { name: t("wrestling"), level: 90 },
+      { name: t("volleyball"), level: 80 },
+      { name: t("skiing"), level: 80 },
+      { name: t("karate"), level: 70 },
+      { name: t("pingPong"), level: 70 },
+      { name: t("tennis"), level: 50 },
+      { name: t("basketball"), level: 2 },
+    ]
   };
 
-  // Category-specific soft skills
-  const softSkillsByCategory = {
-    ios: [
-      "Communication",
-      "Problem-solving",
-      "Teamwork",
-      "Time management",
-      "Adaptability",
-      "Leadership",
-      "Creativity",
-      "Critical thinking",
-    ],
-    camps: [
-      "Teamwork",
-      "Leadership",
-      "Organizational Skills",
-      "Problem Solving",
-      "Emotional Intelligence",
-      "Work Under Pressure",
-      "Prioritization Skills",
-      "Adaptability",
-    ],
-    academic: [
-      "Teamwork",
-      "Problem-solving",
-      "Attention to Detail",
-      "Patience",
-      "Creativity",
-      "Analytical Thinking",
-      "Technical Documentation",
-      "Time Management",
-    ],
-    startups: [
-      "Leadership",
-      "Negotiation",
-      "Networking",
-      "Risk Management",
-      "Decision Making",
-      "Adaptability",
-      "Communication",
-      "Resilience",
-    ],
-  };
-
-  const technicalSkills = technicalSkillsByCategory[category] || [];
-  const softSkills = softSkillsByCategory[category] || [];
+  const currentSkills = technicalSkillsByCategory[category] || [];
 
   return (
     <section id="skills" className="section-padding">
@@ -99,11 +66,11 @@ const Skills: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">{category === 'camps' ? t('hardSkills') : t('technicalSkills')}</h3>
+        <div className="flex justify-center">
+          <div className="w-full md:w-2/3">
+            <h3 className="text-2xl font-semibold mb-6 text-center">{t('technicalSkills')}</h3>
             <div className="space-y-6">
-              {technicalSkills.map((skill, index) => (
+              {currentSkills.map((skill, index) => (
                 <div key={index}>
                   <div className="flex justify-between mb-2">
                     <span className="font-medium">{skill.name}</span>
@@ -111,19 +78,6 @@ const Skills: React.FC = () => {
                   </div>
                   <Progress value={skill.level} className="h-2" />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">{t('softSkills')}</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {softSkills.map((skill, index) => (
-                <Card key={index}>
-                  <CardContent className="p-4 flex items-center justify-center">
-                    <span className="text-center">{skill}</span>
-                  </CardContent>
-                </Card>
               ))}
             </div>
           </div>

@@ -225,48 +225,48 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
   {
     id: 12,
     title: t('mathTutorTitle'),
-    category: "startups",
-    subcategory: "work",
+    category: 'academic',
+    subcategory: 'work',
     description: t('mathTutorDescription'),
     imageUrl: "https://placehold.co/600x400?text=Math+Tutor",
   },
   {
     id: 13,
     title: t('kiuAmbassadorWorkTitle'),
-    category: "startups",
-    subcategory: "work",
+    category: 'academic',
+    subcategory: 'work',
     description: t('kiuAmbassadorWorkDescription'),
     imageUrl: "https://scontent.ftbs6-2.fna.fbcdn.net/v/t39.30808-6/481664531_982427847356852_5400299080596096216_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=70TWeE0-1jUQ7kNvgH0W7E0&_nc_oc=AdkxYGpl6cped6Hhg__olbjjQyp_62MqGf4SRzyGlldiVj3DqMOG6rOT5KPkhQO4SXQ&_nc_zt=23&_nc_ht=scontent.ftbs6-2.fna&_nc_gid=E6Wlx2y8IqmU2_CiYk24wg&oh=00_AYGunW_At-JhYoml-CTE83y7XVdhzuYnXspMx0U-joc1yQ&oe=67F29EC0",
   },
   {
     id: 14,
     title: t('labTutorTitle'),
-    category: "startups",
-    subcategory: "work",
+    category: 'academic',
+    subcategory: 'work',
     description: t('labTutorDescription'),
     imageUrl: "https://placehold.co/600x400?text=Lab+Tutor",
   },
   {
     id: 15,
     title: t('architectureTutorTitle'),
-    category: "startups",
-    subcategory: "work",
+    category: 'academic',
+    subcategory: 'work',
     description: t('architectureTutorDescription'),
     imageUrl: "https://placehold.co/600x400?text=Architecture+Tutor",
   },
   {
     id: 16,
     title: t('campsideStartupTitle'),
-    category: "startups",
-    subcategory: "startup",
+    category: 'academic',
+    subcategory: 'startup',
     description: t('campsideStartupDescription'),
     imageUrl: "https://private-user-images.githubusercontent.com/20245584/408812148-f281e523-ea4a-44e6-8750-3f7169912803.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM1NzI3MDYsIm5iZiI6MTc0MzU3MjQwNiwicGF0aCI6Ii8yMDI0NTU4NC80MDg4MTIxNDgtZjI4MWU1MjMtZWE0YS00NGU2LTg3NTAtM2Y3MTY5OTEyODAzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDAyVDA1NDAwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI4ZmYwOGZlM2M4ODUwZWU1MWVhN2Q5ZTk0ZjliZDcwOTg5ZmM2NDhmY2YwNThlNTk0MzY3NmE2ZjVkOGFiZWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Ho80fN92or2uyiZQldqu2V5Fs3v89XSdvjxiVPJ4b_A",
   },
   {
     id: 17,
     title: t('nasaSpaceAppsTitle'),
-    category: "startups",
-    subcategory: "hackathon",
+    category: 'academic',
+    subcategory: 'hackathon',
     description: t('nasaSpaceAppsDescription'),
     imageUrl: "https://placehold.co/600x400?text=NASA+Space+Apps",
   },
@@ -305,5 +305,37 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     subcategory: "achievements",
     description: t('sampleSportDescription'),
     imageUrl: "https://picsum.photos/seed/chess/800/600",
-  }
+  },
+  {
+    id: 30,
+    title: t('ejoiDesignTitle'),
+    category: 'design',
+    subcategory: 'work',
+    description: t('ejoiDesignDescription'),
+    imageUrl: '/photos/design/mainejoi.jpeg',
+    modal: {
+      content: t('ejoiDesignModal'),
+      images: ['/photos/design/secejoi.jpg']
+    }
+  },
+  {
+    id: 31,
+    title: t('kiuCupTitle'),
+    category: 'design',
+    subcategory: 'work',
+    description: t('kiuCupDescription'),
+    imageUrl: '/photos/design/kiucup.jpg',
+    modal: {
+      content: t('kiuCupModal'),
+      images: ['/photos/design/finmach.png', '/photos/design/zogadicup.png', '/photos/design/jgufuricup.png']
+    }
+  },
+  {
+    id: 32,
+    title: t('novaCampTitle'),
+    category: 'design',
+    subcategory: 'camp',
+    description: t('novaCampDescription'),
+    imageUrl: '/photos/design/firstnovacamp.png'
+  },
 ]; 

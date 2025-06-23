@@ -60,11 +60,10 @@ const Projects: React.FC = () => {
       { id: "all", label: t('all') },
       { id: "education", label: t('education') }
     ],
-    startups: [
+    design: [
       { id: "all", label: t('all') },
       { id: "work", label: t('work') },
-      { id: "startup", label: t('startup') },
-      { id: "hackathon", label: t('hackathon') }
+      { id: "camp", label: 'Camp' }
     ],
     photography: [
       { id: "all", label: t('all') },
@@ -96,7 +95,7 @@ const Projects: React.FC = () => {
   const currentFilters = filterCategories[category] || [];
 
   // Special rendering for CampSide startup info when viewing startups category with startup filter
-  const showCampsideInfo = category === "startups" && 
+  const showCampsideInfo = category === "design" && 
     (filter === "startup" || filter === "all") && 
     filteredProjects.some(p => p.title === t('campsideStartupTitle'));
 
@@ -241,20 +240,6 @@ const Projects: React.FC = () => {
         {/* Default grid layout for other categories */}
         {category !== 'ios' && (
           <>
-            {showCampsideInfo && (
-              <div className="bg-primary/10 p-6 rounded-lg mb-8">
-                <h3 className="text-2xl font-bold mb-4">{t('campsideInfoTitle')}</h3>
-                <div className="text-left space-y-4">
-                  <p>{t('campsideGreeting')}</p>
-                  <p className="font-semibold">{t('campsideWhy')}</p>
-                  <p>{t('campsideMission')}</p>
-                  <p className="font-semibold">{t('campsideJoin')}</p>
-                  <p>{t('campsideContact')}</p>
-                  <p>{t('campsideOutro')}</p>
-                </div>
-              </div>
-            )}
-
             {filteredProjects.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-xl text-muted-foreground">{t('noProjectsFound')}</p>
@@ -357,7 +342,7 @@ const Projects: React.FC = () => {
                   );
 
                   // Special handling for projects that open a modal
-                  if (project.id === 4 || project.id === 5) {
+                  if (project.id === 4 || project.id === 5 || project.modal) {
                     return (
                       <div key={project.id} onClick={() => setActiveModalId(project.id)}>
                         {cardContent}
@@ -500,6 +485,20 @@ const Projects: React.FC = () => {
                         </div>
                       </>
                     )
+                  )}
+
+                  {/* Modal for design projects with modal property */}
+                  {modalProject.modal && (
+                    <>
+                      <p className="mb-4">{modalProject.modal.content}</p>
+                      {modalProject.modal.images && modalProject.modal.images.length > 0 && (
+                        <div className="flex flex-wrap gap-4 justify-center">
+                          {modalProject.modal.images.map((img, idx) => (
+                            <img key={idx} src={img} alt={modalProject.title + ' image ' + (idx + 1)} className="my-2 rounded shadow w-full max-w-xs" />
+                          ))}
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </DialogDescription>

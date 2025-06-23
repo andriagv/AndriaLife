@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Smartphone, Tent, GraduationCap, Rocket, Camera, Bot, Sigma, Trophy } from "lucide-react";
+import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
@@ -25,9 +25,9 @@ const CategorySelection: React.FC = () => {
       icon: <GraduationCap className="h-10 w-10" />,
     },
     {
-      id: "startups",
-      name: t("startups"),
-      icon: <Rocket className="h-10 w-10" />,
+      id: "design",
+      name: t("design"),
+      icon: <Figma className="h-10 w-10" />,
     },
     {
       id: "photography",
