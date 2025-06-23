@@ -53,8 +53,7 @@ const Projects: React.FC = () => {
     camps: [
       { id: "all", label: t('all') },
       { id: "participation", label: t('campParticipation') },
-      { id: "professional", label: t('professional') },
-      { id: "certificate", label: t('certificates') }
+      { id: "professional", label: t('leader') },
     ],
     academic: [
       { id: "all", label: t('all') },

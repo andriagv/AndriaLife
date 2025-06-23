@@ -83,6 +83,8 @@ export const translations = {
     startup: "Startup",
     hackathon: "Hackathon",
     certificates: "Certificates",
+    leader: "Leader",
+    participant: "Participant",
     viewCertificate: "View Certificate",
     livePreview: "Live preview",
     noProjectsFound: "No projects found in this category and filter combination",
@@ -124,15 +126,16 @@ export const translations = {
     // Project descriptions - Camps
     youngLeadersTitle: "Young Leaders' School",
     youngLeadersDescription: "Kutaisi Municipality Project – 2023, 2025",
+
+    icsuTitle: "icsu",
     
-    anakliaTitle: "Anaklia Youth Camp",
+    anakliaTitle: "Anaklia Youth Camp 2024",
     anakliaDescription: "Summer camp organized in Anaklia, focusing on outdoor activities and team building exercises.",
     
     gitaTitle: "GITA Innovation & Startup Camp",
     gitaDescription: "Spring acceleration camp focused on innovation and startups – 2023",
     
-    icsuTitle: "ICSU Camp",
-    icsuDescription: "International Computer Science camp organized for university students – 2021",
+    youthAgency: "Youth Agency",
     
     kiuAmbassadorTitle: "KIU Ambassador",
     kiuAmbassadorDescription: "Conducting introduction tours for prospective students (2022 - present)",
@@ -302,6 +305,8 @@ export const translations = {
     startup: "სტარტაპი",
     hackathon: "ჰაკათონი",
     certificates: "სერთიფიკატები",
+    participant: "მონაწილე",
+    leader: "ლიდერი",
     viewCertificate: "სერთიფიკატის ნახვა",
     livePreview: "პირდაპირი ხედი",
     noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
@@ -342,45 +347,46 @@ export const translations = {
     
     // Project descriptions - Camps
     youngLeadersTitle: "ახალგაზრდა ლიდერების სკოლა",
-    youngLeadersDescription: "Kutaisi Municipality Project – 2023, 2025",
+    youngLeadersDescription: "ქუთაისის მერიის პროექტი – 2023, 2025",
+
+    icsuTitle: "icsu",
     
-    anakliaTitle: "ანაკლიის ახალგაზრდული ბანაკი",
+    anakliaTitle: "ანაკლიის ახალგაზრდული ბანაკი 2024",
     anakliaDescription: "ზაფხულის ბანაკი ორგანიზებული ანაკლიაში, ფოკუსირებული ღია ცის ქვეშ აქტივობებსა და გუნდური მუშაობის სავარჯიშოებზე.",
     
-    gitaTitle: "GITA Innovation & Startup Camp",
-    gitaDescription: "Spring acceleration camp focused on innovation and startups – 2023",
+    gitaTitle: "ჯიტას ინოვაციებისა და სტარტაპაქსელერაციების ბანაკი",
+    gitaDescription: "საგაზაფხულო აქსელერაციის ბანაკი ორიენტირებულია ინოვაციებსა და სტარტაპებზე – 2023",
     
-    icsuTitle: "ICSU Camp",
-    icsuDescription: "International Computer Science camp organized for university students – 2021",
+    youthAgency: "ახალგაზრდობის სააგენტო",
     
-    kiuAmbassadorTitle: "KIU Ambassador",
-    kiuAmbassadorDescription: "Conducting introduction tours for prospective students (2022 - present)",
+    kiuAmbassadorTitle: "KIU-ს ელჩი",
+    kiuAmbassadorDescription: "აბიტურიენტებისთვის გაცნობითი ტურების ჩატარება (2022 - დღემდე)",
     
-    kiuAssistantTitle: "Student Assistant in Computer Architecture",
+    kiuAssistantTitle: "სტუდენტის ასისტენტი კომპიუტერის არქიტექტურაში",
     kiuAssistantDescription: "Served as a Student Assistant in Computer Architecture at KIU – 2023",
     
     // Project descriptions - Academic Achievements
-    kiuEducationTitle: "Kutaisi International University (KIU)",
-    kiuEducationDescription: "Computer Science (2022 - Present)",
+    kiuEducationTitle: "ქუთაისის საერთაშორისო უნივერსიტეტი (KIU)",
+    kiuEducationDescription: "კომპიუტერული მეცნიერებები (2022 - დღემდე)",
     
-    komarovSchoolTitle: "Vladimir Komarov Physics-Mathematics N199 School",
-    komarovSchoolDescription: "Physics-Mathematics specialized education (2016 - 2022)",
+    komarovSchoolTitle: "ვლადიმერ კომაროვის ფიზიკა-მათემატიკის N199 სკოლა",
+    komarovSchoolDescription: "ფიზიკა-მათემატიკაში გაძლიერებული სწავლა (2016 - 2022)",
     
     // Project descriptions - Startups/Work Experience
     mathTutorTitle: "Mathematics Tutor",
-    mathTutorDescription: "Teaching children mathematics since 2020",
+    mathTutorDescription: "ვამზადებ სკოლის მოსწავლეებს მათემატიკაში 2020 დან",
     
-    kiuAmbassadorWorkTitle: "Ambassador of Kutaisi International University",
-    kiuAmbassadorWorkDescription: "Sep 2022 - Present · 2 yrs 8 mos",
+    kiuAmbassadorWorkTitle: "ელჩი ქუთაისის საერთაშორისო უნივერსიტეტში",
+    kiuAmbassadorWorkDescription: "სექტ 2022 - დღემდე · 2 წელი 8 თვე",
     
-    labTutorTitle: "Student Tutor in Laboratory: Computer Organization",
-    labTutorDescription: "Jan 2023 - Jun 2023 · 6 mos",
+    labTutorTitle: "სტუდენტ ტუტორი კომპიუტერულ კაბორატორიაში",
+    labTutorDescription: "იან 2023 - ივნ 2023 · 6 თვე",
     
-    architectureTutorTitle: "Student Tutor in Computer Architecture",
-    architectureTutorDescription: "Sep 2022 - Dec 2022 · 4 mos",
+    architectureTutorTitle: "სტუდენტ ტუტორი კომპიუტერულ არქიტექტურაში",
+    architectureTutorDescription: "სექ 2022 - დეკ 2022 · 4 თვე",
     
-    campsideStartupTitle: "Campside Startup",
-    campsideStartupDescription: "Co-founder & iOS Developer of the Campside application that helps organize and discover outdoor activities.",
+    campsideStartupTitle: "Campside სტარტაპი",
+    campsideStartupDescription: "თანადამაარსებელი & iOS დეველოპერი",
     
     // CampSide info block
     campsideInfoTitle: "About CampSide",
@@ -392,7 +398,7 @@ export const translations = {
     campsideOutro: "We eagerly look forward to collaborating with you! 🤗",
     
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
-    nasaSpaceAppsDescription: "Second Place Winner in the NASA Space Apps Challenge Hackathon (2023)",
+    nasaSpaceAppsDescription: "მეორე ადგილი დავიკავე მოცემულ ჰაკათონში (2023)",
     
     // Footer
     rights: "ყველა უფლება დაცულია.",

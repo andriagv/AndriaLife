@@ -142,6 +142,16 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     imageUrl: "/photos/camps/YoungLeaders'School2023.jpeg",
   },
   {
+    id: 7,
+    title: t('youthAgency'),
+    category: "camps",
+    subcategory: "participation",
+    description: language === 'en'
+      ? '🧍‍♂️🧍‍♀️ Thematic camp in 2025 at the Kvareli Justice Training Center'
+      : '🧍‍♂️🧍‍♀️ 2025 წელს თემატური ბანაკი ყვარლის იუსტიციის სასწავლო ცენტრის ბაზაზე',
+    imageUrl: "/photos/camps/yvarelicamp.JPEG",
+  },
+  {
     id: 5,
     title: t('anakliaTitle'),
     category: "camps",
@@ -160,7 +170,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     linkedinUrl: "https://www.linkedin.com/in/andria-gvaramia-b85935229/overlay/1726070133896/single-media-viewer?type=LINK&profileId=ACoAADlE11UBT_eJRMHxiuoV4gkTpIVAGlSluvA&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B9UnLEeJvSqKTm1%2BduiJCog%3D%3D"
   },
   {
-    id: 7,
+    id: 8,
     title: t('icsuTitle'),
     category: "camps",
     subcategory: "participation",
@@ -169,41 +179,6 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
       : 'ICSU არის ბავშვებისა და სტუდენტების დამოუკიდებელი ორგანიზაცია, რომელმაც შექმნა სეზონური ბანაკი. მე მონაწილეობა მივიღე 2021 წლის ზაფხულში, ქობულეთში.',
     imageUrl: "/photos/camps/icsu.jpg",
   },
-  {
-    id: 8,
-    title: t('kiuAmbassadorTitle'),
-    category: "camps",
-    subcategory: "professional",
-    description: t('kiuAmbassadorDescription'),
-    imageUrl: "/photos/camps/KIUAmbassador.jpeg",
-  },
-  {
-    id: 9,
-    title: t('kiuAssistantTitle'),
-    category: "camps",
-    subcategory: "professional",
-    description: t('kiuAssistantDescription'),
-    imageUrl: "https://placehold.co/600x400?text=KIU+SA",
-  },
-  // Camp certificates
-  {
-    id: 101,
-    title: t('campCertificate1Title'),
-    category: "camps",
-    subcategory: "certificate",
-    description: t('campCertificate1Description'),
-    imageUrl: "https://placehold.co/600x400?text=Camp+Certificate+1",
-    certificateUrl: "https://example.com/certificate1",
-  },
-  {
-    id: 102,
-    title: t('campCertificate2Title'),
-    category: "camps",
-    subcategory: "certificate",
-    description: t('campCertificate2Description'),
-    imageUrl: "https://placehold.co/600x400?text=Camp+Certificate+2",
-    certificateUrl: "https://example.com/certificate2",
-  },
   // Academic achievements (formerly Robotics)
   {
     id: 10,
@@ -211,7 +186,8 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "academic",
     subcategory: "education",
     description: t('kiuEducationDescription'),
-    imageUrl: "https://placehold.co/600x400?text=KIU+Education",
+    imageUrl: "/photos/academic-achievements/kiulogo.png",
+    facebookUrl: "https://www.facebook.com/photo/?fbid=521547706778204&set=a.258939413039036",
   },
   {
     id: 11,
@@ -219,7 +195,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "academic",
     subcategory: "education",
     description: t('komarovSchoolDescription'),
-    imageUrl: "https://placehold.co/600x400?text=Komarov+School",
+    imageUrl: "/photos/academic-achievements/komcer.jpeg",
   },
   // Startups projects
   {
@@ -236,7 +212,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'work',
     description: t('kiuAmbassadorWorkDescription'),
-    imageUrl: "https://scontent.ftbs6-2.fna.fbcdn.net/v/t39.30808-6/481664531_982427847356852_5400299080596096216_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=70TWeE0-1jUQ7kNvgH0W7E0&_nc_oc=AdkxYGpl6cped6Hhg__olbjjQyp_62MqGf4SRzyGlldiVj3DqMOG6rOT5KPkhQO4SXQ&_nc_zt=23&_nc_ht=scontent.ftbs6-2.fna&_nc_gid=E6Wlx2y8IqmU2_CiYk24wg&oh=00_AYGunW_At-JhYoml-CTE83y7XVdhzuYnXspMx0U-joc1yQ&oe=67F29EC0",
+    imageUrl: "/photos/academic-achievements/KIUAmbassador.jpeg",
   },
   {
     id: 14,
@@ -244,7 +220,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'work',
     description: t('labTutorDescription'),
-    imageUrl: "https://placehold.co/600x400?text=Lab+Tutor",
+    imageUrl: "/photos/academic-achievements/labTutor.jpeg",
   },
   {
     id: 15,
@@ -252,7 +228,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'work',
     description: t('architectureTutorDescription'),
-    imageUrl: "https://placehold.co/600x400?text=Architecture+Tutor",
+    imageUrl: "/photos/academic-achievements/architectureTutor.png",
   },
   {
     id: 16,
@@ -260,7 +236,9 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'startup',
     description: t('campsideStartupDescription'),
-    imageUrl: "https://private-user-images.githubusercontent.com/20245584/408812148-f281e523-ea4a-44e6-8750-3f7169912803.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM1NzI3MDYsIm5iZiI6MTc0MzU3MjQwNiwicGF0aCI6Ii8yMDI0NTU4NC80MDg4MTIxNDgtZjI4MWU1MjMtZWE0YS00NGU2LTg3NTAtM2Y3MTY5OTEyODAzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDAyVDA1NDAwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI4ZmYwOGZlM2M4ODUwZWU1MWVhN2Q5ZTk0ZjliZDcwOTg5ZmM2NDhmY2YwNThlNTk0MzY3NmE2ZjVkOGFiZWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Ho80fN92or2uyiZQldqu2V5Fs3v89XSdvjxiVPJ4b_A",
+    imageUrl: "/photos/academic-achievements/campside.jpg",
+    facebookUrl: "https://www.facebook.com/profile.php?id=100095398426627",
+    linkedinUrl: "https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A103899160&keywords=Campside%20Georgia&origin=ENTITY_SEARCH_HOME_HISTORY&sid=nl5",
   },
   {
     id: 17,
@@ -268,7 +246,8 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'hackathon',
     description: t('nasaSpaceAppsDescription'),
-    imageUrl: "https://placehold.co/600x400?text=NASA+Space+Apps",
+    imageUrl: "/photos/academic-achievements/spaceappchallenge.jpg",
+    facebookUrl: "https://www.facebook.com/share/p/19Kt97hiYa/",
   },
   // Robotics Projects
   {
