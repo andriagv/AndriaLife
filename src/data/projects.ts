@@ -259,14 +259,14 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     imageUrl: "https://picsum.photos/seed/robot/800/600",
   },
   // Mathematics Projects
-  {
-    id: 26,
-    title: t('sampleMathTitle'),
-    category: "mathematics",
-    subcategory: "topics",
-    description: t('sampleMathDescription'),
-    imageUrl: "https://picsum.photos/seed/fractal/800/600",
-  },
+  // {
+  //   id: 26,
+  //   title: t('sampleMathTitle'),
+  //   category: "mathematics",
+  //   subcategory: "topics",
+  //   description: t('sampleMathDescription'),
+  //   imageUrl: "https://picsum.photos/seed/fractal/800/600",
+  // },
   // Sports Projects
   {
     id: 28,
@@ -307,5 +307,13 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     subcategory: 'camp',
     description: t('novaCampDescription'),
     imageUrl: '/photos/design/firstnovacamp.png'
+  },
+  {
+    id: 33,
+    title: t('eulerOlympiadTitle'),
+    category: 'mathematics',
+    subcategory: 'topics',
+    description: t('eulerOlympiadDescription'),
+    imageUrl: '/photos/mathematics/freeuineuler.jpeg'
   },
 ]; 
