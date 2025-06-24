@@ -198,14 +198,14 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     imageUrl: "/photos/academic-achievements/komcer.jpeg",
   },
   // Startups projects
-  {
-    id: 12,
-    title: t('mathTutorTitle'),
-    category: 'academic',
-    subcategory: 'work',
-    description: t('mathTutorDescription'),
-    imageUrl: "https://placehold.co/600x400?text=Math+Tutor",
-  },
+  // {
+  //   id: 12,
+  //   title: t('mathTutorTitle'),
+  //   category: 'academic',
+  //   subcategory: 'work',
+  //   description: t('mathTutorDescription'),
+  //   imageUrl: "https://placehold.co/600x400?text=Math+Tutor",
+  // },
   {
     id: 13,
     title: t('kiuAmbassadorWorkTitle'),
@@ -292,7 +292,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     id: 31,
     title: t('kiuCupTitle'),
     category: 'design',
-    subcategory: 'work',
+    subcategory: 'sport',
     description: t('kiuCupDescription'),
     imageUrl: '/photos/design/kiucup.jpg',
     modal: {
