@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
 import CategorySelection from "@/components/CategorySelection";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
@@ -17,7 +16,7 @@ const Index: React.FC = () => {
           <Hero />
           <CategorySelection />
           <About />
-          <Skills />
+          {/* <Skills /> */}
           <Projects />
         </main>
         <Footer />
