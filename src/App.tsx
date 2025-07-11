@@ -19,7 +19,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [showParticles, setShowParticles] = useState(true);
-  const [showSplashCursor, setShowSplashCursor] = useState(false);
+  const [showSplashCursor, setShowSplashCursor] = useState(true);
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
@@ -39,7 +39,6 @@ const App = () => {
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>
-                <ReactQueryDevtools initialIsOpen={false} />
               </TooltipProvider>
             </LanguageProvider>
           </ThemeProvider>

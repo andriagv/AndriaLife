@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
   return (
     <section
       id="hero"
-      className={`min-h-screen flex items-center pt-16 section-padding relative overflow-hidden ${bgClass}`}
+      className={`min-h-[100vh] flex items-center pt-16 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
         />
       </div>
       {/* Content overlay */}
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 ">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <p className="text-primary font-medium mb-4">{t('hello')}</p>
@@ -105,17 +105,17 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             />
           </div>
         </div>
-        {/* Radio group for background mode at the bottom */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-6 z-10 bg-white/70 dark:bg-black/40 rounded-xl px-6 py-3 shadow-lg">
-          <label className="flex items-center gap-2 cursor-pointer select-none">
-            <span>ვარსკვლავები</span>
-            <Switch checked={showParticles} onCheckedChange={setShowParticles} />
-          </label>
-          <label className="flex items-center gap-2 cursor-pointer select-none">
-            <span>SplashCursor</span>
-            <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
-          </label>
-        </div>
+      </div>
+      {/* Radio group for background mode at the bottom */}
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-6 z-10 bg-white/70 dark:bg-black/40 rounded-xl px-6 py-3 shadow-lg">
+        <label className="flex items-center gap-2 cursor-pointer select-none">
+          <span>ვარსკვლავები</span>
+          <Switch checked={showParticles} onCheckedChange={setShowParticles} />
+        </label>
+        <label className="flex items-center gap-2 cursor-pointer select-none">
+          <span>SplashCursor</span>
+          <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
+        </label>
       </div>
     </section>
   );
