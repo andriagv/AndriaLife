@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import Particles from "@/components/Particles";
 import React, { useState } from "react";
 import SplashCursor from "@/components/SplashCursor";
+import Navbar from "./components/Navbar";
 // Remove import of ReactQueryDevtools since the module is missing
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => {
                 {showSplashCursor && <SplashCursor />}
                 <Toaster />
                 <Sonner />
+                <Navbar />
                 <BrowserRouter>
                   <Routes>
                     <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />

@@ -62,6 +62,7 @@ export const translations = {
     
     // Category section
     selectCategory: "Select Category",
+    category: "Category",
     categoryDescription: "Choose an area to explore my projects and expertise",
     iosDeveloper: "iOS Developer",
     camps: "Camps",
@@ -287,6 +288,7 @@ export const translations = {
     
     // Category section
     selectCategory: "აირჩიეთ კატეგორია",
+    category: "კატეგორია",
     categoryDescription: "აირჩიეთ სფერო ჩემი პროექტებისა და გამოცდილების გასაცნობად",
     iosDeveloper: "iOS დეველოპერი",
     camps: "ბანაკები",
@@ -436,9 +438,9 @@ export const translations = {
     kiuCupDescription: "KIU-ის შიდა ჩემპიონატის ფარგლებში შევქმენი პოსტერები სხვადასხვა მატჩისთვის.",
     kiuCupModal: "პირველად 2024-2025 წლის გაზაფხულის სემესტრში უნივერსიტეტის კედლებში ჩატარდა ტურნირი.",
     novaCampTitle: "ნოვა ბანაკი",
+    novaCampDescription: "მომავალმა დამიკვეთეს სარეკლამო პოსტერის შექმნა.",
     eulerOlympiadTitle: "ოილერის ოლიმპიადა",
     eulerOlympiadDescription: "..........",
-    novaCampDescription: "მომავალმა დამიკვეთეს სარეკლამო პოსტერის შექმნა.",
     photoContestExhibit: "2024 წელს მონაწილეობა მივიღე KIU-ში გამართულ ფოტოკონკურსში, სადაც ჩემი 4 ნამუშევარი გამოიფინა.",
   },
 };
