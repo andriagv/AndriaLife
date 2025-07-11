@@ -7,13 +7,20 @@ import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import { CategoryProvider } from "@/contexts/CategoryContext";
 
-const Index: React.FC = () => {
+interface IndexProps {
+  showParticles: boolean;
+  setShowParticles: (value: boolean) => void;
+  showSplashCursor: boolean;
+  setShowSplashCursor: (value: boolean) => void;
+}
+
+const Index: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
   return (
     <CategoryProvider>
       <div className="min-h-screen">
         <Navbar />
         <main>
-          <Hero />
+          <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />
           <CategorySelection />
           <About />
           {/* <Skills /> */}

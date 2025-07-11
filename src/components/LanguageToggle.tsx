@@ -11,7 +11,7 @@ const LanguageToggle: React.FC = () => {
       variant="ghost"
       size="sm"
       onClick={() => changeLanguage(language === "en" ? "ka" : "en")}
-      className="text-sm font-medium"
+      className="text-sm font-medium font-sans leading-none"
     >
       {language === "en" ? "🇬🇪 ქართ." : "🇬🇧 ENG"}
     </Button>
