@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-16 section-padding bg-[#e8e7e7] dark:bg-background relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center pt-16 section-padding bg-transparent dark:bg-transparent relative overflow-hidden">
       {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
         <Spline

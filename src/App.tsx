@@ -10,6 +10,7 @@ import { AppStateProvider } from "./contexts/AppStateContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Particles from "@/components/Particles";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
         <ThemeProvider>
           <LanguageProvider>
             <TooltipProvider>
+              <Particles particleColors={["#ffffff", "#ffffff"]} particleCount={200} particleSpread={10} speed={0.1} particleBaseSize={100} moveParticlesOnHover={true} alphaParticles={false} disableRotation={false} />
               <Toaster />
               <Sonner />
               <BrowserRouter>
