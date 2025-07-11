@@ -12,11 +12,14 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Particles from "@/components/Particles";
 import React, { useState } from "react";
+import SplashCursor from "@/components/SplashCursor";
+// Remove import of ReactQueryDevtools since the module is missing
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const [showParticles, setShowParticles] = useState(true);
+  const [showSplashCursor, setShowSplashCursor] = useState(false);
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
@@ -27,15 +30,16 @@ const App = () => {
                 {showParticles && (
                   <Particles particleColors={["#ffffff", "#ffffff"]} particleCount={200} particleSpread={10} speed={0.1} particleBaseSize={100} moveParticlesOnHover={true} alphaParticles={false} disableRotation={false} />
                 )}
+                {showSplashCursor && <SplashCursor />}
                 <Toaster />
                 <Sonner />
                 <BrowserRouter>
                   <Routes>
-                    <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} />} />
-                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>
+                <ReactQueryDevtools initialIsOpen={false} />
               </TooltipProvider>
             </LanguageProvider>
           </ThemeProvider>

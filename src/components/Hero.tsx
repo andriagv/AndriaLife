@@ -9,17 +9,21 @@ import { Switch } from "@/components/ui/switch";
 interface HeroProps {
   showParticles: boolean;
   setShowParticles: (value: boolean) => void;
+  showSplashCursor: boolean;
+  setShowSplashCursor: (value: boolean) => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles }) => {
+const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
   const { t } = useLanguage();
   
+  let bgClass = (!showParticles && !showSplashCursor)
+    ? "bg-[#e8e7e7] dark:bg-background"
+    : "bg-transparent dark:bg-transparent";
+
   return (
     <section
       id="hero"
-      className={`min-h-screen flex items-center pt-16 section-padding relative overflow-hidden ${
-        showParticles ? "bg-transparent dark:bg-transparent" : "bg-[#e8e7e7] dark:bg-background"
-      }`}
+      className={`min-h-screen flex items-center pt-16 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
@@ -101,10 +105,16 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles }) => {
             />
           </div>
         </div>
-        {/* Switcher for background at the bottom */}
-        <div className="flex items-center gap-2 mt-8 justify-end">
-          <span className="text-sm text-muted-foreground">{showParticles ? "ვარსკვლავები ჩართულია" : "ძველი ფონი"}</span>
-          <Switch checked={showParticles} onCheckedChange={setShowParticles} />
+        {/* Radio group for background mode at the bottom */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-6 z-10 bg-white/70 dark:bg-black/40 rounded-xl px-6 py-3 shadow-lg">
+          <label className="flex items-center gap-2 cursor-pointer select-none">
+            <span>ვარსკვლავები</span>
+            <Switch checked={showParticles} onCheckedChange={setShowParticles} />
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer select-none">
+            <span>SplashCursor</span>
+            <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
+          </label>
         </div>
       </div>
     </section>
