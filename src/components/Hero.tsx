@@ -4,19 +4,29 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
 import Spline from '@splinetool/react-spline';
+import { Switch } from "@/components/ui/switch";
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  showParticles: boolean;
+  setShowParticles: (value: boolean) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles }) => {
   const { t } = useLanguage();
   
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-16 section-padding bg-transparent dark:bg-transparent relative overflow-hidden">
+    <section
+      id="hero"
+      className={`min-h-screen flex items-center pt-16 section-padding relative overflow-hidden ${
+        showParticles ? "bg-transparent dark:bg-transparent" : "bg-[#e8e7e7] dark:bg-background"
+      }`}
+    >
       {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
         <Spline
-        scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode" 
+          scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
         />
       </div>
-      
       {/* Content overlay */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
@@ -90,6 +100,11 @@ const Hero: React.FC = () => {
               className="w-[60%] h-auto object-cover" 
             />
           </div>
+        </div>
+        {/* Switcher for background at the bottom */}
+        <div className="flex items-center gap-2 mt-8 justify-end">
+          <span className="text-sm text-muted-foreground">{showParticles ? "ვარსკვლავები ჩართულია" : "ძველი ფონი"}</span>
+          <Switch checked={showParticles} onCheckedChange={setShowParticles} />
         </div>
       </div>
     </section>
