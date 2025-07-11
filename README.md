@@ -70,4 +70,9 @@ We don't support custom domains (yet). If you want to deploy your project under 
 
 
 dora.run/ai 
+
 modulify.ai
+
+reactbits.dev  გამოვიყენო მზა კოდი და ჩავსვი პროექტში
+
+https://www.lightswind.com/  გამოვიყენო მზა კოდი და ჩავსვი პროექტში
