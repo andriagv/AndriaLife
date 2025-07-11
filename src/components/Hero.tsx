@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
+import ScrambledText from "./ScrambledText";
 
 interface HeroProps {
   showParticles: boolean;
@@ -39,13 +40,10 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {t('name')}
             </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px]">
               <span className="highlight">{t('role')}</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-lg mb-8">
-              {t('heroDescription')}
-            </p>
-            <div className="flex flex-wrap gap-4">
+            <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />            <div className="flex flex-wrap gap-4">
               <Button 
                 variant="outline" 
                 size="lg"
