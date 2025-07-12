@@ -123,17 +123,6 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
           </div>
         </div>
       </div>
-      {/* Radio group for background mode at the bottom */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-6 z-10 bg-white/70 dark:bg-black/40 rounded-xl px-6 py-3 shadow-lg">
-        <label className="flex items-center gap-2 cursor-pointer select-none">
-          <span>ვარსკვლავები</span>
-          <Switch checked={showParticles} onCheckedChange={setShowParticles} />
-        </label>
-        <label className="flex items-center gap-2 cursor-pointer select-none">
-          <span>SplashCursor</span>
-          <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
-        </label>
-      </div>
     </section>
   );
 };

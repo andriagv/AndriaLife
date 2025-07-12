@@ -34,7 +34,12 @@ const App = () => {
                   {showSplashCursor && <SplashCursor />}
                   <Toaster />
                   <Sonner />
-                  <Navbar />
+                  <Navbar
+                    showParticles={showParticles}
+                    setShowParticles={setShowParticles}
+                    showSplashCursor={showSplashCursor}
+                    setShowSplashCursor={setShowSplashCursor}
+                  />
                   <BrowserRouter>
                     <Routes>
                       <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />

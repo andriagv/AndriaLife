@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Home, Info, Folder, Grid } from "lucide-react";
+import { Menu, X, Home, Info, Folder, Grid, Settings } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+import { Switch } from "@/components/ui/switch";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{
+  showParticles: boolean;
+  setShowParticles: (v: boolean) => void;
+  showSplashCursor: boolean;
+  setShowSplashCursor: (v: boolean) => void;
+}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -80,6 +92,28 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-2">
             <LanguageToggle />
             <ThemeToggle />
+            {/* Settings Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="p-2 rounded-full hover:bg-accent focus:outline-none" aria-label="Settings">
+                  <Settings size={20} />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem asChild>
+                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
+                    <span>ვარსკვლავები</span>
+                    <Switch checked={showParticles} onCheckedChange={setShowParticles} />
+                  </label>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
+                    <span>Splash Cursor</span>
+                    <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
+                  </label>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </nav>
         {/* Mobile Navigation Toggle */}

@@ -33,7 +33,12 @@ const Index: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSpla
             disableRotation={false}
           />
         )}
-        <Navbar />
+        <Navbar
+          showParticles={showParticles}
+          setShowParticles={setShowParticles}
+          showSplashCursor={showSplashCursor}
+          setShowSplashCursor={setShowSplashCursor}
+        />
         <main>
           <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />
           <CategorySelection />
