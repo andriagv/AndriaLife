@@ -6,6 +6,7 @@ import MediumIcon from "@/components/icons/MediumIcon";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
 import ScrambledText from "./ScrambledText";
+import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
 
 interface HeroProps {
   showParticles: boolean;
@@ -96,10 +97,10 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
           </div>
           
           <div className="md:w-1/2 flex justify-end md:-mt-20">
-            <img 
-              src="/photos/me.PNG" 
-              alt="Andria profile" 
-              className="w-[60%] h-auto object-cover" 
+            <WoofyHoverImage
+              src="/photos/me.PNG"
+              alt="Andria profile"
+              className="w-[60%] h-auto object-cover rounded-2xl"
             />
           </div>
         </div>
