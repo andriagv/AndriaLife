@@ -4,6 +4,7 @@ import { useCategory } from "@/contexts/CategoryContext";
 import ProjectsHeader from "./projects/ProjectsHeader";
 import ProjectFilters from "./projects/ProjectFilters";
 import ProjectGrid from "./projects/ProjectGrid";
+import PaginatedProjectGrid from "./projects/PaginatedProjectGrid";
 import IOSProjectLayout from "./projects/IOSProjectLayout";
 import PhotographyLayout from "./projects/PhotographyLayout";
 import ProjectModal from "./projects/ProjectModal";
@@ -37,13 +38,8 @@ const Projects: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <section id="projects" className="bg-secondary/30 section-padding">
+      <section id="projects" className="bg-background section-padding">
         <div className="container mx-auto">
-          <ProjectsHeader 
-            title={viewData.sectionTitle}
-            description={viewData.sectionDescription}
-          />
-
           <ProjectFilters 
             filters={viewData.filterOptions}
             activeFilter={filter}
@@ -67,7 +63,7 @@ const Projects: React.FC = () => {
 
               {/* Default grid layout for other categories */}
               {category !== 'ios' && category !== 'photography' && (
-                <ProjectGrid 
+                <PaginatedProjectGrid 
                   projects={viewData.projects}
                   onProjectClick={handleProjectClick}
                 />
