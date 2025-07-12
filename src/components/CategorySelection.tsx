@@ -62,15 +62,28 @@ const CategorySelection: React.FC = () => {
           </p>
         </div>
 
-        <GlowingCards enableGlow={true} gap="1.5rem" maxWidth="80rem" padding="2rem 0" borderRadius="1.5rem">
+        <GlowingCards
+          enableGlow={true}
+          glowRadius={25}
+          glowOpacity={1}
+          animationDuration={400}
+          gap="2.5rem"
+          maxWidth="75rem"
+          padding="3rem 1.5rem"
+          borderRadius="1rem"
+          responsive={true}
+        >
           {categories.map((cat) => (
             <GlowingCard
               key={cat.id}
               className={`cursor-pointer transition-all hover:shadow-lg ${category === cat.id ? "ring-2 ring-primary" : ""}`}
               glowColor="#3b82f6"
-              onClick={() => setCategory(cat.id as any)}
+              hoverEffect={true}
             >
-              <div className="flex flex-col items-center text-center">
+              <div
+                className="flex flex-col items-center text-center"
+                onClick={() => setCategory(cat.id as any)}
+              >
                 <div className={`text-4xl mb-4 ${category === cat.id ? "text-primary" : ""}`}>
                   {cat.icon}
                 </div>
