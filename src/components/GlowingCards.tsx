@@ -55,7 +55,7 @@ export const GlowingCard: React.FC<GlowingCardProps> = ({
     <div
       className={cn(
         "relative flex-1 min-w-[14rem] p-6 rounded-2xl text-black dark:text-white",
-        "bg-white dark:bg-black border border-gray-200 dark:border-gray-700",
+        "bg-transparent border border-gray-200 dark:border-gray-700",
         "transition-all duration-400 ease-out",
         className
       )}
