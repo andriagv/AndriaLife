@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
   return (
     <section
       id="hero"
-      className={`min-h-[100vh] flex items-center pt-16 section-padding relative overflow-hidden ${bgClass}`}
+      className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
