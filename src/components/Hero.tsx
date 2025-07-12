@@ -6,7 +6,9 @@ import MediumIcon from "@/components/icons/MediumIcon";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
 import ScrambledText from "./ScrambledText";
+import GradientText from "./GradientText";
 import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
+import TextPressure from "./TextPressure";
 
 interface HeroProps {
   showParticles: boolean;
@@ -41,8 +43,15 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {t('name')}
             </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px]">
-              <span className="highlight">{t('role')}</span>
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px] text-left">
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="highlight text-left"
+              >
+                {t('role')}
+              </GradientText>
             </h2>
             <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />            <div className="flex flex-wrap gap-4">
               <Button 
