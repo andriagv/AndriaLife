@@ -12,14 +12,14 @@ const About: React.FC = () => {
   return (
     <section id="about" className="bg-secondary/30 section-padding">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">{t('aboutMe')}</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold px-4">{t('aboutMe')}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
         </div>
 
         <div className="flex justify-center">
-          <div className="w-full lg:w-4/5">
-            <div className="text-muted-foreground mb-6 whitespace-pre-line text-center">
+          <div className="w-full lg:w-4/5 px-4">
+            <div className="text-sm md:text-base text-muted-foreground mb-6 whitespace-pre-line text-center">
               {storyText}
             </div>
           </div>

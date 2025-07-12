@@ -54,7 +54,7 @@ export const GlowingCard: React.FC<GlowingCardProps> = ({
   return (
     <div
       className={cn(
-        "relative flex-1 min-w-[14rem] p-6 rounded-2xl text-black dark:text-white",
+        "relative flex-1 min-w-[12rem] md:min-w-[14rem] p-4 md:p-6 rounded-2xl text-black dark:text-white",
         "bg-transparent border border-gray-200 dark:border-gray-700",
         "transition-all duration-400 ease-out",
         className
@@ -151,8 +151,8 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
       >
         <div
           className={cn(
-            "flex items-center justify-center flex-wrap gap-[var(--gap)]",
-            responsive && "flex-col sm:flex-row "
+            "flex items-center justify-center flex-wrap gap-4 md:gap-[var(--gap)]",
+            responsive && "grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row"
           )}
         >
           {children}

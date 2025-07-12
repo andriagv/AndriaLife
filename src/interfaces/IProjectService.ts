@@ -6,6 +6,7 @@ export interface IProjectService {
   getProjectsByCategory(category: string, t: (key: TranslationKey) => string, language: 'en' | 'ka'): Project[];
   getProjectById(id: number, t: (key: TranslationKey) => string, language: 'en' | 'ka'): Project | undefined;
   getFilterOptionsForCategory(category: string, t: (key: TranslationKey) => string): FilterOption[];
+  getProjectsViewData(category: string, filter: string, t: (key: TranslationKey) => string, language: 'en' | 'ka'): ProjectsViewData;
 }
 
 export interface FilterOption {

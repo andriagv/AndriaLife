@@ -33,15 +33,15 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
+      <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(140px)' }}>
         <Spline
           scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
         />
       </div>
       {/* Content overlay */}
-      <div className="container mx-auto px-6 relative z-10 ">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-10 md:mb-0">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
             <p className="text-primary font-medium mb-4">
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
@@ -52,8 +52,8 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
                 {t('hello')}
               </GradientText>
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{textAlign: 'left', marginLeft: 0, paddingLeft: 0}}>
-              <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', margin: 0, padding: 0, transform: 'translateX(-55px)'}}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-left">
+              <div className="flex justify-start items-start w-full transform -translate-x-4 md:-translate-x-14">
                 <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color={theme === 'dark' ? '#fff' : '#000'}>
                   {t('name')}
                 </FuzzyText>
@@ -69,10 +69,10 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
                 {t('role')}
               </GradientText>
             </h2>
-            <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
+            <ScrambledText className="text-base md:text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
             {/* No button here anymore */}
             
-            <div className="flex items-center gap-4 mt-8">
+            <div className="flex items-center gap-3 md:gap-4 mt-8">
               <a 
                 href="https://github.com/andriagv" 
                 target="_blank" 
@@ -114,11 +114,11 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             </div>
           </div>
           
-          <div className="md:w-1/2 flex justify-end md:-mt-20">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-20">
             <WoofyHoverImage
               src="/photos/me.PNG"
               alt="Andria profile"
-              className="w-[60%] h-auto object-cover rounded-2xl"
+              className="w-48 md:w-[60%] h-auto object-cover rounded-2xl"
             />
           </div>
         </div>

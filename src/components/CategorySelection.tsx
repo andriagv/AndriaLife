@@ -54,10 +54,10 @@ const CategorySelection: React.FC = () => {
   return (
     <section id="category-selection" className="section-padding bg-transparent">
       <div className="container mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold">{t("selectCategory")}</h2>
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold px-4">{t("selectCategory")}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto px-4">
             {t("categoryDescription")}
           </p>
         </div>
@@ -67,9 +67,9 @@ const CategorySelection: React.FC = () => {
           glowRadius={25}
           glowOpacity={1}
           animationDuration={400}
-          gap="2.5rem"
+          gap="1.5rem"
           maxWidth="75rem"
-          padding="3rem 1.5rem"
+          padding="2rem 1rem"
           borderRadius="1rem"
           responsive={true}
         >
@@ -84,10 +84,10 @@ const CategorySelection: React.FC = () => {
                 className="flex flex-col items-center text-center"
                 onClick={() => setCategory(cat.id as any)}
               >
-                <div className={`text-4xl mb-4 ${category === cat.id ? "text-primary" : ""}`}>
+                <div className={`text-2xl md:text-4xl mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-xl font-medium">{cat.name}</h3>
+                <h3 className="text-sm md:text-xl font-medium text-center">{cat.name}</h3>
               </div>
             </GlowingCard>
           ))}

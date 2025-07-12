@@ -1,6 +1,7 @@
 export interface ISkillsService {
   getSkillsForCategory(category: string, t: (key: string) => string): Skill[];
   shouldDisplaySkillsForCategory(category: string): boolean;
+  getSkillsViewData(category: string, t: (key: string) => string): SkillsViewData;
 }
 
 export interface Skill {
