@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { GlowingCard, GlowingCards } from "@/components/GlowingCards";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
@@ -62,24 +62,23 @@ const CategorySelection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+        <GlowingCards enableGlow={true} gap="1.5rem" maxWidth="80rem" padding="2rem 0" borderRadius="1.5rem">
           {categories.map((cat) => (
-            <Card
+            <GlowingCard
               key={cat.id}
-              className={`cursor-pointer transition-all hover:shadow-lg ${
-                category === cat.id ? "ring-2 ring-primary" : ""
-              }`}
+              className={`cursor-pointer transition-all hover:shadow-lg ${category === cat.id ? "ring-2 ring-primary" : ""}`}
+              glowColor="#3b82f6"
               onClick={() => setCategory(cat.id as any)}
             >
-              <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center">
                 <div className={`text-4xl mb-4 ${category === cat.id ? "text-primary" : ""}`}>
                   {cat.icon}
                 </div>
                 <h3 className="text-xl font-medium">{cat.name}</h3>
-              </CardContent>
-            </Card>
+              </div>
+            </GlowingCard>
           ))}
-        </div>
+        </GlowingCards>
       </div>
     </section>
   );
