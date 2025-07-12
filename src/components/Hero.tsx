@@ -69,15 +69,8 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
                 {t('role')}
               </GradientText>
             </h2>
-            <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />            <div className="flex flex-wrap gap-4">
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                {t('viewWork')}
-              </Button>
-            </div>
+            <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
+            {/* No button here anymore */}
             
             <div className="flex items-center gap-4 mt-8">
               <a 
