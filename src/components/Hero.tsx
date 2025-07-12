@@ -9,6 +9,8 @@ import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
 import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
 import TextPressure from "./TextPressure";
+import FuzzyText from "@/components/FuzzyText";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface HeroProps {
   showParticles: boolean;
@@ -19,6 +21,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   
   let bgClass = (!showParticles && !showSplashCursor)
     ? "bg-[#e8e7e7] dark:bg-background"
@@ -39,9 +42,22 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       <div className="container mx-auto px-6 relative z-10 ">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <p className="text-primary font-medium mb-4">{t('hello')}</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t('name')}
+            <p className="text-primary font-medium mb-4">
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="highlight text-left"
+              >
+                {t('hello')}
+              </GradientText>
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{textAlign: 'left', marginLeft: 0, paddingLeft: 0}}>
+              <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', margin: 0, padding: 0, transform: 'translateX(-55px)'}}>
+                <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color={theme === 'dark' ? '#fff' : '#000'}>
+                  {t('name')}
+                </FuzzyText>
+              </div>
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px] text-left">
               <GradientText
