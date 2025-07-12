@@ -14,6 +14,7 @@ import Particles from "@/components/Particles";
 import React, { useState } from "react";
 import SplashCursor from "@/components/SplashCursor";
 import Navbar from "./components/Navbar";
+import { useTheme } from "@/contexts/ThemeContext";
 // Remove import of ReactQueryDevtools since the module is missing
 
 const queryClient = new QueryClient();
@@ -28,9 +29,6 @@ const App = () => {
           <ThemeProvider>
             <LanguageProvider>
               <TooltipProvider>
-                {showParticles && (
-                  <Particles particleColors={["#ffffff", "#ffffff"]} particleCount={200} particleSpread={10} speed={0.1} particleBaseSize={100} moveParticlesOnHover={true} alphaParticles={false} disableRotation={false} />
-                )}
                 {showSplashCursor && <SplashCursor />}
                 <Toaster />
                 <Sonner />

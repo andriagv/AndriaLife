@@ -5,7 +5,9 @@ import About from "@/components/About";
 import CategorySelection from "@/components/CategorySelection";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
+import Particles from "@/components/Particles";
 import { CategoryProvider } from "@/contexts/CategoryContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface IndexProps {
   showParticles: boolean;
@@ -15,9 +17,22 @@ interface IndexProps {
 }
 
 const Index: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
+  const { theme } = useTheme();
   return (
     <CategoryProvider>
       <div className="min-h-screen">
+        {showParticles && (
+          <Particles
+            particleColors={[theme === "dark" ? "#ffffff" : "#000000"]}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+          />
+        )}
         <Navbar />
         <main>
           <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />
