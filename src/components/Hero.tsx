@@ -6,6 +6,11 @@ import MediumIcon from "@/components/icons/MediumIcon";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
 import ScrambledText from "./ScrambledText";
+import GradientText from "./GradientText";
+import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
+import TextPressure from "./TextPressure";
+import FuzzyText from "@/components/FuzzyText";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface HeroProps {
   showParticles: boolean;
@@ -16,6 +21,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   
   let bgClass = (!showParticles && !showSplashCursor)
     ? "bg-[#e8e7e7] dark:bg-background"
@@ -24,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
   return (
     <section
       id="hero"
-      className={`min-h-[100vh] flex items-center pt-16 section-padding relative overflow-hidden ${bgClass}`}
+      className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0" style={{ transform: 'translateX(140px)' }}>
@@ -36,22 +42,35 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       <div className="container mx-auto px-6 relative z-10 ">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <p className="text-primary font-medium mb-4">{t('hello')}</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t('name')}
-            </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px]">
-              <span className="highlight">{t('role')}</span>
-            </h2>
-            <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />            <div className="flex flex-wrap gap-4">
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+            <p className="text-primary font-medium mb-4">
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="highlight text-left"
               >
-                {t('viewWork')}
-              </Button>
-            </div>
+                {t('hello')}
+              </GradientText>
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{textAlign: 'left', marginLeft: 0, paddingLeft: 0}}>
+              <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '100%', margin: 0, padding: 0, transform: 'translateX(-55px)'}}>
+                <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color={theme === 'dark' ? '#fff' : '#000'}>
+                  {t('name')}
+                </FuzzyText>
+              </div>
+            </h1>
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px] text-left">
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={3}
+                showBorder={false}
+                className="highlight text-left"
+              >
+                {t('role')}
+              </GradientText>
+            </h2>
+            <ScrambledText className="text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
+            {/* No button here anymore */}
             
             <div className="flex items-center gap-4 mt-8">
               <a 
@@ -96,24 +115,13 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
           </div>
           
           <div className="md:w-1/2 flex justify-end md:-mt-20">
-            <img 
-              src="/photos/me.PNG" 
-              alt="Andria profile" 
-              className="w-[60%] h-auto object-cover" 
+            <WoofyHoverImage
+              src="/photos/me.PNG"
+              alt="Andria profile"
+              className="w-[60%] h-auto object-cover rounded-2xl"
             />
           </div>
         </div>
-      </div>
-      {/* Radio group for background mode at the bottom */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-6 z-10 bg-white/70 dark:bg-black/40 rounded-xl px-6 py-3 shadow-lg">
-        <label className="flex items-center gap-2 cursor-pointer select-none">
-          <span>ვარსკვლავები</span>
-          <Switch checked={showParticles} onCheckedChange={setShowParticles} />
-        </label>
-        <label className="flex items-center gap-2 cursor-pointer select-none">
-          <span>SplashCursor</span>
-          <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
-        </label>
       </div>
     </section>
   );

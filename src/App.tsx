@@ -14,6 +14,8 @@ import Particles from "@/components/Particles";
 import React, { useState } from "react";
 import SplashCursor from "@/components/SplashCursor";
 import Navbar from "./components/Navbar";
+import { useTheme } from "@/contexts/ThemeContext";
+import ClickSpark from "@/components/ClickSpark";
 // Remove import of ReactQueryDevtools since the module is missing
 
 const queryClient = new QueryClient();
@@ -22,31 +24,35 @@ const App = () => {
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
   return (
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <AppStateProvider>
-          <ThemeProvider>
-            <LanguageProvider>
-              <TooltipProvider>
-                {showParticles && (
-                  <Particles particleColors={["#ffffff", "#ffffff"]} particleCount={200} particleSpread={10} speed={0.1} particleBaseSize={100} moveParticlesOnHover={true} alphaParticles={false} disableRotation={false} />
-                )}
-                {showSplashCursor && <SplashCursor />}
-                <Toaster />
-                <Sonner />
-                <Navbar />
-                <BrowserRouter>
-                  <Routes>
-                    <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </BrowserRouter>
-              </TooltipProvider>
-            </LanguageProvider>
-          </ThemeProvider>
-        </AppStateProvider>
-      </QueryClientProvider>
-    </ErrorBoundary>
+    <ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <AppStateProvider>
+            <ThemeProvider>
+              <LanguageProvider>
+                <TooltipProvider>
+                  {showSplashCursor && <SplashCursor />}
+                  <Toaster />
+                  <Sonner />
+                  <Navbar
+                    showParticles={showParticles}
+                    setShowParticles={setShowParticles}
+                    showSplashCursor={showSplashCursor}
+                    setShowSplashCursor={setShowSplashCursor}
+                  />
+                  <BrowserRouter>
+                    <Routes>
+                      <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </BrowserRouter>
+                </TooltipProvider>
+              </LanguageProvider>
+            </ThemeProvider>
+          </AppStateProvider>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </ClickSpark>
   );
 };
 
