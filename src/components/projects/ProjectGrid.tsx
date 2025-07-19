@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ProjectCard from "./ProjectCard";
+import Magnet from "@/components/common/Magnet";
 
 interface ProjectGridProps {
   projects: Project[];
@@ -30,12 +31,14 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
       </div>
       {!showAll && projects.length > 4 && (
         <div className="flex justify-center mt-8">
-          <button
-            className="px-6 py-2 bg-primary text-white rounded hover:bg-primary/90 transition"
-            onClick={() => setShowAll(true)}
-          >
-            See more
-          </button>
+          <Magnet padding={90} magnetStrength={15}>
+            <button
+              className="px-6 py-2 bg-primary text-white rounded hover:bg-primary/90 transition"
+              onClick={() => setShowAll(true)}
+            >
+              See more
+            </button>
+          </Magnet>
         </div>
       )}
     </>

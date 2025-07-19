@@ -3,6 +3,7 @@ import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ProjectCard from "./ProjectCard";
 import { Button } from "@/components/ui/button";
+import Magnet from "@/components/common/Magnet";
 
 interface PaginatedProjectGridProps {
   projects: Project[];
@@ -43,13 +44,15 @@ const PaginatedProjectGrid: React.FC<PaginatedProjectGridProps> = ({
       
       {hasMore && !showAll && (
         <div className="text-center mt-8">
-          <Button 
-            variant="outline" 
-            onClick={() => setShowAll(true)}
-            className="px-8 py-2"
-          >
-            See More ({projects.length - itemsPerPage} more)
-          </Button>
+          <Magnet padding={90} magnetStrength={15}>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAll(true)}
+              className="px-8 py-2"
+            >
+              See More ({projects.length - itemsPerPage} more)
+            </Button>
+          </Magnet>
         </div>
       )}
     </div>

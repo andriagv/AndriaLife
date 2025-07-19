@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Gitlab } from "lucide-react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Magnet from "@/components/common/Magnet";
 
 interface IOSProjectLayoutProps {
   projects: Project[];
@@ -84,9 +85,11 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
           </div>
           {!showAllApps && iosApps.length > 4 && (
             <div className="flex justify-center mt-8">
-              <Button onClick={() => setShowAllApps(true)} variant="outline">
-                See more
-              </Button>
+              <Magnet padding={90} magnetStrength={15}>
+                <Button onClick={() => setShowAllApps(true)} variant="outline">
+                  See more
+                </Button>
+              </Magnet>
             </div>
           )}
         </div>
@@ -117,9 +120,11 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
           </div>
           {!showAllCerts && iosCertificates.length > 4 && (
             <div className="flex justify-center mt-8">
-              <Button onClick={() => setShowAllCerts(true)} variant="outline">
-                See more
-              </Button>
+              <Magnet padding={90} magnetStrength={15}>
+                <Button onClick={() => setShowAllCerts(true)} variant="outline">
+                  See more
+                </Button>
+              </Magnet>
             </div>
           )}
         </div>
