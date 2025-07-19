@@ -31,6 +31,7 @@ interface LensProps {
   blurEdge?: boolean;
   smoothFollow?: boolean;
   disabled?: boolean;
+  onHoverChange?: (hovering: boolean) => void;
 }
 
 export const Lens: React.FC<LensProps> = ({
@@ -53,6 +54,7 @@ export const Lens: React.FC<LensProps> = ({
   blurEdge = false,
   smoothFollow = true,
   disabled = false,
+  onHoverChange,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [localIsHovering, setLocalIsHovering] = useState(false);
@@ -145,10 +147,12 @@ export const Lens: React.FC<LensProps> = ({
         className
       )}
       onMouseEnter={function () {
-        return !disabled && setIsHovering(true);
+        if (!disabled) setIsHovering(true);
+        if (onHoverChange) onHoverChange(true);
       }}
       onMouseLeave={function () {
-        return !disabled && setIsHovering(false);
+        if (!disabled) setIsHovering(false);
+        if (onHoverChange) onHoverChange(false);
       }}
       onMouseMove={handleMouseMove}
     >

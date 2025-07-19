@@ -46,7 +46,9 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
           <CategorySelection />
           <About />
           {/* <Skills /> */}
-          {category === 'mathematics' && <MathematicsTimeline />}
+          {category === 'mathematics' && (
+            <MathematicsTimeline setShowSplashCursor={(hovering) => setShowSplashCursor(!hovering)} />
+          )}
           <Projects />
         </main>
         <Footer />
