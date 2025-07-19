@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <section id="projects" className="bg-background section-padding">
+      <section id="projects" className="bg-customBg section-padding">
         <div className="container mx-auto">
           <ProjectFilters 
             filters={viewData.filterOptions}

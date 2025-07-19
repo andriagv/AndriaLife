@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ProjectCard from "./ProjectCard";
@@ -9,6 +9,8 @@ interface ProjectGridProps {
 }
 
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
   const { t } = useLanguage();
 
   if (projects.length === 0) {
@@ -20,15 +22,23 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => (
-        <ProjectCard 
-          key={project.id} 
-          project={project} 
-          onCardClick={onProjectClick}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {visibleProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} onCardClick={onProjectClick} />
+        ))}
+      </div>
+      {!showAll && projects.length > 4 && (
+        <div className="flex justify-center mt-8">
+          <button
+            className="px-6 py-2 bg-primary text-white rounded hover:bg-primary/90 transition"
+            onClick={() => setShowAll(true)}
+          >
+            See more
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 

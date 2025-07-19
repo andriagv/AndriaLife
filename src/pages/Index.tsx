@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
 import { CategoryProvider } from "@/contexts/CategoryContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import MathematicsTimeline from "@/components/MathematicsTimeline";
+import { useCategory } from "@/contexts/CategoryContext";
 
 interface IndexProps {
   showParticles: boolean;
@@ -16,10 +18,10 @@ interface IndexProps {
   setShowSplashCursor: (value: boolean) => void;
 }
 
-const Index: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
+const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
   const { theme } = useTheme();
+  const { category } = useCategory();
   return (
-    <CategoryProvider>
       <div className="min-h-screen">
         {showParticles && (
           <Particles
@@ -44,10 +46,18 @@ const Index: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSpla
           <CategorySelection />
           <About />
           {/* <Skills /> */}
+          {category === 'mathematics' && <MathematicsTimeline />}
           <Projects />
         </main>
         <Footer />
       </div>
+  );
+};
+
+const Index: React.FC<IndexProps> = (props) => {
+  return (
+    <CategoryProvider>
+      <IndexContent {...props} />
     </CategoryProvider>
   );
 };

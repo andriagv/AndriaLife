@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(140px)' }}>
+      <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px)' }}>
         <Spline
           scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
         />
@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-left">
               <div className="flex justify-start items-start w-full transform -translate-x-4 md:-translate-x-14">
-                <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color={theme === 'dark' ? '#fff' : '#000'}>
+                <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color="#222">
                   {t('name')}
                 </FuzzyText>
               </div>
