@@ -50,9 +50,46 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
+## Getting Started Locally
 
-This project is built with .
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd <YOUR_PROJECT_NAME>
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+3. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+   The app will be available at the URL shown in your terminal (usually http://localhost:5173).
+
+---
+
+## Recommended VSCode Setup
+
+To avoid warnings about Tailwind CSS directives (like `@tailwind` and `@apply`) and get the best developer experience, do the following:
+
+1. **Install the Tailwind CSS IntelliSense extension:**
+   - Open VSCode Extensions (Ctrl+Shift+X or Cmd+Shift+X)
+   - Search for `Tailwind CSS IntelliSense` and install it.
+
+2. **(Optional, but recommended) Add this to your `.vscode/settings.json` to silence CSS linter warnings:**
+   ```json
+   {
+     "css.lint.unknownAtRules": "ignore"
+   }
+   ```
+   This is already included in this repo, but if you use a different editor, you may need to configure it yourself.
+
+---
+
+## Technologies Used
 
 - Vite
 - TypeScript

@@ -13,10 +13,10 @@ const ModernNavbar: React.FC = () => {
   const [active, setActive] = useState("home");
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-customBg/80 backdrop-blur-md shadow-md">
       <nav className="container mx-auto px-3 md:px-6 flex justify-between items-center h-14 md:h-16">
         {/* Logo */}
-        <a href="#hero" className="text-lg md:text-2xl font-bold tracking-tight text-primary drop-shadow-glow">
+        <a href="#hero" className="text-lg md:text-2xl font-bold tracking-tight" style={{color: '#444343'}}>
           Portfolio<span className="text-accent">.</span>
         </a>
         {/* Navigation Links */}
@@ -42,7 +42,6 @@ const ModernNavbar: React.FC = () => {
         {/* Toggles */}
         <div className="flex items-center gap-1 md:gap-2 ml-1 md:ml-2">
           <LanguageToggle />
-          <ThemeToggle />
         </div>
       </nav>
     </header>

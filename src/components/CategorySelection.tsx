@@ -52,7 +52,7 @@ const CategorySelection: React.FC = () => {
   ];
 
   return (
-    <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24 bg-background">
+    <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24 bg-customBg">
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-8">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold px-4">{t("selectCategory")}</h2>

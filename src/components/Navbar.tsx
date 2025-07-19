@@ -60,12 +60,12 @@ const Navbar: React.FC<{
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-md shadow-md ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-customBg/80 backdrop-blur-md shadow-md ${
         isScrolled ? "py-4" : "py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="#hero" className="text-2xl font-bold tracking-tight text-primary drop-shadow-glow">
+        <a href="#hero" className="text-2xl font-bold tracking-tight" style={{color: '#444343'}}>
           Portfolio<span className="text-accent">.</span>
         </a>
         {/* Desktop Navigation */}
@@ -91,7 +91,6 @@ const Navbar: React.FC<{
           </ul>
           <div className="flex items-center gap-2">
             <LanguageToggle />
-            <ThemeToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -119,7 +118,6 @@ const Navbar: React.FC<{
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center gap-2">
           <LanguageToggle />
-          <ThemeToggle />
           <button
             className="text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -131,7 +129,7 @@ const Navbar: React.FC<{
       </div>
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-background border-t border-border animate-fade-in">
+        <nav className="md:hidden bg-customBg border-t border-border animate-fade-in">
           <ul className="container mx-auto py-4 px-4 flex flex-col space-y-3">
             {navLinks.map((link) => (
               <li key={link.id}>

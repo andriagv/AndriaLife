@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: #f0f1fa;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
   }
