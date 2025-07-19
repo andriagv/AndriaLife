@@ -3,6 +3,7 @@ import { GlowingCard, GlowingCards } from "@/components/GlowingCards";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
+import ScrollFloat from "./common/ScrollFloat";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
@@ -55,11 +56,13 @@ const CategorySelection: React.FC = () => {
     <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24 bg-customBg">
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold px-4">{t("selectCategory")}</h2>
+          <ScrollFloat>
+            {t("selectCategory")}
+          </ScrollFloat>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto px-4">
+          <ScrollFloat>
             {t("categoryDescription")}
-          </p>
+          </ScrollFloat>
         </div>
 
         <GlowingCards
