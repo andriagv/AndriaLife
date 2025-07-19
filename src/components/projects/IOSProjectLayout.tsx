@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Gitlab } from "lucide-react";
 import { Project } from "@/types";
@@ -26,6 +26,11 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
     );
   }
 
+  const [showAllApps, setShowAllApps] = useState(false);
+  const [showAllCerts, setShowAllCerts] = useState(false);
+  const visibleApps = showAllApps ? iosApps : iosApps.slice(0, 4);
+  const visibleCerts = showAllCerts ? iosCertificates : iosCertificates.slice(0, 4);
+
   return (
     <div>
       {/* Projects Section */}
@@ -33,11 +38,8 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center mb-12">{t('myProjects')}</h3>
           <div className="space-y-12">
-            {iosApps.map((project) => (
-              <div 
-                key={project.id} 
-                className="flex flex-col md:flex-row items-center gap-8"
-              >
+            {visibleApps.map((project) => (
+              <div key={project.id} className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image */}
                 <div className="w-full md:w-1/6">
                   <img 
@@ -46,12 +48,10 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
                     className="w-full h-auto object-contain rounded-md"
                   />
                 </div>
-
                 {/* Content */}
                 <div className="w-full md:w-5/6 text-center md:text-left">
                   <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
                   <p className="text-muted-foreground mb-6">{project.description}</p>
-                  
                   {/* Tags */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
                     {project.tags?.map(tag => (
@@ -60,7 +60,6 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
                       </span>
                     ))}
                   </div>
-
                   {/* Buttons */}
                   <div className="flex justify-center md:justify-start gap-4">
                     {project.githubUrl && (
@@ -83,6 +82,13 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               </div>
             ))}
           </div>
+          {!showAllApps && iosApps.length > 4 && (
+            <div className="flex justify-center mt-8">
+              <Button onClick={() => setShowAllApps(true)} variant="outline">
+                See more
+              </Button>
+            </div>
+          )}
         </div>
       )}
 
@@ -91,11 +97,8 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
         <div>
           <h3 className="text-3xl font-bold text-center mb-12">{t('certificatesSectionTitle')}</h3>
           <div className="space-y-12">
-            {iosCertificates.map((cert) => (
-              <div 
-                key={cert.id} 
-                className="flex flex-col md:flex-row items-center gap-8"
-              >
+            {visibleCerts.map((cert) => (
+              <div key={cert.id} className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image */}
                 <div className="w-full md:w-1/4">
                   <img 
@@ -112,6 +115,13 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               </div>
             ))}
           </div>
+          {!showAllCerts && iosCertificates.length > 4 && (
+            <div className="flex justify-center mt-8">
+              <Button onClick={() => setShowAllCerts(true)} variant="outline">
+                See more
+              </Button>
+            </div>
+          )}
         </div>
       )}
     </div>
