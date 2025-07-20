@@ -16,6 +16,7 @@ import SplashCursor from "@/components/SplashCursor";
 import Navbar from "./components/Navbar";
 import { useTheme } from "@/contexts/ThemeContext";
 import ClickSpark from "@/components/ClickSpark";
+import Spline from '@splinetool/react-spline';
 // Remove import of ReactQueryDevtools since the module is missing
 
 const queryClient = new QueryClient();
@@ -23,6 +24,9 @@ const queryClient = new QueryClient();
 const App = () => {
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
+
+  // Remove Spline script loader
+
   return (
     <ClickSpark sparkColor="#fff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
       <ErrorBoundary>
@@ -31,6 +35,33 @@ const App = () => {
             <ThemeProvider>
               <LanguageProvider>
                 <TooltipProvider>
+                  {/* Animated Spline Background using React component */}
+                  <div
+                    style={{
+                      position: 'fixed',
+                      top: 0,
+                      left: 0,
+                      width: '100vw',
+                      height: '100vh',
+                      zIndex: 0,
+                      pointerEvents: 'none',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <Spline
+                      scene="https://prod.spline.design/qBilcHnHrzoU2dwg/scene.splinecode"
+                      style={{
+                        width: '120vw',
+                        height: '120vh',
+                        minWidth: '100vw',
+                        minHeight: '100vh',
+                        transform: 'scale(1.2)',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                      }}
+                    />
+                  </div>
                   {showSplashCursor && <SplashCursor />}
                   <Toaster />
                   <Sonner />

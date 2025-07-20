@@ -53,7 +53,7 @@ const CategorySelection: React.FC = () => {
   ];
 
   return (
-    <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24 bg-customBg">
+    <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24">
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-8">
           <ScrollFloat>
