@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CategorySelection from "@/components/CategorySelection";
@@ -35,12 +34,6 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
             disableRotation={false}
           />
         )}
-        <Navbar
-          showParticles={showParticles}
-          setShowParticles={setShowParticles}
-          showSplashCursor={showSplashCursor}
-          setShowSplashCursor={setShowSplashCursor}
-        />
         <main>
           <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />
           <CategorySelection />

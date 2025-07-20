@@ -18,7 +18,9 @@ const Navbar: React.FC<{
   setShowParticles: (v: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (v: boolean) => void;
-}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
+  showSplineBackground: boolean;
+  setShowSplineBackground: (v: boolean) => void;
+}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -90,6 +92,11 @@ const Navbar: React.FC<{
             ))}
           </ul>
           <div className="flex items-center gap-2">
+            {/* 3D Background Toggle */}
+            <label className="flex items-center gap-1 cursor-pointer select-none">
+              <span className="text-xs font-medium">3D</span>
+              <Switch checked={showSplineBackground} onCheckedChange={v => { console.log('Switch toggled:', v, typeof v); setShowSplineBackground(!!v); }} />
+            </label>
             <LanguageToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>
