@@ -20,7 +20,9 @@ const Navbar: React.FC<{
   setShowSplashCursor: (v: boolean) => void;
   showSplineBackground: boolean;
   setShowSplineBackground: (v: boolean) => void;
-}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground }) => {
+  musicPlaying: boolean;
+  onMusicToggle: () => void;
+}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -97,6 +99,22 @@ const Navbar: React.FC<{
               <span className="text-xs font-medium">3D</span>
               <Switch checked={showSplineBackground} onCheckedChange={v => { console.log('Switch toggled:', v, typeof v); setShowSplineBackground(!!v); }} />
             </label>
+            {/* Music Toggle Button */}
+            <button
+              onClick={onMusicToggle}
+              className={`ml-2 p-2 rounded-full transition ${musicPlaying ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'} hover:bg-primary/10`}
+              aria-label={musicPlaying ? 'Pause music' : 'Play music'}
+            >
+              {musicPlaying ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 5.25v13.5m10.5-13.5v13.5" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25v13.5l13.5-6.75-13.5-6.75z" />
+                </svg>
+              )}
+            </button>
             <LanguageToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>

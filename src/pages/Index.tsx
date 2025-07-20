@@ -5,7 +5,6 @@ import CategorySelection from "@/components/CategorySelection";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
-import { CategoryProvider } from "@/contexts/CategoryContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import MathematicsTimeline from "@/components/MathematicsTimeline";
 import { useCategory } from "@/contexts/CategoryContext";
@@ -50,11 +49,7 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
 };
 
 const Index: React.FC<IndexProps> = (props) => {
-  return (
-    <CategoryProvider>
-      <IndexContent {...props} />
-    </CategoryProvider>
-  );
+  return <IndexContent {...props} />;
 };
 
 export default Index;
