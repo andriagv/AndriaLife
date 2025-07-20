@@ -11,7 +11,7 @@ const About: React.FC = () => {
   const storyText = t(storyKey);
 
   return (
-    <section id="about" className="bg-secondary/30 section-padding">
+    <section id="about" className="section-padding">
       <div className="container mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <ScrollFloat>
