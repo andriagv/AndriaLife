@@ -97,6 +97,32 @@ To avoid warnings about Tailwind CSS directives (like `@tailwind` and `@apply`) 
 - shadcn-ui
 - Tailwind CSS
 
+---
+
+## 3D Animated Background (Spline, WebGL, Three.js, Polygonjs)
+
+This project features a fully interactive 3D animated background, visible on every page and section. The background is implemented using [Spline](https://spline.design), a powerful visual tool for creating and exporting 3D scenes for the web. The integration is achieved via the [`@splinetool/react-spline`](https://www.npmjs.com/package/@splinetool/react-spline) React component, which renders the exported Spline scene as a performant WebGL canvas.
+
+**How it works:**
+
+- The Spline scene is created visually in the Spline editor, where you can design, animate, and configure 3D objects, lighting, and camera movement.
+- The scene is exported and embedded in the React app using the `<Spline scene="..." />` component, which internally uses WebGL and Three.js for rendering.
+- The background is set to be fixed, full-screen, and always behind all content, providing a seamless animated experience across all sections (including About, Category Selection, Projects, and Footer).
+- The Spline engine leverages [Three.js](https://threejs.org/) under the hood for 3D rendering, and [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) for hardware-accelerated graphics in the browser.
+
+**Why interactive 3D?**
+
+Interactive 3D is now everywhere: scientific visualizations, product showcases, video games, digital twins, configurators, and digital art. These experiences are difficult to create, requiring both 3D and web expertise. Tools like Spline and Polygonjs simplify this process by providing integrated, easy-to-use, and extensible solutions for building beautiful and performant 3D web experiences.
+
+**Polygonjs** is another tool that helps you create interactive 3D for the web, making it easier to build complex scenes without deep knowledge of 3D programming. It is especially useful for scientific, artistic, and product visualization use cases.
+
+**Other technologies for 3D on the web:**
+- [Three.js](https://threejs.org/): The most popular JavaScript 3D library, used for custom 3D scenes and advanced graphics.
+- [Dora](https://dora.run/): A platform for deploying and running AI/3D applications.
+- [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API): The browser API for rendering 2D and 3D graphics.
+
+---
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/c87fc65d-3676-49b0-a2f0-d967d8feae4c) and click on Share -> Publish.
