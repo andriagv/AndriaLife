@@ -41,7 +41,16 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
           <h3 className="text-3xl font-bold text-center mb-12">{t('myProjects')}</h3>
           <div className="space-y-12">
             {visibleApps.map((project) => (
-              <div key={project.id} className={`${styles['glass-card']} flex flex-col md:flex-row items-center gap-8`}>
+              <div
+                key={project.id}
+                className={`${styles['glass-card']} flex flex-col md:flex-row items-center gap-8`}
+                onMouseEnter={() => {
+                  document.body.classList.add('splash-cursor-faded');
+                }}
+                onMouseLeave={() => {
+                  document.body.classList.remove('splash-cursor-faded');
+                }}
+              >
                 {/* Image */}
                 <div className="w-full md:w-1/6">
                   <img 
