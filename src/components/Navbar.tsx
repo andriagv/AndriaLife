@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
+import ElasticSlider from "./ElasticSlider";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
@@ -22,7 +23,9 @@ const Navbar: React.FC<{
   setShowSplineBackground: (v: boolean) => void;
   musicPlaying: boolean;
   onMusicToggle: () => void;
-}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle }) => {
+  volume: number;
+  onVolumeChange: (v: number) => void;
+}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle, volume, onVolumeChange }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -115,6 +118,19 @@ const Navbar: React.FC<{
                 </svg>
               )}
             </button>
+            {/* Volume Slider */}
+            <div style={{ width: 140, marginLeft: 8, marginRight: 8 }}>
+              <ElasticSlider
+                leftIcon={<>🔈</>}
+                rightIcon={<>🔊</>}
+                startingValue={0}
+                maxValue={100}
+                isStepped
+                stepSize={1}
+                value={volume}
+                onChange={onVolumeChange}
+              />
+            </div>
             <LanguageToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>

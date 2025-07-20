@@ -25,7 +25,7 @@ import { useCategory } from "./contexts/CategoryContext";
 const queryClient = new QueryClient();
 
 // MusicPlayer component to handle music logic inside CategoryProvider
-const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void }) => React.ReactNode }> = ({ children }) => {
+const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void; audioRef: React.RefObject<HTMLAudioElement> }) => React.ReactNode }> = ({ children }) => {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { category } = useCategory();
@@ -58,7 +58,7 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
   const handleMusicToggle = () => setMusicPlaying((v) => !v);
   return <>
     <audio ref={audioRef} src={musicSrc} loop style={{ display: 'none' }} />
-    {children({ musicPlaying, onMusicToggle: handleMusicToggle })}
+    {children({ musicPlaying, onMusicToggle: handleMusicToggle, audioRef })}
   </>;
 };
 
@@ -66,6 +66,7 @@ const App = () => {
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
   const [showSplineBackground, setShowSplineBackground] = useState(false);
+  const [volume, setVolume] = useState(50);
 
   // Remove Spline script loader
 
@@ -79,57 +80,67 @@ const App = () => {
                 <LanguageProvider>
                   <TooltipProvider>
                     <MusicPlayer>
-                      {({ musicPlaying, onMusicToggle }) => <>
-                        {/* Animated Spline Background using React component */}
-                        {showSplineBackground && (
-                          <div
-                            style={{
-                              position: 'fixed',
-                              top: 0,
-                              left: 0,
-                              width: '100vw',
-                              height: '100vh',
-                              zIndex: 0,
-                              pointerEvents: 'none',
-                              overflow: 'hidden',
-                            }}
-                          >
-                            <Spline
-                              scene="https://prod.spline.design/qBilcHnHrzoU2dwg/scene.splinecode"
+                      {({ musicPlaying, onMusicToggle, audioRef }) => {
+                        // Set audio volume when volume state changes
+                        React.useEffect(() => {
+                          if (audioRef && audioRef.current) {
+                            audioRef.current.volume = volume / 100;
+                          }
+                        }, [volume, audioRef]);
+                        return <>
+                          {/* Animated Spline Background using React component */}
+                          {showSplineBackground && (
+                            <div
                               style={{
-                                width: '120vw',
-                                height: '120vh',
-                                minWidth: '100vw',
-                                minHeight: '100vh',
-                                transform: 'scale(1.2)',
-                                position: 'absolute',
+                                position: 'fixed',
                                 top: 0,
                                 left: 0,
+                                width: '100vw',
+                                height: '100vh',
+                                zIndex: 0,
+                                pointerEvents: 'none',
+                                overflow: 'hidden',
                               }}
-                            />
-                          </div>
-                        )}
-                        {/* Spline animated background temporarily disabled for debugging 3D ring */}
-                        {showSplashCursor && <SplashCursor />}
-                        <Toaster />
-                        <Sonner />
-                        <Navbar
-                          showParticles={showParticles}
-                          setShowParticles={setShowParticles}
-                          showSplashCursor={showSplashCursor}
-                          setShowSplashCursor={setShowSplashCursor}
-                          showSplineBackground={showSplineBackground}
-                          setShowSplineBackground={setShowSplineBackground}
-                          musicPlaying={musicPlaying}
-                          onMusicToggle={onMusicToggle}
-                        />
-                        <BrowserRouter>
-                          <Routes>
-                            <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
-                            <Route path="*" element={<NotFound />} />
-                          </Routes>
-                        </BrowserRouter>
-                      </>}
+                            >
+                              <Spline
+                                scene="https://prod.spline.design/qBilcHnHrzoU2dwg/scene.splinecode"
+                                style={{
+                                  width: '120vw',
+                                  height: '120vh',
+                                  minWidth: '100vw',
+                                  minHeight: '100vh',
+                                  transform: 'scale(1.2)',
+                                  position: 'absolute',
+                                  top: 0,
+                                  left: 0,
+                                }}
+                              />
+                            </div>
+                          )}
+                          {/* Spline animated background temporarily disabled for debugging 3D ring */}
+                          {showSplashCursor && <SplashCursor />}
+                          <Toaster />
+                          <Sonner />
+                          <Navbar
+                            showParticles={showParticles}
+                            setShowParticles={setShowParticles}
+                            showSplashCursor={showSplashCursor}
+                            setShowSplashCursor={setShowSplashCursor}
+                            showSplineBackground={showSplineBackground}
+                            setShowSplineBackground={setShowSplineBackground}
+                            musicPlaying={musicPlaying}
+                            onMusicToggle={onMusicToggle}
+                            volume={volume}
+                            onVolumeChange={setVolume}
+                          />
+                          <BrowserRouter>
+                            <Routes>
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
+                              <Route path="*" element={<NotFound />} />
+                            </Routes>
+                          </BrowserRouter>
+                        </>;
+                      }}
                     </MusicPlayer>
                   </TooltipProvider>
                 </LanguageProvider>
