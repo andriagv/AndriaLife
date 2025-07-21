@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
+import ElasticSlider from "./ElasticSlider";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
@@ -18,7 +19,13 @@ const Navbar: React.FC<{
   setShowParticles: (v: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (v: boolean) => void;
-}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
+  showSplineBackground: boolean;
+  setShowSplineBackground: (v: boolean) => void;
+  musicPlaying: boolean;
+  onMusicToggle: () => void;
+  volume: number;
+  onVolumeChange: (v: number) => void;
+}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle, volume, onVolumeChange }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -90,6 +97,40 @@ const Navbar: React.FC<{
             ))}
           </ul>
           <div className="flex items-center gap-2">
+            {/* 3D Background Toggle */}
+            <label className="flex items-center gap-1 cursor-pointer select-none">
+              <span className="text-xs font-medium">3D</span>
+              <Switch checked={showSplineBackground} onCheckedChange={v => { console.log('Switch toggled:', v, typeof v); setShowSplineBackground(!!v); }} />
+            </label>
+            {/* Music Toggle Button */}
+            <button
+              onClick={onMusicToggle}
+              className={`ml-2 p-2 rounded-full transition ${musicPlaying ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'} hover:bg-primary/10`}
+              aria-label={musicPlaying ? 'Pause music' : 'Play music'}
+            >
+              {musicPlaying ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 5.25v13.5m10.5-13.5v13.5" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25v13.5l13.5-6.75-13.5-6.75z" />
+                </svg>
+              )}
+            </button>
+            {/* Volume Slider */}
+            <div style={{ width: 140, marginLeft: 8, marginRight: 8 }}>
+              <ElasticSlider
+                leftIcon={<>🔈</>}
+                rightIcon={<>🔊</>}
+                startingValue={0}
+                maxValue={100}
+                isStepped
+                stepSize={1}
+                value={volume}
+                onChange={onVolumeChange}
+              />
+            </div>
             <LanguageToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>

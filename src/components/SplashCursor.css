@@ -1,0 +1,5 @@
+body.splash-cursor-faded .splash-cursor, body.splash-cursor-faded .lens-cursor {
+  opacity: 0.18 !important;
+  filter: blur(2px) brightness(0.9) !important;
+  transition: opacity 0.2s, filter 0.2s;
+} 

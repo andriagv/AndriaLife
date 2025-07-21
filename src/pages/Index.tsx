@@ -1,12 +1,10 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CategorySelection from "@/components/CategorySelection";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
-import { CategoryProvider } from "@/contexts/CategoryContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import MathematicsTimeline from "@/components/MathematicsTimeline";
 import { useCategory } from "@/contexts/CategoryContext";
@@ -35,12 +33,6 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
             disableRotation={false}
           />
         )}
-        <Navbar
-          showParticles={showParticles}
-          setShowParticles={setShowParticles}
-          showSplashCursor={showSplashCursor}
-          setShowSplashCursor={setShowSplashCursor}
-        />
         <main>
           <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />
           <CategorySelection />
@@ -57,11 +49,7 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
 };
 
 const Index: React.FC<IndexProps> = (props) => {
-  return (
-    <CategoryProvider>
-      <IndexContent {...props} />
-    </CategoryProvider>
-  );
+  return <IndexContent {...props} />;
 };
 
 export default Index;
