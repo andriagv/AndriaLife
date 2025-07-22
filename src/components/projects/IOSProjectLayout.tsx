@@ -117,7 +117,7 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
                   <img 
                     src={cert.imageUrl} 
                     alt={cert.title}
-                    className="w-full h-auto object-contain rounded-md shadow-lg"
+                    className={`w-full h-auto object-contain rounded-md ${styles['certificate-image-shadow']}`}
                   />
                 </div>
                 {/* Content */}
