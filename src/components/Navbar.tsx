@@ -11,10 +11,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
 import ElasticSlider from "./ElasticSlider";
+import ReflectBackground2 from "@/components/common/ReflectBackground2";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
-const Navbar: React.FC<{
+interface NavbarProps {
   showParticles: boolean;
   setShowParticles: (v: boolean) => void;
   showSplashCursor: boolean;
@@ -25,7 +26,11 @@ const Navbar: React.FC<{
   onMusicToggle: () => void;
   volume: number;
   onVolumeChange: (v: number) => void;
-}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle, volume, onVolumeChange }) => {
+  showReflectBackground: boolean;
+  setShowReflectBackground: (v: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle, volume, onVolumeChange, showReflectBackground, setShowReflectBackground }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -154,6 +159,11 @@ const Navbar: React.FC<{
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            {/* Waves BG Toggle - always visible */}
+            <label className="flex items-center gap-1 cursor-pointer select-none">
+              <span className="text-xs font-medium">Waves BG</span>
+              <Switch checked={showReflectBackground} onCheckedChange={setShowReflectBackground} />
+            </label>
           </div>
         </nav>
         {/* Mobile Navigation Toggle */}

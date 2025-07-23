@@ -18,9 +18,8 @@ import { useTheme } from "@/contexts/ThemeContext";
 import ClickSpark from "@/components/ClickSpark";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
-import { CategoryProvider } from "./contexts/CategoryContext";
-import { useCategory } from "./contexts/CategoryContext";
-// Remove import of ReactQueryDevtools since the module is missing
+import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
+import ReflectBackground2 from "@/components/common/ReflectBackground2";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +66,7 @@ const App = () => {
   const [showSplashCursor, setShowSplashCursor] = useState(true);
   const [showSplineBackground, setShowSplineBackground] = useState(false);
   const [volume, setVolume] = useState(50);
+  const [showReflectBackground, setShowReflectBackground] = useState(true);
 
   // Remove Spline script loader
 
@@ -121,6 +121,8 @@ const App = () => {
                           {showSplashCursor && <SplashCursor />}
                           <Toaster />
                           <Sonner />
+                          {/* Add ReflectBackground2 as a background layer */}
+                          {showReflectBackground && <ReflectBackground2 />}
                           <Navbar
                             showParticles={showParticles}
                             setShowParticles={setShowParticles}
@@ -132,6 +134,8 @@ const App = () => {
                             onMusicToggle={onMusicToggle}
                             volume={volume}
                             onVolumeChange={setVolume}
+                            showReflectBackground={showReflectBackground}
+                            setShowReflectBackground={setShowReflectBackground}
                           />
                           <BrowserRouter>
                             <Routes>
