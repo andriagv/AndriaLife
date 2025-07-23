@@ -8,16 +8,16 @@ export const translations = {
     contact: "Contact",
     
     // Hero section
-    hello: "Hello, I'm",
-    name: "Andria",
-    role: "iOS Developer",
-    heroDescription: "Welcome to my digital space - a place where I combine my work, ideas and values - everything that creates my professional identity. My goal is to create solutions that really help people and make life simpler and more beautiful.",
+    hello: "Hello, I am",
+    name: "Andria Gvaramia",
+    role: "Full-Stack Developer",
+    heroDescription: "I am a passionate developer with a love for creating beautiful and functional web applications. I am always looking for new challenges and opportunities to learn and grow.",
     contactMe: "Contact Me",
-    viewWork: "View My Work",
+    viewWork: "View Work",
     
     // About section
     aboutMe: "About Me",
-    aboutDescription: "A brief introduction about who I am and what I do",
+    aboutDescription: "I am a student at Kutaisi International University, where I am studying Computer Science. I am passionate about programming and I am always looking for new challenges and opportunities to learn and grow.",
     myStory: "My Story",
     
     // Category-specific stories
@@ -224,6 +224,10 @@ export const translations = {
     eulerOlympiadTitle: "Euler Olympiad",
     eulerOlympiadDescription: "..........",
     photoContestExhibit: "In 2024 I participated in a photo contest held at KIU where 4 of my works were exhibited.",
+    splashCursor: "Splash Cursor",
+    reflectBackground: "Reflect Background",
+    "project.tbc-concept-redesign.title": "TBC Concept Redesign",
+    "project.tbc-concept-redesign.description": "A redesign of the TBC Concept website, focusing on a modern and clean user interface.",
   },
   ka: {
     // Navigation
@@ -235,14 +239,14 @@ export const translations = {
     
     // Hero section
     hello: "გამარჯობა, მე ვარ",
-    name: "ანდრია",
-    role: "iOS დეველოპერი",
-    heroDescription: "კეთილი იყოს თქვენი მობრძანება ჩემს ციფრულ სივრცეში - ადგილი, სადაც ვაერთიანებ ჩემს ნამუშევარს, იდეებსა და ღირებულებებს - ყველაფერს, რაც ქმნის ჩემს პროფესიულ იდენტობას. ჩემი მიზანია შევქმნა გადაწყვეტილებები, რომლებიც ნამდვილად ეხმარება ადამიანებს და ცხოვრებას უფრო მარტივსა და ლამაზს ხდის.",
-    contactMe: "დამიკავშირდი",
-    viewWork: "ნახე ჩემი ნამუშევრები",
+    name: "ანდრია გვარამია",
+    role: "Full-Stack დეველოპერი",
+    heroDescription: "მე ვარ ენთუზიაზმით სავსე დეველოპერი, რომელსაც უყვარს ლამაზი და ფუნქციონალური ვებ აპლიკაციების შექმნა. მუდმივად ვეძებ ახალ გამოწვევებს და შესაძლებლობებს სწავლისა და ზრდისთვის.",
+    contactMe: "დამიკავშირდით",
+    viewWork: "ნამუშევრების ნახვა",
     
     // About section
-    aboutMe: "ჩემ შესახებ",
+    aboutMe: "ჩემს შესახებ",
     aboutDescription: "მოკლე შესავალი ჩემ შესახებ და რას ვაკეთებ",
     myStory: "ჩემი ისტორია",
     
@@ -410,7 +414,7 @@ export const translations = {
     rights: "ყველა უფლება დაცულია.",
     backToTop: "დაბრუნება თავში",
     photography: "ფოტოგრაფია",
-    robotics: "რობოტიქსი",
+    robotics: "რობოტექნიკა",
     mathematics: "მათემატიკა",
     photographyDescription: "ჩემი საყვარელი კადრებისა და ფოტოსერიების კოლექცია.",
     roboticsDescription: "პროექტები და ექსპერიმენტები რობოტიკის სამყაროში.",
@@ -442,6 +446,11 @@ export const translations = {
     eulerOlympiadTitle: "ოილერის ოლიმპიადა",
     eulerOlympiadDescription: "..........",
     photoContestExhibit: "2024 წელს მონაწილეობა მივიღე KIU-ში გამართულ ფოტოკონკურსში, სადაც ჩემი 4 ნამუშევარი გამოიფინა.",
+    splashCursor: "კურსორის ეფექტი",
+    reflectBackground: "ფონის არეკვლა",
+    "project.tbc-concept-redesign.title": "TBC Concept რედიზაინი",
+    "project.tbc-concept-redesign.description": "TBC Concept ვებსაიტის რედიზაინი, რომელიც ფოკუსირებულია თანამედროვე და სუფთა მომხმარებლის ინტერფეისზე.",
+    "project.tbc-concept-redesign.category": "ვებ-დეველოპმენტი",
   },
 };
 
