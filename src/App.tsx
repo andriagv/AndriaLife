@@ -41,14 +41,24 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
       if (musicPlaying) {
-        audioRef.current.play();
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            setMusicPlaying(false);
+          });
+        }
       }
     }
   }, [musicSrc]);
   React.useEffect(() => {
     if (audioRef.current) {
       if (musicPlaying) {
-        audioRef.current.play();
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            setMusicPlaying(false);
+          });
+        }
       } else {
         audioRef.current.pause();
       }
@@ -66,8 +76,9 @@ type BackgroundMode = 'none' | '3d' | 'reflect';
 const App = () => {
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
-  const [volume, setVolume] = useState(50);
-  const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('3d');
+  const [volume, setVolume] = useState(30);
+  const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('reflect');
+  const [showHeroAnimation, setShowHeroAnimation] = useState(true);
 
   // Remove Spline script loader
 
@@ -135,10 +146,12 @@ const App = () => {
                             onVolumeChange={setVolume}
                             backgroundMode={backgroundMode}
                             setBackgroundMode={setBackgroundMode}
+                            showHeroAnimation={showHeroAnimation}
+                            setShowHeroAnimation={setShowHeroAnimation}
                           />
                           <BrowserRouter>
                             <Routes>
-                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} />} />
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />} />
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </BrowserRouter>
