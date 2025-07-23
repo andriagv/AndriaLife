@@ -15,6 +15,8 @@ interface SettingsPanelProps {
   onVolumeChange: (v: number) => void;
   backgroundMode: 'none' | '3d' | 'reflect';
   setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
+  showHeroAnimation: boolean;
+  setShowHeroAnimation: (v: boolean) => void;
 }
 
 const SettingsPanel: React.FC<SettingsPanelProps> = ({
@@ -28,6 +30,8 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   onVolumeChange,
   backgroundMode,
   setBackgroundMode,
+  showHeroAnimation,
+  setShowHeroAnimation,
 }) => {
   const backgroundOptions = [
     { label: 'None', value: 'none' as const },
@@ -55,6 +59,9 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             </SettingRow>
             <SettingRow label="Splash Cursor">
               <StyledSwitch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
+            </SettingRow>
+            <SettingRow label="Hero Animation">
+              <StyledSwitch checked={showHeroAnimation} onCheckedChange={setShowHeroAnimation} />
             </SettingRow>
             <SettingRow label="Background">
               <SegmentedControl

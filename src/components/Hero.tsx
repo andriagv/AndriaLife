@@ -18,9 +18,10 @@ interface HeroProps {
   showSplashCursor: boolean;
   setShowSplashCursor: (value: boolean) => void;
   backgroundMode: 'none' | '3d' | 'reflect';
+  showHeroAnimation: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode }) => {
+const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation }) => {
   const { t } = useLanguage();
   const { theme } = useTheme();
   
@@ -34,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
-      {backgroundMode === '3d' && (
+      {showHeroAnimation && (
         <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(120px)' }}>
           <Spline
             scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
@@ -117,7 +118,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-20">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-1">
             <WoofyHoverImage
               src="/photos/me.PNG"
               alt="Andria profile"
