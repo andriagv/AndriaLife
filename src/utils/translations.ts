@@ -9,9 +9,9 @@ export const translations = {
     
     // Hero section
     hello: "Hello, I am",
-    name: "Andria Gvaramia",
-    role: "Full-Stack Developer",
-    heroDescription: "I am a passionate developer with a love for creating beautiful and functional web applications. I am always looking for new challenges and opportunities to learn and grow.",
+    name: "Andria",
+    role: "iOS Developer",
+    heroDescription: "Welcome to my digital space - a place where I combine my work, ideas and values - everything that creates my professional identity. My goal is to create solutions that really help people and make life simpler and more beautiful.",
     contactMe: "Contact Me",
     viewWork: "View Work",
     
@@ -239,9 +239,9 @@ export const translations = {
     
     // Hero section
     hello: "გამარჯობა, მე ვარ",
-    name: "ანდრია გვარამია",
-    role: "Full-Stack დეველოპერი",
-    heroDescription: "მე ვარ ენთუზიაზმით სავსე დეველოპერი, რომელსაც უყვარს ლამაზი და ფუნქციონალური ვებ აპლიკაციების შექმნა. მუდმივად ვეძებ ახალ გამოწვევებს და შესაძლებლობებს სწავლისა და ზრდისთვის.",
+    name: "ანდრია",
+    role: "iOS დეველოპერი",
+    heroDescription: "კეთილი იყოს თქვენი მობრძანება ჩემს ციფრულ სივრცეში – ადგილას, სადაც ვაერთიანებ ჩემს საქმეს, იდეებსა და ღირებულებებს – ყველაფერს, რაც ქმნის ჩემს პროფესიულ იდენტობას. ჩემი მიზანია, შევქმნა გადაწყვეტილებები, რომლებიც რეალურად ეხმარება ადამიანებს და ცხოვრებას უფრო მარტივსა და ლამაზს ხდის.",
     contactMe: "დამიკავშირდით",
     viewWork: "ნამუშევრების ნახვა",
     
