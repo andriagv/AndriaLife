@@ -139,7 +139,7 @@ const App = () => {
                           />
                           <BrowserRouter>
                             <Routes>
-                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} showSplineBackground={showSplineBackground} />} />
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </BrowserRouter>
