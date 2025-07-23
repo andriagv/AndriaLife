@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px)' }}>
+      <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(120px)' }}>
         <Spline
           scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
         />

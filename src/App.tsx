@@ -96,7 +96,7 @@ const App = () => {
                                 top: 0,
                                 left: 0,
                                 width: '100vw',
-                                height: '100vh',
+                                height: '1000vh',
                                 zIndex: 0,
                                 pointerEvents: 'none',
                                 overflow: 'hidden',
