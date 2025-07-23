@@ -14,6 +14,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import ElasticSlider from "./ElasticSlider";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
+import SettingsPanel from "./SettingsPanel";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
@@ -22,17 +23,15 @@ interface NavbarProps {
   setShowParticles: (v: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (v: boolean) => void;
-  showSplineBackground: boolean;
-  setShowSplineBackground: (v: boolean) => void;
   musicPlaying: boolean;
   onMusicToggle: () => void;
   volume: number;
   onVolumeChange: (v: number) => void;
-  showReflectBackground: boolean;
-  setShowReflectBackground: (v: boolean) => void;
+  backgroundMode: 'none' | '3d' | 'reflect';
+  setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle, volume, onVolumeChange, showReflectBackground, setShowReflectBackground }) => {
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -116,67 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Display Settings</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>Particles</span>
-                    <Switch checked={showParticles} onCheckedChange={setShowParticles} />
-                  </label>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>Splash Cursor</span>
-                    <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
-                  </label>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>3D Background</span>
-                    <Switch checked={showSplineBackground} onCheckedChange={setShowSplineBackground} />
-                  </label>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>Reflect Background</span>
-                    <Switch checked={showReflectBackground} onCheckedChange={setShowReflectBackground} />
-                  </label>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuLabel>Sound Settings</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>Music</span>
-                    <button
-                      onClick={onMusicToggle}
-                      className={`ml-auto p-1 rounded-full transition ${musicPlaying ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}
-                      aria-label={musicPlaying ? 'Pause music' : 'Play music'}
-                    >
-                      {musicPlaying ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 5.25v13.5m10.5-13.5v13.5" /></svg>
-                      ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25v13.5l13.5-6.75-13.5-6.75z" /></svg>
-                      )}
-                    </button>
-                  </label>
-                </DropdownMenuItem>
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <div className="flex items-center justify-between w-full">
-                    <span>Volume</span>
-                    <ElasticSlider
-                      leftIcon={<>🔈</>}
-                      rightIcon={<>🔊</>}
-                      startingValue={50}
-                      maxValue={100}
-                      isStepped
-                      stepSize={1}
-                      value={volume}
-                      onChange={onVolumeChange}
-                      className="w-24 ml-4"
-                    />
-                  </div>
-                </DropdownMenuItem>
+                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode }} />
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

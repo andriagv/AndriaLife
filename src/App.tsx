@@ -25,7 +25,7 @@ const queryClient = new QueryClient();
 
 // MusicPlayer component to handle music logic inside CategoryProvider
 const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void; audioRef: React.RefObject<HTMLAudioElement> }) => React.ReactNode }> = ({ children }) => {
-  const [musicPlaying, setMusicPlaying] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(true);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { category } = useCategory();
   const musicMap: Record<string, string> = {
@@ -61,12 +61,13 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
   </>;
 };
 
+type BackgroundMode = 'none' | '3d' | 'reflect';
+
 const App = () => {
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
-  const [showSplineBackground, setShowSplineBackground] = useState(false);
   const [volume, setVolume] = useState(50);
-  const [showReflectBackground, setShowReflectBackground] = useState(true);
+  const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('3d');
 
   // Remove Spline script loader
 
@@ -89,7 +90,7 @@ const App = () => {
                         }, [volume, audioRef]);
                         return <>
                           {/* Animated Spline Background using React component */}
-                          {showSplineBackground && (
+                          {backgroundMode === '3d' && (
                             <div
                               style={{
                                 position: 'fixed',
@@ -122,24 +123,22 @@ const App = () => {
                           <Toaster />
                           <Sonner />
                           {/* Add ReflectBackground2 as a background layer */}
-                          {showReflectBackground && <ReflectBackground2 />}
+                          {backgroundMode === 'reflect' && <ReflectBackground2 />}
                           <Navbar
                             showParticles={showParticles}
                             setShowParticles={setShowParticles}
                             showSplashCursor={showSplashCursor}
                             setShowSplashCursor={setShowSplashCursor}
-                            showSplineBackground={showSplineBackground}
-                            setShowSplineBackground={setShowSplineBackground}
                             musicPlaying={musicPlaying}
                             onMusicToggle={onMusicToggle}
                             volume={volume}
                             onVolumeChange={setVolume}
-                            showReflectBackground={showReflectBackground}
-                            setShowReflectBackground={setShowReflectBackground}
+                            backgroundMode={backgroundMode}
+                            setBackgroundMode={setBackgroundMode}
                           />
                           <BrowserRouter>
                             <Routes>
-                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} />} />
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </BrowserRouter>
