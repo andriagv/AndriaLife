@@ -14,9 +14,11 @@ interface IndexProps {
   setShowParticles: (value: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (value: boolean) => void;
+  backgroundMode: 'none' | '3d' | 'reflect';
+  showHeroAnimation: boolean;
 }
 
-const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
+const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation }) => {
   const { theme } = useTheme();
   const { category } = useCategory();
   return (
@@ -34,7 +36,7 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
           />
         )}
         <main>
-          <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />
+          <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />
           <CategorySelection />
           <About />
           {/* <Skills /> */}

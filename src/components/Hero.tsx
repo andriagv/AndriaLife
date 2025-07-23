@@ -17,13 +17,15 @@ interface HeroProps {
   setShowParticles: (value: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (value: boolean) => void;
+  backgroundMode: 'none' | '3d' | 'reflect';
+  showHeroAnimation: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor }) => {
+const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation }) => {
   const { t } = useLanguage();
   const { theme } = useTheme();
   
-  let bgClass = (!showParticles && !showSplashCursor)
+  let bgClass = !showParticles
     ? "bg-[#e8e7e7] dark:bg-background"
     : "bg-transparent dark:bg-transparent";
 
@@ -33,11 +35,13 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px)' }}>
-        <Spline
-          scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
-        />
-      </div>
+      {showHeroAnimation && (
+        <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(120px)' }}>
+          <Spline
+            scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
+          />
+        </div>
+      )}
       {/* Content overlay */}
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
@@ -114,7 +118,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-20">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-1">
             <WoofyHoverImage
               src="/photos/me.PNG"
               alt="Andria profile"

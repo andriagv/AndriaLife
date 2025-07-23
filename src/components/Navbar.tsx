@@ -5,27 +5,35 @@ import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
 import ElasticSlider from "./ElasticSlider";
+import ReflectBackground2 from "@/components/common/ReflectBackground2";
+import SettingsPanel from "./SettingsPanel";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
-const Navbar: React.FC<{
+interface NavbarProps {
   showParticles: boolean;
   setShowParticles: (v: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (v: boolean) => void;
-  showSplineBackground: boolean;
-  setShowSplineBackground: (v: boolean) => void;
   musicPlaying: boolean;
   onMusicToggle: () => void;
   volume: number;
   onVolumeChange: (v: number) => void;
-}> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, showSplineBackground, setShowSplineBackground, musicPlaying, onMusicToggle, volume, onVolumeChange }) => {
+  backgroundMode: 'none' | '3d' | 'reflect';
+  setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
+  showHeroAnimation: boolean;
+  setShowHeroAnimation: (v: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -67,13 +75,13 @@ const Navbar: React.FC<{
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-customBg/80 backdrop-blur-md shadow-md ${
-        isScrolled ? "py-4" : "py-6"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 max-w-7xl w-[95%] z-50 transition-all duration-300 bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-black/20 shadow-xl rounded-full ${
+        isScrolled ? "py-2" : "py-3"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="#hero" className="text-2xl font-bold tracking-tight" style={{color: '#444343'}}>
-          Portfolio<span className="text-accent">.</span>
+        <a href="#hero" className="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+          Portfolio<span className="text-primary">.</span>
         </a>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center">
@@ -83,75 +91,32 @@ const Navbar: React.FC<{
                 <a
                   href={link.href}
                   onClick={() => setActive(link.id)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium
                     ${active === link.id
-                      ? "bg-primary/20 text-primary shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]"
-                      : "hover:bg-primary/10 hover:text-primary/90 text-foreground/80"}
+                      ? "bg-primary text-primary-foreground shadow-lg"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/5"}
                   `}
-                  style={{ boxShadow: active === link.id ? "0 0 12px 2px rgba(59,130,246,0.25)" : undefined }}
                 >
                   {/* Only text, no icon */}
-                  <span className="text-base font-medium">{link.name}</span>
+                  {link.name}
                 </a>
               </li>
             ))}
           </ul>
           <div className="flex items-center gap-2">
-            {/* 3D Background Toggle */}
-            <label className="flex items-center gap-1 cursor-pointer select-none">
-              <span className="text-xs font-medium">3D</span>
-              <Switch checked={showSplineBackground} onCheckedChange={v => { console.log('Switch toggled:', v, typeof v); setShowSplineBackground(!!v); }} />
-            </label>
-            {/* Music Toggle Button */}
-            <button
-              onClick={onMusicToggle}
-              className={`ml-2 p-2 rounded-full transition ${musicPlaying ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'} hover:bg-primary/10`}
-              aria-label={musicPlaying ? 'Pause music' : 'Play music'}
-            >
-              {musicPlaying ? (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 5.25v13.5m10.5-13.5v13.5" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25v13.5l13.5-6.75-13.5-6.75z" />
-                </svg>
-              )}
-            </button>
-            {/* Volume Slider */}
-            <div style={{ width: 140, marginLeft: 8, marginRight: 8 }}>
-              <ElasticSlider
-                leftIcon={<>🔈</>}
-                rightIcon={<>🔊</>}
-                startingValue={0}
-                maxValue={100}
-                isStepped
-                stepSize={1}
-                value={volume}
-                onChange={onVolumeChange}
-              />
-            </div>
             <LanguageToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="p-2 rounded-full hover:bg-accent focus:outline-none" aria-label="Settings">
+                <button
+                  className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none text-gray-700 dark:text-gray-300"
+                  aria-label="Settings"
+                >
                   <Settings size={20} />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>ვარსკვლავები</span>
-                    <Switch checked={showParticles} onCheckedChange={setShowParticles} />
-                  </label>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>Splash Cursor</span>
-                    <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
-                  </label>
-                </DropdownMenuItem>
+              <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
+                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }} />
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -160,7 +125,7 @@ const Navbar: React.FC<{
         <div className="md:hidden flex items-center gap-2">
           <LanguageToggle />
           <button
-            className="text-foreground"
+            className="text-gray-700 dark:text-gray-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -170,25 +135,24 @@ const Navbar: React.FC<{
       </div>
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-customBg border-t border-border animate-fade-in">
-          <ul className="container mx-auto py-4 px-4 flex flex-col space-y-3">
+        <nav className="md:hidden bg-white/80 dark:bg-black/80 backdrop-blur-md border-t border-white/20 dark:border-black/20 animate-fade-in absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl shadow-lg overflow-hidden">
+          <ul className="container mx-auto py-4 px-4 flex flex-col space-y-2">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
                   href={link.href}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200
-                    ${active === link.id
-                      ? "bg-primary/20 text-primary shadow-[0_0_8px_2px_rgba(59,130,246,0.3)]"
-                      : "hover:bg-primary/10 hover:text-primary/90 text-foreground/80"}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-base font-medium
+                  ${active === link.id
+                    ? "bg-primary text-primary-foreground"
+                    : "text-gray-800 dark:text-gray-200 hover:bg-black/5 dark:hover:bg-white/5"}
                   `}
-                  style={{ boxShadow: active === link.id ? "0 0 12px 2px rgba(59,130,246,0.25)" : undefined }}
                   onClick={() => {
                     setActive(link.id);
                     setIsMenuOpen(false);
                   }}
                 >
                   {/* Only text, no icon */}
-                  <span className="text-base font-medium">{link.name}</span>
+                  {link.name}
                 </a>
               </li>
             ))}

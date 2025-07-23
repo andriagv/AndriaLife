@@ -12,8 +12,16 @@ const CategoryContext = createContext<CategoryContextType | undefined>(undefined
 export const CategoryProvider = ({ children }: { children: ReactNode }) => {
   const [category, setCategory] = useState<Category>("ios");
 
+  const setCategoryAndScroll = (newCategory: Category) => {
+    setCategory(newCategory);
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
-    <CategoryContext.Provider value={{ category, setCategory }}>
+    <CategoryContext.Provider value={{ category, setCategory: setCategoryAndScroll }}>
       {children}
     </CategoryContext.Provider>
   );

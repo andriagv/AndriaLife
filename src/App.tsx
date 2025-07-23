@@ -11,22 +11,22 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Particles from "@/components/Particles";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SplashCursor from "@/components/SplashCursor";
 import Navbar from "./components/Navbar";
 import { useTheme } from "@/contexts/ThemeContext";
 import ClickSpark from "@/components/ClickSpark";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
-import { CategoryProvider } from "./contexts/CategoryContext";
-import { useCategory } from "./contexts/CategoryContext";
-// Remove import of ReactQueryDevtools since the module is missing
+import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
+import ReflectBackground2 from "@/components/common/ReflectBackground2";
+import Preloader from "./components/Preloader";
 
 const queryClient = new QueryClient();
 
 // MusicPlayer component to handle music logic inside CategoryProvider
 const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void; audioRef: React.RefObject<HTMLAudioElement> }) => React.ReactNode }> = ({ children }) => {
-  const [musicPlaying, setMusicPlaying] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(true);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { category } = useCategory();
   const musicMap: Record<string, string> = {
@@ -42,14 +42,24 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
       if (musicPlaying) {
-        audioRef.current.play();
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            setMusicPlaying(false);
+          });
+        }
       }
     }
   }, [musicSrc]);
   React.useEffect(() => {
     if (audioRef.current) {
       if (musicPlaying) {
-        audioRef.current.play();
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            setMusicPlaying(false);
+          });
+        }
       } else {
         audioRef.current.pause();
       }
@@ -62,11 +72,27 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
   </>;
 };
 
+type BackgroundMode = 'none' | '3d' | 'reflect';
+
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
-  const [showSplineBackground, setShowSplineBackground] = useState(false);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(30);
+  const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('reflect');
+  const [showHeroAnimation, setShowHeroAnimation] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   // Remove Spline script loader
 
@@ -89,7 +115,7 @@ const App = () => {
                         }, [volume, audioRef]);
                         return <>
                           {/* Animated Spline Background using React component */}
-                          {showSplineBackground && (
+                          {backgroundMode === '3d' && (
                             <div
                               style={{
                                 position: 'fixed',
@@ -121,21 +147,25 @@ const App = () => {
                           {showSplashCursor && <SplashCursor />}
                           <Toaster />
                           <Sonner />
+                          {/* Add ReflectBackground2 as a background layer */}
+                          {backgroundMode === 'reflect' && <ReflectBackground2 />}
                           <Navbar
                             showParticles={showParticles}
                             setShowParticles={setShowParticles}
                             showSplashCursor={showSplashCursor}
                             setShowSplashCursor={setShowSplashCursor}
-                            showSplineBackground={showSplineBackground}
-                            setShowSplineBackground={setShowSplineBackground}
                             musicPlaying={musicPlaying}
                             onMusicToggle={onMusicToggle}
                             volume={volume}
                             onVolumeChange={setVolume}
+                            backgroundMode={backgroundMode}
+                            setBackgroundMode={setBackgroundMode}
+                            showHeroAnimation={showHeroAnimation}
+                            setShowHeroAnimation={setShowHeroAnimation}
                           />
                           <BrowserRouter>
                             <Routes>
-                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} />} />
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />} />
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </BrowserRouter>
