@@ -5,9 +5,11 @@ import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
 import ElasticSlider from "./ElasticSlider";
@@ -102,52 +104,23 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
             ))}
           </ul>
           <div className="flex items-center gap-2">
-            {/* 3D Background Toggle */}
-            <label className="flex items-center gap-1 cursor-pointer select-none">
-              <span className="text-xs font-medium">3D</span>
-              <Switch checked={showSplineBackground} onCheckedChange={v => { console.log('Switch toggled:', v, typeof v); setShowSplineBackground(!!v); }} />
-            </label>
-            {/* Music Toggle Button */}
-            <button
-              onClick={onMusicToggle}
-              className={`ml-2 p-2 rounded-full transition ${musicPlaying ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'} hover:bg-primary/10`}
-              aria-label={musicPlaying ? 'Pause music' : 'Play music'}
-            >
-              {musicPlaying ? (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 5.25v13.5m10.5-13.5v13.5" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25v13.5l13.5-6.75-13.5-6.75z" />
-                </svg>
-              )}
-            </button>
-            {/* Volume Slider */}
-            <div style={{ width: 140, marginLeft: 8, marginRight: 8 }}>
-              <ElasticSlider
-                leftIcon={<>🔈</>}
-                rightIcon={<>🔊</>}
-                startingValue={0}
-                maxValue={100}
-                isStepped
-                stepSize={1}
-                value={volume}
-                onChange={onVolumeChange}
-              />
-            </div>
             <LanguageToggle />
             {/* Settings Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="p-2 rounded-full hover:bg-accent focus:outline-none" aria-label="Settings">
+                <button
+                  className="p-2 rounded-full hover:bg-primary/10 focus:outline-none"
+                  aria-label="Settings"
+                >
                   <Settings size={20} />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
+                <DropdownMenuLabel>Display Settings</DropdownMenuLabel>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <label className="flex items-center gap-2 cursor-pointer select-none w-full">
-                    <span>ვარსკვლავები</span>
+                    <span>Particles</span>
                     <Switch checked={showParticles} onCheckedChange={setShowParticles} />
                   </label>
                 </DropdownMenuItem>
@@ -157,13 +130,55 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                     <Switch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
                   </label>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
+                    <span>3D Background</span>
+                    <Switch checked={showSplineBackground} onCheckedChange={setShowSplineBackground} />
+                  </label>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
+                    <span>Reflect Background</span>
+                    <Switch checked={showReflectBackground} onCheckedChange={setShowReflectBackground} />
+                  </label>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Sound Settings</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <label className="flex items-center gap-2 cursor-pointer select-none w-full">
+                    <span>Music</span>
+                    <button
+                      onClick={onMusicToggle}
+                      className={`ml-auto p-1 rounded-full transition ${musicPlaying ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}
+                      aria-label={musicPlaying ? 'Pause music' : 'Play music'}
+                    >
+                      {musicPlaying ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 5.25v13.5m10.5-13.5v13.5" /></svg>
+                      ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.25v13.5l13.5-6.75-13.5-6.75z" /></svg>
+                      )}
+                    </button>
+                  </label>
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <div className="flex items-center justify-between w-full">
+                    <span>Volume</span>
+                    <ElasticSlider
+                      leftIcon={<>🔈</>}
+                      rightIcon={<>🔊</>}
+                      startingValue={50}
+                      maxValue={100}
+                      isStepped
+                      stepSize={1}
+                      value={volume}
+                      onChange={onVolumeChange}
+                      className="w-24 ml-4"
+                    />
+                  </div>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            {/* Waves BG Toggle - always visible */}
-            <label className="flex items-center gap-1 cursor-pointer select-none">
-              <span className="text-xs font-medium">Waves BG</span>
-              <Switch checked={showReflectBackground} onCheckedChange={setShowReflectBackground} />
-            </label>
           </div>
         </nav>
         {/* Mobile Navigation Toggle */}
