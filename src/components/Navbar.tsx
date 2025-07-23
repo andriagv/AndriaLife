@@ -114,7 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                   <Settings size={20} />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
                 <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode }} />
               </DropdownMenuContent>
             </DropdownMenu>
