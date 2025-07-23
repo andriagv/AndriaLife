@@ -11,7 +11,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Particles from "@/components/Particles";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SplashCursor from "@/components/SplashCursor";
 import Navbar from "./components/Navbar";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -20,6 +20,7 @@ import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
 import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
+import Preloader from "./components/Preloader";
 
 const queryClient = new QueryClient();
 
@@ -74,11 +75,24 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
 type BackgroundMode = 'none' | '3d' | 'reflect';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [showParticles, setShowParticles] = useState(true);
   const [showSplashCursor, setShowSplashCursor] = useState(true);
   const [volume, setVolume] = useState(30);
   const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('reflect');
   const [showHeroAnimation, setShowHeroAnimation] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   // Remove Spline script loader
 
