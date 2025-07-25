@@ -118,6 +118,9 @@ export const translations = {
     catchTheBananaTitle: "Catch the Banana",
     catchTheBananaDescription: "Is a simple but very fun and dynamic game where the player's goal is to collect as many bananas as possible before at least one banana falls to the ground. Use quick reaction and attention, collect bananas to the maximum, accumulate high scores and improve your own result with each game.",
     
+    // General UI
+    comingSoon: "Coming Soon",
+    
     // Certificate Titles & Descriptions (iOS)
     tbcAcademyCertificateTitle: "TBC IT Academy - iOS Development",
     tbcAcademyCertificateDescription: "In 2024, I successfully completed the TBC IT Academy iOS development course with the best grade. During this intensive program, I deeply studied the fundamental principles and modern approaches of iOS application development.",
@@ -260,6 +263,9 @@ export const translations = {
     photographyStory: "ფოტოგრაფიაში ჩემი გზა დაიწყო უბრალო ცნობისმოყვარეობით — მინდოდა დამეფიქსირებინა სამყარო ისე, როგორც მე ვხედავ. მსიამოვნებს ექსპერიმენტები განათებასთან, კომპოზიციასთან და სხვადასხვა თემასთან, რათა ფოტოებით მოვყვე ისტორიებს.",
     roboticsStory: "ყოველთვის მაინტერესებდა როგორ მუშაობს სხვადასხვა რამ, რაც ბუნებრივად მიმიყვანა რობოტიქსთან. მსიამოვნებს რობოტების აწყობა და პროგრამირება, რათა გადაჭრა ამოცანები და შეასრულო დავალებები, რაც აერთიანებს აპარატურასა და პროგრამულ უზრუნველყოფას.",
     mathematicsStory: "მათემატიკა ჩემთვის სამყაროს ენაა. გატაცებული ვარ მისი ელეგანტური ნიმუშების შესწავლითა და რთული პრობლემების გადაჭრით, აბსტრაქტული თეორიებიდან პრაქტიკულ გამოყენებამდე.",
+    
+    // General UI
+    comingSoon: "მალე იქნება",
     
     // Stats
     experience: "წლის გამოცდილება",
