@@ -3,16 +3,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github, Gitlab, Award, Facebook, Linkedin } from "lucide-react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   project: Project;
   onCardClick?: (projectId: number) => void;
+  index?: number;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick, index = 0 }) => {
   const { t } = useLanguage();
 
-  // Determine the main link for the card (priority: facebook, linkedin, github, gitlab, live)
   const mainLink = project.facebookUrl || project.linkedinUrl || project.githubUrl || project.gitlabUrl || project.liveUrl;
 
   const handleCardClick = () => {
@@ -21,14 +22,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick }) => {
     }
   };
 
+  // Glassmorphism + Gradient Border + Hover effect only for camps
+  const isCamps = project.category === "camps";
+
   const cardContent = (
-    <Card className="overflow-hidden group transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
-      <div className="overflow-hidden h-48">
-        <img 
-          src={project.imageUrl} 
+    <Card
+      className={
+        `overflow-hidden group transition-all duration-300 cursor-pointer h-full ` +
+        (isCamps ? "glass-card gradient-border-camps" : "hover:shadow-lg")
+      }
+    >
+      <div className="overflow-hidden h-48 relative">
+        <motion.img
+          src={project.imageUrl}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1"
+          whileHover={isCamps ? { scale: 1.08, rotate: 2 } : {}}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         />
+        {/* Overlay on hover for camps */}
+        {isCamps && (
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-blue-400/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center"
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <button className="mb-4 px-4 py-2 bg-white/80 rounded-lg font-semibold shadow-lg hover:bg-white">
+              View Details
+            </button>
+          </motion.div>
+        )}
       </div>
       <CardContent className="p-6">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -114,29 +138,45 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick }) => {
   // Special handling for projects that open a modal
   if (project.id === 4 || project.id === 5 || project.modal) {
     return (
-      <div onClick={handleCardClick}>
+      <motion.div
+        onClick={handleCardClick}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", delay: index * 0.12 }}
+      >
         {cardContent}
-      </div>
+      </motion.div>
     );
   }
 
   // Default behavior for projects with external links
   if (mainLink) {
     return (
-      <a
+      <motion.a
         href={mainLink}
         target="_blank"
         rel="noopener noreferrer"
         className="block"
         style={{ textDecoration: 'none', color: 'inherit' }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", delay: index * 0.12 }}
       >
         {cardContent}
-      </a>
+      </motion.a>
     );
   }
   
   // Fallback for cards with no link
-  return <div>{cardContent}</div>;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", delay: index * 0.12 }}
+    >
+      {cardContent}
+    </motion.div>
+  );
 };
 
 export default ProjectCard;
