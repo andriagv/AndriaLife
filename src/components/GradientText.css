@@ -11,6 +11,9 @@
   overflow: hidden;
   cursor: pointer;
   text-align: left;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .gradient-overlay {
@@ -64,4 +67,7 @@
   -webkit-background-clip: text;
   color: transparent;
   animation: gradient linear infinite;
+  line-height: 1.5;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 } 
