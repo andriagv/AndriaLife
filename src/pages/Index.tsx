@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useCategory } from "@/contexts/CategoryContext";
+import { useAppState } from "@/contexts/AppStateContext";
 
 interface IndexProps {
   showParticles: boolean;
@@ -23,18 +24,19 @@ interface IndexProps {
 const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation }) => {
   const { theme } = useTheme();
   const { category } = useCategory();
+  const { reduceMotion } = useAppState();
   return (
       <div className="min-h-screen">
-        {showParticles && (
+        {showParticles && !reduceMotion && (
           <Particles
             particleColors={[theme === "dark" ? "#ffffff" : "#000000"]}
-            particleCount={200}
+            particleCount={reduceMotion ? 50 : 200}
             particleSpread={10}
-            speed={0.1}
+            speed={reduceMotion ? 0.05 : 0.1}
             particleBaseSize={100}
-            moveParticlesOnHover={true}
+            moveParticlesOnHover={!reduceMotion}
             alphaParticles={false}
-            disableRotation={false}
+            disableRotation={reduceMotion}
           />
         )}
         <main>

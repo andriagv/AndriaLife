@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import StyledSwitch from './ui/StyledSwitch';
-import { Music, Volume2, Pause, Play } from 'lucide-react';
+import { Music, Volume2, Pause, Play, Gauge } from 'lucide-react';
 import SegmentedControl from './ui/SegmentedControl';
+import { useAppState } from '@/contexts/AppStateContext';
 
 interface SettingsPanelProps {
   showParticles: boolean;
@@ -33,6 +34,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   showHeroAnimation,
   setShowHeroAnimation,
 }) => {
+  const { reduceMotion, setReduceMotion } = useAppState();
   const backgroundOptions = [
     { label: 'None', value: 'none' as const },
     { label: '3D', value: '3d' as const },
@@ -58,6 +60,9 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             </SettingRow>
             <SettingRow label="Hero Animation">
               <StyledSwitch checked={showHeroAnimation} onCheckedChange={setShowHeroAnimation} />
+            </SettingRow>
+            <SettingRow label="Reduce Motion" icon={<Gauge size={16} />}>
+              <StyledSwitch checked={reduceMotion} onCheckedChange={setReduceMotion} />
             </SettingRow>
             <SettingRow label="Background">
               <SegmentedControl
@@ -101,10 +106,13 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   );
 };
 
-const SettingRow: React.FC<{ label: string, children: React.ReactNode }> = ({ label, children }) => {
+const SettingRow: React.FC<{ label: string, children: React.ReactNode, icon?: React.ReactNode }> = ({ label, children, icon }) => {
   return (
     <div className="flex items-center justify-between">
-      <span className="text-gray-800 dark:text-white font-medium">{label}</span>
+      <div className="flex items-center gap-2">
+        {icon}
+        <span className="text-gray-800 dark:text-white font-medium">{label}</span>
+      </div>
       {children}
     </div>
   );

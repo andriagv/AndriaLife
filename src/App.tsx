@@ -19,6 +19,7 @@ import ClickSpark from "@/components/ClickSpark";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
 import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
+import { AppStateProvider, useAppState } from "./contexts/AppStateContext";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
 import Preloader from "./components/Preloader";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -83,6 +84,7 @@ const App = () => {
   const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('reflect');
   const [showHeroAnimation, setShowHeroAnimation] = useState(true);
   const isMobile = useIsMobile();
+  const { reduceMotion } = useAppState();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -146,7 +148,7 @@ const App = () => {
                             </div>
                           )}
                           {/* Spline animated background temporarily disabled for debugging 3D ring */}
-                          {showSplashCursor && !isMobile && <SplashCursor />}
+                          {showSplashCursor && !isMobile && !reduceMotion && <SplashCursor />}
                           <Toaster />
                           <Sonner />
                           {/* Add ReflectBackground2 as a background layer */}

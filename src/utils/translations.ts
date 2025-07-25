@@ -61,7 +61,7 @@ export const translations = {
     basketball: "Basketball",
     
     // Category section
-    selectCategory: "C a t e g o r y s",
+    selectCategory: "C a t e g o r i e s",
     category: "Category",
     categoryDescription: "Choose an area to explore my projects and expertise",
     iosDeveloper: "iOS Developer",
