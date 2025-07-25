@@ -1,70 +1,74 @@
 import React from "react";
 import { ScrollTimeline } from "@/components/ScrollTimeline";
 import { Lens } from "@/components/common/Lens";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const academicAchievements = [
+const getAcademicAchievements = (t: (key: string) => string) => [
   {
     image: "/photos/academic-achievements/KIUAmbassador.jpeg",
     year: "2024",
-    title: "KIU Ambassador",
-    subtitle: "Kutaisi International University",
-    description: "Selected as an official ambassador representing KIU and promoting university values and programs."
+    title: t('kiuAmbassadorTitle'),
+    subtitle: t('kiuAmbassadorSubtitle'),
+    description: t('kiuAmbassadorDescription')
   },
   {
     image: "/photos/academic-achievements/spaceappchallenge.jpg",
     year: "2023",
-    title: "NASA Space Apps Challenge",
-    subtitle: "NASA International Competition",
-    description: "Participated in the global NASA Space Apps Challenge, developing innovative solutions for space exploration challenges."
+    title: t('nasaSpaceAppsTitle'),
+    subtitle: t('nasaSpaceAppsSubtitle'),
+    description: t('nasaSpaceAppsDescription')
   },
   {
     image: "/photos/academic-achievements/architectureTutor.png",
     year: "2023",
-    title: "Architecture Tutor",
-    subtitle: "Academic Teaching Role",
-    description: "Served as a tutor in architecture, helping students understand design principles and architectural concepts."
+    title: t('architectureTutorTitle'),
+    subtitle: t('architectureTutorSubtitle'),
+    description: t('architectureTutorDescription')
   },
   {
     image: "/photos/academic-achievements/labTutor.jpeg",
     year: "2023",
-    title: "Laboratory Tutor",
-    subtitle: "Computer Science Department",
-    description: "Assisted students in computer science laboratory sessions, providing guidance on programming and technical projects."
+    title: t('laboratoryTutorTitle'),
+    subtitle: t('laboratoryTutorSubtitle'),
+    description: t('laboratoryTutorDescription')
   },
   {
     image: "/photos/academic-achievements/campside.jpg",
     year: "2022",
-    title: "Camp Leadership",
-    subtitle: "Educational Program",
-    description: "Led educational activities and mentored students in various academic and personal development programs."
+    title: t('campLeadershipTitle'),
+    subtitle: t('campLeadershipSubtitle'),
+    description: t('campLeadershipDescription')
   },
   {
     image: "/photos/academic-achievements/komcer.jpeg",
     year: "2022",
-    title: "Academic Certificate",
-    subtitle: "Recognition of Excellence",
-    description: "Received academic recognition for outstanding performance and contribution to the educational community."
+    title: t('academicCertificateTitle'),
+    subtitle: t('academicCertificateSubtitle'),
+    description: t('academicCertificateDescription')
   }
 ];
-
-const events = academicAchievements.map((achievement) => ({
-  year: achievement.year,
-  title: achievement.title,
-  subtitle: achievement.subtitle,
-  description: achievement.description,
-  image: achievement.image,
-}));
 
 interface AcademicAchievementsTimelineProps {
   setShowSplashCursor?: (v: boolean) => void;
 }
 
 const AcademicAchievementsTimeline: React.FC<AcademicAchievementsTimelineProps> = ({ setShowSplashCursor }) => {
+  const { t } = useLanguage();
+  
+  const academicAchievements = getAcademicAchievements(t);
+  const events = academicAchievements.map((achievement) => ({
+    year: achievement.year,
+    title: achievement.title,
+    subtitle: achievement.subtitle,
+    description: achievement.description,
+    image: achievement.image,
+  }));
+  
   return (
     <ScrollTimeline
       events={events}
-      title="Academic Achievements"
-      subtitle="Journey of Learning and Leadership"
+      title={t('academicAchievementsTitle')}
+      subtitle={t('academicAchievementsSubtitle')}
       revealAnimation="fade"
       cardAlignment="alternating"
       cardVariant="elevated"
