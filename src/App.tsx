@@ -19,7 +19,6 @@ import ClickSpark from "@/components/ClickSpark";
 import Spline from '@splinetool/react-spline';
 import { Switch } from "@/components/ui/switch";
 import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
-import { AppStateProvider, useAppState } from "./contexts/AppStateContext";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
 import Preloader from "./components/Preloader";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -78,13 +77,13 @@ type BackgroundMode = 'none' | '3d' | 'reflect';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [showParticles, setShowParticles] = useState(true);
-  const [showSplashCursor, setShowSplashCursor] = useState(true);
+  const [showParticles, setShowParticles] = useState(false);
+  const [showSplashCursor, setShowSplashCursor] = useState(false);
   const [volume, setVolume] = useState(30);
   const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('reflect');
-  const [showHeroAnimation, setShowHeroAnimation] = useState(true);
+  const [showHeroAnimation, setShowHeroAnimation] = useState(false);
+  const [showTargetCursor, setShowTargetCursor] = useState(false);
   const isMobile = useIsMobile();
-  const { reduceMotion } = useAppState();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -148,7 +147,7 @@ const App = () => {
                             </div>
                           )}
                           {/* Spline animated background temporarily disabled for debugging 3D ring */}
-                          {showSplashCursor && !isMobile && !reduceMotion && <SplashCursor />}
+                          {showSplashCursor && !isMobile && <SplashCursor />}
                           <Toaster />
                           <Sonner />
                           {/* Add ReflectBackground2 as a background layer */}
@@ -158,6 +157,8 @@ const App = () => {
                             setShowParticles={setShowParticles}
                             showSplashCursor={showSplashCursor}
                             setShowSplashCursor={setShowSplashCursor}
+                            showTargetCursor={showTargetCursor}
+                            setShowTargetCursor={setShowTargetCursor}
                             musicPlaying={musicPlaying}
                             onMusicToggle={onMusicToggle}
                             volume={volume}
@@ -169,7 +170,9 @@ const App = () => {
                           />
                           <BrowserRouter>
                             <Routes>
-                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />} />
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} 
+                                showTargetCursor={showTargetCursor} setShowTargetCursor={setShowTargetCursor}
+                              />} />
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </BrowserRouter>

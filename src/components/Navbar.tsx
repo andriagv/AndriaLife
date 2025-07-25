@@ -31,9 +31,11 @@ interface NavbarProps {
   setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
   showHeroAnimation: boolean;
   setShowHeroAnimation: (v: boolean) => void;
+  showTargetCursor: boolean;
+  setShowTargetCursor: (v: boolean) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }) => {
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -116,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }} />
+                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -135,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }} />
+              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
             </DropdownMenuContent>
           </DropdownMenu>
           <button

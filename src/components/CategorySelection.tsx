@@ -9,7 +9,11 @@ import SplitText from "./SplitText";
 import TargetCursor from "./TargetCursor";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const CategorySelection: React.FC = () => {
+interface CategorySelectionProps {
+  showTargetCursor: boolean;
+  setShowTargetCursor: (v: boolean) => void;
+}
+const CategorySelection: React.FC<CategorySelectionProps> = ({ showTargetCursor }) => {
   const { category, setCategory } = useCategory();
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
@@ -59,7 +63,7 @@ const CategorySelection: React.FC = () => {
 
   return (
     <section id="category-selection" className="pt-8 pb-20 px-4 sm:px-6 md:px-12 lg:px-24">
-      {!isMobile && (
+      {!isMobile && showTargetCursor && (
         <TargetCursor 
           targetSelector=".cursor-target"
           spinDuration={2}

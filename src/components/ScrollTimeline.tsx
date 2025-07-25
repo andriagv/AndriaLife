@@ -8,7 +8,6 @@ import {
 import { cn } from "../lib/utils";
 import { Card, CardContent } from "../components/ui/card";
 import { Calendar } from "lucide-react";
-import { useAppState } from "@/contexts/AppStateContext";
 
 export interface TimelineEvent {
   id?: string;
@@ -93,7 +92,6 @@ export const ScrollTimeline = ({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(-1);
   const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const { reduceMotion } = useAppState();
 
   const { scrollYProgress } = useScroll({
     target: scrollRef,
@@ -101,8 +99,8 @@ export const ScrollTimeline = ({
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: reduceMotion ? 200 : 100,
-    damping: reduceMotion ? 50 : 30,
+    stiffness: 100,
+    damping: 30,
     restDelta: 0.001,
   });
 
@@ -157,9 +155,9 @@ export const ScrollTimeline = ({
         scale: 1,
         rotateY: 0,
         transition: {
-          duration: reduceMotion ? 0.3 : 0.7,
-          delay: reduceMotion ? 0 : baseDelay,
-          ease: reduceMotion ? "easeOut" : [0.25, 0.1, 0.25, 1.0] as [number, number, number, number],
+          duration: 0.7,
+          delay: baseDelay,
+          ease: [0.25, 0.1, 0.25, 1.0] as [number, number, number, number],
         },
       },
       viewport: { once: false, margin: "-100px" },

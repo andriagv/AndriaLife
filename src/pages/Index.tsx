@@ -10,7 +10,6 @@ import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useCategory } from "@/contexts/CategoryContext";
-import { useAppState } from "@/contexts/AppStateContext";
 
 interface IndexProps {
   showParticles: boolean;
@@ -19,29 +18,30 @@ interface IndexProps {
   setShowSplashCursor: (value: boolean) => void;
   backgroundMode: 'none' | '3d' | 'reflect';
   showHeroAnimation: boolean;
+  showTargetCursor: boolean;
+  setShowTargetCursor: (value: boolean) => void;
 }
 
-const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation }) => {
+const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation, showTargetCursor, setShowTargetCursor }) => {
   const { theme } = useTheme();
   const { category } = useCategory();
-  const { reduceMotion } = useAppState();
   return (
       <div className="min-h-screen">
-        {showParticles && !reduceMotion && (
+        {showParticles && (
           <Particles
             particleColors={[theme === "dark" ? "#ffffff" : "#000000"]}
-            particleCount={reduceMotion ? 50 : 200}
+            particleCount={200}
             particleSpread={10}
-            speed={reduceMotion ? 0.05 : 0.1}
+            speed={0.1}
             particleBaseSize={100}
-            moveParticlesOnHover={!reduceMotion}
+            moveParticlesOnHover={true}
             alphaParticles={false}
-            disableRotation={reduceMotion}
+            disableRotation={false}
           />
         )}
         <main>
           <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />
-          <CategorySelection />
+          <CategorySelection showTargetCursor={showTargetCursor} setShowTargetCursor={setShowTargetCursor} />
           {category !== 'robotics' && <About />}
           {/* <Skills /> */}
           {category === 'mathematics' && (
