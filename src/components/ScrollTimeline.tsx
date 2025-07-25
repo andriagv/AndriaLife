@@ -324,7 +324,7 @@ export const ScrollTimeline = ({
                     timelineRefs.current[index] = el;
                   }}
                   className={cn(
-                    "relative flex items-center mb-10 py-5",
+                    "relative flex items-center mb-8 sm:mb-10 md:mb-12 py-4 sm:py-5",
                     "flex-col lg:flex-row",
                     cardAlignment === "alternating"
                       ? index % 2 === 0
@@ -371,7 +371,7 @@ export const ScrollTimeline = ({
                   <motion.div
                     className={cn(
                       getCardClasses(index),
-                      "mt-12 lg:mt-0 bg-transparent border-none shadow-none"
+                      "mt-8 sm:mt-10 md:mt-12 lg:mt-0 bg-transparent border-none shadow-none"
                     )}
                     variants={getCardVariants(index)}
                     initial="initial"
@@ -387,7 +387,7 @@ export const ScrollTimeline = ({
                           <img 
                             src={event.image} 
                             alt={event.title || "Certificate"} 
-                            className="w-full max-w-[300px] mx-auto mb-2 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover"
+                            className="w-full max-w-[250px] sm:max-w-[280px] md:max-w-[300px] mx-auto mb-2 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover"
                           />
                         )
                     )}

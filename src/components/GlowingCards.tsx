@@ -54,9 +54,11 @@ export const GlowingCard: React.FC<GlowingCardProps> = ({
   return (
     <div
       className={cn(
-        "relative flex-1 min-w-[12rem] md:min-w-[14rem] p-4 md:p-6 rounded-2xl text-black",
+        "relative flex-1 min-w-[8rem] sm:min-w-[9rem] md:min-w-[12rem] lg:min-w-[14rem]",
+        "p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl text-black",
         "bg-transparent border border-gray-200 dark:border-gray-700",
         "transition-all duration-400 ease-out",
+        "flex flex-col items-center justify-center min-h-[90px] sm:min-h-[100px] md:min-h-auto",
         className
       )}
       style={{
@@ -144,15 +146,15 @@ export const GlowingCards: React.FC<GlowingCardsProps> = ({
       <div
         ref={containerRef}
         className={cn(
-          "relative max-w-[var(--max-width)] mx-auto ",
-          "px-6 py-12"
+          "relative max-w-[var(--max-width)] mx-auto",
+          "px-2 sm:px-4 md:px-6 py-8 sm:py-10 md:py-12"
         )}
         style={{ padding: "var(--padding)" }} // String literal
       >
         <div
           className={cn(
-            "flex items-center justify-center flex-wrap gap-4 md:gap-[var(--gap)]",
-            responsive && "grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row"
+            "flex items-center justify-center flex-wrap gap-[var(--gap)]",
+            responsive && "grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-4 md:gap-4 lg:flex lg:flex-row lg:gap-[var(--gap)]"
           )}
         >
           {children}

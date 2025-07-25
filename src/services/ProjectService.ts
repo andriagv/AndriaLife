@@ -38,7 +38,7 @@ export class ProjectService implements IProjectService {
         { id: "all", label: t('all') },
         { id: "work", label: t('work') },
         { id: "sport", label: t('sport') },
-        { id: "camp", label: 'Camp' }
+        { id: "camp", label: t('camps') }
       ],
       photography: [
         { id: "all", label: t('all') },

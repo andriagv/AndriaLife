@@ -49,7 +49,7 @@ const PaginatedProjectGrid: React.FC<PaginatedProjectGridProps> = ({
               className="filter-btn px-8 py-2"
               onClick={() => setShowAll(true)}
             >
-              See More ({projects.length - itemsPerPage} more)
+              {t('seeMore')} ({projects.length - itemsPerPage} more)
             </Button>
           </Magnet>
         </div>

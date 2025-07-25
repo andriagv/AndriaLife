@@ -5,8 +5,6 @@ import { Music, Volume2, Pause, Play } from 'lucide-react';
 import SegmentedControl from './ui/SegmentedControl';
 
 interface SettingsPanelProps {
-  showParticles: boolean;
-  setShowParticles: (v: boolean) => void;
   showSplashCursor: boolean;
   setShowSplashCursor: (v: boolean) => void;
   musicPlaying: boolean;
@@ -17,11 +15,13 @@ interface SettingsPanelProps {
   setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
   showHeroAnimation: boolean;
   setShowHeroAnimation: (v: boolean) => void;
+  showParticles: boolean;
+  setShowParticles: (v: boolean) => void;
+  showTargetCursor: boolean;
+  setShowTargetCursor: (v: boolean) => void;
 }
 
 const SettingsPanel: React.FC<SettingsPanelProps> = ({
-  showParticles,
-  setShowParticles,
   showSplashCursor,
   setShowSplashCursor,
   musicPlaying,
@@ -32,6 +32,10 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   setBackgroundMode,
   showHeroAnimation,
   setShowHeroAnimation,
+  showParticles,
+  setShowParticles,
+  showTargetCursor,
+  setShowTargetCursor,
 }) => {
   const backgroundOptions = [
     { label: 'None', value: 'none' as const },
@@ -55,6 +59,9 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             </SettingRow>
             <SettingRow label="Splash Cursor">
               <StyledSwitch checked={showSplashCursor} onCheckedChange={setShowSplashCursor} />
+            </SettingRow>
+            <SettingRow label="Target Cursor">
+              <StyledSwitch checked={showTargetCursor} onCheckedChange={setShowTargetCursor} />
             </SettingRow>
             <SettingRow label="Hero Animation">
               <StyledSwitch checked={showHeroAnimation} onCheckedChange={setShowHeroAnimation} />

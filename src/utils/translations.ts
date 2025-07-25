@@ -43,6 +43,12 @@ export const translations = {
     championshipsWon: "Championships Won",
     downloadResume: "Download Resume",
     
+    // Welcome Alert
+    welcomeAlertTitle: "Welcome to My Interactive Portfolio!",
+    welcomeAlertDescription: "If you want to enjoy special animations, you can enable them from the settings button in the top-right corner.",
+    welcomeAlertNote: "Please note that performance depends on your computer's power to avoid any lagging.",
+    gotIt: "Got it!",
+    
     // Skills section
     mySkills: "My Skills",
     skillsDescription: "Here are some of my skills and expertise",
@@ -61,7 +67,7 @@ export const translations = {
     basketball: "Basketball",
     
     // Category section
-    selectCategory: "C a t e g o r y s",
+    selectCategory: "C a t e g o r i e s",
     category: "Category",
     categoryDescription: "Choose an area to explore my projects and expertise",
     iosDeveloper: "iOS Developer",
@@ -92,6 +98,7 @@ export const translations = {
     noProjectsFound: "No projects found in this category and filter combination",
     showMore: "Show More",
     showLess: "Show Less",
+    seeMore: "See More",
     
     // Certificate titles and descriptions
     campCertificate1Title: "Camp Leadership Certificate",
@@ -207,14 +214,31 @@ export const translations = {
     sampleMathDescription: "An exploration of Mandelbrot and Julia sets.",
     sampleSportTitle: "Chess Champion",
     sampleSportDescription: "Won the university chess tournament.",
-    profilePageTitle: "User Profile Page",
-    profilePageDescription: "A simple user profile page to display user information.",
-    timerTitle: "Countdown Timer",
-    timerDescription: "A timer application with start, stop, and reset functionality.",
-    musicPlayerTitle: "Music Player",
-    musicPlayerDescription: "A simple music player interface.",
-    emojiGuessingTitle: "Emoji Guessing Game",
-    emojiGuessingDescription: "A fun game where you guess the word or phrase from a set of emojis.",
+    profilePageTitle: "მომხმარებლის პროფილის გვერდი",
+    profilePageDescription: "მარტივი მომხმარებლის პროფილის გვერდი მომხმარებლის ინფორმაციის საჩვენებლად.",
+    timerTitle: "დრის მთვლელი",
+    timerDescription: "ტაიმერის აპლიკაცია დაწყების, შეჩერებისა და ხელახალი დაყენების ფუნქციონალით.",
+    musicPlayerTitle: "მუსიკალური პლეერი",
+    musicPlayerDescription: "მარტივი მუსიკალური პლეერის ინტერფეისი.",
+    emojiGuessingTitle: "ემოჯის გამოცნობის თამაში",
+    emojiGuessingDescription: "სახალისო თამაში, სადაც ემოჯიების ნაკრებიდან უნდა გამოიცნო სიტყვა ან ფრაზა.",
+    
+    // Academic Achievements
+    academicAchievementsTitle: "Academic Achievements",
+    academicAchievementsSubtitle: "Journey of Learning and Leadership",
+    kiuAmbassadorSubtitle: "Kutaisi International University",
+    nasaSpaceAppsSubtitle: "NASA International Competition",
+    architectureTutorSubtitle: "Academic Teaching Role",
+    laboratoryTutorTitle: "Laboratory Tutor",
+    laboratoryTutorSubtitle: "Computer Science Department",
+    laboratoryTutorDescription: "Assisted students in computer science laboratory sessions, providing guidance on programming and technical projects.",
+    campLeadershipTitle: "Camp Leadership",
+    campLeadershipSubtitle: "Educational Program",
+    campLeadershipDescription: "Led educational activities and mentored students in various academic and personal development programs.",
+    academicCertificateTitle: "Academic Certificate",
+    academicCertificateSubtitle: "Recognition of Excellence",
+    academicCertificateDescription: "Received academic recognition for outstanding performance and contribution to the educational community.",
+
     // Project descriptions - Design
     ejoiDesignTitle: "European Junior Olympiad in Informatics (EJOI)",
     ejoiDesignDescription: "I created a logo for this international olympiad in 2023.",
@@ -239,6 +263,12 @@ export const translations = {
     skills: "უნარები",
     projects: "პროექტები",
     contact: "კონტაქტი",
+    
+    // Welcome Alert
+    welcomeAlertTitle: "კეთილი იყოს თქვენი მობრძანება ჩემს ინტერაქტიულ პორტფოლიოში!",
+    welcomeAlertDescription: "თუ გსურთ, ისიამოვნოთ სპეციალური ანიმაციებით, შეგიძლიათ ჩართოთ ისინი მარჯვენა ზედა კუთხეში არსებული პარამეტრების ღილაკით.",
+    welcomeAlertNote: "გაითვალისწინეთ, რომ ანიმაციების გამართული მუშაობა დამოკიდებულია თქვენი კომპიუტერის სიმძლავრეზე, რათა თავიდან აიცილოთ შეფერხებები.",
+    gotIt: "გასაგებია!",
     
     // Hero section
     hello: "გამარჯობა, მე ვარ",
@@ -276,8 +306,8 @@ export const translations = {
     campsAttended: "მონაწილეობა ბანაკებში",
     campsLed: "ხელმძღვანელობა",
     teamsPlayedFor: "გუნდში თამაში",
-    championshipsWon: "მოგებული ჩემპიონატი",
-    downloadResume: "რეზიუმეს ჩამოტვირთვა",
+    championshipsWon: "მოგებული ჩემპიონატები",
+    downloadResume: "რეზიუმეს გადმოწერა",
     
     // Skills section
     mySkills: "ჩემი უნარები",
@@ -328,6 +358,7 @@ export const translations = {
     noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
     showMore: "მეტის ნახვა",
     showLess: "ნაკლების ნახვა",
+    seeMore: "მეტის ნახვა",
     
     // Certificate titles and descriptions
     campCertificate1Title: "ბანაკის ლიდერობის სერტიფიკატი",
@@ -355,11 +386,11 @@ export const translations = {
     catchTheBananaDescription: "არის მარტივი, მაგრამ ძალიან სახალისო და დინამიური თამაში, სადაც მოთამაშის მიზანია შეაგროვოს რაც შეიძლება მეტი ბანანი, სანამ მინიმუმ ერთი ბანანი ძირს დავარდება. გამოიყენე სწრაფი რეაქცია და ყურადღება, მაქსიმალურად შეაგროვე ბანანი, დააგროვე მაღალი ქულები და გააუმჯობესე საკუთარი შედეგი ყოველ თამაშზე.",
     
     // Certificate Titles & Descriptions (iOS)
-    tbcAcademyCertificateTitle: "TBC IT Academy - iOS Development",
-    tbcAcademyCertificateDescription: "In 2024, I successfully completed the TBC IT Academy iOS development course with the best grade. During this intensive program, I deeply studied the fundamental principles and modern approaches of iOS application development.",
-    codecademyCertificateTitle: "Codecademy - Build a Social Media iOS App",
-    codecademyCertificateDescription: "I completed a specialized course on Codecademy 'Build a Social Media iOS App with Firebase and SwiftUI', which enriched my knowledge in the field of backend integration and modern SwiftUI technologies. This course was particularly valuable for implementing real social platform functionalities.",
-    certificatesSectionTitle: "Certificates",
+    tbcAcademyCertificateTitle: "TBC IT აკადემია - iOS განვითარება",
+    tbcAcademyCertificateDescription: "2024 წელს წარმატებით დავამთავრე TBC IT აკადემიის iOS განვითარების კურსი საუკეთესო შეფასებით. ამ ინტენსიური პროგრამის განმავლობაში ღრმად შევისწავლე iOS აპლიკაციების განვითარების ფუნდამენტური პრინციპები და თანამედროვე მიდგომები.",
+    codecademyCertificateTitle: "Codecademy - სოციალური მედიის iOS აპის შექმნა",
+    codecademyCertificateDescription: "დავამთავრე სპეციალიზებული კურსი Codecademy-ზე 'Build a Social Media iOS App with Firebase and SwiftUI', რომელმაც გააღრმავა ჩემი ცოდნა backend ინტეგრაციისა და თანამედროვე SwiftUI ტექნოლოგიების სფეროში. ეს კურსი განსაკუთრებით ღირებული იყო რეალური სოციალური პლატფორმის ფუნქციონალობის განხორციელებისთვის.",
+    certificatesSectionTitle: "სერთიფიკატები",
     
     // Project descriptions - Camps
     youngLeadersTitle: "ახალგაზრდა ლიდერების სკოლა",

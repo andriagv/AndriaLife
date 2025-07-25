@@ -31,9 +31,11 @@ interface NavbarProps {
   setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
   showHeroAnimation: boolean;
   setShowHeroAnimation: (v: boolean) => void;
+  showTargetCursor: boolean;
+  setShowTargetCursor: (v: boolean) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }) => {
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -75,12 +77,12 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
 
   return (
     <header
-      className={`fixed top-4 left-1/2 -translate-x-1/2 max-w-7xl w-[95%] z-50 transition-all duration-300 bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-black/20 shadow-xl rounded-full ${
-        isScrolled ? "py-2" : "py-3"
+      className={`fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 max-w-7xl w-[96%] sm:w-[95%] z-50 transition-all duration-300 bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-black/20 shadow-xl rounded-full ${
+        isScrolled ? "py-1.5 sm:py-2" : "py-2 sm:py-3"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="#hero" className="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 flex justify-between items-center">
+        <a href="#hero" className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
           Portfolio<span className="text-primary">.</span>
         </a>
         {/* Desktop Navigation */}
@@ -116,20 +118,34 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }} />
+                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
         </nav>
         {/* Mobile Navigation Toggle */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1 sm:gap-2">
           <LanguageToggle />
+          {/* Settings Dropdown for Mobile */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className="p-1 rounded-full hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none text-gray-700 dark:text-gray-300"
+                aria-label="Settings"
+              >
+                <Settings size={20} className="sm:w-6 sm:h-6" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
+              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
+            </DropdownMenuContent>
+          </DropdownMenu>
           <button
-            className="text-gray-700 dark:text-gray-300"
+            className="text-gray-700 dark:text-gray-300 p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
           </button>
         </div>
       </div>

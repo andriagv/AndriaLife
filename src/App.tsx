@@ -21,12 +21,14 @@ import { Switch } from "@/components/ui/switch";
 import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
 import Preloader from "./components/Preloader";
+import { useIsMobile } from "@/hooks/use-mobile";
+import WelcomeAlert from "@/components/WelcomeAlert";
 
 const queryClient = new QueryClient();
 
 // MusicPlayer component to handle music logic inside CategoryProvider
 const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void; audioRef: React.RefObject<HTMLAudioElement> }) => React.ReactNode }> = ({ children }) => {
-  const [musicPlaying, setMusicPlaying] = useState(true);
+  const [musicPlaying, setMusicPlaying] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { category } = useCategory();
   const musicMap: Record<string, string> = {
@@ -76,11 +78,13 @@ type BackgroundMode = 'none' | '3d' | 'reflect';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [showParticles, setShowParticles] = useState(true);
-  const [showSplashCursor, setShowSplashCursor] = useState(true);
+  const [showParticles, setShowParticles] = useState(false);
+  const [showSplashCursor, setShowSplashCursor] = useState(false);
   const [volume, setVolume] = useState(30);
   const [backgroundMode, setBackgroundMode] = useState<BackgroundMode>('reflect');
   const [showHeroAnimation, setShowHeroAnimation] = useState(true);
+  const [showTargetCursor, setShowTargetCursor] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -104,6 +108,7 @@ const App = () => {
             <CategoryProvider>
               <ThemeProvider>
                 <LanguageProvider>
+                  <WelcomeAlert />
                   <TooltipProvider>
                     <MusicPlayer>
                       {({ musicPlaying, onMusicToggle, audioRef }) => {
@@ -144,7 +149,7 @@ const App = () => {
                             </div>
                           )}
                           {/* Spline animated background temporarily disabled for debugging 3D ring */}
-                          {showSplashCursor && <SplashCursor />}
+                          {showSplashCursor && !isMobile && <SplashCursor />}
                           <Toaster />
                           <Sonner />
                           {/* Add ReflectBackground2 as a background layer */}
@@ -154,6 +159,8 @@ const App = () => {
                             setShowParticles={setShowParticles}
                             showSplashCursor={showSplashCursor}
                             setShowSplashCursor={setShowSplashCursor}
+                            showTargetCursor={showTargetCursor}
+                            setShowTargetCursor={setShowTargetCursor}
                             musicPlaying={musicPlaying}
                             onMusicToggle={onMusicToggle}
                             volume={volume}
@@ -165,7 +172,9 @@ const App = () => {
                           />
                           <BrowserRouter>
                             <Routes>
-                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />} />
+                              <Route path="/" element={<Index showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} 
+                                showTargetCursor={showTargetCursor} setShowTargetCursor={setShowTargetCursor}
+                              />} />
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </BrowserRouter>

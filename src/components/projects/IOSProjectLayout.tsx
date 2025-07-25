@@ -98,7 +98,7 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               <Magnet padding={90} magnetStrength={15}>
                 <Button onClick={() => setShowAllApps(true)} 
                   className="filter-btn">
-                  See more
+                  {t('seeMore')}
                 </Button>
               </Magnet>
             </div>
@@ -134,7 +134,7 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               <Magnet padding={90} magnetStrength={15}>
                 <Button onClick={() => setShowAllCerts(true)} 
                   className="filter-btn">
-                  See more
+                  {t('seeMore')}
                 </Button>
               </Magnet>
             </div>

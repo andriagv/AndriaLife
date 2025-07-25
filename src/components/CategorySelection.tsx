@@ -7,10 +7,16 @@ import ScrollFloat from "./common/ScrollFloat";
 import ScrollVelocity from "./ScrollVelocity";
 import SplitText from "./SplitText";
 import TargetCursor from "./TargetCursor";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-const CategorySelection: React.FC = () => {
+interface CategorySelectionProps {
+  showTargetCursor: boolean;
+  setShowTargetCursor: (v: boolean) => void;
+}
+const CategorySelection: React.FC<CategorySelectionProps> = ({ showTargetCursor }) => {
   const { category, setCategory } = useCategory();
   const { t, language } = useLanguage();
+  const isMobile = useIsMobile();
 
   const categories = [
     {
@@ -56,18 +62,20 @@ const CategorySelection: React.FC = () => {
   ];
 
   return (
-    <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24">
-      <TargetCursor 
-        targetSelector=".cursor-target"
-        spinDuration={2}
-        hideDefaultCursor={false}
-      />
+    <section id="category-selection" className="pt-8 pb-20 px-4 sm:px-6 md:px-12 lg:px-24">
+      {!isMobile && showTargetCursor && (
+        <TargetCursor 
+          targetSelector=".cursor-target"
+          spinDuration={2}
+          hideDefaultCursor={false}
+        />
+      )}
       <div className="container mx-auto">
-        <div className="text-center mb-6 md:mb-8">
+        <div className="text-center mb-8 md:mb-10">
           <SplitText
             key={language}
             text={t("selectCategory")}
-            className="text-6xl md:text-6xl font-bold text-foreground"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
             delay={170}
             duration={0.6}
             ease="power3.out"
@@ -89,7 +97,7 @@ const CategorySelection: React.FC = () => {
         </div>
 
         <GlowingCards
-          enableGlow={true}
+          enableGlow={!isMobile}
           glowRadius={25}
           glowOpacity={1}
           animationDuration={400}
@@ -107,13 +115,13 @@ const CategorySelection: React.FC = () => {
               hoverEffect={true}
             >
               <div
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center h-full justify-center"
                 onClick={() => setCategory(cat.id as any)}
               >
-                <div className={`text-2xl md:text-4xl mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
+                <div className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1 sm:mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-sm md:text-xl font-medium text-center">{cat.name}</h3>
+                <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-medium text-center leading-tight px-1">{cat.name}</h3>
               </div>
             </GlowingCard>
           ))}
