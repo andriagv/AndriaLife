@@ -36,7 +36,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
               className="filter-btn px-6 py-2"
               onClick={() => setShowAll(true)}
             >
-              See more
+              {t('seeMore')}
             </button>
           </Magnet>
         </div>

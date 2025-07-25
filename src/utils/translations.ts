@@ -92,6 +92,7 @@ export const translations = {
     noProjectsFound: "No projects found in this category and filter combination",
     showMore: "Show More",
     showLess: "Show Less",
+    seeMore: "See More",
     
     // Certificate titles and descriptions
     campCertificate1Title: "Camp Leadership Certificate",
@@ -328,6 +329,7 @@ export const translations = {
     noProjectsFound: "ამ კატეგორიისა და ფილტრის კომბინაციაში პროექტები ვერ მოიძებნა",
     showMore: "მეტის ნახვა",
     showLess: "ნაკლების ნახვა",
+    seeMore: "მეტის ნახვა",
     
     // Certificate titles and descriptions
     campCertificate1Title: "ბანაკის ლიდერობის სერტიფიკატი",
