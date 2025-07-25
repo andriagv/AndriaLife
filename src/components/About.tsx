@@ -2,6 +2,7 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCategory } from "@/contexts/CategoryContext";
 import ScrollFloat from "./common/ScrollFloat";
+import DecryptedText from "./DecryptedText";
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -22,10 +23,15 @@ const About: React.FC = () => {
 
         <div className="flex justify-center">
           <div className="w-full lg:w-4/5 px-4">
-            <div className="text-sm md:text-base text-muted-foreground mb-6 whitespace-pre-line text-center">
-              <ScrollFloat>
-                {storyText}
-              </ScrollFloat>
+            <div className="text-xl md:text-2xl text-muted-foreground mb-6 whitespace-pre-line text-center">
+              <DecryptedText
+                text={storyText}
+                animateOn="view"
+                speed={130}
+                maxIterations={15}
+                className="text-xl md:text-2xl text-muted-foreground"
+                encryptedClassName="text-xl md:text-2xl text-muted-foreground opacity-70"
+              />
             </div>
           </div>
         </div>
