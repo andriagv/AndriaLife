@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CategorySelection from "@/components/CategorySelection";
 import MathematicsTimeline from "@/components/MathematicsTimeline";
+import AcademicAchievementsTimeline from "@/components/AcademicAchievementsTimeline";
 import RoboticsComingSoon from "@/components/RoboticsComingSoon";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
@@ -43,6 +44,9 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
           {/* <Skills /> */}
           {category === 'mathematics' && (
             <MathematicsTimeline setShowSplashCursor={(hovering) => setShowSplashCursor(!hovering)} />
+          )}
+          {category === 'academic' && (
+            <AcademicAchievementsTimeline setShowSplashCursor={(hovering) => setShowSplashCursor(!hovering)} />
           )}
           {category === 'robotics' && (
             <RoboticsComingSoon />
