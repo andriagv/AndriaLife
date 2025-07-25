@@ -51,7 +51,7 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
           {category === 'robotics' && (
             <RoboticsComingSoon />
           )}
-          {category !== 'robotics' && <Projects />}
+          {category !== 'robotics' && category !== 'academic' && category !== 'mathematics' && <Projects />}
         </main>
         <Footer />
       </div>
