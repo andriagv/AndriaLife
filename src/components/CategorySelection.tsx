@@ -107,13 +107,13 @@ const CategorySelection: React.FC = () => {
               hoverEffect={true}
             >
               <div
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center h-full justify-center"
                 onClick={() => setCategory(cat.id as any)}
               >
-                <div className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
+                <div className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1 sm:mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-medium text-center leading-tight">{cat.name}</h3>
+                <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-medium text-center leading-tight px-1">{cat.name}</h3>
               </div>
             </GlowingCard>
           ))}
