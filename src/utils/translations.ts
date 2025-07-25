@@ -43,6 +43,12 @@ export const translations = {
     championshipsWon: "Championships Won",
     downloadResume: "Download Resume",
     
+    // Welcome Alert
+    welcomeAlertTitle: "Welcome to My Interactive Portfolio!",
+    welcomeAlertDescription: "If you want to enjoy special animations, you can enable them from the settings button in the top-right corner.",
+    welcomeAlertNote: "Please note that performance depends on your computer's power to avoid any lagging.",
+    gotIt: "Got it!",
+    
     // Skills section
     mySkills: "My Skills",
     skillsDescription: "Here are some of my skills and expertise",
@@ -218,26 +224,20 @@ export const translations = {
     emojiGuessingDescription: "სახალისო თამაში, სადაც ემოჯიების ნაკრებიდან უნდა გამოიცნო სიტყვა ან ფრაზა.",
     
     // Academic Achievements
-    academicAchievementsTitle: "აკადემიური მიღწევები",
-    academicAchievementsSubtitle: "სწავლისა და ლიდერობის მოგზაურობა",
-    kiuAmbassadorTitle: "KIU ამბასადორი",
-    kiuAmbassadorSubtitle: "ქუთაისის საერთაშორისო უნივერსიტეტი",
-    kiuAmbassadorDescription: "შეირჩა როგორც ოფიციალური ამბასადორი, რომელიც წარმოადგენს KIU-ს და ხელს უწყობს უნივერსიტეტის ღირებულებებისა და პროგრამების პროპაგანდას.",
-    nasaSpaceAppsTitle: "NASA Space Apps Challenge",
-    nasaSpaceAppsSubtitle: "NASA საერთაშორისო კონკურსი",
-    nasaSpaceAppsDescription: "მონაწილეობა მიიღო გლობალურ NASA Space Apps Challenge-ში, კოსმოსური კვლევის გამოწვევებისთვის ინოვაციური გადაწყვეტების შემუშავებით.",
-    architectureTutorTitle: "არქიტექტურის ტუტორი",
-    architectureTutorSubtitle: "აკადემიური სწავლების როლი",
-    architectureTutorDescription: "მუშაობდა არქიტექტურის ტუტორად, ეხმარებოდა სტუდენტებს დიზაინის პრინციპებისა და არქიტექტურული კონცეფციების გაგებაში.",
-    laboratoryTutorTitle: "ლაბორატორიის ტუტორი",
-    laboratoryTutorSubtitle: "კომპიუტერული მეცნიერების დეპარტამენტი",
-    laboratoryTutorDescription: "ეხმარებოდა სტუდენტებს კომპიუტერული მეცნიერების ლაბორატორიულ სესიებში, უზრუნველყოფდა მითითებებს პროგრამირებასა და ტექნიკურ პროექტებზე.",
-    campLeadershipTitle: "ბანაკის ლიდერობა",
-    campLeadershipSubtitle: "განათლების პროგრამა",
-    campLeadershipDescription: "ხელმძღვანელობდა განათლებით აქტივობებს და მენტორობდა სტუდენტებს სხვადასხვა აკადემიურ და პიროვნული განვითარების პროგრამებში.",
-    academicCertificateTitle: "აკადემიური სერტიფიკატი",
-    academicCertificateSubtitle: "ღირსების აღიარება",
-    academicCertificateDescription: "მიიღო აკადემიური აღიარება გამორჩეული შესრულებისა და განათლების საზოგადოებაში წვლილისთვის.",
+    academicAchievementsTitle: "Academic Achievements",
+    academicAchievementsSubtitle: "Journey of Learning and Leadership",
+    kiuAmbassadorSubtitle: "Kutaisi International University",
+    nasaSpaceAppsSubtitle: "NASA International Competition",
+    architectureTutorSubtitle: "Academic Teaching Role",
+    laboratoryTutorTitle: "Laboratory Tutor",
+    laboratoryTutorSubtitle: "Computer Science Department",
+    laboratoryTutorDescription: "Assisted students in computer science laboratory sessions, providing guidance on programming and technical projects.",
+    campLeadershipTitle: "Camp Leadership",
+    campLeadershipSubtitle: "Educational Program",
+    campLeadershipDescription: "Led educational activities and mentored students in various academic and personal development programs.",
+    academicCertificateTitle: "Academic Certificate",
+    academicCertificateSubtitle: "Recognition of Excellence",
+    academicCertificateDescription: "Received academic recognition for outstanding performance and contribution to the educational community.",
 
     // Project descriptions - Design
     ejoiDesignTitle: "European Junior Olympiad in Informatics (EJOI)",
@@ -263,6 +263,12 @@ export const translations = {
     skills: "უნარები",
     projects: "პროექტები",
     contact: "კონტაქტი",
+    
+    // Welcome Alert
+    welcomeAlertTitle: "კეთილი იყოს თქვენი მობრძანება ჩემს ინტერაქტიულ პორტფოლიოში!",
+    welcomeAlertDescription: "თუ გსურთ, ისიამოვნოთ სპეციალური ანიმაციებით, შეგიძლიათ ჩართოთ ისინი მარჯვენა ზედა კუთხეში არსებული პარამეტრების ღილაკით.",
+    welcomeAlertNote: "გაითვალისწინეთ, რომ ანიმაციების გამართული მუშაობა დამოკიდებულია თქვენი კომპიუტერის სიმძლავრეზე, რათა თავიდან აიცილოთ შეფერხებები.",
+    gotIt: "გასაგებია!",
     
     // Hero section
     hello: "გამარჯობა, მე ვარ",
@@ -300,8 +306,8 @@ export const translations = {
     campsAttended: "მონაწილეობა ბანაკებში",
     campsLed: "ხელმძღვანელობა",
     teamsPlayedFor: "გუნდში თამაში",
-    championshipsWon: "მოგებული ჩემპიონატი",
-    downloadResume: "რეზიუმეს ჩამოტვირთვა",
+    championshipsWon: "მოგებული ჩემპიონატები",
+    downloadResume: "რეზიუმეს გადმოწერა",
     
     // Skills section
     mySkills: "ჩემი უნარები",
