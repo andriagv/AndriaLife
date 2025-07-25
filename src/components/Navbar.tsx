@@ -124,6 +124,20 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center gap-1 sm:gap-2">
           <LanguageToggle />
+          {/* Settings Dropdown for Mobile */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className="p-1 rounded-full hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none text-gray-700 dark:text-gray-300"
+                aria-label="Settings"
+              >
+                <Settings size={20} className="sm:w-6 sm:h-6" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
+              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation }} />
+            </DropdownMenuContent>
+          </DropdownMenu>
           <button
             className="text-gray-700 dark:text-gray-300 p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
