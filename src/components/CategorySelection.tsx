@@ -62,11 +62,11 @@ const CategorySelection: React.FC = () => {
           </ScrollFloat>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <div className="mb-6">
-            <ScrollVelocity
-              texts={language === 'en' ? ['Choose an area', 'Explore projects'] : ['აირჩიეთ სფერო', 'გაეცანით პროექტებს']}
-              velocity={50}
-              className="text-muted-foreground"
-            />
+                         <ScrollVelocity
+               texts={language === 'en' ? ['Choose an area ⋆', 'Explore projects ⋆'] : ['აირჩიეთ სფერო ⋆', 'გაეცანით პროექტებს ⋆']}
+               velocity={50}
+               className="text-muted-foreground"
+             />
           </div>
         </div>
 

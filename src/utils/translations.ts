@@ -61,7 +61,7 @@ export const translations = {
     basketball: "Basketball",
     
     // Category section
-    selectCategory: "Select Category",
+    selectCategory: "C a t e g o r y s",
     category: "Category",
     categoryDescription: "Choose an area to explore my projects and expertise",
     iosDeveloper: "iOS Developer",
@@ -297,7 +297,7 @@ export const translations = {
     basketball: "კალათბურთი",
     
     // Category section
-    selectCategory: "აირჩიეთ კატეგორია",
+    selectCategory: "კ ა ტ ე გ ო რ ი ე ბ ი",
     category: "კატეგორია",
     categoryDescription: "აირჩიეთ სფერო ჩემი პროექტებისა და გამოცდილების გასაცნობად",
     iosDeveloper: "iOS დეველოპერი",
