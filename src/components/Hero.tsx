@@ -25,9 +25,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
   const { t } = useLanguage();
   const { theme } = useTheme();
   
-  let bgClass = !showParticles
-    ? "bg-[#e8e7e7] dark:bg-background"
-    : "bg-transparent dark:bg-transparent";
+  let bgClass = "bg-transparent";
 
   return (
     <section
