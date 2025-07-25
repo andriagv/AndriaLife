@@ -2,11 +2,13 @@ import React from "react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import CategorySelection from "@/components/CategorySelection";
+import MathematicsTimeline from "@/components/MathematicsTimeline";
+import AcademicAchievementsTimeline from "@/components/AcademicAchievementsTimeline";
+import RoboticsComingSoon from "@/components/RoboticsComingSoon";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import Particles from "@/components/Particles";
 import { useTheme } from "@/contexts/ThemeContext";
-import MathematicsTimeline from "@/components/MathematicsTimeline";
 import { useCategory } from "@/contexts/CategoryContext";
 
 interface IndexProps {
@@ -38,12 +40,18 @@ const IndexContent: React.FC<IndexProps> = ({ showParticles, setShowParticles, s
         <main>
           <Hero showParticles={showParticles} setShowParticles={setShowParticles} showSplashCursor={showSplashCursor} setShowSplashCursor={setShowSplashCursor} backgroundMode={backgroundMode} showHeroAnimation={showHeroAnimation} />
           <CategorySelection />
-          <About />
+          {category !== 'robotics' && <About />}
           {/* <Skills /> */}
           {category === 'mathematics' && (
             <MathematicsTimeline setShowSplashCursor={(hovering) => setShowSplashCursor(!hovering)} />
           )}
-          <Projects />
+          {category === 'academic' && (
+            <AcademicAchievementsTimeline setShowSplashCursor={(hovering) => setShowSplashCursor(!hovering)} />
+          )}
+          {category === 'robotics' && (
+            <RoboticsComingSoon />
+          )}
+          {category !== 'robotics' && category !== 'academic' && category !== 'mathematics' && <Projects />}
         </main>
         <Footer />
       </div>

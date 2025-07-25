@@ -61,7 +61,7 @@ export const translations = {
     basketball: "Basketball",
     
     // Category section
-    selectCategory: "Select Category",
+    selectCategory: "C a t e g o r y s",
     category: "Category",
     categoryDescription: "Choose an area to explore my projects and expertise",
     iosDeveloper: "iOS Developer",
@@ -117,6 +117,9 @@ export const translations = {
     quizAppDescription: "An interactive quiz application where users can go through authorization, answer question series on various topics and accumulate points for correct answers. The application creates motivation through a combination of learning and entertainment — users try to accumulate maximum points and improve their own results in each session.",
     catchTheBananaTitle: "Catch the Banana",
     catchTheBananaDescription: "Is a simple but very fun and dynamic game where the player's goal is to collect as many bananas as possible before at least one banana falls to the ground. Use quick reaction and attention, collect bananas to the maximum, accumulate high scores and improve your own result with each game.",
+    
+    // General UI
+    comingSoon: "Coming Soon",
     
     // Certificate Titles & Descriptions (iOS)
     tbcAcademyCertificateTitle: "TBC IT Academy - iOS Development",
@@ -261,6 +264,9 @@ export const translations = {
     roboticsStory: "ყოველთვის მაინტერესებდა როგორ მუშაობს სხვადასხვა რამ, რაც ბუნებრივად მიმიყვანა რობოტიქსთან. მსიამოვნებს რობოტების აწყობა და პროგრამირება, რათა გადაჭრა ამოცანები და შეასრულო დავალებები, რაც აერთიანებს აპარატურასა და პროგრამულ უზრუნველყოფას.",
     mathematicsStory: "მათემატიკა ჩემთვის სამყაროს ენაა. გატაცებული ვარ მისი ელეგანტური ნიმუშების შესწავლითა და რთული პრობლემების გადაჭრით, აბსტრაქტული თეორიებიდან პრაქტიკულ გამოყენებამდე.",
     
+    // General UI
+    comingSoon: "მალე იქნება",
+    
     // Stats
     experience: "წლის გამოცდილება",
     yearsExperience: "წლის გამოცდილება",
@@ -291,7 +297,7 @@ export const translations = {
     basketball: "კალათბურთი",
     
     // Category section
-    selectCategory: "აირჩიეთ კატეგორია",
+    selectCategory: "კ ა ტ ე გ ო რ ი ე ბ ი",
     category: "კატეგორია",
     categoryDescription: "აირჩიეთ სფერო ჩემი პროექტებისა და გამოცდილების გასაცნობად",
     iosDeveloper: "iOS დეველოპერი",

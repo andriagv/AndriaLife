@@ -25,15 +25,15 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {visibleProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} onCardClick={onProjectClick} />
+        {visibleProjects.map((project, idx) => (
+          <ProjectCard key={project.id} project={project} onCardClick={onProjectClick} index={idx} />
         ))}
       </div>
       {!showAll && projects.length > 4 && (
         <div className="flex justify-center mt-8">
           <Magnet padding={90} magnetStrength={15}>
             <button
-              className="px-6 py-2 bg-primary text-white rounded hover:bg-primary/90 transition"
+              className="filter-btn px-6 py-2"
               onClick={() => setShowAll(true)}
             >
               See more

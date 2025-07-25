@@ -22,7 +22,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       {filters.map((filterOption) => (
         <Button 
           key={filterOption.id}
-          variant={activeFilter === filterOption.id ? "default" : "outline"} 
+          className={`filter-btn${activeFilter === filterOption.id ? ' filter-btn-active' : ''}`}
           onClick={() => onFilterChange(filterOption.id)}
         >
           {filterOption.label}

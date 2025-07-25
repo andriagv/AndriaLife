@@ -96,7 +96,8 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
           {!showAllApps && iosApps.length > 4 && (
             <div className="flex justify-center mt-8">
               <Magnet padding={90} magnetStrength={15}>
-                <Button onClick={() => setShowAllApps(true)} variant="outline">
+                <Button onClick={() => setShowAllApps(true)} 
+                  className="filter-btn">
                   See more
                 </Button>
               </Magnet>
@@ -131,7 +132,8 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
           {!showAllCerts && iosCertificates.length > 4 && (
             <div className="flex justify-center mt-8">
               <Magnet padding={90} magnetStrength={15}>
-                <Button onClick={() => setShowAllCerts(true)} variant="outline">
+                <Button onClick={() => setShowAllCerts(true)} 
+                  className="filter-btn">
                   See more
                 </Button>
               </Magnet>

@@ -46,9 +46,8 @@ const PaginatedProjectGrid: React.FC<PaginatedProjectGridProps> = ({
         <div className="text-center mt-8">
           <Magnet padding={90} magnetStrength={15}>
             <Button 
-              variant="outline" 
+              className="filter-btn px-8 py-2"
               onClick={() => setShowAll(true)}
-              className="px-8 py-2"
             >
               See More ({projects.length - itemsPerPage} more)
             </Button>

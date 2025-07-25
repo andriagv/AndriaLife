@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
     >
       {/* Spline 3D Background */}
       {showHeroAnimation && (
-        <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(120px)' }}>
+        <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(30px)' }}>
           <Spline
             scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
           />
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
                 {t('role')}
               </GradientText>
             </h2>
-            <ScrambledText className="text-base md:text-lg text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
+            <ScrambledText className="text-xl md:text-2xl text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
             {/* No button here anymore */}
             
             <div className="flex items-center gap-3 md:gap-4 mt-8">

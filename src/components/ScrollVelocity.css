@@ -1,0 +1,50 @@
+.parallax {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 100%;
+  mask: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0,0,0,0.2) 5%, 
+    rgba(0,0,0,0.8) 15%, 
+    black 25%, 
+    black 75%, 
+    rgba(0,0,0,0.8) 85%, 
+    rgba(0,0,0,0.2) 95%, 
+    transparent 100%);
+  -webkit-mask: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(0,0,0,0.2) 5%, 
+    rgba(0,0,0,0.8) 15%, 
+    black 25%, 
+    black 75%, 
+    rgba(0,0,0,0.8) 85%, 
+    rgba(0,0,0,0.2) 95%, 
+    transparent 100%);
+}
+
+.scroller {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  line-height: 2.5rem;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  transform-origin: center;
+}
+
+.scroller span {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .scroller {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+} 
