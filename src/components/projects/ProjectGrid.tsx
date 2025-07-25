@@ -33,7 +33,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
         <div className="flex justify-center mt-8">
           <Magnet padding={90} magnetStrength={15}>
             <button
-              className="px-6 py-2 bg-primary text-white rounded hover:bg-primary/90 transition"
+              className="filter-btn px-6 py-2"
               onClick={() => setShowAll(true)}
             >
               See more
