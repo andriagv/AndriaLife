@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
   return (
     <section
       id="hero"
-      className={`min-h-[100vh] flex items-center pt-8 section-padding relative overflow-hidden ${bgClass}`}
+      className={`min-h-[100vh] flex items-center pt-16 sm:pt-20 md:pt-8 px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 relative overflow-hidden ${bgClass}`}
     >
       {/* Spline 3D Background */}
       {showHeroAnimation && (
@@ -43,9 +43,9 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
         </div>
       )}
       {/* Content overlay */}
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
             <p className="text-primary font-medium mb-4">
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
@@ -56,34 +56,34 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
                 {t('hello')}
               </GradientText>
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-left">
-              <div className="flex justify-start items-start w-full transform -translate-x-4 md:-translate-x-14">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+              <div className="flex justify-center md:justify-start items-start w-full transform -translate-x-0 md:-translate-x-4 lg:-translate-x-14">
                 <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color="#222">
                   {t('name')}
                 </FuzzyText>
               </div>
             </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-[11px] text-left">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-[11px]">
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
                 animationSpeed={3}
                 showBorder={false}
-                className="highlight text-left"
+                className="highlight"
               >
                 {t('role')}
               </GradientText>
             </h2>
-            <ScrambledText className="text-xl md:text-2xl text-muted-foreground max-w-lg ml-[1px] mb-8" text={t('heroDescription')} key={t('heroDescription')} />
+            <ScrambledText className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg mx-auto md:mx-0 mb-8" text={t('heroDescription')} key={t('heroDescription')} />
             {/* No button here anymore */}
             
-            <div className="flex items-center gap-3 md:gap-4 mt-8">
+            <div className="flex items-center justify-center md:justify-start gap-3 md:gap-4 mt-8">
               <a 
                 href="https://github.com/andriagv" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 border border-border rounded-full hover:text-primary hover:border-primary transition-colors"
+                className="p-2 sm:p-3 border border-border rounded-full hover:text-primary hover:border-primary transition-colors"
               >
-                <Github size={20} />
+                <Github size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a 
                 href="https://linkedin.com" 

@@ -56,18 +56,18 @@ const CategorySelection: React.FC = () => {
   ];
 
   return (
-    <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24">
+    <section id="category-selection" className="pt-8 pb-20 px-4 sm:px-6 md:px-12 lg:px-24">
       <TargetCursor 
         targetSelector=".cursor-target"
         spinDuration={2}
         hideDefaultCursor={false}
       />
       <div className="container mx-auto">
-        <div className="text-center mb-6 md:mb-8">
+        <div className="text-center mb-8 md:mb-10">
           <SplitText
             key={language}
             text={t("selectCategory")}
-            className="text-6xl md:text-6xl font-bold text-foreground"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
             delay={170}
             duration={0.6}
             ease="power3.out"
@@ -110,10 +110,10 @@ const CategorySelection: React.FC = () => {
                 className="flex flex-col items-center text-center"
                 onClick={() => setCategory(cat.id as any)}
               >
-                <div className={`text-2xl md:text-4xl mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
+                <div className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-4 ${category === cat.id ? "text-primary" : ""}`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-sm md:text-xl font-medium text-center">{cat.name}</h3>
+                <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-medium text-center leading-tight">{cat.name}</h3>
               </div>
             </GlowingCard>
           ))}
