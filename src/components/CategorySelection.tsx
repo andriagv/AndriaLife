@@ -4,10 +4,11 @@ import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
 import ScrollFloat from "./common/ScrollFloat";
+import ScrollVelocity from "./ScrollVelocity";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const categories = [
     {
@@ -60,9 +61,13 @@ const CategorySelection: React.FC = () => {
             {t("selectCategory")}
           </ScrollFloat>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
-          <ScrollFloat>
-            {t("categoryDescription")}
-          </ScrollFloat>
+          <div className="mb-6">
+            <ScrollVelocity
+              texts={language === 'en' ? ['Choose an area', 'Explore projects'] : ['აირჩიეთ სფერო', 'გაეცანით პროექტებს']}
+              velocity={50}
+              className="text-muted-foreground"
+            />
+          </div>
         </div>
 
         <GlowingCards
