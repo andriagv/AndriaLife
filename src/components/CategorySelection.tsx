@@ -6,6 +6,7 @@ import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } fr
 import ScrollFloat from "./common/ScrollFloat";
 import ScrollVelocity from "./ScrollVelocity";
 import SplitText from "./SplitText";
+import TargetCursor from "./TargetCursor";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
@@ -56,6 +57,11 @@ const CategorySelection: React.FC = () => {
 
   return (
     <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24">
+      <TargetCursor 
+        targetSelector=".cursor-target"
+        spinDuration={2}
+        hideDefaultCursor={false}
+      />
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-8">
           <SplitText
@@ -96,7 +102,7 @@ const CategorySelection: React.FC = () => {
           {categories.map((cat) => (
             <GlowingCard
               key={cat.id}
-              className={`cursor-pointer transition-all hover:shadow-lg ${category === cat.id ? "ring-2 ring-primary" : ""}`}
+              className={`cursor-pointer cursor-target transition-all hover:shadow-lg ${category === cat.id ? "ring-2 ring-primary" : ""}`}
               glowColor="#3b82f6"
               hoverEffect={true}
             >
