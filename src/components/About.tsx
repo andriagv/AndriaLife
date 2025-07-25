@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useCategory } from "@/contexts/CategoryContext";
 import ScrollFloat from "./common/ScrollFloat";
 import DecryptedText from "./DecryptedText";
+import BlurText from "./BlurText";
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -15,9 +16,13 @@ const About: React.FC = () => {
     <section id="about" className="section-padding">
       <div className="container mx-auto">
         <div className="text-center mb-8 md:mb-12">
-          <ScrollFloat>
-            {t('aboutMe')}
-          </ScrollFloat>
+          <BlurText
+            text={t('aboutMe')}
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-2"
+          />
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
         </div>
 
