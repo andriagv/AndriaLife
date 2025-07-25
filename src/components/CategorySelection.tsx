@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
 import ScrollFloat from "./common/ScrollFloat";
 import ScrollVelocity from "./ScrollVelocity";
+import SplitText from "./SplitText";
 
 const CategorySelection: React.FC = () => {
   const { category, setCategory } = useCategory();
@@ -57,9 +58,20 @@ const CategorySelection: React.FC = () => {
     <section id="category-selection" className="pt-8 pb-20 px-6 md:px-12 lg:px-24">
       <div className="container mx-auto">
         <div className="text-center mb-6 md:mb-8">
-          <ScrollFloat>
-            {t("selectCategory")}
-          </ScrollFloat>
+          <SplitText
+            key={language}
+            text={t("selectCategory")}
+            className="text-6xl md:text-6xl font-bold text-foreground"
+            delay={170}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
           <div className="w-20 h-1 bg-primary mx-auto mt-4 mb-6"></div>
           <div className="mb-6">
                          <ScrollVelocity
