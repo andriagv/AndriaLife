@@ -1,141 +1,108 @@
-# Welcome to your Lovable project
+# Andria's Interactive Portfolio
 
-## Project info
+Welcome to my interactive and visually rich personal portfolio, built with React, TypeScript, and a host of modern web technologies. This project is not just a showcase of my work, but also a playground for advanced animations and user interface experiments.
 
-**URL**: https://lovable.dev/projects/c87fc65d-3676-49b0-a2f0-d967d8feae4c
+**[View Live Demo](https://andriagv.github.io/AndriaLife/)**
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Dynamic Content:** Content is dynamically loaded and displayed based on category selection (iOS, Camps, Academics, Design, etc.).
+- **Multi-language Support:** Fully bilingual, supporting both English and Georgian, with a seamless language toggle.
+- **Advanced Animations:**
+  - **WebGL Particles:** A beautiful, interactive particle animation on the hero section.
+  - **Spline 3D Integration:** An interactive 3D model integrated into the hero section.
+  -**Scroll-based Animations:** Engaging timeline components for showcasing academic and mathematical journeys.
+  - **Custom Cursor Effects:** Unique cursor effects like "Splash" and "Target" cursors for enhanced user interaction.
+- **Theme-aware:** Supports both light and dark modes, with all components styled accordingly.
+- **Customizable Experience:** A settings panel allows users to toggle heavy animations (like particles and cursors) to match their hardware capabilities.
+- **Responsive Design:** Fully responsive layout, optimized for a great experience on both desktop and mobile devices.
+- **Component-Based Architecture:** Built with reusable and modular components using Shadcn/UI and custom components.
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c87fc65d-3676-49b0-a2f0-d967d8feae4c) and start prompting.
+### Core Technologies
+- **React:** A JavaScript library for building user interfaces.
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vite:** A fast build tool and development server.
 
-Changes made via Lovable will be committed automatically to this repo.
+### UI & Styling
+- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+- **Shadcn/UI:** A collection of beautifully designed, reusable components.
+- **Framer Motion:** A powerful library for creating fluid animations.
+- **Lucide React:** A comprehensive library of simply beautiful icons.
 
-**Use your preferred IDE**
+### State Management
+- **React Context API:** Used for managing global state like theme, language, and application state.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Animations & Graphics
+- **OGL (OpenGL library):** A small, effective WebGL library used for the particle animations.
+- **GSAP (GreenSock Animation Platform):** A robust JavaScript toolset for professional-grade animations.
+- **Spline:** A 3D design tool used for creating and integrating the interactive 3D scene.
+- **Three.js:** A 3D graphics library that powers the Spline integration.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Other Libraries
+- **React Router:** For declarative routing in the application.
+- **React Hook Form:** For managing forms with ease.
+- **Sonner:** A toast notification library for displaying non-intrusive messages.
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## Getting Started Locally
+## Getting Started
 
 To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone <YOUR_GIT_URL>
-   cd <YOUR_PROJECT_NAME>
+   git clone https://github.com/andriagv/AndriaLife.git
+   cd AndriaLife
    ```
+
 2. **Install dependencies:**
+   *Note: If you are using `nvm` (Node Version Manager), first run `nvm use` to switch to the correct Node.js version specified in the `.nvmrc` file.*
    ```sh
    npm install
    ```
+
 3. **Start the development server:**
    ```sh
    npm run dev
    ```
-   The app will be available at the URL shown in your terminal (usually http://localhost:5173).
+   The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
 
----
+## Project Structure
 
-## Recommended VSCode Setup
+Here is a brief overview of the key directories in this project:
 
-To avoid warnings about Tailwind CSS directives (like `@tailwind` and `@apply`) and get the best developer experience, do the following:
+- **`public/`**: Contains static assets like fonts, images, and music files.
+- **`src/`**: The main source code directory.
+  - **`components/`**: Contains all the React components, organized by feature and reusability.
+    - **`common/`**: Shared, reusable components used across the application.
+    - **`projects/`**: Components specifically for the projects section.
+    - **`ui/`**: UI components from Shadcn, and other custom UI elements.
+  - **`contexts/`**: Contains all the React context providers for state management (Theme, Language, etc.).
+  - **`data/`**: Static data files, such as the list of projects.
+  - **`hooks/`**: Custom React hooks for shared logic.
+  - **`services/`**: Services for fetching and processing data.
+  - **`utils/`**: Utility functions, including the `translations.ts` file for multi-language support.
+- **`README.md`**: This file, providing information about the project.
+- **`package.json`**: Lists the project's dependencies and scripts.
+- **`vite.config.ts`**: The configuration file for Vite.
 
-1. **Install the Tailwind CSS IntelliSense extension:**
-   - Open VSCode Extensions (Ctrl+Shift+X or Cmd+Shift+X)
-   - Search for `Tailwind CSS IntelliSense` and install it.
+## Acknowledgements
 
-2. **(Optional, but recommended) Add this to your `.vscode/settings.json` to silence CSS linter warnings:**
-   ```json
-   {
-     "css.lint.unknownAtRules": "ignore"
-   }
-   ```
-   This is already included in this repo, but if you use a different editor, you may need to configure it yourself.
+A big thank you to the creators of the various open-source libraries and tools that made this project possible. Special mentions to:
+- The **Shadcn/UI** team for their excellent component library.
+- The **Framer Motion** team for making web animations so intuitive.
+- The **Three.js** and **OGL** communities for their amazing work in WebGL.
 
----
+## The Role of AI in this Project
 
-## Technologies Used
+Despite my minimal knowledge of TypeScript, creating this project independently without AI support would have been practically impossible.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The initial structure (skeleton) of the project was created on **Lovable.ai**. The core backend and client base were developed using **Cursor**, which significantly simplified working with the code.
 
----
+For integrating visual effects, I actively used AI-developed tools such as:
 
-## 3D Animated Background (Spline, WebGL, Three.js, Polygonjs)
+- **dora.run/ai** – for generating interactive animations and visual scenes.
+- **reactbits.dev** – for inserting ready-made React components.
+- **lightswind.com** – for modern UI elements and animations.
 
-This project features a fully interactive 3D animated background, visible on every page and section. The background is implemented using [Spline](https://spline.design), a powerful visual tool for creating and exporting 3D scenes for the web. The integration is achieved via the [`@splinetool/react-spline`](https://www.npmjs.com/package/@splinetool/react-spline) React component, which renders the exported Spline scene as a performant WebGL canvas.
-
-**How it works:**
-
-- The Spline scene is created visually in the Spline editor, where you can design, animate, and configure 3D objects, lighting, and camera movement.
-- The scene is exported and embedded in the React app using the `<Spline scene="..." />` component, which internally uses WebGL and Three.js for rendering.
-- The background is set to be fixed, full-screen, and always behind all content, providing a seamless animated experience across all sections (including About, Category Selection, Projects, and Footer).
-- The Spline engine leverages [Three.js](https://threejs.org/) under the hood for 3D rendering, and [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) for hardware-accelerated graphics in the browser.
-
-**Why interactive 3D?**
-
-Interactive 3D is now everywhere: scientific visualizations, product showcases, video games, digital twins, configurators, and digital art. These experiences are difficult to create, requiring both 3D and web expertise. Tools like Spline and Polygonjs simplify this process by providing integrated, easy-to-use, and extensible solutions for building beautiful and performant 3D web experiences.
-
-**Polygonjs** is another tool that helps you create interactive 3D for the web, making it easier to build complex scenes without deep knowledge of 3D programming. It is especially useful for scientific, artistic, and product visualization use cases.
-
-**Other technologies for 3D on the web:**
-- [Three.js](https://threejs.org/): The most popular JavaScript 3D library, used for custom 3D scenes and advanced graphics.
-- [Dora](https://dora.run/): A platform for deploying and running AI/3D applications.
-- [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API): The browser API for rendering 2D and 3D graphics.
-
----
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/c87fc65d-3676-49b0-a2f0-d967d8feae4c) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
-
-
-dora.run/ai 
-
-modulify.ai
-
-reactbits.dev  გამოვიყენო მზა კოდი და ჩავსვი პროექტში
-
-https://www.lightswind.com/  გამოვიყენო მზა კოდი და ჩავსვი პროექტში
+For generating content ideas, I used **ChatGPT**, and for ensuring linguistic accuracy of the text, I used **Claude AI**. To fix technical errors that arose during the project, I often turned to **Gemini**, which effectively helped in diagnosing and fixing bugs.
