@@ -34,9 +34,11 @@ interface NavbarProps {
   setShowHeroAnimation: (v: boolean) => void;
   showTargetCursor: boolean;
   setShowTargetCursor: (v: boolean) => void;
+  audioLoaded?: boolean;
+  isLoadingMusic?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }) => {
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor, audioLoaded = false, isLoadingMusic = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -136,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
+                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor, audioLoaded, isLoadingMusic }} />
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -155,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
+              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor, audioLoaded, isLoadingMusic }} />
             </DropdownMenuContent>
           </DropdownMenu>
           <button
