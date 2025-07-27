@@ -27,8 +27,11 @@ import WelcomeAlert from "@/components/WelcomeAlert";
 const queryClient = new QueryClient();
 
 // MusicPlayer component to handle music logic inside CategoryProvider
-const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void; audioRef: React.RefObject<HTMLAudioElement> }) => React.ReactNode }> = ({ children }) => {
+const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusicToggle: () => void; audioRef: React.RefObject<HTMLAudioElement>; audioLoaded: boolean; isLoadingMusic: boolean }) => React.ReactNode }> = ({ children }) => {
   const [musicPlaying, setMusicPlaying] = useState(false);
+  const [audioLoaded, setAudioLoaded] = useState(false);
+  const [isLoadingMusic, setIsLoadingMusic] = useState(false);
+  const [currentMusicSrc, setCurrentMusicSrc] = useState<string>('');
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const { category } = useCategory();
   const musicMap: Record<string, string> = {
@@ -39,22 +42,48 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
     // add more as needed
   };
   const musicSrc = musicMap[category] || "/music/mainmusic.mp3";
-  React.useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      if (musicPlaying) {
-        const playPromise = audioRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            setMusicPlaying(false);
-          });
-        }
+
+  // Load audio only when user first enables music
+  const loadAudio = async (src: string) => {
+    setIsLoadingMusic(true);
+    try {
+      if (audioRef.current) {
+        audioRef.current.src = src;
+        audioRef.current.load();
+        setCurrentMusicSrc(src);
+        setAudioLoaded(true);
       }
+    } catch (error) {
+      console.error('Failed to load audio:', error);
+    } finally {
+      setIsLoadingMusic(false);
     }
-  }, [musicSrc]);
+  };
+
+  // Handle category changes - update music source if already loaded
   React.useEffect(() => {
-    if (audioRef.current) {
+    if (audioLoaded && audioRef.current && musicSrc !== currentMusicSrc) {
+      const wasPlaying = musicPlaying;
+      if (wasPlaying) {
+        audioRef.current.pause();
+      }
+      
+      // Load new music source
+      loadAudio(musicSrc).then(() => {
+        if (wasPlaying && audioRef.current) {
+          const playPromise = audioRef.current.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              setMusicPlaying(false);
+            });
+          }
+        }
+      });
+    }
+  }, [musicSrc, audioLoaded]);
+
+  React.useEffect(() => {
+    if (audioRef.current && audioLoaded) {
       if (musicPlaying) {
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
@@ -66,11 +95,18 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
         audioRef.current.pause();
       }
     }
-  }, [musicPlaying]);
-  const handleMusicToggle = () => setMusicPlaying((v) => !v);
+  }, [musicPlaying, audioLoaded]);
+
+  const handleMusicToggle = async () => {
+    if (!audioLoaded) {
+      await loadAudio(musicSrc);
+    }
+    setMusicPlaying((v) => !v);
+  };
+
   return <>
-    <audio ref={audioRef} src={musicSrc} loop style={{ display: 'none' }} />
-    {children({ musicPlaying, onMusicToggle: handleMusicToggle, audioRef })}
+    <audio ref={audioRef} loop style={{ display: 'none' }} preload="none" />
+    {children({ musicPlaying, onMusicToggle: handleMusicToggle, audioRef, audioLoaded, isLoadingMusic })}
   </>;
 };
 
@@ -111,7 +147,7 @@ const App = () => {
                   <WelcomeAlert />
                   <TooltipProvider>
                     <MusicPlayer>
-                      {({ musicPlaying, onMusicToggle, audioRef }) => {
+                      {({ musicPlaying, onMusicToggle, audioRef, audioLoaded, isLoadingMusic }) => {
                         // Set audio volume when volume state changes
                         React.useEffect(() => {
                           if (audioRef && audioRef.current) {
@@ -169,6 +205,8 @@ const App = () => {
                             setBackgroundMode={setBackgroundMode}
                             showHeroAnimation={showHeroAnimation}
                             setShowHeroAnimation={setShowHeroAnimation}
+                            audioLoaded={audioLoaded}
+                            isLoadingMusic={isLoadingMusic}
                           />
                           <BrowserRouter>
                             <Routes>

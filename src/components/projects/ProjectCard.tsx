@@ -4,6 +4,7 @@ import { ExternalLink, Github, Gitlab, Award, Facebook, Linkedin } from "lucide-
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 interface ProjectCardProps {
   project: Project;
@@ -33,12 +34,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick, index =
       }
     >
       <div className="overflow-hidden h-48 relative">
-        <motion.img
+        <img
           src={project.imageUrl}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1"
-          whileHover={isCamps ? { scale: 1.08, rotate: 2 } : {}}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         />
         {/* Overlay on hover for camps */}
         {isCamps && (

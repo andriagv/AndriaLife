@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import StyledSwitch from './ui/StyledSwitch';
-import { Music, Volume2, Pause, Play } from 'lucide-react';
+import { Music, Volume2, Pause, Play, Loader2 } from 'lucide-react';
 import SegmentedControl from './ui/SegmentedControl';
 
 interface SettingsPanelProps {
@@ -19,6 +19,8 @@ interface SettingsPanelProps {
   setShowParticles: (v: boolean) => void;
   showTargetCursor: boolean;
   setShowTargetCursor: (v: boolean) => void;
+  audioLoaded?: boolean;
+  isLoadingMusic?: boolean;
 }
 
 const SettingsPanel: React.FC<SettingsPanelProps> = ({
@@ -36,6 +38,8 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   setShowParticles,
   showTargetCursor,
   setShowTargetCursor,
+  audioLoaded = false,
+  isLoadingMusic = false,
 }) => {
   const backgroundOptions = [
     { label: 'None', value: 'none' as const },
@@ -79,14 +83,22 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
           <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Sound Settings</h3>
           <div className="space-y-4">
             <SettingRow label="Music">
-              <button
-                onClick={onMusicToggle}
-                className={`w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-105 active:scale-95 ${
-                  musicPlaying ? 'bg-gradient-to-r from-green-400 to-blue-500' : 'bg-black/20 dark:bg-white/10'
-                }`}
-              >
-                {musicPlaying ? <Pause size={20} /> : <Play size={20} />}
-              </button>
+              <div className="flex flex-col items-end gap-1">
+                <button
+                  onClick={onMusicToggle}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-105 active:scale-95 ${
+                    musicPlaying ? 'bg-gradient-to-r from-green-400 to-blue-500' : 'bg-black/20 dark:bg-white/10'
+                  }`}
+                  title={!audioLoaded ? "Click to load music (energy-efficient)" : musicPlaying ? "Pause music" : "Play music"}
+                >
+                  {isLoadingMusic ? <Loader2 size={20} className="animate-spin" /> : musicPlaying ? <Pause size={20} /> : <Play size={20} />}
+                </button>
+                {!audioLoaded && (
+                  <span className="text-xs text-gray-500 dark:text-gray-400 text-right">
+                    Energy-efficient loading
+                  </span>
+                )}
+              </div>
             </SettingRow>
             <SettingRow label="Volume">
               <div className="w-full flex items-center gap-2">

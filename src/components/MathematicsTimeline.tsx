@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollTimeline } from "@/components/ScrollTimeline";
 import { Lens } from "@/components/common/Lens";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const mathCertificates = [
   { image: "/photos/mathematics/mt1.jpeg" },
@@ -41,7 +42,7 @@ const MathematicsTimeline: React.FC<MathematicsTimelineProps> = ({ setShowSplash
       className="my-12"
       renderImage={img => (
         <Lens onHoverChange={setShowSplashCursor}>
-          <img src={img} alt="Certificate" className="w-full max-w-[300px] mx-auto mb-2 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover" />
+          <OptimizedImage src={img} alt="Certificate" className="w-full max-w-[300px] mx-auto mb-2 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover" placeholder={"/placeholder.svg"} />
         </Lens>
       )}
     />

@@ -15,6 +15,7 @@ import { Switch } from "@/components/ui/switch";
 import ElasticSlider from "./ElasticSlider";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
 import SettingsPanel from "./SettingsPanel";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const SECTION_IDS = ["hero", "category-selection", "projects"];
 
@@ -33,13 +34,16 @@ interface NavbarProps {
   setShowHeroAnimation: (v: boolean) => void;
   showTargetCursor: boolean;
   setShowTargetCursor: (v: boolean) => void;
+  audioLoaded?: boolean;
+  isLoadingMusic?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }) => {
+const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor, audioLoaded = false, isLoadingMusic = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const { t } = useLanguage();
+  const { scrollToSection, scrollToTop } = useSmoothScroll();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,7 +86,15 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4 md:px-6 flex justify-between items-center">
-        <a href="#hero" className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">
+        <a 
+          href="#hero" 
+          className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200 cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToTop();
+            setActive("home");
+          }}
+        >
           Portfolio<span className="text-primary">.</span>
         </a>
         {/* Desktop Navigation */}
@@ -92,8 +104,16 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
               <li key={link.id}>
                 <a
                   href={link.href}
-                  onClick={() => setActive(link.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.id === "home") {
+                      scrollToTop();
+                    } else {
+                      scrollToSection(link.id);
+                    }
+                    setActive(link.id);
+                  }}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium cursor-pointer
                     ${active === link.id
                       ? "bg-primary text-primary-foreground shadow-lg"
                       : "text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/5"}
@@ -118,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
+                <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor, audioLoaded, isLoadingMusic }} />
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -137,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-transparent border-none shadow-none p-0">
-              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor }} />
+              <SettingsPanel {...{ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, musicPlaying, onMusicToggle, volume, onVolumeChange, backgroundMode, setBackgroundMode, showHeroAnimation, setShowHeroAnimation, showTargetCursor, setShowTargetCursor, audioLoaded, isLoadingMusic }} />
             </DropdownMenuContent>
           </DropdownMenu>
           <button
@@ -157,12 +177,18 @@ const Navbar: React.FC<NavbarProps> = ({ showParticles, setShowParticles, showSp
               <li key={link.id}>
                 <a
                   href={link.href}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-base font-medium
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-base font-medium cursor-pointer
                   ${active === link.id
                     ? "bg-primary text-primary-foreground"
                     : "text-gray-800 dark:text-gray-200 hover:bg-black/5 dark:hover:bg-white/5"}
                   `}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (link.id === "home") {
+                      scrollToTop();
+                    } else {
+                      scrollToSection(link.id);
+                    }
                     setActive(link.id);
                     setIsMenuOpen(false);
                   }}

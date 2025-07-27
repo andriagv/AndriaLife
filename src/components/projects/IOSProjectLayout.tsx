@@ -4,6 +4,7 @@ import { ExternalLink, Github, Gitlab } from "lucide-react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Magnet from "@/components/common/Magnet";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import styles from './IOSProjectLayout.module.css';
 
 interface IOSProjectLayoutProps {

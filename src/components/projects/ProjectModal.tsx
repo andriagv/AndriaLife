@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Facebook } from "lucide-react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 interface ProjectModalProps {
   project: Project | undefined;
