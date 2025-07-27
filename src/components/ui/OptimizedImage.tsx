@@ -37,10 +37,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       return originalSrc;
     }
     
-    // Check if WebP version exists
-    const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    
-    // For now, return original source
+    // For now, return original source to avoid missing WebP files
     // In the future, we can implement proper WebP detection
     return originalSrc;
   };
@@ -48,6 +45,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   useEffect(() => {
     const optimizedSrc = getOptimizedSrc(src);
     setCurrentSrc(optimizedSrc);
+    setHasError(false);
+    setIsLoaded(false);
   }, [src]);
 
   const handleLoad = () => {
@@ -56,6 +55,16 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   };
 
   const handleError = () => {
+    console.error('Failed to load image:', currentSrc);
+    
+    // If we're trying to load a WebP version and it fails, try the original
+    if (currentSrc !== src && currentSrc.includes('.webp')) {
+      console.log('Trying original image:', src);
+      setCurrentSrc(src);
+      setHasError(false);
+      return;
+    }
+    
     setHasError(true);
     onError?.();
   };
