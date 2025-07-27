@@ -4,6 +4,7 @@ import { ExternalLink, Github, Gitlab } from "lucide-react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Magnet from "@/components/common/Magnet";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import styles from './IOSProjectLayout.module.css';
 
 interface IOSProjectLayoutProps {
@@ -53,10 +54,11 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               >
                 {/* Image */}
                 <div className="w-full md:w-1/6">
-                  <img 
+                  <OptimizedImage 
                     src={project.imageUrl} 
                     alt={project.title}
                     className="w-full h-auto object-contain rounded-md"
+                    placeholder={"/placeholder.svg"}
                   />
                 </div>
                 {/* Content */}
@@ -115,10 +117,11 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               <div key={cert.id} className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image */}
                 <div className="w-full md:w-1/4">
-                  <img 
+                  <OptimizedImage 
                     src={cert.imageUrl} 
                     alt={cert.title}
                     className={`w-full h-auto object-contain rounded-md ${styles['certificate-image-shadow']}`}
+                    placeholder={"/placeholder.svg"}
                   />
                 </div>
                 {/* Content */}

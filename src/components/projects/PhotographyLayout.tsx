@@ -1,4 +1,5 @@
 import React from "react";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const PhotographyLayout: React.FC = () => {
   const photoFilenames = [
@@ -13,14 +14,18 @@ const PhotographyLayout: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-        {photoFilenames.map((filename, index) => (
-          <img
-            key={index}
-            src={`/photos/photography/${filename}`}
-            alt={`photo-${index}`}
-            className="w-full mb-4 rounded-lg shadow-md break-inside-avoid"
-          />
-        ))}
+        {photoFilenames.map((filename, index) => {
+          const webp = `/photos/photography/webp/${filename.replace(/\.(jpeg|jpg|png)$/i, '.webp')}`;
+          return (
+            <OptimizedImage
+              key={index}
+              src={webp}
+              alt={`photo-${index}`}
+              className="w-full mb-4 rounded-lg shadow-md break-inside-avoid"
+              placeholder={"/placeholder.svg"}
+            />
+          );
+        })}
       </div>
     </div>
   );

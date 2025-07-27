@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollTimeline } from "@/components/ScrollTimeline";
 import { Lens } from "@/components/common/Lens";
 import { useLanguage } from "@/contexts/LanguageContext";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const getAcademicAchievements = (t: (key: string) => string) => [
   {
@@ -81,7 +82,7 @@ const AcademicAchievementsTimeline: React.FC<AcademicAchievementsTimelineProps> 
       className="my-12"
       renderImage={img => (
         <Lens onHoverChange={setShowSplashCursor}>
-          <img src={img} alt="Academic Achievement" className="w-full max-w-[300px] mx-auto mb-4 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover" />
+          <OptimizedImage src={img} alt="Academic Achievement" className="w-full max-w-[300px] mx-auto mb-4 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover" placeholder={"/placeholder.svg"} />
         </Lens>
       )}
     />
