@@ -34,11 +34,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick, index =
       }
     >
       <div className="overflow-hidden h-48 relative">
-        <OptimizedImage
+        <img
           src={project.imageUrl}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1"
-          placeholder={"/placeholder.svg"}
         />
         {/* Overlay on hover for camps */}
         {isCamps && (

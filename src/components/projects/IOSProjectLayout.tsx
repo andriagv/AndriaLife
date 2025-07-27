@@ -54,11 +54,10 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               >
                 {/* Image */}
                 <div className="w-full md:w-1/6">
-                  <OptimizedImage 
+                  <img 
                     src={project.imageUrl} 
                     alt={project.title}
                     className="w-full h-auto object-contain rounded-md"
-                    placeholder={"/placeholder.svg"}
                   />
                 </div>
                 {/* Content */}
@@ -117,11 +116,10 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               <div key={cert.id} className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image */}
                 <div className="w-full md:w-1/4">
-                  <OptimizedImage 
+                  <img 
                     src={cert.imageUrl} 
                     alt={cert.title}
                     className={`w-full h-auto object-contain rounded-md ${styles['certificate-image-shadow']}`}
-                    placeholder={"/placeholder.svg"}
                   />
                 </div>
                 {/* Content */}
