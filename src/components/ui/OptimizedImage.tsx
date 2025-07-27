@@ -25,7 +25,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onError,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(priority);
+  const [isInView, setIsInView] = useState(true); // Always start with true for now
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>('');
   const imgRef = useRef<HTMLImageElement>(null);
@@ -48,46 +48,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   useEffect(() => {
     const optimizedSrc = getOptimizedSrc(src);
     setCurrentSrc(optimizedSrc);
-
-    if (priority) {
-      // Preload priority images
-      const img = new Image();
-      img.onload = () => {
-        setIsLoaded(true);
-        onLoad?.();
-      };
-      img.onerror = () => {
-        setHasError(true);
-        onError?.();
-      };
-      img.src = optimizedSrc;
-      return;
-    }
-
-    // Set up intersection observer for lazy loading
-    if (!isInView && imgRef.current) {
-      observerRef.current = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observerRef.current?.disconnect();
-          }
-        },
-        {
-          rootMargin: '50px',
-          threshold: 0.1,
-        }
-      );
-
-      observerRef.current.observe(imgRef.current);
-    }
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, [isInView, src, priority, onLoad, onError]);
+  }, [src]);
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -122,25 +83,20 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       )}
 
       {/* Main image */}
-      <AnimatePresence>
-        {isInView && (
-          <motion.img
-            ref={imgRef}
-            src={currentSrc}
-            alt={alt}
-            className={`w-full h-full object-cover transition-opacity duration-300 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            onLoad={handleLoad}
-            onError={handleError}
-            loading={priority ? 'eager' : 'lazy'}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isLoaded ? 1 : 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          />
-        )}
-      </AnimatePresence>
+      <motion.img
+        ref={imgRef}
+        src={currentSrc}
+        alt={alt}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        onLoad={handleLoad}
+        onError={handleError}
+        loading={priority ? 'eager' : 'lazy'}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoaded ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
 
       {/* Loading skeleton */}
       {!isLoaded && !placeholder && (
