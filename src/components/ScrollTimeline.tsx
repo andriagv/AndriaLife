@@ -15,6 +15,7 @@ export interface TimelineEvent {
   title: string;
   subtitle?: string;
   description: string;
+  date?: string;
   icon?: React.ReactNode;
   color?: string;
   image?: string;
@@ -424,6 +425,11 @@ export const ScrollTimeline = ({
                     <p className="text-muted-foreground">
                       {event.description}
                     </p>
+                    {event.date && (
+                      <p className="text-sm text-primary font-medium mt-2">
+                        {event.date}
+                      </p>
+                    )}
                   </motion.div>
                 </div>
               );
