@@ -173,7 +173,7 @@ export const translations = {
     labTutorDescription: "Jan 2023 - Jun 2023 · 6 mos",
     
     architectureTutorTitle: "Student Tutor in Computer Architecture",
-    architectureTutorDescription: "Sep 2022 - Dec 2022 · 4 mos",
+    architectureTutorDescription: "Assisted students in computer architecture topics.",
     
     campsideStartupTitle: "Campside Startup",
     campsideStartupDescription: "Co-founder & iOS Developer of the Campside application that helps organize and discover outdoor activities.",
@@ -438,7 +438,7 @@ export const translations = {
     labTutorDescription: "იან 2023 - ივნ 2023 · 6 თვე",
     
     architectureTutorTitle: "სტუდენტ ტუტორი კომპიუტერულ არქიტექტურაში",
-    architectureTutorDescription: "სექ 2022 - დეკ 2022 · 4 თვე",
+    architectureTutorDescription: "დავეხმარე სტუდენტებს კომპიუტერული არქიტექტურის საკითხებში.",
     
     campsideStartupTitle: "Campside სტარტაპი",
     campsideStartupDescription: "თანადამაარსებელი & iOS დეველოპერი",
