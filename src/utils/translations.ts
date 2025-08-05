@@ -236,8 +236,16 @@ export const translations = {
     campLeadershipSubtitle: "Educational Program",
     campLeadershipDescription: "Led educational activities and mentored students in various academic and personal development programs.",
     academicCertificateTitle: "Academic Certificate",
-    academicCertificateSubtitle: "Recognition of Excellence",
-    academicCertificateDescription: "Received academic recognition for outstanding performance and contribution to the educational community.",
+    academicCertificateSubtitle: "School Graduation",
+    academicCertificateDescription: "Received a certificate for successfully graduating from Komarov School",
+    academicCertificateDate: "2016 - 2022",
+    
+    // Dates for academic achievements
+    kiuAmbassadorDate: "2022 - present",
+    nasaSpaceAppsDate: "2022",
+    architectureTutorDate: "Sep 2022 - Dec 2022 · 4 months",
+    laboratoryTutorDate: "Feb 2023 - Jun 2023 · 5 months",
+    campLeadershipDate: "2023 - present",
 
     // Project descriptions - Design
     ejoiDesignTitle: "European Junior Olympiad in Informatics (EJOI)",
@@ -446,6 +454,32 @@ export const translations = {
     
     nasaSpaceAppsTitle: "NASA Space Apps Challenge",
     nasaSpaceAppsDescription: "მეორე ადგილი დავიკავე მოცემულ ჰაკათონში (2023)",
+
+    
+    // Academic Achievements
+    academicAchievementsTitle: "აკადემიური მიღწევები",
+    academicAchievementsSubtitle: "სწავლისა და ლიდერობის გზა",
+    kiuAmbassadorSubtitle: "ქუთაისის საერთაშორისო უნივერსიტეტი",
+    nasaSpaceAppsSubtitle: "NASA საერთაშორისო კონკურსი",
+    architectureTutorSubtitle: "აკადემიური სწავლების როლი",
+    laboratoryTutorTitle: "ლაბორატორიის ტუტორი",
+    laboratoryTutorSubtitle: "კომპიუტერული მეცნიერებების დეპარტამენტი",
+    laboratoryTutorDescription: "დავეხმარე სტუდენტებს კომპიუტერული მეცნიერებების ლაბორატორიულ სესიებში.",
+    campLeadershipTitle: "ბანაკის ლიდერობა",
+    campLeadershipSubtitle: "საგანმანათლებლო პროგრამა",
+    campLeadershipDescription: "ვიყავი საგანმანათლებლო აქტივობების ლიდერი და მენტორი სტუდენტებისთვის სხვადასხვა აკადემიურ და პირადი განვითარების პროგრამებში.",
+    academicCertificateTitle: "აკადემიური სერტიფიკატი",
+    academicCertificateSubtitle: "სკოლის დამთავრება",
+    academicCertificateDescription: "ატესტატი მივიღე კომაროვის სკოლის წარმატებულად დამთავრებისთვის",
+    academicCertificateDate: "2016 - 2022",
+    
+    // Dates for academic achievements
+    kiuAmbassadorDate: "2022 - დღემდე",
+    nasaSpaceAppsDate: "2022",
+    architectureTutorDate: "სექ 2022 - დეკ 2022 · 4 თვე",
+    laboratoryTutorDate: "თებ 2023 - ივნ 2023 · 5 თვე",
+    campLeadershipDate: "2023 - დღემდე",
+
     
     // Footer
     rights: "ყველა უფლება დაცულია.",

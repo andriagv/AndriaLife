@@ -10,42 +10,48 @@ const getAcademicAchievements = (t: (key: string) => string) => [
     year: "2024",
     title: t('kiuAmbassadorTitle'),
     subtitle: t('kiuAmbassadorSubtitle'),
-    description: t('kiuAmbassadorDescription')
-  },
-  {
-    image: "/photos/academic-achievements/spaceappchallenge.jpg",
-    year: "2023",
-    title: t('nasaSpaceAppsTitle'),
-    subtitle: t('nasaSpaceAppsSubtitle'),
-    description: t('nasaSpaceAppsDescription')
+    description: t('kiuAmbassadorDescription'),
+    date: t('kiuAmbassadorDate')
   },
   {
     image: "/photos/academic-achievements/architectureTutor.png",
     year: "2023",
     title: t('architectureTutorTitle'),
     subtitle: t('architectureTutorSubtitle'),
-    description: t('architectureTutorDescription')
+    description: t('architectureTutorDescription'),
+    date: t('architectureTutorDate')
   },
   {
     image: "/photos/academic-achievements/labTutor.jpeg",
     year: "2023",
     title: t('laboratoryTutorTitle'),
     subtitle: t('laboratoryTutorSubtitle'),
-    description: t('laboratoryTutorDescription')
+    description: t('laboratoryTutorDescription'),
+    date: t('laboratoryTutorDate')
   },
   {
     image: "/photos/academic-achievements/campside.jpg",
     year: "2022",
     title: t('campLeadershipTitle'),
     subtitle: t('campLeadershipSubtitle'),
-    description: t('campLeadershipDescription')
+    description: t('campLeadershipDescription'),
+    date: t('campLeadershipDate')
+  },
+  {
+    image: "/photos/academic-achievements/spaceappchallenge.jpg",
+    year: "2023",
+    title: t('nasaSpaceAppsTitle'),
+    subtitle: t('nasaSpaceAppsSubtitle'),
+    description: t('nasaSpaceAppsDescription'),
+    date: t('nasaSpaceAppsDate')
   },
   {
     image: "/photos/academic-achievements/komcer.jpeg",
     year: "2022",
     title: t('academicCertificateTitle'),
     subtitle: t('academicCertificateSubtitle'),
-    description: t('academicCertificateDescription')
+    description: t('academicCertificateDescription'),
+    date: t('academicCertificateDate')
   }
 ];
 
@@ -63,6 +69,7 @@ const AcademicAchievementsTimeline: React.FC<AcademicAchievementsTimelineProps> 
     title: achievement.title,
     subtitle: achievement.subtitle,
     description: achievement.description,
+    date: achievement.date,
     image: showImages ? achievement.image : undefined, // Only include image if showImages is true
   }));
   
@@ -79,8 +86,8 @@ const AcademicAchievementsTimeline: React.FC<AcademicAchievementsTimelineProps> 
       
       <ScrollTimeline
         events={events}
-        title={t('academicAchievementsTitle')}
-        subtitle={t('academicAchievementsSubtitle')}
+        title=""
+        subtitle=""
         revealAnimation="fade"
         cardAlignment="alternating"
         cardVariant="elevated"
