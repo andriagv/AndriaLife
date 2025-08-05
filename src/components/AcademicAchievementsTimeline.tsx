@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ScrollTimeline } from "@/components/ScrollTimeline";
 import { Lens } from "@/components/common/Lens";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -55,6 +55,7 @@ interface AcademicAchievementsTimelineProps {
 
 const AcademicAchievementsTimeline: React.FC<AcademicAchievementsTimelineProps> = ({ setShowSplashCursor }) => {
   const { t } = useLanguage();
+  const [showImages, setShowImages] = useState(false);
   
   const academicAchievements = getAcademicAchievements(t);
   const events = academicAchievements.map((achievement) => ({
@@ -62,30 +63,46 @@ const AcademicAchievementsTimeline: React.FC<AcademicAchievementsTimelineProps> 
     title: achievement.title,
     subtitle: achievement.subtitle,
     description: achievement.description,
-    image: achievement.image,
+    image: showImages ? achievement.image : undefined, // Only include image if showImages is true
   }));
   
   return (
-    <ScrollTimeline
-      events={events}
-      title={t('academicAchievementsTitle')}
-      subtitle={t('academicAchievementsSubtitle')}
-      revealAnimation="fade"
-      cardAlignment="alternating"
-      cardVariant="elevated"
-      progressIndicator={true}
-      connectorStyle="line"
-      parallaxIntensity={0.1}
-      progressLineWidth={3}
-      dateFormat="badge"
-      cardEffect="shadow"
-      className="my-12"
-      renderImage={img => (
-        <Lens onHoverChange={setShowSplashCursor}>
-          <OptimizedImage src={img} alt="Academic Achievement" className="w-full max-w-[300px] mx-auto mb-4 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover" placeholder={"/placeholder.svg"} />
-        </Lens>
-      )}
-    />
+    <div>
+      <div className="text-center mb-8">
+        <button
+          onClick={() => setShowImages(!showImages)}
+          className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          {showImages ? "ფოტოების დამალვა" : "ფოტოების ნახვა"}
+        </button>
+      </div>
+      
+      <ScrollTimeline
+        events={events}
+        title={t('academicAchievementsTitle')}
+        subtitle={t('academicAchievementsSubtitle')}
+        revealAnimation="fade"
+        cardAlignment="alternating"
+        cardVariant="elevated"
+        progressIndicator={true}
+        connectorStyle="line"
+        parallaxIntensity={0.1}
+        progressLineWidth={3}
+        dateFormat="none"
+        cardEffect="shadow"
+        className="my-12"
+        renderImage={img => (
+          <Lens onHoverChange={setShowSplashCursor}>
+            <OptimizedImage 
+              src={img} 
+              alt="Academic Achievement" 
+              className="w-full max-w-[300px] mx-auto mb-4 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover" 
+              placeholder={"/placeholder.svg"}
+            />
+          </Lens>
+        )}
+      />
+    </div>
   );
 };
 
