@@ -16,7 +16,8 @@ import SplashCursor from "@/components/SplashCursor";
 import Navbar from "./components/Navbar";
 import { useTheme } from "@/contexts/ThemeContext";
 import ClickSpark from "@/components/ClickSpark";
-import Spline from '@splinetool/react-spline';
+import ReactLazy, { Suspense } from 'react';
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 import { Switch } from "@/components/ui/switch";
 import { CategoryProvider, useCategory } from "./contexts/CategoryContext";
 import ReflectBackground2 from "@/components/common/ReflectBackground2";
@@ -125,7 +126,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -169,19 +170,21 @@ const App = () => {
                                 overflow: 'hidden',
                               }}
                             >
-                              <Spline
-                                scene="https://prod.spline.design/qBilcHnHrzoU2dwg/scene.splinecode"
-                                style={{
-                                  width: '120vw',
-                                  height: '120vh',
-                                  minWidth: '100vw',
-                                  minHeight: '100vh',
-                                  transform: 'scale(1.2)',
-                                  position: 'absolute',
-                                  top: 0,
-                                  left: 0,
-                                }}
-                              />
+                              <Suspense fallback={null}>
+                                <Spline
+                                  scene="https://prod.spline.design/qBilcHnHrzoU2dwg/scene.splinecode"
+                                  style={{
+                                    width: '120vw',
+                                    height: '120vh',
+                                    minWidth: '100vw',
+                                    minHeight: '100vh',
+                                    transform: 'scale(1.2)',
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                  }}
+                                />
+                              </Suspense>
                             </div>
                           )}
                           {/* Spline animated background temporarily disabled for debugging 3D ring */}

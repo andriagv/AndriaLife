@@ -24,7 +24,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         <ul className="mb-4 list-disc pl-5">
           <li className="mb-2">
             <strong>In 2023</strong>, I attended for the first time <br />
-            <img src="/photos/camps/YoungLeaders'School2023.jpeg" alt="Young Leaders School 2023" className="my-2 rounded shadow w-full max-w-xs" />
+            <OptimizedImage src={"/photos/camps/YoungLeaders'School2023.jpeg"} alt="Young Leaders School 2023" className="my-2 rounded shadow w-full max-w-xs" />
             where we covered topics such as:
             <ul className="list-disc pl-5">
               <li>Effective communication</li>
@@ -34,7 +34,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </li>
           <li>
             <strong>In 2025</strong>, I participated again <br />
-            <img src="/photos/camps/YoungLeaders'School2025.jpeg" alt="Young Leaders School 2025" className="my-2 rounded shadow w-full max-w-xs" />
+            <OptimizedImage src={"/photos/camps/YoungLeaders'School2025.jpeg"} alt="Young Leaders School 2025" className="my-2 rounded shadow w-full max-w-xs" />
             and the main focus areas were:
             <ul className="list-disc pl-5">
               <li>Debating</li>
@@ -51,7 +51,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         <ul className="mb-4 list-disc pl-5">
           <li className="mb-2">
             <strong>2023 წელს</strong> პირველად მივიღე მონაწილეობა <br />
-            <img src="/photos/camps/YoungLeaders'School2023.jpeg" alt="Young Leaders School 2023" className="my-2 rounded shadow w-full max-w-xs" />
+            <OptimizedImage src={"/photos/camps/YoungLeaders'School2023.jpeg"} alt="Young Leaders School 2023" className="my-2 rounded shadow w-full max-w-xs" />
             სადაც განვიხილეთ თემები:
             <ul className="list-disc pl-5">
               <li>ახალგაზრდების საკვანძო კომპონენტების განვითარების მხარდაჭერა</li>
@@ -60,7 +60,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </li>
           <li>
             <strong>2025 წელს</strong> კვლავ მივიღე მონაწილეობა <br />
-            <img src="/photos/camps/YoungLeaders'School2025.jpeg" alt="Young Leaders School 2025" className="my-2 rounded shadow w-full max-w-xs" />
+            <OptimizedImage src={"/photos/camps/YoungLeaders'School2025.jpeg"} alt="Young Leaders School 2025" className="my-2 rounded shadow w-full max-w-xs" />
             და მთავარი აქცენტები იყო:
             <ul className="list-disc pl-5">
               <li>ეფექტური რეზიუმეს შექმნა</li>
@@ -86,7 +86,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           <li>Promotion and encouragement of a healthy lifestyle</li>
         </ul>
         <p className="mb-2">Additionally, we won the football championship!</p>
-        <img src="/photos/camps/anakliaFootball.jpeg" alt="Anaklia Football Championship" className="my-2 rounded shadow w-full max-w-xs" />
+        <OptimizedImage src={"/photos/camps/anakliaFootball.jpeg"} alt="Anaklia Football Championship" className="my-2 rounded shadow w-full max-w-xs" />
         <div className="mt-4">
           <a href="https://www.facebook.com/photo/?fbid=477969575038747&set=pcb.477971548371883" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center hover:underline">
             Facebook
@@ -105,7 +105,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           <li>ჯანსაღი ცხოვრების წესის პოპულარიზაცია და წახალისება</li>
         </ul>
         <p className="mb-2">დამატებით, ჩვენ მოვიგეთ ფეხბურთის ჩემპიონატი!</p>
-        <img src="/photos/camps/anakliaFootball.jpeg" alt="Anaklia Football Championship" className="my-2 rounded shadow w-full max-w-xs" />
+        <OptimizedImage src={"/photos/camps/anakliaFootball.jpeg"} alt="Anaklia Football Championship" className="my-2 rounded shadow w-full max-w-xs" />
         <div className="mt-4">
           <a href="https://www.facebook.com/photo/?fbid=477969575038747&set=pcb.477971548371883" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center hover:underline">
             Facebook
@@ -133,7 +133,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           {project.modal.images && project.modal.images.length > 0 && (
             <div className="flex flex-wrap gap-4 justify-center">
               {project.modal.images.map((img, idx) => (
-                <img key={idx} src={img} alt={project.title + ' image ' + (idx + 1)} className="my-2 rounded shadow w-full max-w-xs" />
+                <OptimizedImage key={idx} src={img} alt={project.title + ' image ' + (idx + 1)} className="my-2 rounded shadow w-full max-w-xs" />
               ))}
             </div>
           )}
