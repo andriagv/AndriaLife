@@ -25,7 +25,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   onError,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(true); // Always start with true for now
+  const [isInView, setIsInView] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>('');
   const imgRef = useRef<HTMLImageElement>(null);
@@ -48,6 +48,27 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     setHasError(false);
     setIsLoaded(false);
   }, [src]);
+
+  useEffect(() => {
+    if (!imgRef.current || priority) {
+      setIsInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(imgRef.current);
+    observerRef.current = observer;
+    return () => observer.disconnect();
+  }, [priority]);
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -94,7 +115,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       {/* Main image */}
       <motion.img
         ref={imgRef}
-        src={currentSrc}
+        src={isInView ? currentSrc : undefined}
         alt={alt}
         className={`w-full h-full object-cover transition-opacity duration-300 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
