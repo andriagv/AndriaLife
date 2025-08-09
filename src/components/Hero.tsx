@@ -3,7 +3,6 @@ import { ArrowRight, Github, Linkedin, Mail, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
-import React from 'react';
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 import { Switch } from "@/components/ui/switch";
 import ScrambledText from "./ScrambledText";
