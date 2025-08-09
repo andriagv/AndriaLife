@@ -3,7 +3,7 @@ import { ArrowRight, Github, Linkedin, Mail, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
-import Spline from '@splinetool/react-spline';
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 import { Switch } from "@/components/ui/switch";
 import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
@@ -35,9 +35,11 @@ const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplash
       {/* Spline 3D Background */}
       {showHeroAnimation && (
         <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(30px)' }}>
-          <Spline
-            scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
-          />
+          <React.Suspense fallback={null}>
+            <Spline
+              scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
+            />
+          </React.Suspense>
         </div>
       )}
       {/* Content overlay */}

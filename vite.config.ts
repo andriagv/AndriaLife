@@ -9,6 +9,19 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  build: {
+    cssMinify: true,
+    minify: 'esbuild',
+    sourcemap: false,
+    chunkSizeWarningLimit: 1500,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          spline: ['@splinetool/react-spline'],
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     mode === 'development' &&

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import {
   motion,
   useScroll,
@@ -385,9 +386,9 @@ export const ScrollTimeline = ({
                       renderImage
                         ? renderImage(event.image)
                         : (
-                          <img 
-                            src={event.image} 
-                            alt={event.title || "Certificate"} 
+                          <OptimizedImage
+                            src={event.image!}
+                            alt={event.title || "Certificate"}
                             className="w-full max-w-[250px] sm:max-w-[280px] md:max-w-[300px] mx-auto mb-2 rounded-xl shadow-[0_4px_24px_rgba(168,85,247,0.18),0_1.5px_8px_rgba(0,0,0,0.10)] object-cover"
                           />
                         )

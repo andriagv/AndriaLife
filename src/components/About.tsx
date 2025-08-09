@@ -2,6 +2,7 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCategory } from "@/contexts/CategoryContext";
 import ScrollFloat from "./common/ScrollFloat";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import DecryptedText from "./DecryptedText";
 import BlurText from "./BlurText";
 
@@ -45,7 +46,7 @@ const About: React.FC = () => {
         {category === 'photography' && (
           <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
             <div className="w-full md:w-1/3 flex justify-start">
-              <img 
+              <OptimizedImage 
                 src="/photos/photography/certificate/phcer.jpeg" 
                 alt="Photography Certificate" 
                 className="w-full max-w-xs rounded shadow-lg object-cover"

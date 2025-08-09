@@ -54,8 +54,8 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               >
                 {/* Image */}
                 <div className="w-full md:w-1/6">
-                  <img 
-                    src={project.imageUrl} 
+                  <OptimizedImage
+                    src={project.imageUrl}
                     alt={project.title}
                     className="w-full h-auto object-contain rounded-md"
                   />
@@ -116,8 +116,8 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
               <div key={cert.id} className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image */}
                 <div className="w-full md:w-1/4">
-                  <img 
-                    src={cert.imageUrl} 
+                  <OptimizedImage
+                    src={cert.imageUrl}
                     alt={cert.title}
                     className={`w-full h-auto object-contain rounded-md ${styles['certificate-image-shadow']}`}
                   />
