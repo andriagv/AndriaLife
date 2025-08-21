@@ -142,6 +142,14 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     imageUrl: "/photos/camps/YoungLeaders'School2023.jpeg",
   },
   {
+    id: 34,
+    title: t('aiCampBakurianiTitle'),
+    category: "camps",
+    subcategory: "participation",
+    description: t('aiCampBakurianiDescription'),
+    imageUrl: "/photos/camps/AICampBakuriani.jpg",
+  },
+  {
     id: 7,
     title: t('youthAgency'),
     category: "camps",
