@@ -139,6 +139,9 @@ export const translations = {
     youngLeadersTitle: "Young Leaders' School",
     youngLeadersDescription: "Kutaisi Municipality Project – 2023, 2025",
 
+    aiCampBakurianiTitle: "AI Camp Bakuriani",
+    aiCampBakurianiDescription: "Organized by GITA, in Bakuriani at ROOMS KOKHTA hotel, an Artificial Intelligence camp is held for 1st–4th year students. The camp hosts 50 Georgian and 10 Uzbek students selected in advance.",
+
     icsuTitle: "icsu",
     
     anakliaTitle: "Anaklia Youth Camp 2024",
@@ -403,6 +406,9 @@ export const translations = {
     // Project descriptions - Camps
     youngLeadersTitle: "ახალგაზრდა ლიდერების სკოლა",
     youngLeadersDescription: "ქუთაისის მერიის პროექტი – 2023, 2025",
+
+    aiCampBakurianiTitle: "AI Camp Bakuriani",
+    aiCampBakurianiDescription: "GITA - ს ორგანიზებით, ბაკურიანში, სასტუმრო ROOMS KOKHTA-ში I-IV კურსის სტუდენტებისთვის ხელოვნური ინტელექტის ბანაკი მიმდინარეობს. ბანაკში მონაწილეობას წინასწარ შერჩეული 50 ქართველი და 10 უზბეკი სტუდენტი იღებს.",
 
     icsuTitle: "icsu",
     
