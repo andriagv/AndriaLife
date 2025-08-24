@@ -147,7 +147,11 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "camps",
     subcategory: "participation",
     description: t('aiCampBakurianiDescription'),
-    imageUrl: "/photos/camps/AICampBakuriani.jpg",
+    imageUrl: "/photos/camps/AICampBakuriani1.jpg",
+    modal: {
+      content: t('aiCampBakurianiModal'),
+      images: ['/photos/camps/AICampBakuriani.jpg']
+    }
   },
   {
     id: 7,
