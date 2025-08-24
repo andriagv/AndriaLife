@@ -4,6 +4,7 @@ import { useCategory } from "@/contexts/CategoryContext";
 import ProjectsHeader from "./projects/ProjectsHeader";
 import ProjectFilters from "./projects/ProjectFilters";
 import ProjectGrid from "./projects/ProjectGrid";
+import ProjectCard from "./projects/ProjectCard";
 import PaginatedProjectGrid from "./projects/PaginatedProjectGrid";
 import IOSProjectLayout from "./projects/IOSProjectLayout";
 import PhotographyLayout from "./projects/PhotographyLayout";
@@ -61,8 +62,17 @@ const Projects: React.FC = () => {
                 />
               )}
 
+              {/* Camps category - show all projects without pagination */}
+              {category === 'camps' && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                  {viewData.projects.map((project, idx) => (
+                    <ProjectCard key={project.id} project={project} onCardClick={handleProjectClick} index={idx} />
+                  ))}
+                </div>
+              )}
+
               {/* Default grid layout for other categories */}
-              {category !== 'ios' && category !== 'photography' && (
+              {category !== 'ios' && category !== 'photography' && category !== 'camps' && (
                 <PaginatedProjectGrid 
                   projects={viewData.projects}
                   onProjectClick={handleProjectClick}
