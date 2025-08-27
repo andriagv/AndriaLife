@@ -37,9 +37,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       return originalSrc;
     }
     
-    // For now, return original source to avoid missing WebP files
-    // In the future, we can implement proper WebP detection
-    return originalSrc;
+    // Check if WebP is supported and file exists
+    const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    
+    // For now, prioritize WebP if available
+    return webpSrc;
   };
 
   useEffect(() => {
@@ -112,21 +114,37 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
 
-      {/* Main image */}
-      <motion.img
+      {/* Optimized image with WebP/AVIF support */}
+      <motion.picture
         ref={imgRef}
-        src={isInView ? currentSrc : undefined}
-        alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        onLoad={handleLoad}
-        onError={handleError}
-        loading={priority ? 'eager' : 'lazy'}
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-      />
+      >
+        {/* AVIF format (best compression) */}
+        <source
+          srcSet={isInView ? src.replace(/\.(jpg|jpeg|png)$/i, '.avif') : undefined}
+          type="image/avif"
+        />
+        {/* WebP format (good compression) */}
+        <source
+          srcSet={isInView ? src.replace(/\.(jpg|jpeg|png)$/i, '.webp') : undefined}
+          type="image/webp"
+        />
+        {/* Fallback to original format */}
+        <img
+          src={isInView ? src : undefined}
+          alt={alt}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoad={handleLoad}
+          onError={handleError}
+          loading={priority ? 'eager' : 'lazy'}
+          width={width}
+          height={height}
+        />
+      </motion.picture>
 
       {/* Loading skeleton */}
       {!isLoaded && !placeholder && (

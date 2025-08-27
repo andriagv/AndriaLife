@@ -1,14 +1,16 @@
 'use client'
 
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import CategorySelection from '@/components/CategorySelection'
-import MathematicsTimeline from '@/components/MathematicsTimeline'
-import AcademicAchievementsTimeline from '@/components/AcademicAchievementsTimeline'
-import RoboticsComingSoon from '@/components/RoboticsComingSoon'
-import Projects from '@/components/Projects'
 import Footer from '@/components/Footer'
+
+// Lazy load heavy components
+const MathematicsTimeline = lazy(() => import('@/components/MathematicsTimeline'))
+const AcademicAchievementsTimeline = lazy(() => import('@/components/AcademicAchievementsTimeline'))
+const RoboticsComingSoon = lazy(() => import('@/components/RoboticsComingSoon'))
+const Projects = lazy(() => import('@/components/Projects'))
 
 import { useCategory } from '@/contexts/CategoryContext'
 
@@ -24,15 +26,25 @@ export default function HomePageClient() {
         <CategorySelection showTargetCursor={false} setShowTargetCursor={() => {}} />
         {category !== 'robotics' && <About />}
         {category === 'mathematics' && (
-          <MathematicsTimeline setShowSplashCursor={() => {}} />
+          <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
+            <MathematicsTimeline setShowSplashCursor={() => {}} />
+          </Suspense>
         )}
         {category === 'academic' && (
-          <AcademicAchievementsTimeline setShowSplashCursor={() => {}} />
+          <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
+            <AcademicAchievementsTimeline setShowSplashCursor={() => {}} />
+          </Suspense>
         )}
         {category === 'robotics' && (
-          <RoboticsComingSoon />
+          <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
+            <RoboticsComingSoon />
+          </Suspense>
         )}
-        {category !== 'robotics' && category !== 'academic' && category !== 'mathematics' && <Projects />}
+        {category !== 'robotics' && category !== 'academic' && category !== 'mathematics' && (
+          <Suspense fallback={<div className="h-64 flex items-center justify-center">Loading...</div>}>
+            <Projects />
+          </Suspense>
+        )}
       </main>
       <Footer />
     </div>
