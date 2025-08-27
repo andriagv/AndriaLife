@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import {
   CanvasTexture,
   Clock,
-  Color,
+
   LinearFilter,
   LinearMipmapLinearFilter,
   Mesh,

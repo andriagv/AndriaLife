@@ -4,7 +4,7 @@ import { ExternalLink, Github, Gitlab, Award, Facebook, Linkedin } from "lucide-
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import OptimizedImage from "@/components/ui/OptimizedImage";
+
 
 interface ProjectCardProps {
   project: Project;

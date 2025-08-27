@@ -1,5 +1,5 @@
 // Image optimization utilities
-export const optimizeImageUrl = (url: string, width?: number, quality: number = 80): string => {
+export const optimizeImageUrl = (url: string): string => {
   // If it's an external URL, return as is
   if (url.startsWith('http')) {
     return url;
@@ -10,7 +10,7 @@ export const optimizeImageUrl = (url: string, width?: number, quality: number = 
   return url;
 };
 
-export const getResponsiveImageSrc = (baseUrl: string, sizes: number[] = [400, 800, 1200]): string => {
+export const getResponsiveImageSrc = (baseUrl: string): string => {
   // For now, return the base URL
   // In a real implementation, you'd generate multiple sizes
   return baseUrl;

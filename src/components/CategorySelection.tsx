@@ -3,7 +3,7 @@ import { GlowingCard, GlowingCards } from "@/components/GlowingCards";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
-import ScrollFloat from "./common/ScrollFloat";
+
 import ScrollVelocity from "./ScrollVelocity";
 import SplitText from "./SplitText";
 import TargetCursor from "./TargetCursor";

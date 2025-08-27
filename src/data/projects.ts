@@ -1,5 +1,5 @@
 import { Project } from "@/types";
-import { translations, TranslationKey } from "@/utils/translations";
+import { TranslationKey } from "@/utils/translations";
 
 type TFunction = (key: TranslationKey) => string;
 type Language = 'en' | 'ka';

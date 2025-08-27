@@ -13,7 +13,7 @@ const mathCertificates = [
   { image: "/photos/mathematics/mt7.jpeg" },
 ];
 
-const events = mathCertificates.map((cert, idx) => ({
+const events = mathCertificates.map((cert) => ({
   year: "",
   title: "",
   description: "",

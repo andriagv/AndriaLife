@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Home, Info, Folder, Grid, Settings } from "lucide-react";
+import { Menu, X, Settings } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
-import ThemeToggle from "./ThemeToggle";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
+
   DropdownMenuTrigger,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+
+
 } from "@/components/ui/dropdown-menu";
-import { Switch } from "@/components/ui/switch";
-import ElasticSlider from "./ElasticSlider";
-import ReflectBackground2 from "@/components/common/ReflectBackground2";
+
+
+
 import SettingsPanel from "./SettingsPanel";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 

@@ -1,29 +1,24 @@
 import React from "react";
-import { ArrowRight, Github, Linkedin, Mail, Facebook } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Facebook } from "lucide-react";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
-import { Switch } from "@/components/ui/switch";
+
 import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
 import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
-import TextPressure from "./TextPressure";
+
 import FuzzyText from "@/components/FuzzyText";
-import { useTheme } from "@/contexts/ThemeContext";
+
 
 interface HeroProps {
-  showParticles: boolean;
-  setShowParticles: (value: boolean) => void;
-  showSplashCursor: boolean;
-  setShowSplashCursor: (value: boolean) => void;
-  backgroundMode: 'none' | '3d' | 'reflect';
   showHeroAnimation: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ showParticles, setShowParticles, showSplashCursor, setShowSplashCursor, backgroundMode, showHeroAnimation }) => {
+const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
   const { t } = useLanguage();
-  const { theme } = useTheme();
+
   
   let bgClass = "bg-transparent";
 

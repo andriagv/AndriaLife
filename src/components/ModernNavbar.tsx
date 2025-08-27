@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Home, Info, Folder, Mail } from "lucide-react";
+import { Home, Info, Folder } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
-import ThemeToggle from "./ThemeToggle";
+
 
 const navLinks = [
   { id: "home", label: "Home", href: "#hero", icon: <Home className="w-5 h-5" /> },

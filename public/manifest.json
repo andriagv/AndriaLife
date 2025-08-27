@@ -1,0 +1,27 @@
+{
+  "name": "Andria Gvaramia - iOS Developer & Mathematician",
+  "short_name": "AndriaLife",
+  "description": "iOS Developer, Mathematician, and Technology Enthusiast Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/me.PNG",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/me.PNG",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "education", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+}

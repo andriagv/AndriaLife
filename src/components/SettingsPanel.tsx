@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import StyledSwitch from './ui/StyledSwitch';
-import { Music, Volume2, Pause, Play, Loader2 } from 'lucide-react';
+import { Volume2, Pause, Play, Loader2 } from 'lucide-react';
 import SegmentedControl from './ui/SegmentedControl';
 
 interface SettingsPanelProps {
