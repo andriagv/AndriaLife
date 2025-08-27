@@ -200,6 +200,55 @@ NEXT_PUBLIC_SITE_URL=https://andrialife.com
 - Background sync
 - Push notifications
 
+## 🚀 Quick Start
+
+### Prerequisites
+- **Node.js** 18.0 or higher
+- **npm** or **yarn** package manager
+
+### One-Command Setup
+```bash
+# Clone repository and setup everything in one command
+git clone https://github.com/andriagv/AndriaLife.git && cd AndriaLife && npm install && npm run dev
+```
+
+### Manual Setup
+```bash
+# 1. Clone the repository
+git clone https://github.com/andriagv/AndriaLife.git
+
+# 2. Navigate to project directory
+cd AndriaLife
+
+# 3. Install dependencies
+npm install
+
+# 4. Start development server
+npm run dev
+```
+
+### Available Scripts
+```bash
+# Development
+npm run dev          # Start development server (http://localhost:3000)
+
+# Build & Production
+npm run build        # Build for production
+npm run start        # Start production server
+npm run export       # Export as static site
+
+# Code Quality
+npm run lint         # Run ESLint
+npm run type-check   # TypeScript type checking
+```
+
+### Development Workflow
+1. **Start Development**: `npm run dev`
+2. **Open Browser**: http://localhost:3000
+3. **Make Changes**: Edit files in `src/` or `app/`
+4. **Hot Reload**: Changes appear automatically
+5. **Build Test**: `npm run build` before committing
+
 ## 🔧 Development
 
 ### Code Quality
