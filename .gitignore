@@ -27,6 +27,7 @@ dist-ssr
 .next/
 out/
 build/
+dist/
 
 # TypeScript
 *.tsbuildinfo
