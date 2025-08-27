@@ -7,7 +7,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { cn } from "../lib/utils";
-import { Card, CardContent } from "../components/ui/card";
+
 import { Calendar } from "lucide-react";
 
 export interface TimelineEvent {
@@ -75,7 +75,7 @@ export const ScrollTimeline = ({
   animationOrder = "sequential",
   cardAlignment = "alternating",
   lineColor = "bg-neutral-300",
-  activeColor = "bg-primary",
+
   progressIndicator = true,
   cardVariant = "default",
   cardEffect = "none",
@@ -86,9 +86,9 @@ export const ScrollTimeline = ({
   revealAnimation = "fade",
   className = "",
   connectorStyle = "line",
-  perspective = false,
+
   darkMode = false,
-  smoothScroll = true,
+
   renderImage,
 }: ScrollTimelineProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -209,9 +209,8 @@ export const ScrollTimeline = ({
         : cardAlignment === "left"
         ? "lg:mr-auto lg:ml-0"
         : "lg:ml-auto lg:mr-0";
-    const perspectiveClass = perspective
-      ? "transform transition-transform hover:rotate-y-1 hover:rotate-x-1"
-      : "";
+
+
 
     return cn(
       baseClasses,

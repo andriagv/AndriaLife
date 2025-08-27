@@ -11,7 +11,7 @@ export const useSkills = () => {
 
   // Memoize the skills view data
   const viewData: SkillsViewData = useMemo(() => {
-    return skillsService.getSkillsViewData(category, t);
+    return skillsService.getSkillsViewData(category, t as any);
   }, [category, t, skillsService]);
 
   return {

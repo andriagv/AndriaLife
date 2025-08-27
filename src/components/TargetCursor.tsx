@@ -15,7 +15,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
 }) => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const cornersRef = useRef<NodeListOf<HTMLDivElement>>(null);
-  const spinTl = useRef<gsap.core.Timeline>(null);
+
 
   const constants = useMemo(
     () => ({
@@ -45,9 +45,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     }
 
     const cursor = cursorRef.current;
-    cornersRef.current = cursor.querySelectorAll<HTMLDivElement>(
-      ".target-cursor-corner"
-    );
+
 
     let activeTarget: Element | null = null;
     let currentTargetMove: ((ev: Event) => void) | null = null;
@@ -74,10 +72,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     });
 
     const createSpinTimeline = () => {
-      if (spinTl.current) {
-        spinTl.current.kill();
-      }
-      spinTl.current = gsap
+      gsap
         .timeline({ repeat: -1 })
         .to(cursor, { rotation: "+=360", duration: spinDuration, ease: "none" });
     };
@@ -137,7 +132,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       activeTarget = target;
 
       gsap.killTweensOf(cursorRef.current, "rotation");
-      spinTl.current?.pause();
+
 
       gsap.set(cursorRef.current, { rotation: 0 });
 
@@ -252,15 +247,14 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         }
 
         resumeTimeout = setTimeout(() => {
-          if (!activeTarget && cursorRef.current && spinTl.current) {
+          if (!activeTarget && cursorRef.current) {
             const currentRotation = gsap.getProperty(
               cursorRef.current,
               "rotation"
             ) as number;
             const normalizedRotation = currentRotation % 360;
 
-            spinTl.current.kill();
-            spinTl.current = gsap
+            gsap
               .timeline({ repeat: -1 })
               .to(cursorRef.current, { rotation: "+=360", duration: spinDuration, ease: "none" });
 
@@ -269,7 +263,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
               duration: spinDuration * (1 - normalizedRotation / 360),
               ease: "none",
               onComplete: () => {
-                spinTl.current?.restart();
+    
               },
             });
           }
@@ -297,20 +291,17 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         cleanupTarget(activeTarget);
       }
 
-      spinTl.current?.kill();
+
       document.body.style.cursor = originalCursor;
     };
   }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor]);
 
   useEffect(() => {
-    if (!cursorRef.current || !spinTl.current) return;
+    if (!cursorRef.current) return;
     
-    if (spinTl.current.isActive()) {
-      spinTl.current.kill();
-      spinTl.current = gsap
-        .timeline({ repeat: -1 })
-        .to(cursorRef.current, { rotation: "+=360", duration: spinDuration, ease: "none" });
-    }
+    gsap
+      .timeline({ repeat: -1 })
+      .to(cursorRef.current, { rotation: "+=360", duration: spinDuration, ease: "none" });
   }, [spinDuration]);
 
   return (

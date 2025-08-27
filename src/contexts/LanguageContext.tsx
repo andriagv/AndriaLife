@@ -32,7 +32,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Translation function
   const t = (key: keyof typeof translations.en): string => {
-    return translations[language][key] || translations.en[key] || key;
+    return (translations as any)[language][key] || (translations as any).en[key] || key;
   };
 
   return (

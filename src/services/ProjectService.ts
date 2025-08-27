@@ -1,4 +1,4 @@
-import { IProjectService, FilterOption, ProjectFilter, ProjectsViewData } from "@/interfaces/IProjectService";
+import { IProjectService, FilterOption, ProjectsViewData } from "@/interfaces/IProjectService";
 import { Project } from "@/types";
 import { TranslationKey } from "@/utils/translations";
 import { getAllProjects } from "@/data/projects";

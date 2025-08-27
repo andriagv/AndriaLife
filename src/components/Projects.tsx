@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useProjects } from "@/hooks/useProjects";
 import { useCategory } from "@/contexts/CategoryContext";
-import ProjectsHeader from "./projects/ProjectsHeader";
+
 import ProjectFilters from "./projects/ProjectFilters";
-import ProjectGrid from "./projects/ProjectGrid";
+
 import ProjectCard from "./projects/ProjectCard";
 import PaginatedProjectGrid from "./projects/PaginatedProjectGrid";
 import IOSProjectLayout from "./projects/IOSProjectLayout";

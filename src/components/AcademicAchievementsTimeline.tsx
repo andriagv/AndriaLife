@@ -4,7 +4,7 @@ import { Lens } from "@/components/common/Lens";
 import { useLanguage } from "@/contexts/LanguageContext";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 
-const getAcademicAchievements = (t: (key: string) => string) => [
+const getAcademicAchievements = (t: any) => [
   {
     image: "/photos/academic-achievements/KIUAmbassador.jpeg",
     year: "2024",

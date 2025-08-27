@@ -1,108 +1,252 @@
-# Andria's Interactive Portfolio
+# AndriaLife Portfolio - SSR/SSG Optimized
 
-Welcome to my interactive and visually rich personal portfolio, built with React, TypeScript, and a host of modern web technologies. This project is not just a showcase of my work, but also a playground for advanced animations and user interface experiments.
+A modern, SEO-optimized portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. This project has been migrated from Vite + React to Next.js to implement Server-Side Rendering (SSR) and Static Site Generation (SSG) for better SEO and ChatGPT accessibility.
 
-**[View Live Demo](https://andriagv.github.io/AndriaLife/)**
+## 🚀 Features
 
-## Features
+### SEO & Performance
+- **Server-Side Rendering (SSR)** - Content is rendered on the server for better SEO
+- **Static Site Generation (SSG)** - Pre-rendered pages for optimal performance
+- **Comprehensive Metadata** - OpenGraph, Twitter Cards, and structured data
+- **Sitemap Generation** - Automatic sitemap.xml generation
+- **Robots.txt** - Search engine crawling instructions
+- **PWA Support** - Web app manifest for mobile experience
 
-- **Dynamic Content:** Content is dynamically loaded and displayed based on category selection (iOS, Camps, Academics, Design, etc.).
-- **Multi-language Support:** Fully bilingual, supporting both English and Georgian, with a seamless language toggle.
-- **Advanced Animations:**
-  - **WebGL Particles:** A beautiful, interactive particle animation on the hero section.
-  - **Spline 3D Integration:** An interactive 3D model integrated into the hero section.
-  -**Scroll-based Animations:** Engaging timeline components for showcasing academic and mathematical journeys.
-  - **Custom Cursor Effects:** Unique cursor effects like "Splash" and "Target" cursors for enhanced user interaction.
-- **Theme-aware:** Supports both light and dark modes, with all components styled accordingly.
-- **Customizable Experience:** A settings panel allows users to toggle heavy animations (like particles and cursors) to match their hardware capabilities.
-- **Responsive Design:** Fully responsive layout, optimized for a great experience on both desktop and mobile devices.
-- **Component-Based Architecture:** Built with reusable and modular components using Shadcn/UI and custom components.
+### Technical Stack
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Accessible component primitives
+- **Framer Motion** - Smooth animations
+- **React Query** - Server state management
 
-## Technologies Used
+### Content Accessibility
+- **JavaScript-Free Content** - Main content visible without JavaScript
+- **Progressive Enhancement** - Enhanced experience with JavaScript
+- **Semantic HTML** - Proper heading structure and landmarks
+- **Alt Text** - Descriptive image alt text for screen readers
 
-### Core Technologies
-- **React:** A JavaScript library for building user interfaces.
-- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
-- **Vite:** A fast build tool and development server.
+## 📁 Project Structure
 
-### UI & Styling
-- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
-- **Shadcn/UI:** A collection of beautifully designed, reusable components.
-- **Framer Motion:** A powerful library for creating fluid animations.
-- **Lucide React:** A comprehensive library of simply beautiful icons.
+```
+AndriaLife/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Home page (Server Component)
+│   ├── sitemap.ts         # Sitemap generator
+│   ├── robots.ts          # Robots.txt generator
+│   └── globals.css        # Global styles
+├── src/
+│   ├── components/        # React components
+│   │   ├── ClientLayout.tsx    # Client-side layout wrapper
+│   │   ├── HomePageClient.tsx  # Client-side home page
+│   │   └── ...                 # Other components
+│   ├── contexts/          # React contexts
+│   ├── hooks/             # Custom hooks
+│   ├── utils/             # Utility functions
+│   └── ...
+├── public/                # Static assets
+│   ├── manifest.json      # PWA manifest
+│   └── ...
+└── ...
+```
 
-### State Management
-- **React Context API:** Used for managing global state like theme, language, and application state.
+## 🔧 SSR/SSG Implementation
 
-### Animations & Graphics
-- **OGL (OpenGL library):** A small, effective WebGL library used for the particle animations.
-- **GSAP (GreenSock Animation Platform):** A robust JavaScript toolset for professional-grade animations.
-- **Spline:** A 3D design tool used for creating and integrating the interactive 3D scene.
-- **Three.js:** A 3D graphics library that powers the Spline integration.
+### Server Components
+- **Root Layout** (`app/layout.tsx`) - Server component with metadata
+- **Home Page** (`app/page.tsx`) - Server component with SEO metadata
+- **Sitemap** (`app/sitemap.ts`) - Dynamic sitemap generation
+- **Robots** (`app/robots.ts`) - Dynamic robots.txt generation
 
-### Other Libraries
-- **React Router:** For declarative routing in the application.
-- **React Hook Form:** For managing forms with ease.
-- **Sonner:** A toast notification library for displaying non-intrusive messages.
+### Client Components
+- **ClientLayout** (`src/components/ClientLayout.tsx`) - Wraps interactive features
+- **HomePageClient** (`src/components/HomePageClient.tsx`) - Client-side content
 
-## Getting Started
+### SEO Optimizations
 
-To run this project locally, follow these steps:
+#### Metadata Structure
+```typescript
+export const metadata: Metadata = {
+  title: {
+    default: 'Andria Gvaramia - iOS Developer & Mathematician',
+    template: '%s | Andria Gvaramia'
+  },
+  description: 'iOS Developer, Mathematician, and Technology Enthusiast...',
+  keywords: ['iOS Developer', 'Mathematician', 'Mobile App Development', ...],
+  openGraph: {
+    type: 'website',
+    title: 'Andria Gvaramia - iOS Developer & Mathematician',
+    description: '...',
+    images: [{ url: '/me.PNG', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '...',
+    images: ['/me.PNG'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
+```
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/andriagv/AndriaLife.git
-   cd AndriaLife
-   ```
+#### Sitemap Generation
+```typescript
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: 'https://andrialife.com',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    // ... more routes
+  ]
+}
+```
 
-2. **Install dependencies:**
-   *Note: If you are using `nvm` (Node Version Manager), first run `nvm use` to switch to the correct Node.js version specified in the `.nvmrc` file.*
-   ```sh
-   npm install
-   ```
+## 🚀 Getting Started
 
-3. **Start the development server:**
-   ```sh
-   npm run dev
-   ```
-   The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-## Project Structure
+### Installation
+```bash
+# Install dependencies
+npm install
 
-Here is a brief overview of the key directories in this project:
+# Run development server
+npm run dev
 
-- **`public/`**: Contains static assets like fonts, images, and music files.
-- **`src/`**: The main source code directory.
-  - **`components/`**: Contains all the React components, organized by feature and reusability.
-    - **`common/`**: Shared, reusable components used across the application.
-    - **`projects/`**: Components specifically for the projects section.
-    - **`ui/`**: UI components from Shadcn, and other custom UI elements.
-  - **`contexts/`**: Contains all the React context providers for state management (Theme, Language, etc.).
-  - **`data/`**: Static data files, such as the list of projects.
-  - **`hooks/`**: Custom React hooks for shared logic.
-  - **`services/`**: Services for fetching and processing data.
-  - **`utils/`**: Utility functions, including the `translations.ts` file for multi-language support.
-- **`README.md`**: This file, providing information about the project.
-- **`package.json`**: Lists the project's dependencies and scripts.
-- **`vite.config.ts`**: The configuration file for Vite.
+# Build for production
+npm run build
 
-## Acknowledgements
+# Start production server
+npm start
+```
 
-A big thank you to the creators of the various open-source libraries and tools that made this project possible. Special mentions to:
-- The **Shadcn/UI** team for their excellent component library.
-- The **Framer Motion** team for making web animations so intuitive.
-- The **Three.js** and **OGL** communities for their amazing work in WebGL.
+### Environment Variables
+Create a `.env.local` file:
+```env
+NEXT_PUBLIC_SITE_URL=https://andrialife.com
+```
 
-## The Role of AI in this Project
+## 📊 SEO Benefits
 
-Despite my minimal knowledge of TypeScript, creating this project independently without AI support would have been practically impossible.
+### Before (Client-Side Rendering)
+- ❌ Content not visible to search engines
+- ❌ ChatGPT cannot access page content
+- ❌ Poor Core Web Vitals
+- ❌ No structured data
 
-The initial structure (skeleton) of the project was created on **Lovable.ai**. The core backend and client base were developed using **Cursor**, which significantly simplified working with the code.
+### After (Server-Side Rendering)
+- ✅ Content fully accessible to search engines
+- ✅ ChatGPT can read and understand content
+- ✅ Improved Core Web Vitals
+- ✅ Rich structured data and metadata
+- ✅ Automatic sitemap generation
+- ✅ Optimized social media sharing
 
-For integrating visual effects, I actively used AI-developed tools such as:
+## 🔍 Testing SEO
 
-- **dora.run/ai** – for generating interactive animations and visual scenes.
-- **reactbits.dev** – for inserting ready-made React components.
-- **lightswind.com** – for modern UI elements and animations.
+### View Page Source
+1. Right-click on the page
+2. Select "View Page Source"
+3. Verify content is present in HTML
 
-For generating content ideas, I used **ChatGPT**, and for ensuring linguistic accuracy of the text, I used **Claude AI**. To fix technical errors that arose during the project, I often turned to **Gemini**, which effectively helped in diagnosing and fixing bugs.
+### Google Search Console
+1. Submit sitemap: `https://andrialife.com/sitemap.xml`
+2. Monitor indexing status
+3. Check Core Web Vitals
+
+### Social Media Testing
+- **Facebook**: https://developers.facebook.com/tools/debug/
+- **Twitter**: https://cards-dev.twitter.com/validator
+- **LinkedIn**: https://www.linkedin.com/post-inspector/
+
+## 🎯 Performance Optimizations
+
+### Build Optimizations
+- **Tree Shaking** - Unused code elimination
+- **Code Splitting** - Automatic route-based splitting
+- **Image Optimization** - Next.js Image component
+- **Font Optimization** - Google Fonts optimization
+
+### Runtime Optimizations
+- **Server Components** - Reduced client bundle size
+- **Streaming** - Progressive content loading
+- **Caching** - Automatic static optimization
+
+## 📱 PWA Features
+
+### Manifest
+- App name and description
+- Icons for different sizes
+- Theme colors
+- Display mode
+
+### Service Worker (Future)
+- Offline functionality
+- Background sync
+- Push notifications
+
+## 🔧 Development
+
+### Code Quality
+```bash
+# Lint code
+npm run lint
+
+# Type checking
+npx tsc --noEmit
+```
+
+### Performance Monitoring
+- **Lighthouse** - Core Web Vitals
+- **WebPageTest** - Performance testing
+- **Google PageSpeed Insights** - SEO and performance
+
+## 📈 Deployment
+
+### Vercel (Recommended)
+1. Connect GitHub repository
+2. Configure build settings
+3. Deploy automatically
+
+### Other Platforms
+- **Netlify** - Static site hosting
+- **AWS Amplify** - Full-stack hosting
+- **DigitalOcean App Platform** - Container hosting
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Next.js team for the excellent SSR/SSG support
+- Vercel for the deployment platform
+- Tailwind CSS for the utility-first approach
+- Radix UI for accessible components
+
+---
+
+**Note**: This migration ensures that your portfolio content is fully accessible to search engines, ChatGPT, and other AI tools, while maintaining the beautiful interactive experience for users.

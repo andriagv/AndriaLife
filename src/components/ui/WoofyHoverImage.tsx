@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import OptimizedImage from "@/components/ui/OptimizedImage";
+
 
 interface WoofyHoverImageProps {
   src: string;

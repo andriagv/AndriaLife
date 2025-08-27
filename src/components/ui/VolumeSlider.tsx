@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface VolumeSliderProps {
@@ -19,8 +19,7 @@ const VolumeSlider: React.FC<VolumeSliderProps> = ({
   className,
 }) => {
   const [internalValue, setInternalValue] = useState(controlledValue ?? 50);
-  const [isHovering, setIsHovering] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+
   const sliderRef = useRef<HTMLInputElement>(null);
 
   const value = controlledValue ?? internalValue;
@@ -51,8 +50,7 @@ const VolumeSlider: React.FC<VolumeSliderProps> = ({
   return (
     <div
       className={cn('relative w-full flex items-center group', className)}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+
     >
       <div className="absolute left-[-40px] w-[35px] text-center text-xs text-gray-500">
         {Math.round(value)}%
@@ -65,8 +63,7 @@ const VolumeSlider: React.FC<VolumeSliderProps> = ({
         value={value}
         ref={sliderRef}
         onChange={handleInputChange}
-        onMouseDown={() => setIsActive(true)}
-        onMouseUp={() => setIsActive(false)}
+
         className="w-full h-2 appearance-none cursor-pointer"
         style={{
           background: getGradient(),
