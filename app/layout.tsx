@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://andrialife.vercel.app'),
+  metadataBase: new URL('https://andria.life'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://andrialife.vercel.app',
+    url: 'https://andria.life',
     siteName: 'Andria Gvaramia Portfolio',
     title: 'Andria Gvaramia - iOS Developer & Mathematician',
     description: 'iOS Developer, Mathematician, and Technology Enthusiast. Specializing in mobile app development, mathematical research, and innovative technology solutions.',

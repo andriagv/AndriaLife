@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Andria Gvaramia - iOS Developer & Mathematician',
     description: 'iOS Developer, Mathematician, and Technology Enthusiast. Specializing in mobile app development, mathematical research, and innovative technology solutions.',
-    url: 'https://andrialife.com',
+    url: 'https://andria.life',
     siteName: 'Andria Gvaramia Portfolio',
     images: [
       {

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   try {
-    const baseUrl = 'https://andrialife.vercel.app'
+    const baseUrl = 'https://andria.life'
     
     return [
       {
@@ -58,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     console.error('Error generating sitemap:', error)
     return [
       {
-        url: 'https://andrialife.vercel.app',
+        url: 'https://andria.life',
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 1,

@@ -1,6 +1,8 @@
-# AndriaLife Portfolio - SSR/SSG Optimized
+# AndriaLife Portfolio - SSR/SSG Optimized with SSL
 
-A modern, SEO-optimized portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. This project has been migrated from Vite + React to Next.js to implement Server-Side Rendering (SSR) and Static Site Generation (SSG) for better SEO and ChatGPT accessibility.
+**Live Site**: https://andria.life
+
+A modern, SEO-optimized portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. This project has been migrated from Vite + React to Next.js to implement Server-Side Rendering (SSR) and Static Site Generation (SSG) for better SEO and ChatGPT accessibility. Features proper SSL configuration for secure HTTPS access.
 
 ## 🚀 Features
 
@@ -11,6 +13,7 @@ A modern, SEO-optimized portfolio website built with Next.js 14, TypeScript, and
 - **Sitemap Generation** - Automatic sitemap.xml generation
 - **Robots.txt** - Search engine crawling instructions
 - **PWA Support** - Web app manifest for mobile experience
+- **SSL Security** - Proper HTTPS configuration for https://andria.life
 
 ### Technical Stack
 - **Next.js 14** - React framework with App Router
@@ -19,12 +22,14 @@ A modern, SEO-optimized portfolio website built with Next.js 14, TypeScript, and
 - **Radix UI** - Accessible component primitives
 - **Framer Motion** - Smooth animations
 - **React Query** - Server state management
+- **Vercel** - Deployment platform with automatic SSL
 
 ### Content Accessibility
 - **JavaScript-Free Content** - Main content visible without JavaScript
 - **Progressive Enhancement** - Enhanced experience with JavaScript
 - **Semantic HTML** - Proper heading structure and landmarks
 - **Alt Text** - Descriptive image alt text for screen readers
+- **HTTPS Security** - Secure connection for all users
 
 ## 📁 Project Structure
 
@@ -48,6 +53,8 @@ AndriaLife/
 ├── public/                # Static assets
 │   ├── manifest.json      # PWA manifest
 │   └── ...
+├── .env.local             # Environment variables
+├── next.config.js         # Next.js configuration with SSL headers
 └── ...
 ```
 
@@ -74,8 +81,10 @@ export const metadata: Metadata = {
   },
   description: 'iOS Developer, Mathematician, and Technology Enthusiast...',
   keywords: ['iOS Developer', 'Mathematician', 'Mobile App Development', ...],
+  metadataBase: new URL('https://andria.life'),
   openGraph: {
     type: 'website',
+    url: 'https://andria.life',
     title: 'Andria Gvaramia - iOS Developer & Mathematician',
     description: '...',
     images: [{ url: '/me.PNG', width: 1200, height: 630 }],
@@ -104,7 +113,7 @@ export const metadata: Metadata = {
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://andrialife.com',
+              url: 'https://andria.life',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
@@ -138,7 +147,7 @@ npm start
 ### Environment Variables
 Create a `.env.local` file:
 ```env
-NEXT_PUBLIC_SITE_URL=https://andrialife.com
+NEXT_PUBLIC_SITE_URL=https://andria.life
 ```
 
 ## 📊 SEO Benefits
@@ -156,6 +165,7 @@ NEXT_PUBLIC_SITE_URL=https://andrialife.com
 - ✅ Rich structured data and metadata
 - ✅ Automatic sitemap generation
 - ✅ Optimized social media sharing
+- ✅ SSL certificate properly configured for https://andria.life
 
 ## 🔍 Testing SEO
 
@@ -165,7 +175,7 @@ NEXT_PUBLIC_SITE_URL=https://andrialife.com
 3. Verify content is present in HTML
 
 ### Google Search Console
-1. Submit sitemap: `https://andrialife.com/sitemap.xml`
+1. Submit sitemap: `https://andria.life/sitemap.xml`
 2. Monitor indexing status
 3. Check Core Web Vitals
 
@@ -173,6 +183,8 @@ NEXT_PUBLIC_SITE_URL=https://andrialife.com
 - **Facebook**: https://developers.facebook.com/tools/debug/
 - **Twitter**: https://cards-dev.twitter.com/validator
 - **LinkedIn**: https://www.linkedin.com/post-inspector/
+
+**Test your site**: https://andria.life
 
 ## 🎯 Performance Optimizations
 
@@ -210,6 +222,8 @@ NEXT_PUBLIC_SITE_URL=https://andrialife.com
 ```bash
 # Clone repository and setup everything in one command
 git clone https://github.com/andriagv/AndriaLife.git && cd AndriaLife && npm install && npm run dev
+
+# Or visit the live site: https://andria.life
 ```
 
 ### Manual Setup
@@ -223,7 +237,10 @@ cd AndriaLife
 # 3. Install dependencies
 npm install
 
-# 4. Start development server
+# 4. Create environment file
+echo "NEXT_PUBLIC_SITE_URL=https://andria.life" > .env.local
+
+# 5. Start development server
 npm run dev
 ```
 
@@ -236,6 +253,7 @@ npm run dev          # Start development server (http://localhost:3000)
 npm run build        # Build for production
 npm run start        # Start production server
 npm run export       # Export as static site
+npm run deploy       # Deploy to Vercel with SSL
 
 # Code Quality
 npm run lint         # Run ESLint
@@ -248,6 +266,8 @@ npm run type-check   # TypeScript type checking
 3. **Make Changes**: Edit files in `src/` or `app/`
 4. **Hot Reload**: Changes appear automatically
 5. **Build Test**: `npm run build` before committing
+6. **Deploy**: `npm run deploy` to deploy with SSL
+7. **Visit Live Site**: https://andria.life
 
 ## 🔧 Development
 
@@ -264,6 +284,7 @@ npx tsc --noEmit
 - **Lighthouse** - Core Web Vitals
 - **WebPageTest** - Performance testing
 - **Google PageSpeed Insights** - SEO and performance
+- **SSL Labs** - SSL certificate testing
 
 ## 📈 Deployment
 
@@ -271,6 +292,8 @@ npx tsc --noEmit
 1. Connect GitHub repository
 2. Configure build settings
 3. Deploy automatically
+4. Configure custom domain: `andria.life`
+5. Enable SSL certificate in Vercel dashboard
 
 ### Other Platforms
 - **Netlify** - Static site hosting
@@ -292,10 +315,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgments
 
 - Next.js team for the excellent SSR/SSG support
-- Vercel for the deployment platform
+- Vercel for the deployment platform and SSL certificates
 - Tailwind CSS for the utility-first approach
 - Radix UI for accessible components
 
 ---
 
-**Note**: This migration ensures that your portfolio content is fully accessible to search engines, ChatGPT, and other AI tools, while maintaining the beautiful interactive experience for users.
+**Note**: This migration ensures that your portfolio content is fully accessible to search engines, ChatGPT, and other AI tools, while maintaining the beautiful interactive experience for users. The SSL certificate is now properly configured for https://andria.life.
