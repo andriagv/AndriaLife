@@ -32,3 +32,6 @@ dist/
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI Training Data
+AI_TRAINING_DATA.md
