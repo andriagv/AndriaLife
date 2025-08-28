@@ -37,11 +37,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       return originalSrc;
     }
     
-    // Check if WebP is supported and file exists
-    const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    
-    // For now, prioritize WebP if available
-    return webpSrc;
+    // For now, just return the original source since WebP/AVIF files don't exist
+    return originalSrc;
   };
 
   useEffect(() => {
@@ -79,15 +76,6 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   const handleError = () => {
     console.error('Failed to load image:', currentSrc);
-    
-    // If we're trying to load a WebP version and it fails, try the original
-    if (currentSrc !== src && currentSrc.includes('.webp')) {
-      console.log('Trying original image:', src);
-      setCurrentSrc(src);
-      setHasError(false);
-      return;
-    }
-    
     setHasError(true);
     onError?.();
   };
@@ -114,37 +102,23 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
 
-      {/* Optimized image with WebP/AVIF support */}
-      <motion.picture
+      {/* Simple image without format optimization for now */}
+      <motion.img
         ref={imgRef}
+        src={isInView ? src : undefined}
+        alt={alt}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        onLoad={handleLoad}
+        onError={handleError}
+        loading={priority ? 'eager' : 'lazy'}
+        width={width}
+        height={height}
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-      >
-        {/* AVIF format (best compression) */}
-        <source
-          srcSet={isInView ? src.replace(/\.(jpg|jpeg|png)$/i, '.avif') : undefined}
-          type="image/avif"
-        />
-        {/* WebP format (good compression) */}
-        <source
-          srcSet={isInView ? src.replace(/\.(jpg|jpeg|png)$/i, '.webp') : undefined}
-          type="image/webp"
-        />
-        {/* Fallback to original format */}
-        <img
-          src={isInView ? src : undefined}
-          alt={alt}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoad={handleLoad}
-          onError={handleError}
-          loading={priority ? 'eager' : 'lazy'}
-          width={width}
-          height={height}
-        />
-      </motion.picture>
+      />
 
       {/* Loading skeleton */}
       {!isLoaded && !placeholder && (

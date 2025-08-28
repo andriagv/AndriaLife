@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: 'Andria Gvaramia Portfolio',
     images: [
       {
-        url: '/me.PNG',
+        url: '/photos/me.PNG',
         width: 1200,
         height: 630,
         alt: 'Andria Gvaramia - iOS Developer & Mathematician',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Andria Gvaramia - iOS Developer & Mathematician',
     description: 'iOS Developer, Mathematician, and Technology Enthusiast. Specializing in mobile app development, mathematical research, and innovative technology solutions.',
-    images: ['/me.PNG'],
+    images: ['/photos/me.PNG'],
   },
   alternates: {
     canonical: '/',

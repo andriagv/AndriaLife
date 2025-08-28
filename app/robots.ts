@@ -1,12 +1,22 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/private/', '/admin/'],
-    },
-    sitemap: 'https://andrialife.com/sitemap.xml',
+  try {
+    return {
+      rules: {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/private/', '/admin/'],
+      },
+      sitemap: 'https://andrialife.vercel.app/sitemap.xml',
+    }
+  } catch (error) {
+    console.error('Error generating robots.txt:', error)
+    return {
+      rules: {
+        userAgent: '*',
+        allow: '/',
+      },
+    }
   }
 }
