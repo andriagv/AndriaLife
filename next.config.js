@@ -1,4 +1,9 @@
 import bundleAnalyzer from '@next/bundle-analyzer';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -29,6 +34,19 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   webpack: (config, { dev, isServer }) => {
+    // Fix webpack cache issues
+    if (dev) {
+      config.cache = {
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename],
+        },
+        cacheDirectory: join(__dirname, '.next', 'cache'),
+        compression: 'gzip',
+        maxAge: 172800000, // 2 days
+      };
+    }
+    
     // Optimize bundle size
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
