@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/private/', '/admin/'],
       },
-      sitemap: 'https://andrialife.vercel.app/sitemap.xml',
+      sitemap: 'https://andria.life/sitemap.xml',
     }
   } catch (error) {
     console.error('Error generating robots.txt:', error)

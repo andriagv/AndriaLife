@@ -10,7 +10,8 @@
     "lint": "next lint",
     "export": "next build",
     "type-check": "tsc --noEmit",
-    "analyze": "ANALYZE=true npm run build"
+    "analyze": "ANALYZE=true npm run build",
+    "deploy": "npm run build && vercel --prod"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
