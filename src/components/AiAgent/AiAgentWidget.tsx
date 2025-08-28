@@ -86,7 +86,8 @@ const AiAgentWidget: React.FC = () => {
 
     // Create script element with optimized loading
     const script = document.createElement('script')
-    script.src = 'https://buildmyagent.io/widget/68aff2d26d39689687c858a6/widget-professional.js?widgetId=68aff2d26d39689687c858a6'
+    //script.src = 'https://buildmyagent.io/widget/68aff2d26d39689687c858a6/widget-professional.js?widgetId=68aff2d26d39689687c858a6'
+    script.src = 'https://buildmyagent.io/widget/68b06677a76de6ed8699065c/widget-professional.js?widgetId=68b06677a76de6ed8699065c'
     script.async = true
     script.defer = true
     
