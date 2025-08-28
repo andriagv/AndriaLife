@@ -142,52 +142,37 @@ const AiAgentWidget: React.FC = () => {
   // Manual trigger button with beautiful design
   if (showManualTrigger && !isLoaded && !shouldLoad) {
     return (
-      <>
-        <style jsx>{`
-          @keyframes pulse {
-            0% {
-              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            }
-            50% {
-              box-shadow: 0 4px 25px rgba(102, 126, 234, 0.4);
-            }
-            100% {
-              box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            }
-          }
-        `}</style>
-        <div 
-          style={{
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            zIndex: 9999,
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            color: 'white',
-            padding: '12px 20px',
-            borderRadius: '25px',
-            cursor: 'pointer',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-            fontSize: '14px',
-            fontWeight: '500',
-            transition: 'all 0.3s ease',
-            border: '2px solid rgba(255,255,255,0.2)',
-            backdropFilter: 'blur(10px)',
-            animation: 'pulse 2s infinite'
-          }}
-          onClick={triggerLoad}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)'
-            e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)'
-            e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)'
-          }}
-        >
-          💬 Need Help?
-        </div>
-      </>
+      <div 
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 9999,
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: 'white',
+          padding: '12px 20px',
+          borderRadius: '25px',
+          cursor: 'pointer',
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+          fontSize: '14px',
+          fontWeight: '500',
+          transition: 'all 0.3s ease',
+          border: '2px solid rgba(255,255,255,0.2)',
+          backdropFilter: 'blur(10px)',
+          animation: 'pulse 2s infinite'
+        }}
+        onClick={triggerLoad}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'scale(1.05)'
+          e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'scale(1)'
+          e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)'
+        }}
+      >
+        💬 Need Help?
+      </div>
     )
   }
 
