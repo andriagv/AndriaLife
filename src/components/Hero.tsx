@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
-            <p className="text-primary font-medium mb-4">
+            <div className="text-primary font-medium mb-4">
               <GradientText
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
                 animationSpeed={3}
@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
               >
                 {t('hello')}
               </GradientText>
-            </p>
+            </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
               <div className="flex justify-center md:justify-start items-start w-full transform -translate-x-0 md:-translate-x-4 lg:-translate-x-14">
                 <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color="#222">
