@@ -237,6 +237,18 @@ export const translations = {
     organizerRoleDescription: "Part of the organizing team.",
     brainHackTitle: "BrainHack_AI · GTU",
     brainHackDescription: "Technical mentor and organizing-team member. I wrote the technical tasks (Generative AI, Data Scraping, Business Intelligence), defined the judging criteria and mentored the participating teams.",
+
+    // AI category: sections and projects from my GitHub
+    aiVoiceAssistants: "Voice Assistants",
+    aiAgentsAutomation: "Agents & Automation",
+    voiceAvatarTitle: "Georgian Voice Avatar — My AI Clone",
+    voiceAvatarDescription: "A voice assistant you can talk to in Georgian, the one on this page. A speech-to-text → LLM → text-to-speech pipeline: the browser records the speech, the server transcribes it, Gemini writes a short answer and every sentence is spoken as soon as it is ready, with the lip-sync driven by the audio. It answers only from the content of this site and moves the page to the right category while it talks. Every voice session is traced in Langfuse, with stage timings and a user rating. Built with TanStack Start (React, TypeScript) and Lovable.",
+    hotelAgentTitle: "Hotel Voice Agent — LangGraph + Claude",
+    hotelAgentDescription: "A Georgian-language hotel voice assistant built as a LangGraph graph: an input guard (empty or too long input never reaches the LLM), an agent that calls tools (room service orders and Wi-Fi info on a simulated PMS) and a verifier that checks every answer for invented facts and prompt injection and sends rejected answers back for rewriting. Orders need the guest's confirmation (a human-in-the-loop interrupt), and loop limits or repeated errors hand the call over to a human administrator. Conversation memory per guest, answers split into sentences for TTS, 41 safety test cases and a step-by-step guide notebook. Open source.",
+    hworkestratorTitle: "HWorkestrator — Telegram Agent for University Assignments",
+    hworkestratorDescription: "An open-source Telegram bot that takes a whole assignment through Claude with the user approving every step: pick a subject, an assignment, a skill and a model (the price estimate is shown first), the bot downloads the task, solves it and sends the finished file, and uploads it only after the user confirms. Assignments come from pluggable sources (Moodle, Google Drive) and are solved by skills that produce real results: code that is actually executed, LaTeX/PDF, Word and Jupyter notebooks. The whole setup is done by a Claude Code skill (/hw-setup). The tests use fakes and run in GitHub Actions; MIT license. Meant to be used responsibly, within the university's rules.",
+    aiNewsTitle: "AI News Georgia — Telegram Digest Bot",
+    aiNewsDescription: "A Telegram bot that collects AI news from 13 RSS sources (TechCrunch, MIT Technology Review, Wired, Google, Microsoft, Hugging Face, DeepMind and others) and has Claude Haiku write short digests in Georgian. /news gives today's digest (/mokle a shorter one), /topic reads the full articles on a keyword with a headless Playwright browser and sums up the trend, /summary summarizes any link, and /subscribe sends a daily digest at 09:00. Python, python-telegram-bot, Docker and Fly.io configuration.",
     // New sub-category filters
     photos: "Photos",
     topics: "Topics",
@@ -566,6 +578,18 @@ export const translations = {
     organizerRoleDescription: "საორგანიზაციო გუნდის წევრი.",
     brainHackTitle: "BrainHack_AI · GTU",
     brainHackDescription: "ტექნიკური მენტორი და საორგანიზაციო გუნდის წევრი. დავწერე ტექნიკური ამოცანები — Generative AI, Data Scraping, Business Intelligence, განვსაზღვრე შეფასების კრიტერიუმები და ვმენტორობდი მონაწილე გუნდებს.",
+
+    // AI კატეგორია: სექციები და პროექტები ჩემი GitHub-დან
+    aiVoiceAssistants: "ხმოვანი ასისტენტები",
+    aiAgentsAutomation: "აგენტები და ავტომატიზაცია",
+    voiceAvatarTitle: "ქართული ხმოვანი ავატარი — ჩემი AI კლონი",
+    voiceAvatarDescription: "ხმოვანი ასისტენტი, რომელსაც ქართულად ესაუბრები — სწორედ ის, რომელიც ამ გვერდზეა. Speech-to-Text → LLM → Text-to-Speech ციკლი: ბრაუზერი ხმას იწერს, სერვერი ტექსტად გარდაქმნის, Gemini მოკლე პასუხს წერს და თითოეული წინადადება მზადებისთანავე ჟღერდება; ტუჩების მოძრაობა ხმას მიჰყვება. პასუხობს მხოლოდ ამ საიტის შიგთავსიდან და საუბრისას გვერდს სასურველ კატეგორიაზე გადაიყვანს. ყოველი ხმოვანი სესია Langfuse-ში ჩაიწერება — ეტაპების დროებითა და მომხმარებლის შეფასებით. აგებულია TanStack Start-ით (React, TypeScript) და Lovable-ით.",
+    hotelAgentTitle: "Hotel Voice Agent — LangGraph + Claude",
+    hotelAgentDescription: "ქართულენოვანი სასტუმროს ხმოვანი ასისტენტი, აგებული LangGraph-ის გრაფად: input guard (ცარიელი ან ძალიან გრძელი შეტანა LLM-მდე არ მიდის), აგენტი ხელსაწყოებით (ნომრის სერვისის შეკვეთა და Wi-Fi ინფორმაცია იმიტირებულ PMS-ზე) და verifier, რომელიც ყოველ პასუხს ამოწმებს მოგონილ ფაქტებსა და prompt injection-ზე და უარყოფილ პასუხს გადასაწერად აბრუნებს. შეკვეთას სტუმრის დადასტურება სჭირდება (human-in-the-loop interrupt), ციკლის ლიმიტი ან განმეორებითი შეცდომები კი ზარს ადმინისტრატორზე გადამისამართებს. საუბრის მეხსიერება თითოეულ სტუმარზე, პასუხი TTS-ისთვის წინადადებებად იჭრება, 41 უსაფრთხოების სატესტო შემთხვევა და ეტაპობრივი სასწავლო notebook. ღია კოდი.",
+    hworkestratorTitle: "HWorkestrator — Telegram აგენტი უნივერსიტეტის დავალებებისთვის",
+    hworkestratorDescription: "ღია კოდის Telegram ბოტი, რომელიც დავალებას Claude-ით ბოლომდე ატარებს და ყოველ ნაბიჯს მომხმარებელი ამტკიცებს: ირჩევ საგანს, დავალებას, skill-სა და მოდელს (ფასის გათვლა წინასწარ ჩანს), ბოტი ამოცანას ჩამოტვირთავს, ამოხსნის და დასრულებულ ფაილს გამოგიგზავნის, ატვირთვა კი მხოლოდ შენი დადასტურების შემდეგ ხდება. დავალებები მოდის მოდულური წყაროებიდან (Moodle, Google Drive), skill-ები კი რეალურ შედეგს აგებენ: რეალურად გაშვებული კოდი, LaTeX/PDF, Word და Jupyter notebook. მთელ გამართვას Claude Code-ის skill (/hw-setup) ასრულებს. ტესტები fake-ებით მუშაობს და GitHub Actions-ში ეშვება; MIT ლიცენზია. გამოიყენება პასუხისმგებლობით, უნივერსიტეტის წესების ფარგლებში.",
+    aiNewsTitle: "AI News Georgia — Telegram დაიჯესტ-ბოტი",
+    aiNewsDescription: "Telegram ბოტი, რომელიც 13 RSS წყაროდან (TechCrunch, MIT Technology Review, Wired, Google, Microsoft, Hugging Face, DeepMind და სხვა) აგროვებს AI სიახლეებს, Claude Haiku კი მათგან ქართულ მოკლე დაიჯესტს წერს. /news დღევანდელ დაიჯესტს გიგზავნის (/mokle — უფრო მოკლეს), /topic საკვანძო სიტყვით სრულ სტატიებს headless Playwright ბრაუზერით კითხულობს და ტენდენციას აჯამებს, /summary ნებისმიერ ბმულს აჯამებს, /subscribe კი ყოველდღე 09:00-ზე დაიჯესტს გამოგიგზავნის. Python, python-telegram-bot, Docker და Fly.io-ს კონფიგურაცია.",
     // New sub-category filters
     photos: "ფოტოები",
     topics: "თემები",

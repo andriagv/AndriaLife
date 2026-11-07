@@ -8,7 +8,7 @@ import GroupedProjectGrid from "./projects/GroupedProjectGrid";
 
 import ProjectCard from "./projects/ProjectCard";
 import PaginatedProjectGrid from "./projects/PaginatedProjectGrid";
-import IOSProjectLayout from "./projects/IOSProjectLayout";
+import SectionedProjectLayout, { type ProjectSection } from "./projects/SectionedProjectLayout";
 import PhotographyLayout from "./projects/PhotographyLayout";
 import ProjectModal from "./projects/ProjectModal";
 import LoadingSpinner from "./common/LoadingSpinner";
@@ -20,12 +20,24 @@ const Projects: React.FC = () => {
   const { viewData, filter, setFilter, isLoading, error, getProjectById } = useProjects();
   const [activeModalId, setActiveModalId] = useState<number | null>(null);
 
-  // Categories whose cards are split into titled sections (ids match the project subcategories)
-  const groupsByCategory: Record<string, { id: string; title: string }[]> = {
-    ai: [
-      { id: "work", title: t("work") },
-      { id: "projects", title: t("myProjects") },
+  // iOS and AI share one look: work experience rows, then big project cards (section ids match the project
+  // subcategories and the filter buttons)
+  const sectionsByCategory: Record<string, ProjectSection[]> = {
+    ios: [
+      { id: "work", title: t("work"), variant: "work" },
+      { id: "app", title: t("myProjects"), variant: "cards" },
+      { id: "certificate", title: t("certificatesSectionTitle"), variant: "certificates" },
     ],
+    ai: [
+      { id: "work", title: t("work"), variant: "work" },
+      { id: "voice", title: t("aiVoiceAssistants"), variant: "cards" },
+      { id: "agents", title: t("aiAgentsAutomation"), variant: "cards" },
+    ],
+  };
+  const sections = sectionsByCategory[category];
+
+  // Other categories whose cards are split into titled sections
+  const groupsByCategory: Record<string, { id: string; title: string }[]> = {
     hackathons: [
       { id: "participation", title: t("hackathonParticipation") },
       { id: "organizing", title: t("hackathonOrganizing") },
@@ -70,11 +82,12 @@ const Projects: React.FC = () => {
               {/* Photography has custom layout */}
               {category === 'photography' && <PhotographyLayout />}
               
-              {/* iOS has custom layout */}
-              {category === 'ios' && (
-                <IOSProjectLayout 
+              {/* iOS and AI: work experience rows and big project cards */}
+              {sections && (
+                <SectionedProjectLayout
                   projects={viewData.projects}
                   filter={filter}
+                  sections={sections}
                 />
               )}
 
@@ -87,7 +100,7 @@ const Projects: React.FC = () => {
                 </div>
               )}
 
-              {/* AI and hackathons: cards split into titled sections */}
+              {/* Hackathons: cards split into titled sections */}
               {groups && (
                 <GroupedProjectGrid
                   projects={viewData.projects}
@@ -98,7 +111,7 @@ const Projects: React.FC = () => {
               )}
 
               {/* Default grid layout for other categories */}
-              {category !== 'ios' && category !== 'photography' && category !== 'camps' && !groups && (
+              {category !== 'photography' && category !== 'camps' && !sections && !groups && (
                 <PaginatedProjectGrid 
                   projects={viewData.projects}
                   onProjectClick={handleProjectClick}
