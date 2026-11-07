@@ -140,8 +140,8 @@ export const translations = {
     youngLeadersDescription: "Kutaisi Municipality Project – 2023, 2025",
 
     aiCampBakurianiTitle: "AI Camp Bakuriani",
-    aiCampBakurianiDescription: "Organized by GITA, in Bakuriani at ROOMS KOKHTA hotel, an Artificial Intelligence camp was held for 1st-4th year students.",
-    aiCampBakurianiModal: "Organized by GITA, in Bakuriani at ROOMS KOKHTA hotel, an Artificial Intelligence camp was held for 1st-4th year students. Within the framework of cooperation between Georgia and Uzbekistan, 50 pre-selected Georgian and 10 Uzbek students participated in the camp.\n\n🚀Over the course of one week, participants were actively involved in lecture processes, learned about AI technologies, machine learning algorithms, the importance of cybersecurity, and data science. Additionally, during the camp, participants actively worked on creating their own startups, and on demo day, 11 teams presented their projects to the jury.",
+    aiCampBakurianiDescription: "Organized by GITA, in Bakuriani at ROOMS KOKHTA hotel, an Artificial Intelligence camp was held for 1st-4th year students. Winner of the camp (2025).",
+    aiCampBakurianiModal: "Organized by GITA, in Bakuriani at ROOMS KOKHTA hotel, an Artificial Intelligence camp was held for 1st-4th year students. Within the framework of cooperation between Georgia and Uzbekistan, 50 pre-selected Georgian and 10 Uzbek students participated in the camp.\n\n🚀Over the course of one week, participants were actively involved in lecture processes, learned about AI technologies, machine learning algorithms, the importance of cybersecurity, and data science. Additionally, during the camp, participants actively worked on creating their own startups, and on demo day, 11 teams presented their projects to the jury.\n\n🏆 Winner of the camp (2025).",
 
     icsuTitle: "icsu",
     
@@ -180,7 +180,7 @@ export const translations = {
     architectureTutorDescription: "Assisted students in computer architecture topics.",
     
     campsideStartupTitle: "Campside Startup",
-    campsideStartupDescription: "Co-founder & iOS Developer of the Campside application that helps organize and discover outdoor activities.",
+    campsideStartupDescription: "iOS Engineer (2023–2025), then AI Agents & Automation Engineer (2025 – Present) at Campside, the application that helps organize and discover outdoor activities.",
     
     // CampSide info block
     campsideInfoTitle: "About CampSide",
@@ -205,6 +205,38 @@ export const translations = {
     mathematicsDescription: "Exploring mathematical concepts, problems, and visualizations.",
     sports: "Sports",
     sportsDescription: "A showcase of my athletic activities and achievements.",
+
+    // AI and Hackathons categories
+    ai: "Artificial Intelligence",
+    hackathons: "Hackathons",
+    aiDescription: "LLM-based agents, voice assistants and evaluation work: what I build and where I have worked on it.",
+    hackathonsDescription: "Hackathons I have taken part in and ones I helped organize.",
+    aiStory: "I build LLM-based agentic systems and conversational assistants (chatbots, voice assistants) in Python, using LangGraph, my own agent logic and an MCP server. I measure the quality and accuracy of answers with an LLM-as-judge approach and optimize prompts based on the evaluation metrics. My hackathon prize-winning project is a Georgian–English voice assistant with a full cycle: speech-to-text → agent → Gemini text-to-speech.",
+    hackathonsStory: "Hackathons are where I learn fastest. I have taken part as a competitor (NASA Space Apps 2023, GITA ENERGO HACK 2025, a prize at a 2026 hackathon with a voice assistant) and I also help organize them: writing the technical tasks, defining the judging criteria and mentoring the teams.",
+    hackathonParticipation: "Participation",
+    hackathonOrganizing: "Part of the Organizing Team",
+    presentLabel: "Present",
+    campsideAiTitle: "AI Agents & Automation Engineer — Campside",
+    campsideAiDescription: "Multi-step LLM workflows with LangGraph (state management, conditional branching, tool calling), plus my own agent loops without a framework and LangChain. I measure answer quality and accuracy systematically with LLM-as-judge: defining the evaluation metrics, analysing the results and iterating on prompts. I also structure unstructured data with LLMs, automate end-to-end flows with external APIs, monitor stability and diagnose failures.",
+    hotelVoiceAssistantTitle: "Voice Assistant for Hotel Operations",
+    hotelVoiceAssistantDescription: "A Georgian and English voice cycle: speech-to-text → intent recognition by an agent → task generation → the answer spoken with Gemini text-to-speech. Dialogue management with LangGraph, dialogue scenarios tested and answers scored with LLM-as-judge. Python + FastAPI backend with Telegram and phone-call integrations that notify staff automatically. Hackathon prize-winning project (2026).",
+    mcpAgentTitle: "MCP Server & LangGraph Agent",
+    mcpAgentDescription: "Open source: an MCP server that gives a model standardized access to internal data and tools, a LangGraph agent with state management and tool calling, and eval scripts that measure the quality of the answers.",
+    gseTitle: "iOS Developer — Georgian State Electrosystem",
+    gseDescription: "Built the notifications feature of the GSE mobile app, following the internal procedures and standards of a large organization.",
+    tbcCrossCollabTitle: "iOS Developer — TBC Cross Collab",
+    tbcCrossCollabDescription: "Fully implemented the Subscription feature of a mobile bank (SwiftUI, UIKit), working in an Agile process with cross-functional business and technical teams.",
+    campsideIosTitle: "iOS Engineer — Campside",
+    campsideIosDescription: "iOS engineer on Campside, the app that brings together hiking trips, camps and tourism events.",
+    gitaEnergoTitle: "GITA ENERGO HACK 2025",
+    gitaEnergoDescription: "Won a 10,000 GEL grant.",
+    hackathonPrizeTitle: "Hackathon Prize Winner — Voice Assistant",
+    hackathonPrizeDescription: "Prize for a Georgian–English voice assistant for hotel operations (2026).",
+    smartStayTitle: "Smart Stay 3.0 · GITA Telavi",
+    hacktoberfestTitle: "Hacktoberfest 2026",
+    organizerRoleDescription: "Part of the organizing team.",
+    brainHackTitle: "BrainHack_AI · GTU",
+    brainHackDescription: "Technical mentor and organizing-team member. I wrote the technical tasks (Generative AI, Data Scraping, Business Intelligence), defined the judging criteria and mentored the participating teams.",
     // New sub-category filters
     photos: "Photos",
     topics: "Topics",
@@ -246,7 +278,7 @@ export const translations = {
     
     // Dates for academic achievements
     kiuAmbassadorDate: "2022 - present",
-    nasaSpaceAppsDate: "2022",
+    nasaSpaceAppsDate: "2023",
     architectureTutorDate: "Sep 2022 - Dec 2022 · 4 months",
     laboratoryTutorDate: "Feb 2023 - Jun 2023 · 5 months",
     campLeadershipDate: "2023 - present",
@@ -261,7 +293,7 @@ export const translations = {
     novaCampTitle: "Nova Camp",
     novaCampDescription: "I was commissioned to create a poster for advertising.",
     eulerOlympiadTitle: "Euler Olympiad",
-    eulerOlympiadDescription: "..........",
+    eulerOlympiadDescription: "Author of the olympiad problems (2024–2026): an unambiguous statement and a pre-written correct answer.",
     photoContestExhibit: "In 2024 I participated in a photo contest held at KIU where 4 of my works were exhibited.",
     morePhotosText: "Want to see more photos?",
     morePhotosButton: "Follow me on Instagram",
@@ -411,8 +443,8 @@ export const translations = {
     youngLeadersDescription: "ქუთაისის მერიის პროექტი – 2023, 2025",
 
     aiCampBakurianiTitle: "AI Camp Bakuriani",
-    aiCampBakurianiDescription: "GITA - ს ორგანიზებით, ბაკურიანში, სასტუმრო ROOMS KOKHTA-ში I-IV კურსის სტუდენტებისთვის ხელოვნური ინტელექტის ბანაკი გაიმართა.",
-    aiCampBakurianiModal: "GITA - ს ორგანიზებით, ბაკურიანში, სასტუმრო ROOMS KOKHTA-ში, I-IV კურსის სტუდენტებისთვის ხელოვნური ინტელექტის ბანაკი გაიმართა. საქართველოსა და უზბეკეთს შორის არსებული თანამშრომლობის ფარგლებში, ბანაკში მონაწილეობას წინასწარ შერჩეული 50 ქართველი და 10 უზბეკი სტუდენტი იღებდა.\n\n🚀ერთი კვირის განმავლობაში მონაწილეები აქტიურად იყვნენ ჩართული სალექციო პროცესებში, გაეცნენ AI ტექნოლოგიებს, მანქანური სწავლების ალგორითმებს, კიბერუსაფრთხოების მნიშვნელობასა და მონაცემთა მეცნიერებას. ამას გარდა, ბანაკის განმავლობაში მონაწილეები აქტიურად მუშაობდნენ საკუთარი სტარტაპების შექმნაზე, დემო დღეზე 11 გუნდმა საკუთარი პროექტი ჟიურის წინაშე წარადგინა.",
+    aiCampBakurianiDescription: "GITA - ს ორგანიზებით, ბაკურიანში, სასტუმრო ROOMS KOKHTA-ში I-IV კურსის სტუდენტებისთვის ხელოვნური ინტელექტის ბანაკი გაიმართა. ბანაკის გამარჯვებული (2025).",
+    aiCampBakurianiModal: "GITA - ს ორგანიზებით, ბაკურიანში, სასტუმრო ROOMS KOKHTA-ში, I-IV კურსის სტუდენტებისთვის ხელოვნური ინტელექტის ბანაკი გაიმართა. საქართველოსა და უზბეკეთს შორის არსებული თანამშრომლობის ფარგლებში, ბანაკში მონაწილეობას წინასწარ შერჩეული 50 ქართველი და 10 უზბეკი სტუდენტი იღებდა.\n\n🚀ერთი კვირის განმავლობაში მონაწილეები აქტიურად იყვნენ ჩართული სალექციო პროცესებში, გაეცნენ AI ტექნოლოგიებს, მანქანური სწავლების ალგორითმებს, კიბერუსაფრთხოების მნიშვნელობასა და მონაცემთა მეცნიერებას. ამას გარდა, ბანაკის განმავლობაში მონაწილეები აქტიურად მუშაობდნენ საკუთარი სტარტაპების შექმნაზე, დემო დღეზე 11 გუნდმა საკუთარი პროექტი ჟიურის წინაშე წარადგინა.\n\n🏆 ბანაკის გამარჯვებული (2025).",
 
     icsuTitle: "icsu",
     
@@ -451,7 +483,7 @@ export const translations = {
     architectureTutorDescription: "დავეხმარე სტუდენტებს კომპიუტერული არქიტექტურის საკითხებში.",
     
     campsideStartupTitle: "Campside სტარტაპი",
-    campsideStartupDescription: "თანადამაარსებელი & iOS დეველოპერი",
+    campsideStartupDescription: "iOS Engineer (2023–2025), შემდეგ AI Agents & Automation Engineer (2025 – დღემდე) Campside-ში — აპლიკაციაში, რომელიც ეხმარება ღია ცის ქვეშ აქტივობების ორგანიზებასა და პოვნას.",
     
     // CampSide info block
     campsideInfoTitle: "About CampSide",
@@ -485,7 +517,7 @@ export const translations = {
     
     // Dates for academic achievements
     kiuAmbassadorDate: "2022 - დღემდე",
-    nasaSpaceAppsDate: "2022",
+    nasaSpaceAppsDate: "2023",
     architectureTutorDate: "სექ 2022 - დეკ 2022 · 4 თვე",
     laboratoryTutorDate: "თებ 2023 - ივნ 2023 · 5 თვე",
     campLeadershipDate: "2023 - დღემდე",
@@ -502,6 +534,38 @@ export const translations = {
     mathematicsDescription: "მათემატიკური კონცეფციების, პრობლემებისა და ვიზუალიზაციების კვლევა.",
     sports: "სპორტი",
     sportsDescription: "ჩემი სპორტული აქტივობებისა და მიღწევების ჩვენება.",
+
+    // AI და ჰაკათონების კატეგორიები
+    ai: "ხელოვნური ინტელექტი",
+    hackathons: "ჰაკათონები",
+    aiDescription: "LLM-ზე დაფუძნებული აგენტები, ხმოვანი ასისტენტები და შეფასების სისტემები: რას ვაშენებ და სად მიმუშავია.",
+    hackathonsDescription: "ჰაკათონები, რომლებშიც მივიღე მონაწილეობა და რომელთა ორგანიზებაშიც ჩავერთე.",
+    aiStory: "ვაშენებ LLM-ზე დაფუძნებულ აგენტურ სისტემებსა და დიალოგურ ასისტენტებს (chatbot, voice assistant) Python-ზე — LangGraph, საკუთარი აგენტური ლოგიკა, MCP სერვერი. პასუხების ხარისხსა და სისწორეს (accuracy) ვზომავ LLM-as-judge მიდგომით და შეფასების მეტრიკებზე დაყრდნობით ვაკეთებ prompt optimization-ს. ჰაკათონის პრიზიორი პროექტი: ქართულ-ინგლისური ხმოვანი ასისტენტი სრული ციკლით — STT → აგენტი → Gemini TTS.",
+    hackathonsStory: "ჰაკათონებზე ყველაზე სწრაფად ვსწავლობ. მონაწილეობა მიმიღია როგორც მონაწილეს (NASA Space Apps 2023, GITA ENERGO HACK 2025, 2026 წლის ჰაკათონის პრიზი ხმოვანი ასისტენტით) და ასევე ვმონაწილეობ მათ ორგანიზებაში: ვწერ ტექნიკურ ამოცანებს, ვადგენ შეფასების კრიტერიუმებს და ვმენტორობ გუნდებს.",
+    hackathonParticipation: "მონაწილეობა",
+    hackathonOrganizing: "საორგანიზაციო საქმეებში მონაწილე",
+    presentLabel: "დღემდე",
+    campsideAiTitle: "AI Agents & Automation Engineer — Campside",
+    campsideAiDescription: "მრავალნაბიჯიანი LLM workflow-ები LangGraph-ით — state-ის მართვა, პირობითი განშტოებები, tool calling; საკუთარი აგენტური ციკლები framework-ის გარეშე და LangChain. პასუხების ხარისხისა და სისწორის (accuracy) სისტემატური გაზომვა LLM-as-judge-ით — შეფასების მეტრიკების (evaluation metrics) განსაზღვრა, შედეგების ანალიზი და იტერაციული prompt optimization. არასტრუქტურიზებული მონაცემების სტრუქტურირება LLM-ით; End-to-End ავტომატიზაცია გარე API-ებთან; სტაბილურობის მონიტორინგი და ხარვეზების დიაგნოსტიკა.",
+    hotelVoiceAssistantTitle: "ხმოვანი ასისტენტი სასტუმროს ოპერაციებისთვის",
+    hotelVoiceAssistantDescription: "ხმოვანი ციკლი: Speech-to-Text → განზრახვის (intent) ამოცნობა აგენტით → დავალების გენერაცია → პასუხის გახმოვანება Gemini TTS-ით; ქართული და ინგლისური. დიალოგის მართვა (dialogue management) LangGraph-ით; დიალოგური სცენარების ტესტირება და პასუხების შეფასება LLM-as-judge მიდგომით. Python + FastAPI ბექენდი; ინტეგრაციები — Telegram და სატელეფონო ზარი პერსონალის ავტომატური ინფორმირებისთვის. ჰაკათონის პრიზიორი პროექტი (2026).",
+    mcpAgentTitle: "MCP სერვერი და LangGraph აგენტი",
+    mcpAgentDescription: "ღია კოდი: MCP სერვერი — მოდელისთვის შიდა მონაცემებსა და ხელსაწყოებზე სტანდარტიზებული წვდომა; LangGraph აგენტი state-ის მართვითა და tool calling-ით; eval სკრიპტები პასუხების ხარისხის გასაზომად.",
+    gseTitle: "iOS დეველოპერი — საქართველოს სახელმწიფო ელექტროსისტემა",
+    gseDescription: "Mobile GSE-ის შეტყობინებების ფუნქციონალის შექმნა მსხვილი ორგანიზაციის შიდა პროცედურებისა და სტანდარტების დაცვით.",
+    tbcCrossCollabTitle: "iOS დეველოპერი — TBC Cross Collab",
+    tbcCrossCollabDescription: "Mobile Bank-ის Subscription ფუნქციონალის სრული იმპლემენტაცია (SwiftUI, UIKit); Agile პროცესი და მუშაობა კროს-ფუნქციურ ბიზნეს და ტექნიკურ გუნდებთან.",
+    campsideIosTitle: "iOS Engineer — Campside",
+    campsideIosDescription: "Campside-ის iOS ინჟინერი — აპლიკაცია, რომელიც აერთიანებს ლაშქრობებს, ბანაკებსა და ტურისტულ ღონისძიებებს.",
+    gitaEnergoTitle: "GITA ENERGO HACK 2025",
+    gitaEnergoDescription: "10 000 ₾ გრანტის მოგება.",
+    hackathonPrizeTitle: "ჰაკათონის პრიზიორი — ხმოვანი ასისტენტი",
+    hackathonPrizeDescription: "პრიზი ქართულ-ინგლისური ხმოვანი ასისტენტისთვის სასტუმროს ოპერაციებისთვის (2026).",
+    smartStayTitle: "Smart Stay 3.0 · GITA თელავი",
+    hacktoberfestTitle: "Hacktoberfest 2026",
+    organizerRoleDescription: "საორგანიზაციო გუნდის წევრი.",
+    brainHackTitle: "BrainHack_AI · GTU",
+    brainHackDescription: "ტექნიკური მენტორი და საორგანიზაციო გუნდის წევრი. დავწერე ტექნიკური ამოცანები — Generative AI, Data Scraping, Business Intelligence, განვსაზღვრე შეფასების კრიტერიუმები და ვმენტორობდი მონაწილე გუნდებს.",
     // New sub-category filters
     photos: "ფოტოები",
     topics: "თემები",
@@ -525,7 +589,7 @@ export const translations = {
     novaCampTitle: "ნოვა ბანაკი",
     novaCampDescription: "მომავალმა დამიკვეთეს სარეკლამო პოსტერის შექმნა.",
     eulerOlympiadTitle: "ოილერის ოლიმპიადა",
-    eulerOlympiadDescription: "..........",
+    eulerOlympiadDescription: "საოლიმპიადო ამოცანების ავტორი (2024–2026): ცალსახა პირობა და წინასწარ გაწერილი სწორი პასუხი.",
     photoContestExhibit: "2024 წელს მონაწილეობა მივიღე KIU-ში გამართულ ფოტოკონკურსში, სადაც ჩემი 4 ნამუშევარი გამოიფინა.",
     morePhotosText: "მეტი ფოტოს სანახავად გადადით ჩემს ინსტაგრამზე",
     morePhotosButton: "ინსტაგრამი @gvaroph",

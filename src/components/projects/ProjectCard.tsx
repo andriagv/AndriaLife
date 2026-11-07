@@ -54,6 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick, index =
         )}
       </div>
       <CardContent className="p-6">
+        {project.period && <p className="text-sm font-medium text-primary mb-1">{project.period}</p>}
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
         <p className="text-muted-foreground mb-4">{project.description}</p>
         <div className="flex gap-3">

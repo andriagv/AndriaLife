@@ -22,8 +22,19 @@ export class ProjectService implements IProjectService {
     const filterCategories: Record<string, FilterOption[]> = {
       ios: [
         { id: "all", label: t('all') },
+        { id: "work", label: t('work') },
         { id: "app", label: t('myProjects') },
         { id: "certificate", label: t('certificates') }
+      ],
+      ai: [
+        { id: "all", label: t('all') },
+        { id: "work", label: t('work') },
+        { id: "projects", label: t('myProjects') }
+      ],
+      hackathons: [
+        { id: "all", label: t('all') },
+        { id: "participation", label: t('hackathonParticipation') },
+        { id: "organizing", label: t('hackathonOrganizing') }
       ],
       camps: [
         { id: "all", label: t('all') },
@@ -65,6 +76,8 @@ export class ProjectService implements IProjectService {
     const titleMap: Record<string, TranslationKey> = {
       camps: "campParticipation",
       ios: "iosDeveloper",
+      ai: "ai",
+      hackathons: "hackathons",
       photography: "photography",
       robotics: "robotics",
       mathematics: "mathematics",
@@ -76,6 +89,8 @@ export class ProjectService implements IProjectService {
 
   getSectionDescription(category: string, t: (key: TranslationKey) => string): string {
     const descriptionMap: Record<string, TranslationKey> = {
+      ai: 'aiDescription',
+      hackathons: 'hackathonsDescription',
       camps: 'campsDescription',
       photography: 'photographyDescription',
       robotics: 'roboticsDescription',

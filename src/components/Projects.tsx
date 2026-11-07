@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useProjects } from "@/hooks/useProjects";
 import { useCategory } from "@/contexts/CategoryContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import ProjectFilters from "./projects/ProjectFilters";
+import GroupedProjectGrid from "./projects/GroupedProjectGrid";
 
 import ProjectCard from "./projects/ProjectCard";
 import PaginatedProjectGrid from "./projects/PaginatedProjectGrid";
@@ -14,8 +16,22 @@ import ErrorBoundary from "./ErrorBoundary";
 
 const Projects: React.FC = () => {
   const { category } = useCategory();
+  const { t } = useLanguage();
   const { viewData, filter, setFilter, isLoading, error, getProjectById } = useProjects();
   const [activeModalId, setActiveModalId] = useState<number | null>(null);
+
+  // Categories whose cards are split into titled sections (ids match the project subcategories)
+  const groupsByCategory: Record<string, { id: string; title: string }[]> = {
+    ai: [
+      { id: "work", title: t("work") },
+      { id: "projects", title: t("myProjects") },
+    ],
+    hackathons: [
+      { id: "participation", title: t("hackathonParticipation") },
+      { id: "organizing", title: t("hackathonOrganizing") },
+    ],
+  };
+  const groups = groupsByCategory[category];
 
   const modalProject = activeModalId ? getProjectById(activeModalId) : undefined;
 
@@ -71,8 +87,18 @@ const Projects: React.FC = () => {
                 </div>
               )}
 
+              {/* AI and hackathons: cards split into titled sections */}
+              {groups && (
+                <GroupedProjectGrid
+                  projects={viewData.projects}
+                  groups={groups}
+                  filter={filter}
+                  onProjectClick={handleProjectClick}
+                />
+              )}
+
               {/* Default grid layout for other categories */}
-              {category !== 'ios' && category !== 'photography' && category !== 'camps' && (
+              {category !== 'ios' && category !== 'photography' && category !== 'camps' && !groups && (
                 <PaginatedProjectGrid 
                   projects={viewData.projects}
                   onProjectClick={handleProjectClick}
