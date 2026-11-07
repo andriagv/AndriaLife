@@ -10,20 +10,20 @@ export const translations = {
     // Hero section
     hello: "Hello, I am",
     name: "Andria",
-    role: "iOS Developer",
+    role: "AI Engineer",
     heroDescription: "Welcome to my digital space - a place where I combine my work, ideas and values - everything that creates my professional identity. My goal is to create solutions that really help people and make life simpler and more beautiful.",
     contactMe: "Contact Me",
     viewWork: "View Work",
     
     // About section
     aboutMe: "About Me",
-    aboutDescription: "I am a student at Kutaisi International University, where I am studying Computer Science. I am passionate about programming and I am always looking for new challenges and opportunities to learn and grow.",
+    aboutDescription: "I am a student at the Georgian Technical University, where I am studying Computer Science. I am passionate about programming and I am always looking for new challenges and opportunities to learn and grow.",
     myStory: "My Story",
     
     // Category-specific stories
     iosStory: "I completed the TBC IT Academy iOS course with excellent grades. During the course and after its completion, I worked on numerous interesting projects - both individual and collaborative projects, including hackathons",
     campsStory: "Since childhood, I have been actively involved in non-formal education, participating in numerous educational camps, training programs, and workshops. This experience has helped me develop essential skills in leadership, teamwork, communication, and problem-solving, which are valuable assets in professional environments",
-    academicStory: "I am pursuing education in Computer Science at Kutaisi International University, focusing on building a strong foundation in technology and innovation.",
+    academicStory: "I study Computer Science at the Georgian Technical University (GTU), focusing on building a strong foundation in technology and innovation. Before that I studied at Kutaisi International University (KIU) from 2022.",
     startupsStory: "I'm an entrepreneur at heart with experience in developing and launching innovative products. I enjoy turning ideas into viable businesses.",
     designStory: "I am passionate about design and have experience working on various creative projects — from UI/UX design to branding development. My goal is to create visually appealing, user-centered, and functional products that deliver optimal user experience. My design approach focuses on balancing aesthetic appeal with practical usability, ensuring that form follows function while maintaining visual excellence",
     sportsStory: "From childhood, I was actively involved in sports and passionate about various disciplines. Football particularly captured my interest at age 5 when I received a ball as a birthday gift — from that moment, the sport became a true passion of mine. I took my first step toward professional development in second grade when I started training with the local village team. Unfortunately, tragedy struck when our coach passed away during the second training session, temporarily halting my sporting activities. After a few months' break, my father took me to one of the teams in a nearby city. However, there was no age-appropriate group available, and my physical development at the time wasn't sufficient to compete with players two years older. Eventually, following my mother's persistent advice, I focused my attention on mathematics — thus ending my pursuit of a sporting career, though my love for football remains to this day",
@@ -331,7 +331,7 @@ export const translations = {
     // Hero section
     hello: "გამარჯობა, მე ვარ",
     name: "ანდრია",
-    role: "iOS დეველოპერი",
+    role: "AI ინჟინერი",
     heroDescription: "კეთილი იყოს თქვენი მობრძანება ჩემს ციფრულ სივრცეში – ადგილას, სადაც ვაერთიანებ ჩემს საქმეს, იდეებსა და ღირებულებებს – ყველაფერს, რაც ქმნის ჩემს პროფესიულ იდენტობას. ჩემი მიზანია, შევქმნა გადაწყვეტილებები, რომლებიც რეალურად ეხმარება ადამიანებს და ცხოვრებას უფრო მარტივსა და ლამაზს ხდის.",
     contactMe: "დამიკავშირდით",
     viewWork: "ნამუშევრების ნახვა",
@@ -344,7 +344,7 @@ export const translations = {
     // Category-specific stories
     iosStory: "დავამთავრე TBC IT აკადემიის iOS კურსი საუკეთესო შეფასებით. კურსის განმავლობაში და მის დასრულების შემდეგ ვმუშაობდი მრავალ საინტერესო პროექტზე - როგორც ინდივიდუალურ, ისე კოლაბორაციულ პროექტებზე, მათ შორის ჰაკათონებშიც",
     campsStory: "ბავშვობიდან აქტიურად ვართ ჩართული არაფორმალურ განათლებაში და მონაწილეობა მიმიღია მრავალ საგანმანათლებლო ბანაკში, ტრენინგსა და ფართომასშტაბიან პროგრამაში. ეს გამოცდილებები დამეხმარა განმევითარებინა ლიდერობის, გუნდური მუშაობის, კომუნიკაციისა და პრობლემების გადაჭრის უნარები, რაც მნიშვნელოვან ღირებულებას წარმოადგენს პროფესიულ საქმიანობაში.",
-    academicStory: "მე ვსწავლობ კომპიუტერულ მეცნიერებებს ქუთაისის საერთაშორისო უნივერსიტეტში, ფოკუსირებული ვარ ტექნოლოგიებისა და ინოვაციების მყარი საფუძვლის შექმნაზე.",
+    academicStory: "მე ვსწავლობ კომპიუტერულ მეცნიერებებს საქართველოს ტექნიკურ უნივერსიტეტში (GTU), ფოკუსირებული ვარ ტექნოლოგიებისა და ინოვაციების მყარი საფუძვლის შექმნაზე. მანამდე 2022 წლიდან ვსწავლობდი ქუთაისის საერთაშორისო უნივერსიტეტში (KIU).",
     startupsStory: "მე ვარ მეწარმე გულით და მაქვს გამოცდილება ინოვაციური პროდუქტების შემუშავებასა და გაშვებაში. მომწონს იდეების სიცოცხლისუნარიან ბიზნესად გარდაქმნა.",
     designStory: "გავატაცებული ვარ დიზაინით და გამოცდილება მაქვს სხვადასხვა კრეატიულ პროექტზე მუშაობის — UI/UX დიზაინიდან ბრენდინგის შექმნამდე. ვცდილობ შევქმნა ვიზუალურად მიმზიდველი, მომხმარებელზე ორიენტირებული და ფუნქციონალური პროდუქტები, რომლებიც ოპტიმალურ მომხმარებლის გამოცდილებას უზრუნველყოფს. დიზაინისადმი ჩემი მიდგომა ორიენტირებულია როგორც ესთეტიკურ ღირებულებებზე, ისე პრაქტიკულ გამყენებაზე",
     sportsStory: "ბავშვობიდან აქტიური ვიყავი სპორტში და სხვადასხვა სახეობით ვიყავი გატაცებული. განსაკუთრებით დამაინტერესა ფეხბურთმა 5 წლის ასაკში, როცა დაბადების დღეზე ბურთი მაჩუქეს — მას შემდეგ ეს სპორტი ჩემთვის ნამდვილ ვნებად იქცა.   პროფესიული განვითარების პირველი ნაბიჯი მეორე კლასში გადავდგი, როცა ადგილობრივ სოფლის გუნდში ვვარჯიშობდი. სამწუხაროდ, მეორე ვარჯიშის დღეს მწვრთნელი ტრაგიკულად გარდაიცვალა, რამაც დროებით შეწყვიტა ჩემი სპორტული მოღვაწეობა. რამდენიმე თვიანი პაუზის შემდეგ, მამამ ახლომდებარე ქალაქის ერთ-ერთ გუნდში მიმიყვანა. თუმცა, იქ ჩემი ასაკის ჯგუფი არ მუშაობდა და ჩემი მაშინდელი ფიზიკური მონაცემები ორი წლით უფროს მოთამაშეებთან კონკურენციისთვის საკმარისი არ იყო. საბოლოოდ, დედაჩემის დაჟინებული რჩევით, ყურადღება მათემატიკას მივაქციე — ასე დასრულდა ჩემი სპორტული კარიერისკენ სწრაფვა, თუმცა ფეხბურთისადმი სიყვარული დღემდე შემორჩა",

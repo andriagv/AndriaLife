@@ -6,14 +6,14 @@ import ClientLayout from '@/components/ClientLayout'
 const inter = Inter({ subsets: ['latin'] })
 
 const SITE_URL = 'https://andria.life'
-const TITLE = 'Andria Gvaramia - iOS Developer & Mathematician'
+const TITLE = 'Andria Gvaramia - AI Engineer & Mathematician'
 const DESCRIPTION =
-  'Portfolio of Andria Gvaramia: iOS developer, mathematics enthusiast and Computer Science student at Kutaisi International University. Apps, camps, academic achievements, design and photography.'
+  'Portfolio of Andria Gvaramia: AI engineer, mathematics enthusiast and Computer Science student at the Georgian Technical University. LLM agents, voice assistants, iOS apps, hackathons, camps, academic achievements, design and photography.'
 const OG_IMAGE = {
   url: '/og-image.jpg',
   width: 1200,
   height: 630,
-  alt: 'Andria Gvaramia - iOS Developer & Mathematician',
+  alt: 'Andria Gvaramia - AI Engineer & Mathematician',
 }
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | Andria Gvaramia',
   },
   description: DESCRIPTION,
-  keywords: ['Andria Gvaramia', 'iOS Developer', 'Swift', 'SwiftUI', 'Mathematics', 'Kutaisi International University', 'Georgia', 'Portfolio'],
+  keywords: ['Andria Gvaramia', 'AI Engineer', 'LLM', 'LangGraph', 'MCP', 'Voice Assistant', 'iOS Developer', 'Swift', 'SwiftUI', 'Mathematics', 'Georgian Technical University', 'Georgia', 'Portfolio'],
   authors: [{ name: 'Andria Gvaramia', url: SITE_URL }],
   creator: 'Andria Gvaramia',
   publisher: 'Andria Gvaramia',
@@ -81,13 +81,18 @@ const personJsonLd = {
   name: 'Andria Gvaramia',
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
-  jobTitle: 'iOS Developer',
+  jobTitle: 'AI Engineer',
   description: DESCRIPTION,
+  // Studies at GTU now, after Kutaisi International University
+  affiliation: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Georgian Technical University',
+  },
   alumniOf: {
     '@type': 'CollegeOrUniversity',
     name: 'Kutaisi International University',
   },
-  knowsAbout: ['iOS development', 'Swift', 'Mathematics', 'Photography', 'Graphic design'],
+  knowsAbout: ['AI agents', 'LLM', 'LangGraph', 'Voice assistants', 'iOS development', 'Swift', 'Mathematics', 'Photography', 'Graphic design'],
   sameAs: [
     'https://github.com/andriagv',
     'https://www.instagram.com/gvaroph/',
