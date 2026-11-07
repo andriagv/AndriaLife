@@ -329,14 +329,14 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     imageUrl: '/photos/mathematics/freeuineuler.webp'
   },
 
-  // iOS: work experience (shown as its own section; no image until logos are added)
+  // iOS: work experience (shown as its own section, with the company logo)
   {
     id: 43,
     title: t('gseTitle'),
     category: 'ios',
     subcategory: 'work',
     description: t('gseDescription'),
-    imageUrl: '',
+    imageUrl: '/photos/ios-developer/work/gse.webp',
     period: '2025–2026',
   },
   {
@@ -345,7 +345,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'ios',
     subcategory: 'work',
     description: t('tbcCrossCollabDescription'),
-    imageUrl: '',
+    imageUrl: '/photos/ios-developer/work/tbc.webp',
     period: '2024',
     tags: ['SwiftUI', 'UIKit'],
   },
@@ -355,7 +355,8 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'ios',
     subcategory: 'work',
     description: t('campsideIosDescription'),
-    imageUrl: '',
+    imageUrl: '/photos/ios-developer/work/campside.webp',
+    imageTone: 'dark', // the logo is light grey
     period: '2023–2025',
   },
 

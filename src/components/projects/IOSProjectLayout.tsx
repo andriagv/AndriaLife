@@ -44,23 +44,43 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
           <h3 className="text-3xl font-bold text-center mb-12">{t('work')}</h3>
           <div className="mx-auto max-w-4xl space-y-6">
             {iosWork.map((job) => (
-              <div key={job.id} className={`${styles['glass-card']} text-center md:text-left`}>
-                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-3">
-                  <h3 className="text-2xl font-bold">{job.title}</h3>
-                  {job.period && (
-                    <span className="text-primary font-medium whitespace-nowrap">{job.period}</span>
-                  )}
-                </div>
-                <p className="text-muted-foreground">{job.description}</p>
-                {job.tags && job.tags.length > 0 && (
-                  <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
-                    {job.tags.map(tag => (
-                      <span key={tag} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        {tag}
-                      </span>
-                    ))}
+              <div
+                key={job.id}
+                className={`${styles['glass-card']} flex flex-col md:flex-row items-center gap-6 text-center md:text-left`}
+              >
+                {/* Company logo on its own tile, so dark and light logos both stay readable */}
+                {job.imageUrl && (
+                  <div
+                    className={`flex h-24 w-24 shrink-0 items-center justify-center rounded-xl p-3 shadow-sm ring-1 ring-black/5 ${
+                      job.imageTone === 'dark' ? 'bg-neutral-900' : 'bg-white'
+                    }`}
+                  >
+                    <img
+                      src={job.imageUrl}
+                      alt={job.title}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                 )}
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-3">
+                    <h3 className="text-2xl font-bold">{job.title}</h3>
+                    {job.period && (
+                      <span className="text-primary font-medium whitespace-nowrap">{job.period}</span>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground">{job.description}</p>
+                  {job.tags && job.tags.length > 0 && (
+                    <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
+                      {job.tags.map(tag => (
+                        <span key={tag} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
