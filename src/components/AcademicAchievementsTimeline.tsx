@@ -6,7 +6,7 @@ import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const getAcademicAchievements = (t: any) => [
   {
-    image: "/photos/academic-achievements/KIUAmbassador.jpeg",
+    image: "/photos/academic-achievements/KIUAmbassador.webp",
     year: "2024",
     title: t('kiuAmbassadorTitle'),
     subtitle: t('kiuAmbassadorSubtitle'),
@@ -14,7 +14,7 @@ const getAcademicAchievements = (t: any) => [
     date: t('kiuAmbassadorDate')
   },
   {
-    image: "/photos/academic-achievements/architectureTutor.png",
+    image: "/photos/academic-achievements/architectureTutor.webp",
     year: "2023",
     title: t('architectureTutorTitle'),
     subtitle: t('architectureTutorSubtitle'),
@@ -22,7 +22,7 @@ const getAcademicAchievements = (t: any) => [
     date: t('architectureTutorDate')
   },
   {
-    image: "/photos/academic-achievements/labTutor.jpeg",
+    image: "/photos/academic-achievements/labTutor.webp",
     year: "2023",
     title: t('laboratoryTutorTitle'),
     subtitle: t('laboratoryTutorSubtitle'),
@@ -30,7 +30,7 @@ const getAcademicAchievements = (t: any) => [
     date: t('laboratoryTutorDate')
   },
   {
-    image: "/photos/academic-achievements/campside.jpg",
+    image: "/photos/academic-achievements/campside.webp",
     year: "2022",
     title: t('campLeadershipTitle'),
     subtitle: t('campLeadershipSubtitle'),
@@ -38,7 +38,7 @@ const getAcademicAchievements = (t: any) => [
     date: t('campLeadershipDate')
   },
   {
-    image: "/photos/academic-achievements/spaceappchallenge.jpg",
+    image: "/photos/academic-achievements/spaceappchallenge.webp",
     year: "2023",
     title: t('nasaSpaceAppsTitle'),
     subtitle: t('nasaSpaceAppsSubtitle'),
@@ -46,7 +46,7 @@ const getAcademicAchievements = (t: any) => [
     date: t('nasaSpaceAppsDate')
   },
   {
-    image: "/photos/academic-achievements/komcer.jpeg",
+    image: "/photos/academic-achievements/komcer.webp",
     year: "2022",
     title: t('academicCertificateTitle'),
     subtitle: t('academicCertificateSubtitle'),
