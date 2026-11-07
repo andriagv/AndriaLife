@@ -75,7 +75,8 @@ const VoiceAvatar: React.FC = () => {
   const panelClass = docked
     ? [
         `fixed bottom-4 ${sideClass} z-40 flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl`,
-        "w-[min(340px,calc(100vw-2rem))] h-[min(460px,calc(100vh-7rem))]",
+        // The assistant page needs ~545px of height at this width, plus ~40px for our header and border
+        "w-[min(340px,calc(100vw-2rem))] h-[min(600px,calc(100vh-6rem))]",
         minimized ? "invisible pointer-events-none" : "",
       ].join(" ")
     : "absolute inset-0 flex flex-col";
