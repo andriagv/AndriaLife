@@ -126,7 +126,6 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
                         const [showParticles, setShowParticles] = useState(false);
                         const [showSplashCursor, setShowSplashCursor] = useState(false);
                         const [showTargetCursor, setShowTargetCursor] = useState(false);
-                        const [showHeroAnimation, setShowHeroAnimation] = useState(true);
                         const isMobile = useIsMobile();
 
                         // Set audio volume when volume state changes
@@ -154,8 +153,6 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
                             onVolumeChange={setVolume}
                             backgroundMode={backgroundMode}
                             setBackgroundMode={setBackgroundMode}
-                            showHeroAnimation={showHeroAnimation}
-                            setShowHeroAnimation={setShowHeroAnimation}
                             audioLoaded={audioLoaded}
                             isLoadingMusic={isLoadingMusic}
                           />

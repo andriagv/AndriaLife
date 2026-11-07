@@ -3,7 +3,6 @@ import { Github, Linkedin, Mail, Facebook } from "lucide-react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
-const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
@@ -12,11 +11,7 @@ import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
 import FuzzyText from "@/components/FuzzyText";
 
 
-interface HeroProps {
-  showHeroAnimation: boolean;
-}
-
-const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
+const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   
@@ -27,16 +22,6 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
       id="hero"
       className={`min-h-[100vh] flex items-center pt-16 sm:pt-20 md:pt-8 px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 relative overflow-hidden ${bgClass}`}
     >
-      {/* Spline 3D Background */}
-      {showHeroAnimation && (
-        <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(30px)' }}>
-          <React.Suspense fallback={null}>
-            <Spline
-              scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
-            />
-          </React.Suspense>
-        </div>
-      )}
       {/* Content overlay */}
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center">
