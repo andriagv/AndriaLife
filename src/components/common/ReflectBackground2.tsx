@@ -167,14 +167,16 @@ function ReflectBackground2({
 
   const finalBlurClass = blurClassMap[backdropBlurAmount] || blurClassMap["sm"];
 
+  // -z-10 keeps both layers behind the page content. Without a z-index these positioned layers paint over any
+  // in-flow content that isn't itself positioned or in its own stacking context (text, card bodies, ...).
   return (
     <div className={`w-full max-w-screen h-full overflow-hidden ${className}`}>
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full max-w-screen h-full overflow-hidden"
+        className="absolute inset-0 -z-10 w-full max-w-screen h-full overflow-hidden"
         style={{ display: "block" }}
       />
-      <div className={`absolute inset-0 ${finalBlurClass}`} />
+      <div className={`absolute inset-0 -z-10 ${finalBlurClass}`} />
     </div>
   );
 }
