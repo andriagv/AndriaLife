@@ -378,8 +378,8 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'ai',
     subcategory: 'voice',
     description: t('hotelVoiceAssistantDescription'),
-    imageUrl: '',
-    icon: 'mic',
+    imageUrl: '/photos/ai/hotel-voice-agent-graph.webp',
+    imageLayout: 'wide',
     period: '2026',
     tags: ['Python', 'FastAPI', 'LangGraph', 'STT', 'Gemini TTS'],
   },
@@ -461,7 +461,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'hackathons',
     subcategory: 'participation',
     description: t('gitaEnergoDescription'),
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/photos/hackathons/energo-hack-2025.webp',
     period: '2025',
   },
   {
@@ -490,7 +490,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'hackathons',
     subcategory: 'organizing',
     description: t('organizerRoleDescription'),
-    imageUrl: '/placeholder.svg',
+    imageUrl: '/photos/hackathons/hacktoberfest-2026.webp',
     period: '2026',
   },
   {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Bot, Brain, ExternalLink, Github, Gitlab, Mic, Newspaper, Workflow, type LucideIcon } from "lucide-react";
 import { Project } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -77,6 +78,7 @@ const WorkRow: React.FC<{ job: Project }> = ({ job }) => (
 const ProjectCardRow: React.FC<{ project: Project }> = ({ project }) => {
   const { t } = useLanguage();
   const Icon = project.icon ? ICONS[project.icon] : undefined;
+  const wide = project.imageLayout === "wide" && !!project.imageUrl;
 
   return (
     <div
@@ -89,8 +91,25 @@ const ProjectCardRow: React.FC<{ project: Project }> = ({ project }) => {
       }}
     >
       {/* Picture, or an icon until there is one */}
-      <div className="w-full md:w-1/6 flex justify-center">
-        {project.imageUrl ? (
+      <div className={`w-full flex justify-center ${wide ? "md:w-2/5" : "md:w-1/6"}`}>
+        {wide ? (
+          // A landscape picture (e.g. a diagram) is too small to read in the card: click to see it full size
+          <Dialog>
+            <DialogTrigger asChild>
+              <button type="button" aria-label={`${t("enlargeImage")}: ${project.title}`} className="w-full cursor-zoom-in">
+                <OptimizedImage
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="w-full h-auto object-contain rounded-lg shadow-md ring-1 ring-black/10"
+                />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-5xl border-0 bg-transparent p-0 shadow-none [&>button]:text-white [&>button]:opacity-90">
+              <DialogTitle className="sr-only">{project.title}</DialogTitle>
+              <img src={project.imageUrl} alt={project.title} className="max-h-[85vh] w-full rounded-lg object-contain" />
+            </DialogContent>
+          </Dialog>
+        ) : project.imageUrl ? (
           <OptimizedImage src={project.imageUrl} alt={project.title} className="w-full h-auto object-contain rounded-md" />
         ) : (
           Icon && (
@@ -101,7 +120,7 @@ const ProjectCardRow: React.FC<{ project: Project }> = ({ project }) => {
         )}
       </div>
       {/* Content */}
-      <div className="w-full md:w-5/6 text-center md:text-left">
+      <div className={`w-full text-center md:text-left ${wide ? "md:w-3/5" : "md:w-5/6"}`}>
         {project.period && <p className="text-primary font-medium mb-2">{project.period}</p>}
         <h3 className="text-2xl md:text-3xl font-bold mb-4">{project.title}</h3>
         <p className="text-muted-foreground mb-6">{project.description}</p>
