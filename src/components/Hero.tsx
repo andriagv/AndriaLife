@@ -3,20 +3,15 @@ import { Github, Linkedin, Mail, Facebook } from "lucide-react";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
-const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
-import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
+import VoiceAvatar from "./VoiceAvatar";
 
 import FuzzyText from "@/components/FuzzyText";
 
 
-interface HeroProps {
-  showHeroAnimation: boolean;
-}
-
-const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
+const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   
@@ -25,18 +20,8 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
   return (
     <section
       id="hero"
-      className={`min-h-[100vh] flex items-center pt-16 sm:pt-20 md:pt-8 px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 relative overflow-hidden ${bgClass}`}
+      className={`min-h-[100vh] flex items-center pt-16 sm:pt-20 md:pt-28 px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 relative overflow-hidden ${bgClass}`}
     >
-      {/* Spline 3D Background */}
-      {showHeroAnimation && (
-        <div className="absolute inset-0 z-0 hidden md:block" style={{ transform: 'translateX(160px) translateY(30px)' }}>
-          <React.Suspense fallback={null}>
-            <Spline
-              scene="https://prod.spline.design/3AEnkRbooqoiSfQS/scene.splinecode"
-            />
-          </React.Suspense>
-        </div>
-      )}
       {/* Content overlay */}
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center">
@@ -115,12 +100,9 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-1">
-            <WoofyHoverImage
-              src="/photos/me.webp"
-              alt="Andria profile"
-              className="w-48 md:w-[60%] h-auto object-cover rounded-2xl"
-            />
+          {/* Voice assistant (hosted separately; floats in the corner once the hero scrolls away) */}
+          <div className="w-full md:w-1/2 md:pl-6 flex justify-center md:justify-end">
+            <VoiceAvatar />
           </div>
         </div>
       </div>

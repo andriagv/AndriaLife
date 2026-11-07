@@ -20,9 +20,7 @@ export default function HomePageClient() {
   return (
     <div className="min-h-screen">
       <main>
-        <Hero 
-          showHeroAnimation={true} 
-        />
+        <Hero />
         <CategorySelection showTargetCursor={false} setShowTargetCursor={() => {}} />
         {category !== 'robotics' && <About />}
         {category === 'mathematics' && (

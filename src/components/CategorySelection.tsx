@@ -14,7 +14,7 @@ interface CategorySelectionProps {
   setShowTargetCursor: (v: boolean) => void;
 }
 const CategorySelection: React.FC<CategorySelectionProps> = ({ showTargetCursor }) => {
-  const { category, setCategory } = useCategory();
+  const { category, setCategory, avatarHighlight } = useCategory();
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
 
@@ -62,7 +62,7 @@ const CategorySelection: React.FC<CategorySelectionProps> = ({ showTargetCursor 
   ];
 
   return (
-    <section id="category-selection" className="pt-8 pb-20 px-4 sm:px-6 md:px-12 lg:px-24">
+    <section id="category-selection" className="scroll-mt-20 pt-8 pb-20 px-4 sm:px-6 md:px-12 lg:px-24">
       {!isMobile && showTargetCursor && (
         <TargetCursor 
           targetSelector=".cursor-target"
@@ -110,7 +110,8 @@ const CategorySelection: React.FC<CategorySelectionProps> = ({ showTargetCursor 
           {categories.map((cat) => (
             <GlowingCard
               key={cat.id}
-              className={`cursor-pointer cursor-target transition-all hover:shadow-lg ${category === cat.id ? "ring-2 ring-primary" : ""}`}
+              data-category-id={cat.id}
+              className={`cursor-pointer cursor-target transition-all hover:shadow-lg ${category === cat.id ? "ring-2 ring-primary" : ""} ${avatarHighlight === cat.id ? "avatar-pick" : ""}`}
               glowColor="#3b82f6"
               hoverEffect={true}
             >
