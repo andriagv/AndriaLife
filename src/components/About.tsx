@@ -47,7 +47,7 @@ const About: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
             <div className="w-full md:w-1/3 flex justify-start">
               <OptimizedImage 
-                src="/photos/photography/certificate/phcer.jpeg" 
+                src="/photos/photography/certificate/phcer.webp" 
                 alt="Photography Certificate" 
                 className="w-full max-w-xs rounded shadow-lg object-cover"
               />

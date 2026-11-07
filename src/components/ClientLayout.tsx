@@ -15,7 +15,6 @@ import WelcomeAlert from '@/components/WelcomeAlert'
 import ReflectBackground2 from '@/components/common/ReflectBackground2'
 import Navbar from '@/components/Navbar'
 import SplashCursor from '@/components/SplashCursor'
-import AiAgentWidget from '@/components/AiAgent/AiAgentWidget'
 import { useIsMobile } from '@/hooks/use-mobile'
 
 const queryClient = new QueryClient()
@@ -142,7 +141,6 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
                           <Toaster />
                           <Sonner />
                           {backgroundMode === 'reflect' && <ReflectBackground2 />}
-                          <AiAgentWidget />
                           <Navbar
                             showParticles={showParticles}
                             setShowParticles={setShowParticles}

@@ -4,13 +4,13 @@ import { Lens } from "@/components/common/Lens";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 
 const mathCertificates = [
-  { image: "/photos/mathematics/mt1.jpeg" },
-  { image: "/photos/mathematics/mt2.jpeg" },
-  { image: "/photos/mathematics/mt3.jpeg" },
-  { image: "/photos/mathematics/mt4.jpeg" },
-  { image: "/photos/mathematics/mt5.jpeg" },
-  { image: "/photos/mathematics/mt6.jpeg" },
-  { image: "/photos/mathematics/mt7.jpeg" },
+  { image: "/photos/mathematics/mt1.webp" },
+  { image: "/photos/mathematics/mt2.webp" },
+  { image: "/photos/mathematics/mt3.webp" },
+  { image: "/photos/mathematics/mt4.webp" },
+  { image: "/photos/mathematics/mt5.webp" },
+  { image: "/photos/mathematics/mt6.webp" },
+  { image: "/photos/mathematics/mt7.webp" },
 ];
 
 const events = mathCertificates.map((cert) => ({

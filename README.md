@@ -54,9 +54,17 @@ AndriaLife/
 │   ├── manifest.json      # PWA manifest
 │   └── ...
 ├── .env.local             # Environment variables
-├── next.config.js         # Next.js configuration with SSL headers
+├── next.config.js         # Next.js configuration (static export)
+├── vercel.json            # Security + cache headers (headers() doesn't work with output: 'export')
 └── ...
 ```
+
+## 🖼️ Images & audio
+
+- All site images are **WebP**, max 1800px on the long side, quality ~82 (`public/photos/**`).
+- Use `scripts/optimize-images.sh <folder>` to convert new JPG/PNG files before committing. Don't commit raw camera photos.
+- Music in `public/music` is 96 kbps MP3.
+- More photos live on Instagram: https://www.instagram.com/gvaroph/
 
 ## 🔧 SSR/SSG Implementation
 

@@ -12,7 +12,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('campsideDescription'),
-    imageUrl: "/photos/ios-developer/Campside.png",
+    imageUrl: "/photos/ios-developer/Campside.webp",
     githubUrl: "https://github.com/andriagv/TbcIosFinalProject",
     tags: ["Swift", "UIKit", "SwiftUI", "Firebase", "Xcode"],
   },
@@ -22,7 +22,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('instagramCloneDescription'),
-    imageUrl: "/photos/ios-developer/InstagramClone.png",
+    imageUrl: "/photos/ios-developer/InstagramClone.webp",
     githubUrl: "https://github.com/Irakli66/InstagramClone",
     tags: ["Swift", "SwiftUI"],
   },
@@ -32,7 +32,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('manageSubscriptionsDescription'),
-    imageUrl: "/photos/ios-developer/ManageSubscriptions.png",
+    imageUrl: "/photos/ios-developer/ManageSubscriptions.webp",
     gitlabUrl: "https://gitlab.com/techxplore7/manage-subscriptions-ios",
     tags: ["Swift", "SwiftUI"],
   },
@@ -42,7 +42,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('calculatorAppDescription'),
-    imageUrl: "/photos/ios-developer/CalculatorApp.png",
+    imageUrl: "/photos/ios-developer/CalculatorApp.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/c31d70bc124ffefae30bf520956cba9a967bb913/tbcUIKit/tbcHW15",
     tags: ["Swift", "UIKit", "Storyboard", "Xcode"],
   },
@@ -52,7 +52,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('newsAppDescription'),
-    imageUrl: "/photos/ios-developer/NewsApp.png",
+    imageUrl: "/photos/ios-developer/NewsApp.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/a120f53dbc2bb2d8848945cc4667b48baa2be474/tbcUIKit/tbcHW19",
     tags: ["Swift", "UIKit", "Xcode"],
   },
@@ -62,7 +62,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('quizAppDescription'),
-    imageUrl: "/photos/ios-developer/QuizApp.png",
+    imageUrl: "/photos/ios-developer/QuizApp.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/e045e6343b332b5e22212116b59d5606fbaac440/tbcUIKit/tbcHW21",
     tags: ["Swift", "UIKit", "Xcode"],
   },
@@ -72,7 +72,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('catchTheBananaDescription'),
-    imageUrl: "/photos/ios-developer/CatchtheBanana.png",
+    imageUrl: "/photos/ios-developer/CatchtheBanana.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/167cf52f0a8b12161b5fee83f00f22730d1e5947/tbcUIKit/tbcHW26",
     tags: ["Swift", "UIKit", "Xcode"],
   },
@@ -82,7 +82,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "certificate",
     description: t('tbcAcademyCertificateDescription'),
-    imageUrl: "/photos/ios-developer/certificate/ioscer.jpeg",
+    imageUrl: "/photos/ios-developer/certificate/ioscer.webp",
   },
   {
     id: 23,
@@ -90,7 +90,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "certificate",
     description: t('codecademyCertificateDescription'),
-    imageUrl: "/photos/ios-developer/certificate/Codecademy_ios.png",
+    imageUrl: "/photos/ios-developer/certificate/Codecademy_ios.webp",
   },
   {
     id: 24,
@@ -98,7 +98,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('profilePageDescription'),
-    imageUrl: "/photos/ios-developer/profil.png",
+    imageUrl: "/photos/ios-developer/profil.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/9afa2e84d852e7c1b55298113dcbb3ae15b9a628/tbcSwiftUI/tbcHW29/Essentials",
     tags: ["Swift", "SwiftUI", "UserDefaults"],
   },
@@ -108,7 +108,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('timerDescription'),
-    imageUrl: "/photos/ios-developer/timer.png",
+    imageUrl: "/photos/ios-developer/timer.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/9afa2e84d852e7c1b55298113dcbb3ae15b9a628/tbcSwiftUI/tbcHW32/ListsAndGrids",
     tags: ["Swift", "SwiftUI", "UserDefaults"],
   },
@@ -118,7 +118,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('musicPlayerDescription'),
-    imageUrl: "/photos/ios-developer/mini_spot.png",
+    imageUrl: "/photos/ios-developer/mini_spot.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/9afa2e84d852e7c1b55298113dcbb3ae15b9a628/tbcSwiftUI/tbcHW34/anotherHW",
     tags: ["Swift", "SwiftUI"],
   },
@@ -128,7 +128,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "ios",
     subcategory: "app",
     description: t('emojiGuessingDescription'),
-    imageUrl: "/photos/ios-developer/EmojiGuessing.png",
+    imageUrl: "/photos/ios-developer/EmojiGuessing.webp",
     githubUrl: "https://github.com/andriagv/tbcHWs/tree/aa039202e0a299eb6d0426ceaffee73e3333ac6e/tbcSwiftUI/tbcHW35",
     tags: ["Swift", "SwiftUI"],
   },
@@ -139,7 +139,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "camps",
     subcategory: "participation",
     description: t('youngLeadersDescription'),
-    imageUrl: "/photos/camps/YoungLeaders'School2023.jpeg",
+    imageUrl: "/photos/camps/YoungLeaders'School2023.webp",
   },
   {
     id: 34,
@@ -147,10 +147,10 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "camps",
     subcategory: "participation",
     description: t('aiCampBakurianiDescription'),
-    imageUrl: "/photos/camps/AICampBakuriani1.jpg",
+    imageUrl: "/photos/camps/AICampBakuriani1.webp",
     modal: {
       content: t('aiCampBakurianiModal'),
-      images: ['/photos/camps/AICampBakuriani.jpg']
+      images: ['/photos/camps/AICampBakuriani.webp']
     }
   },
   {
@@ -161,7 +161,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     description: language === 'en'
       ? '🧍‍♂️🧍‍♀️ Thematic camp in 2025 at the Kvareli Justice Training Center'
       : '🧍‍♂️🧍‍♀️ 2025 წელს თემატური ბანაკი ყვარლის იუსტიციის სასწავლო ცენტრის ბაზაზე',
-    imageUrl: "/photos/camps/yvarelicamp.JPEG",
+    imageUrl: "/photos/camps/yvarelicamp.webp",
   },
   {
     id: 5,
@@ -177,7 +177,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "camps",
     subcategory: "participation",
     description: t('gitaDescription'),
-    imageUrl: "/photos/camps/GITAInnovation&StartupCamp.jpg",
+    imageUrl: "/photos/camps/GITAInnovation&StartupCamp.webp",
     facebookUrl: "https://www.facebook.com/gitatechpark/photos/%E1%83%A5%E1%83%A3%E1%83%97%E1%83%90%E1%83%98%E1%83%A1%E1%83%98%E1%83%A1-%E1%83%A1%E1%83%90%E1%83%94%E1%83%A0%E1%83%97%E1%83%90%E1%83%A8%E1%83%9D%E1%83%A0%E1%83%98%E1%83%A1%E1%83%9D-%E1%83%A3%E1%83%9C%E1%83%98%E1%83%95%E1%83%94%E1%83%A0%E1%83%A1%E1%83%98%E1%83%A2%E1%83%94%E1%83%A2%E1%83%A8%E1%83%98-kiu-%E1%83%A1%E1%83%90-%E1%83%93%E1%83%90-gita-%E1%83%A1-%E1%83%98%E1%83%9C%E1%83%9D%E1%83%95%E1%83%90%E1%83%AA%E1%83%98%E1%83%94%E1%83%91%E1%83%98%E1%83%A1-%E1%83%A1%E1%83%90%E1%83%96%E1%83%90%E1%83%A4%E1%83%AE%E1%83%A3%E1%83%9A%E1%83%9D-%E1%83%A1%E1%83%99%E1%83%9D%E1%83%9A%E1%83%98/612378427734392/",
     linkedinUrl: "https://www.linkedin.com/in/andria-gvaramia-b85935229/overlay/1726070133896/single-media-viewer?type=LINK&profileId=ACoAADlE11UBT_eJRMHxiuoV4gkTpIVAGlSluvA&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B9UnLEeJvSqKTm1%2BduiJCog%3D%3D"
   },
@@ -189,7 +189,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     description: language === 'en'
       ? 'ICSU is an independent organization of children and students who created a seasonal camp. I participated in the summer of 2021, in Kobuleti.'
       : 'ICSU არის ბავშვებისა და სტუდენტების დამოუკიდებელი ორგანიზაცია, რომელმაც შექმნა სეზონური ბანაკი. მე მონაწილეობა მივიღე 2021 წლის ზაფხულში, ქობულეთში.',
-    imageUrl: "/photos/camps/icsu.jpg",
+    imageUrl: "/photos/camps/icsu.webp",
   },
   // Academic achievements (formerly Robotics)
   {
@@ -198,7 +198,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "academic",
     subcategory: "education",
     description: t('kiuEducationDescription'),
-    imageUrl: "/photos/academic-achievements/kiulogo.png",
+    imageUrl: "/photos/academic-achievements/kiulogo.webp",
     facebookUrl: "https://www.facebook.com/photo/?fbid=521547706778204&set=a.258939413039036",
   },
   {
@@ -207,7 +207,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: "academic",
     subcategory: "education",
     description: t('komarovSchoolDescription'),
-    imageUrl: "/photos/academic-achievements/komcer.jpeg",
+    imageUrl: "/photos/academic-achievements/komcer.webp",
   },
   // Startups projects
   // {
@@ -224,7 +224,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'work',
     description: t('kiuAmbassadorWorkDescription'),
-    imageUrl: "/photos/academic-achievements/KIUAmbassador.jpeg",
+    imageUrl: "/photos/academic-achievements/KIUAmbassador.webp",
   },
   {
     id: 14,
@@ -232,7 +232,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'work',
     description: t('labTutorDescription'),
-    imageUrl: "/photos/academic-achievements/labTutor.jpeg",
+    imageUrl: "/photos/academic-achievements/labTutor.webp",
   },
   {
     id: 15,
@@ -240,7 +240,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'work',
     description: t('architectureTutorDescription'),
-    imageUrl: "/photos/academic-achievements/architectureTutor.png",
+    imageUrl: "/photos/academic-achievements/architectureTutor.webp",
   },
   {
     id: 16,
@@ -248,7 +248,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'startup',
     description: t('campsideStartupDescription'),
-    imageUrl: "/photos/academic-achievements/campside.jpg",
+    imageUrl: "/photos/academic-achievements/campside.webp",
     facebookUrl: "https://www.facebook.com/profile.php?id=100095398426627",
     linkedinUrl: "https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A103899160&keywords=Campside%20Georgia&origin=ENTITY_SEARCH_HOME_HISTORY&sid=nl5",
   },
@@ -258,7 +258,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'academic',
     subcategory: 'hackathon',
     description: t('nasaSpaceAppsDescription'),
-    imageUrl: "/photos/academic-achievements/spaceappchallenge.jpg",
+    imageUrl: "/photos/academic-achievements/spaceappchallenge.webp",
     facebookUrl: "https://www.facebook.com/share/p/19Kt97hiYa/",
   },
   // Robotics Projects
@@ -294,10 +294,10 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'design',
     subcategory: 'work',
     description: t('ejoiDesignDescription'),
-    imageUrl: '/photos/design/mainejoi.jpeg',
+    imageUrl: '/photos/design/mainejoi.webp',
     modal: {
       content: t('ejoiDesignModal'),
-      images: ['/photos/design/secejoi.jpg']
+      images: ['/photos/design/secejoi.webp']
     }
   },
   {
@@ -306,10 +306,10 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'design',
     subcategory: 'sport',
     description: t('kiuCupDescription'),
-    imageUrl: '/photos/design/kiucup.jpg',
+    imageUrl: '/photos/design/kiucup.webp',
     modal: {
       content: t('kiuCupModal'),
-      images: ['/photos/design/finmach.png', '/photos/design/zogadicup.png', '/photos/design/jgufuricup.png']
+      images: ['/photos/design/finmach.webp', '/photos/design/zogadicup.webp', '/photos/design/jgufuricup.webp']
     }
   },
   {
@@ -318,7 +318,7 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'design',
     subcategory: 'camp',
     description: t('novaCampDescription'),
-    imageUrl: '/photos/design/firstnovacamp.png'
+    imageUrl: '/photos/design/firstnovacamp.webp'
   },
   {
     id: 33,
@@ -326,6 +326,6 @@ export const getAllProjects = (t: TFunction, language: Language): Project[] => [
     category: 'mathematics',
     subcategory: 'topics',
     description: t('eulerOlympiadDescription'),
-    imageUrl: '/photos/mathematics/freeuineuler.jpeg'
+    imageUrl: '/photos/mathematics/freeuineuler.webp'
   },
 ]; 

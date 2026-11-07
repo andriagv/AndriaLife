@@ -52,7 +52,9 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
               </GradientText>
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
-              <div className="flex justify-center md:justify-start items-start w-full transform -translate-x-0 md:-translate-x-4 lg:-translate-x-14">
+              {/* The visible name is drawn on a canvas, so keep real text for search engines and screen readers */}
+              <span className="sr-only">Andria Gvaramia - iOS Developer &amp; Mathematician</span>
+              <div aria-hidden="true" className="flex justify-center md:justify-start items-start w-full transform -translate-x-0 md:-translate-x-4 lg:-translate-x-14">
                 <FuzzyText baseIntensity={0.08} hoverIntensity={0.5} enableHover={true} color="#222">
                   {t('name')}
                 </FuzzyText>
@@ -115,7 +117,7 @@ const Hero: React.FC<HeroProps> = ({ showHeroAnimation }) => {
           
           <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-1">
             <WoofyHoverImage
-              src="/photos/me.PNG"
+              src="/photos/me.webp"
               alt="Andria profile"
               className="w-48 md:w-[60%] h-auto object-cover rounded-2xl"
             />

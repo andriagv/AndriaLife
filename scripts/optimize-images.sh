@@ -1,70 +1,31 @@
 #!/bin/bash
+# Convert JPG/PNG images in a folder (recursively) to resized WebP and remove the originals.
+# Usage: scripts/optimize-images.sh public/photos/photography
+# Requires: cwebp (brew install webp) and sips (macOS).
+# Remember to update the file extensions where the images are referenced in src/.
 
-# Image optimization script
-# Converts images to WebP format and reduces their size
+set -euo pipefail
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+DIR="${1:-}"
+MAX_SIDE="${MAX_SIDE:-1800}"
+QUALITY="${QUALITY:-82}"
 
-echo -e "${GREEN}Starting image optimization...${NC}"
+if [ -z "$DIR" ] || [ ! -d "$DIR" ]; then
+  echo "Usage: $0 <folder>" >&2
+  exit 1
+fi
 
-# Photography images
-echo -e "${YELLOW}Optimizing photography images...${NC}"
-cd public/photos/photography
+find "$DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 |
+while IFS= read -r -d '' img; do
+  out="${img%.*}.webp"
+  w=$(sips -g pixelWidth "$img" | awk '/pixelWidth/ {print $2}')
+  h=$(sips -g pixelHeight "$img" | awk '/pixelHeight/ {print $2}')
 
-# Create webp directory if it doesn't exist
-mkdir -p webp
+  resize=()
+  if [ "$w" -ge "$h" ] && [ "$w" -gt "$MAX_SIDE" ]; then resize=(-resize "$MAX_SIDE" 0); fi
+  if [ "$h" -gt "$w" ] && [ "$h" -gt "$MAX_SIDE" ]; then resize=(-resize 0 "$MAX_SIDE"); fi
 
-# Convert JPEG images to WebP with reduced quality
-for img in *.jpeg *.jpg; do
-    if [ -f "$img" ]; then
-        filename=$(basename "$img")
-        name="${filename%.*}"
-        webp_path="webp/${name}.webp"
-        
-        echo "Converting $img to WebP..."
-        
-        # Use cwebp to convert to WebP with reduced quality
-        cwebp -q 80 "$img" -o "$webp_path"
-        
-        # Get file sizes
-        original_size=$(stat -f%z "$img")
-        webp_size=$(stat -f%z "$webp_path")
-        
-        # Calculate reduction percentage
-        reduction=$((100 - (webp_size * 100 / original_size)))
-        
-        echo -e "${GREEN}✓ $img -> $webp_path (${reduction}% smaller)${NC}"
-    fi
+  cwebp -quiet -q "$QUALITY" -m 6 ${resize[@]+"${resize[@]}"} "$img" -o "$out"
+  echo "$img -> $out ($(( $(stat -f%z "$img") / 1024 )) KB -> $(( $(stat -f%z "$out") / 1024 )) KB)"
+  rm "$img"
 done
-
-# Also optimize PNG images
-for img in *.png; do
-    if [ -f "$img" ]; then
-        filename=$(basename "$img")
-        name="${filename%.*}"
-        webp_path="webp/${name}.webp"
-        
-        echo "Converting $img to WebP..."
-        
-        # Use cwebp to convert to WebP with reduced quality
-        cwebp -q 80 "$img" -o "$webp_path"
-        
-        # Get file sizes
-        original_size=$(stat -f%z "$img")
-        webp_size=$(stat -f%z "$webp_path")
-        
-        # Calculate reduction percentage
-        reduction=$((100 - (webp_size * 100 / original_size)))
-        
-        echo -e "${GREEN}✓ $img -> $webp_path (${reduction}% smaller)${NC}"
-    fi
-done
-
-# Go back to project root
-cd ../../..
-
-echo -e "${GREEN}Image optimization completed!${NC}" 

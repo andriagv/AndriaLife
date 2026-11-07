@@ -1,52 +1,55 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import ClientLayout from '@/components/ClientLayout'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const SITE_URL = 'https://andria.life'
+const TITLE = 'Andria Gvaramia - iOS Developer & Mathematician'
+const DESCRIPTION =
+  'Portfolio of Andria Gvaramia: iOS developer, mathematics enthusiast and Computer Science student at Kutaisi International University. Apps, camps, academic achievements, design and photography.'
+const OG_IMAGE = {
+  url: '/og-image.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'Andria Gvaramia - iOS Developer & Mathematician',
+}
+
 export const metadata: Metadata = {
   title: {
-    default: 'Andria Gvaramia - iOS Developer & Mathematician',
-    template: '%s | Andria Gvaramia'
+    default: TITLE,
+    template: '%s | Andria Gvaramia',
   },
-  description: 'iOS Developer, Mathematician, and Technology Enthusiast. Specializing in mobile app development, mathematical research, and innovative technology solutions.',
-  keywords: ['iOS Developer', 'Mathematician', 'Mobile App Development', 'Swift', 'React Native', 'Mathematics', 'Technology', 'Portfolio'],
-  authors: [{ name: 'Andria Gvaramia' }],
-  creator: '@andriagv',
+  description: DESCRIPTION,
+  keywords: ['Andria Gvaramia', 'iOS Developer', 'Swift', 'SwiftUI', 'Mathematics', 'Kutaisi International University', 'Georgia', 'Portfolio'],
+  authors: [{ name: 'Andria Gvaramia', url: SITE_URL }],
+  creator: 'Andria Gvaramia',
   publisher: 'Andria Gvaramia',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://andria.life'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://andria.life',
+    locale: 'ka_GE',
+    alternateLocale: ['en_US'],
+    url: SITE_URL,
     siteName: 'Andria Gvaramia Portfolio',
-    title: 'Andria Gvaramia - iOS Developer & Mathematician',
-    description: 'iOS Developer, Mathematician, and Technology Enthusiast. Specializing in mobile app development, mathematical research, and innovative technology solutions.',
-    images: [
-      {
-        url: '/photos/me.PNG',
-        width: 1200,
-        height: 630,
-        alt: 'Andria Gvaramia - iOS Developer & Mathematician',
-      },
-    ],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@andriagv',
-    creator: '@andriagv',
-    title: 'Andria Gvaramia - iOS Developer & Mathematician',
-    description: 'iOS Developer, Mathematician, and Technology Enthusiast. Specializing in mobile app development, mathematical research, and innovative technology solutions.',
-    images: ['/photos/me.PNG'],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -59,9 +62,38 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
+  manifest: '/manifest.json',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#000000',
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Andria Gvaramia',
+  url: SITE_URL,
+  image: `${SITE_URL}/og-image.jpg`,
+  jobTitle: 'iOS Developer',
+  description: DESCRIPTION,
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Kutaisi International University',
+  },
+  knowsAbout: ['iOS development', 'Swift', 'Mathematics', 'Photography', 'Graphic design'],
+  sameAs: [
+    'https://github.com/andriagv',
+    'https://www.instagram.com/gvaroph/',
+    'https://www.facebook.com/andria361791/',
+    'https://medium.com/@gvaramiaandria1',
+  ],
 }
 
 export default function RootLayout({
@@ -70,26 +102,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ka" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/photos/me.PNG" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        
-        {/* Preload critical resources */}
-        <link rel="preload" href="/photos/me.PNG" as="image" type="image/png" />
-        <link rel="preload" href="https://buildmyagent.io/widget/68aff2d26d39689687c858a6/widget-professional.js" as="script" />
-        
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/globals.css" as="style" />
+        {/* Hero image is above the fold */}
+        <link rel="preload" href="/photos/me.webp" as="image" type="image/webp" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body className={inter.className}>
         <ClientLayout>
