@@ -24,7 +24,8 @@ const Projects: React.FC = () => {
   const groupsByCategory: Record<string, { id: string; title: string }[]> = {
     ai: [
       { id: "work", title: t("work") },
-      { id: "projects", title: t("myProjects") },
+      { id: "voice", title: t("aiVoiceAssistants") },
+      { id: "agents", title: t("aiAgentsAutomation") },
     ],
     hackathons: [
       { id: "participation", title: t("hackathonParticipation") },

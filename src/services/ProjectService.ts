@@ -29,7 +29,8 @@ export class ProjectService implements IProjectService {
       ai: [
         { id: "all", label: t('all') },
         { id: "work", label: t('work') },
-        { id: "projects", label: t('myProjects') }
+        { id: "voice", label: t('aiVoiceAssistants') },
+        { id: "agents", label: t('aiAgentsAutomation') }
       ],
       hackathons: [
         { id: "all", label: t('all') },
