@@ -108,6 +108,17 @@ const Hero: React.FC = () => {
             />
           </div>
         </div>
+
+        {/* Voice avatar (hosted separately; lazy-loaded so it doesn't slow the first paint) */}
+        <div className="mt-12 md:mt-16 w-full max-w-3xl mx-auto">
+          <iframe
+            src="https://georgian-voice-avatar.lovable.app"
+            allow="microphone; autoplay"
+            title="ანდრიას ხმოვანი ავატარი"
+            loading="lazy"
+            className="w-full h-[850px] border-0 rounded-2xl"
+          />
+        </div>
       </div>
     </section>
   );
