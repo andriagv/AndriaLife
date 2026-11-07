@@ -104,8 +104,6 @@ export default function RootLayout({
   return (
     <html lang="ka" suppressHydrationWarning>
       <head>
-        {/* Hero image is above the fold */}
-        <link rel="preload" href="/photos/me.webp" as="image" type="image/webp" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

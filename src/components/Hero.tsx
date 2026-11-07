@@ -6,7 +6,6 @@ import MediumIcon from "@/components/icons/MediumIcon";
 
 import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
-import WoofyHoverImage from "@/components/ui/WoofyHoverImage";
 
 import FuzzyText from "@/components/FuzzyText";
 
@@ -20,7 +19,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className={`min-h-[100vh] flex items-center pt-16 sm:pt-20 md:pt-8 px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 relative overflow-hidden ${bgClass}`}
+      className={`min-h-[100vh] flex items-center pt-16 sm:pt-20 md:pt-28 px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 relative overflow-hidden ${bgClass}`}
     >
       {/* Content overlay */}
       <div className="container mx-auto relative z-10">
@@ -100,24 +99,16 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end md:-mt-1">
-            <WoofyHoverImage
-              src="/photos/me.webp"
-              alt="Andria profile"
-              className="w-48 md:w-[60%] h-auto object-cover rounded-2xl"
+          {/* Voice avatar (hosted separately; lazy-loaded so it doesn't slow the first paint) */}
+          <div className="w-full md:w-1/2 md:pl-6 flex justify-center md:justify-end">
+            <iframe
+              src="https://georgian-voice-avatar.lovable.app"
+              allow="microphone; autoplay"
+              title="ანდრიას ხმოვანი ავატარი"
+              loading="lazy"
+              className="w-full h-[850px] border-0 rounded-2xl"
             />
           </div>
-        </div>
-
-        {/* Voice avatar (hosted separately; lazy-loaded so it doesn't slow the first paint) */}
-        <div className="mt-12 md:mt-16 w-full max-w-3xl mx-auto">
-          <iframe
-            src="https://georgian-voice-avatar.lovable.app"
-            allow="microphone; autoplay"
-            title="ანდრიას ხმოვანი ავატარი"
-            loading="lazy"
-            className="w-full h-[850px] border-0 rounded-2xl"
-          />
         </div>
       </div>
     </section>
