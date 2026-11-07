@@ -18,33 +18,44 @@ const labels = {
  *
  * It sits in the hero until the hero scrolls out of view, then the very same iframe switches to a floating
  * panel in the bottom-right corner. Only CSS changes (no remount), so an ongoing conversation isn't interrupted
- * and the assistant stays visible while it scrolls the page to the category buttons.
+ * and the assistant stays visible while it scrolls the page around.
  */
 const VoiceAvatar: React.FC = () => {
   const { language } = useLanguage();
   const text = labels[language === "en" ? "en" : "ka"];
 
-  const { avatarHighlight } = useCategory();
+  const { avatarHighlight, avatarListing } = useCategory();
 
   const slotRef = useRef<HTMLDivElement>(null);
   const touched = useRef(false);
+  const autoCollapsed = useRef(false); // collapsed by us (not by the visitor) to uncover the category buttons
   const [docked, setDocked] = useState(false);
   const [minimized, setMinimized] = useState(false);
   const [side, setSide] = useState<"left" | "right">("right");
 
-  // When the assistant picks a category, keep the floating panel from covering that button:
-  // stay on the right if it fits, else move to the left, else collapse.
+  // While the assistant lists the areas the buttons must all be visible: keep the floating panel off them by
+  // staying on the right if that is clear, else moving to the left, else collapsing.
   useEffect(() => {
-    if (!avatarHighlight) return;
-    const card = document.querySelector(`[data-category-id="${avatarHighlight}"]`);
-    if (!card) return;
-    const { left, right } = card.getBoundingClientRect();
+    if (!avatarListing) return;
+    const cards = Array.from(document.querySelectorAll("[data-category-id]"), (el) => el.getBoundingClientRect());
     const panelWidth = Math.min(PANEL_WIDTH, window.innerWidth - 2 * PANEL_MARGIN);
-    const covers = (panelLeft: number) => left < panelLeft + panelWidth && right > panelLeft;
+    const covers = (panelLeft: number) => cards.some((c) => c.left < panelLeft + panelWidth && c.right > panelLeft);
 
     if (!covers(window.innerWidth - PANEL_MARGIN - panelWidth)) setSide("right");
     else if (!covers(PANEL_MARGIN)) setSide("left");
-    else setMinimized(true);
+    else {
+      autoCollapsed.current = true;
+      setMinimized(true);
+    }
+  }, [avatarListing]);
+
+  // Once an area is picked the page moves on to its content, so a panel we collapsed can come back
+  // (not on phones: there it would cover the very content the page just scrolled to)
+  useEffect(() => {
+    if (avatarHighlight && autoCollapsed.current) {
+      autoCollapsed.current = false;
+      if (window.innerWidth >= 768) setMinimized(false);
+    }
   }, [avatarHighlight]);
 
   useEffect(() => {
@@ -67,6 +78,7 @@ const VoiceAvatar: React.FC = () => {
 
   const toggle = (value: boolean) => {
     touched.current = true;
+    autoCollapsed.current = false;
     setMinimized(value);
   };
 
