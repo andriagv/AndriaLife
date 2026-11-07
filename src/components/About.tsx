@@ -14,7 +14,7 @@ const About: React.FC = () => {
   const storyText = t(storyKey);
 
   return (
-    <section id="about" className="section-padding">
+    <section id="about" className="section-padding scroll-mt-16">
       <div className="container mx-auto">
         <div className="text-center mb-8 md:mb-12">
           <BlurText

@@ -6,7 +6,7 @@ const RoboticsComingSoon: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="robotics-coming-soon" className="section-padding flex items-center justify-center min-h-[60vh]">
+    <section id="robotics-coming-soon" className="section-padding scroll-mt-16 flex items-center justify-center min-h-[60vh]">
       <div className="text-center">
         <div className="mb-8">
           <svg className="pl mx-auto mb-6" width="240" height="240" viewBox="0 0 240 240">
