@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useEffect, useRef, useState, ReactNode } from "react";
 
-export type Category = "ios" | "camps" | "academic" | "design" | "photography" | "robotics" | "mathematics" | "sports";
+export type Category = "ios" | "ai" | "hackathons" | "camps" | "academic" | "design" | "photography" | "robotics" | "mathematics" | "sports";
 
 // The voice assistant lives in an iframe on another origin and talks to the page via postMessage.
 // These ids are shared with the assistant, so don't rename them without updating it too.
 const AVATAR_ORIGIN = "https://georgian-voice-avatar.lovable.app";
 const AVATAR_LIST_MESSAGE = "andria-avatar:categories"; // it is listing the areas
 const AVATAR_PICK_MESSAGE = "andria-avatar:category"; // an area was picked
-const CATEGORY_IDS: readonly Category[] = ["ios", "camps", "academic", "design", "photography", "robotics", "mathematics", "sports"];
+const CATEGORY_IDS: readonly Category[] = ["ios", "ai", "hackathons", "camps", "academic", "design", "photography", "robotics", "mathematics", "sports"];
 const AVATAR_HIGHLIGHT_MS = 2800;
 
 /**

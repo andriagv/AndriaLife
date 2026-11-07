@@ -2,7 +2,7 @@ import React from "react";
 import { GlowingCard, GlowingCards } from "@/components/GlowingCards";
 import { useCategory } from "@/contexts/CategoryContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Smartphone, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
+import { Smartphone, Brain, Rocket, Tent, GraduationCap, Figma, Camera, Bot, Sigma, Trophy } from "lucide-react";
 
 import ScrollVelocity from "./ScrollVelocity";
 import SplitText from "./SplitText";
@@ -23,6 +23,16 @@ const CategorySelection: React.FC<CategorySelectionProps> = ({ showTargetCursor 
       id: "ios",
       name: t("iosDeveloper"),
       icon: <Smartphone className="h-10 w-10" />,
+    },
+    {
+      id: "ai",
+      name: t("ai"),
+      icon: <Brain className="h-10 w-10" />,
+    },
+    {
+      id: "hackathons",
+      name: t("hackathons"),
+      icon: <Rocket className="h-10 w-10" />,
     },
     {
       id: "camps",

@@ -15,9 +15,11 @@ interface IOSProjectLayoutProps {
 const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter }) => {
   const { t } = useLanguage();
   
+  const iosWork = projects.filter(p => p.subcategory === 'work');
   const iosApps = projects.filter(p => p.subcategory === 'app');
   const iosCertificates = projects.filter(p => p.subcategory === 'certificate');
 
+  const showWork = filter === 'all' || filter === 'work';
   const showApps = filter === 'all' || filter === 'app';
   const showCerts = filter === 'all' || filter === 'certificate';
 
@@ -36,6 +38,35 @@ const IOSProjectLayout: React.FC<IOSProjectLayoutProps> = ({ projects, filter })
 
   return (
     <div>
+      {/* Work experience Section */}
+      {showWork && iosWork.length > 0 && (
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-center mb-12">{t('work')}</h3>
+          <div className="mx-auto max-w-4xl space-y-6">
+            {iosWork.map((job) => (
+              <div key={job.id} className={`${styles['glass-card']} text-center md:text-left`}>
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-3">
+                  <h3 className="text-2xl font-bold">{job.title}</h3>
+                  {job.period && (
+                    <span className="text-primary font-medium whitespace-nowrap">{job.period}</span>
+                  )}
+                </div>
+                <p className="text-muted-foreground">{job.description}</p>
+                {job.tags && job.tags.length > 0 && (
+                  <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
+                    {job.tags.map(tag => (
+                      <span key={tag} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Projects Section */}
       {showApps && iosApps.length > 0 && (
         <div className="mb-16">
