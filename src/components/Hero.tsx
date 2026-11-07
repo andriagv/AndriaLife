@@ -6,6 +6,7 @@ import MediumIcon from "@/components/icons/MediumIcon";
 
 import ScrambledText from "./ScrambledText";
 import GradientText from "./GradientText";
+import VoiceAvatar from "./VoiceAvatar";
 
 import FuzzyText from "@/components/FuzzyText";
 
@@ -99,15 +100,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          {/* Voice avatar (hosted separately; lazy-loaded so it doesn't slow the first paint) */}
+          {/* Voice assistant (hosted separately; floats in the corner once the hero scrolls away) */}
           <div className="w-full md:w-1/2 md:pl-6 flex justify-center md:justify-end">
-            <iframe
-              src="https://georgian-voice-avatar.lovable.app"
-              allow="microphone; autoplay"
-              title="ანდრიას ხმოვანი ავატარი"
-              loading="lazy"
-              className="w-full h-[850px] border-0 rounded-2xl"
-            />
+            <VoiceAvatar />
           </div>
         </div>
       </div>
