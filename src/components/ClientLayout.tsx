@@ -102,7 +102,7 @@ const MusicPlayer: React.FC<{ children: (props: { musicPlaying: boolean; onMusic
   </>;
 };
 
-type BackgroundMode = 'none' | '3d' | 'reflect';
+type BackgroundMode = 'none' | 'warm' | 'reflect';
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -140,6 +140,13 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
                           <Toaster />
                           <Sonner />
                           {backgroundMode === 'reflect' && <ReflectBackground2 />}
+                          {backgroundMode === 'warm' && (
+                            <div
+                              aria-hidden
+                              className="fixed inset-0 -z-10"
+                              style={{ backgroundColor: '#EBCFB8' }}
+                            />
+                          )}
                           <Navbar
                             showParticles={showParticles}
                             setShowParticles={setShowParticles}

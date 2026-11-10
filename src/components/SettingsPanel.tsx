@@ -11,8 +11,8 @@ interface SettingsPanelProps {
   onMusicToggle: () => void;
   volume: number;
   onVolumeChange: (v: number) => void;
-  backgroundMode: 'none' | '3d' | 'reflect';
-  setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
+  backgroundMode: 'none' | 'warm' | 'reflect';
+  setBackgroundMode: (mode: 'none' | 'warm' | 'reflect') => void;
   showParticles: boolean;
   setShowParticles: (v: boolean) => void;
   showTargetCursor: boolean;
@@ -39,7 +39,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
 }) => {
   const backgroundOptions = [
     { label: 'None', value: 'none' as const },
-    { label: '3D', value: '3d' as const },
+    { label: 'Warm', value: 'warm' as const },
     { label: 'Reflect', value: 'reflect' as const },
   ];
 

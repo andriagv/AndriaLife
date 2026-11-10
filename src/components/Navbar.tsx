@@ -28,8 +28,8 @@ interface NavbarProps {
   onMusicToggle: () => void;
   volume: number;
   onVolumeChange: (v: number) => void;
-  backgroundMode: 'none' | '3d' | 'reflect';
-  setBackgroundMode: (mode: 'none' | '3d' | 'reflect') => void;
+  backgroundMode: 'none' | 'warm' | 'reflect';
+  setBackgroundMode: (mode: 'none' | 'warm' | 'reflect') => void;
   showTargetCursor: boolean;
   setShowTargetCursor: (v: boolean) => void;
   audioLoaded?: boolean;
