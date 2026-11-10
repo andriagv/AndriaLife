@@ -10,7 +10,7 @@ export const translations = {
     // Hero section
     hello: "Hello, I am",
     name: "Andria",
-    role: "iOS Developer",
+    role: "Software Developer",
     heroDescription: "Welcome to my digital space - a place where I combine my work, ideas and values - everything that creates my professional identity. My goal is to create solutions that really help people and make life simpler and more beautiful.",
     contactMe: "Contact Me",
     viewWork: "View Work",
@@ -319,7 +319,7 @@ export const translations = {
     // Hero section
     hello: "გამარჯობა, მე ვარ",
     name: "ანდრია",
-    role: "iOS დეველოპერი",
+    role: "Software Developer",
     heroDescription: "კეთილი იყოს თქვენი მობრძანება ჩემს ციფრულ სივრცეში – ადგილას, სადაც ვაერთიანებ ჩემს საქმეს, იდეებსა და ღირებულებებს – ყველაფერს, რაც ქმნის ჩემს პროფესიულ იდენტობას. ჩემი მიზანია, შევქმნა გადაწყვეტილებები, რომლებიც რეალურად ეხმარება ადამიანებს და ცხოვრებას უფრო მარტივსა და ლამაზს ხდის.",
     contactMe: "დამიკავშირდით",
     viewWork: "ნამუშევრების ნახვა",

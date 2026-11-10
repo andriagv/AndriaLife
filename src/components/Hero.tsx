@@ -5,7 +5,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import MediumIcon from "@/components/icons/MediumIcon";
 
 import ScrambledText from "./ScrambledText";
-import GradientText from "./GradientText";
 import VoiceAvatar from "./VoiceAvatar";
 
 import FuzzyText from "@/components/FuzzyText";
@@ -27,14 +26,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
             <div className="text-primary font-medium mb-4">
-              <GradientText
-                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-                animationSpeed={3}
-                showBorder={false}
-                className="highlight text-left"
-              >
-                {t('hello')}
-              </GradientText>
+              {t('hello')}
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
               {/* The visible name is drawn on a canvas, so keep real text for search engines and screen readers */}
@@ -46,14 +38,7 @@ const Hero: React.FC = () => {
               </div>
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-[11px]">
-              <GradientText
-                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-                animationSpeed={3}
-                showBorder={false}
-                className="highlight"
-              >
-                {t('role')}
-              </GradientText>
+              {t('role')}
             </h2>
             <ScrambledText className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg mx-auto md:mx-0 mb-8" text={t('heroDescription')} key={t('heroDescription')} />
             {/* No button here anymore */}
