@@ -84,16 +84,16 @@ AndriaLife/
 ```typescript
 export const metadata: Metadata = {
   title: {
-    default: 'Andria Gvaramia - iOS Developer & Mathematician',
+    default: 'Andria Gvaramia - AI Engineer & Mathematician',
     template: '%s | Andria Gvaramia'
   },
-  description: 'iOS Developer, Mathematician, and Technology Enthusiast...',
-  keywords: ['iOS Developer', 'Mathematician', 'Mobile App Development', ...],
+  description: 'AI Engineer, Mathematician, and Technology Enthusiast...',
+  keywords: ['AI Engineer', 'Mathematician', 'LLM', ...],
   metadataBase: new URL('https://andria.life'),
   openGraph: {
     type: 'website',
     url: 'https://andria.life',
-    title: 'Andria Gvaramia - iOS Developer & Mathematician',
+    title: 'Andria Gvaramia - AI Engineer & Mathematician',
     description: '...',
     images: [{ url: '/me.PNG', width: 1200, height: 630 }],
   },

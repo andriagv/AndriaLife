@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               Portfolio<span className="text-primary">.</span>
             </h3>
             <p className="text-muted-foreground mt-2">
-              iOS Developer
+              AI Engineer
             </p>
           </div>
           

@@ -57,6 +57,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick, index =
         {project.period && <p className="text-sm font-medium text-primary mb-1">{project.period}</p>}
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
         <p className="text-muted-foreground mb-4">{project.description}</p>
+        {project.tags && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag) => (
+              <span key={tag} className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-xs font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
         <div className="flex gap-3">
           {project.githubUrl && (
             <a 

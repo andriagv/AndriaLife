@@ -17,13 +17,13 @@ export const translations = {
     
     // About section
     aboutMe: "About Me",
-    aboutDescription: "I am a student at Kutaisi International University, where I am studying Computer Science. I am passionate about programming and I am always looking for new challenges and opportunities to learn and grow.",
+    aboutDescription: "I am a student at the Georgian Technical University, where I am studying Computer Science. I am passionate about programming and I am always looking for new challenges and opportunities to learn and grow.",
     myStory: "My Story",
     
     // Category-specific stories
     iosStory: "I completed the TBC IT Academy iOS course with excellent grades. During the course and after its completion, I worked on numerous interesting projects - both individual and collaborative projects, including hackathons",
     campsStory: "Since childhood, I have been actively involved in non-formal education, participating in numerous educational camps, training programs, and workshops. This experience has helped me develop essential skills in leadership, teamwork, communication, and problem-solving, which are valuable assets in professional environments",
-    academicStory: "I am pursuing education in Computer Science at Kutaisi International University, focusing on building a strong foundation in technology and innovation.",
+    academicStory: "I study Computer Science at the Georgian Technical University (GTU), focusing on building a strong foundation in technology and innovation. Before that I studied at Kutaisi International University (KIU) from 2022.",
     startupsStory: "I'm an entrepreneur at heart with experience in developing and launching innovative products. I enjoy turning ideas into viable businesses.",
     designStory: "I am passionate about design and have experience working on various creative projects — from UI/UX design to branding development. My goal is to create visually appealing, user-centered, and functional products that deliver optimal user experience. My design approach focuses on balancing aesthetic appeal with practical usability, ensuring that form follows function while maintaining visual excellence",
     sportsStory: "From childhood, I was actively involved in sports and passionate about various disciplines. Football particularly captured my interest at age 5 when I received a ball as a birthday gift — from that moment, the sport became a true passion of mine. I took my first step toward professional development in second grade when I started training with the local village team. Unfortunately, tragedy struck when our coach passed away during the second training session, temporarily halting my sporting activities. After a few months' break, my father took me to one of the teams in a nearby city. However, there was no age-appropriate group available, and my physical development at the time wasn't sufficient to compete with players two years older. Eventually, following my mother's persistent advice, I focused my attention on mathematics — thus ending my pursuit of a sporting career, though my love for football remains to this day",
@@ -237,6 +237,18 @@ export const translations = {
     organizerRoleDescription: "Part of the organizing team.",
     brainHackTitle: "BrainHack_AI · GTU",
     brainHackDescription: "Technical mentor and organizing-team member. I wrote the technical tasks (Generative AI, Data Scraping, Business Intelligence), defined the judging criteria and mentored the participating teams.",
+
+    // AI category: sections and projects from my GitHub
+    aiVoiceAssistants: "Voice Assistants",
+    aiAgentsAutomation: "Agents & Automation",
+    voiceAvatarTitle: "Georgian Voice Avatar — My AI Clone",
+    voiceAvatarDescription: "A voice assistant you can talk to in Georgian, the one on this page. A speech-to-text → LLM → text-to-speech pipeline: the browser records the speech, the server transcribes it, Gemini writes a short answer and every sentence is spoken as soon as it is ready, with the lip-sync driven by the audio. It answers only from the content of this site and moves the page to the right category while it talks. Every voice session is traced in Langfuse, with stage timings and a user rating. Built with TanStack Start (React, TypeScript) and Lovable.",
+    hotelAgentTitle: "Hotel Voice Agent — LangGraph + Claude",
+    hotelAgentDescription: "A Georgian-language hotel voice assistant built as a LangGraph graph: an input guard (empty or too long input never reaches the LLM), an agent that calls tools (room service orders and Wi-Fi info on a simulated PMS) and a verifier that checks every answer for invented facts and prompt injection and sends rejected answers back for rewriting. Orders need the guest's confirmation (a human-in-the-loop interrupt), and loop limits or repeated errors hand the call over to a human administrator. Conversation memory per guest, answers split into sentences for TTS, 41 safety test cases and a step-by-step guide notebook. Open source.",
+    hworkestratorTitle: "HWorkestrator — Telegram Agent for University Assignments",
+    hworkestratorDescription: "An open-source Telegram bot that takes a whole assignment through Claude with the user approving every step: pick a subject, an assignment, a skill and a model (the price estimate is shown first), the bot downloads the task, solves it and sends the finished file, and uploads it only after the user confirms. Assignments come from pluggable sources (Moodle, Google Drive) and are solved by skills that produce real results: code that is actually executed, LaTeX/PDF, Word and Jupyter notebooks. The whole setup is done by a Claude Code skill (/hw-setup). The tests use fakes and run in GitHub Actions; MIT license. Meant to be used responsibly, within the university's rules.",
+    aiNewsTitle: "AI News Georgia — Telegram Digest Bot",
+    aiNewsDescription: "A Telegram bot that collects AI news from 13 RSS sources (TechCrunch, MIT Technology Review, Wired, Google, Microsoft, Hugging Face, DeepMind and others) and has Claude Haiku write short digests in Georgian. /news gives today's digest (/mokle a shorter one), /topic reads the full articles on a keyword with a headless Playwright browser and sums up the trend, /summary summarizes any link, and /subscribe sends a daily digest at 09:00. Python, python-telegram-bot, Docker and Fly.io configuration.",
     // New sub-category filters
     photos: "Photos",
     topics: "Topics",
@@ -297,6 +309,7 @@ export const translations = {
     photoContestExhibit: "In 2024 I participated in a photo contest held at KIU where 4 of my works were exhibited.",
     morePhotosText: "Want to see more photos?",
     morePhotosButton: "Follow me on Instagram",
+    enlargeImage: "Enlarge image",
     splashCursor: "Splash Cursor",
     reflectBackground: "Reflect Background",
     "project.tbc-concept-redesign.title": "TBC Concept Redesign",
@@ -332,7 +345,7 @@ export const translations = {
     // Category-specific stories
     iosStory: "დავამთავრე TBC IT აკადემიის iOS კურსი საუკეთესო შეფასებით. კურსის განმავლობაში და მის დასრულების შემდეგ ვმუშაობდი მრავალ საინტერესო პროექტზე - როგორც ინდივიდუალურ, ისე კოლაბორაციულ პროექტებზე, მათ შორის ჰაკათონებშიც",
     campsStory: "ბავშვობიდან აქტიურად ვართ ჩართული არაფორმალურ განათლებაში და მონაწილეობა მიმიღია მრავალ საგანმანათლებლო ბანაკში, ტრენინგსა და ფართომასშტაბიან პროგრამაში. ეს გამოცდილებები დამეხმარა განმევითარებინა ლიდერობის, გუნდური მუშაობის, კომუნიკაციისა და პრობლემების გადაჭრის უნარები, რაც მნიშვნელოვან ღირებულებას წარმოადგენს პროფესიულ საქმიანობაში.",
-    academicStory: "მე ვსწავლობ კომპიუტერულ მეცნიერებებს ქუთაისის საერთაშორისო უნივერსიტეტში, ფოკუსირებული ვარ ტექნოლოგიებისა და ინოვაციების მყარი საფუძვლის შექმნაზე.",
+    academicStory: "მე ვსწავლობ კომპიუტერულ მეცნიერებებს საქართველოს ტექნიკურ უნივერსიტეტში (GTU), ფოკუსირებული ვარ ტექნოლოგიებისა და ინოვაციების მყარი საფუძვლის შექმნაზე. მანამდე 2022 წლიდან ვსწავლობდი ქუთაისის საერთაშორისო უნივერსიტეტში (KIU).",
     startupsStory: "მე ვარ მეწარმე გულით და მაქვს გამოცდილება ინოვაციური პროდუქტების შემუშავებასა და გაშვებაში. მომწონს იდეების სიცოცხლისუნარიან ბიზნესად გარდაქმნა.",
     designStory: "გავატაცებული ვარ დიზაინით და გამოცდილება მაქვს სხვადასხვა კრეატიულ პროექტზე მუშაობის — UI/UX დიზაინიდან ბრენდინგის შექმნამდე. ვცდილობ შევქმნა ვიზუალურად მიმზიდველი, მომხმარებელზე ორიენტირებული და ფუნქციონალური პროდუქტები, რომლებიც ოპტიმალურ მომხმარებლის გამოცდილებას უზრუნველყოფს. დიზაინისადმი ჩემი მიდგომა ორიენტირებულია როგორც ესთეტიკურ ღირებულებებზე, ისე პრაქტიკულ გამყენებაზე",
     sportsStory: "ბავშვობიდან აქტიური ვიყავი სპორტში და სხვადასხვა სახეობით ვიყავი გატაცებული. განსაკუთრებით დამაინტერესა ფეხბურთმა 5 წლის ასაკში, როცა დაბადების დღეზე ბურთი მაჩუქეს — მას შემდეგ ეს სპორტი ჩემთვის ნამდვილ ვნებად იქცა.   პროფესიული განვითარების პირველი ნაბიჯი მეორე კლასში გადავდგი, როცა ადგილობრივ სოფლის გუნდში ვვარჯიშობდი. სამწუხაროდ, მეორე ვარჯიშის დღეს მწვრთნელი ტრაგიკულად გარდაიცვალა, რამაც დროებით შეწყვიტა ჩემი სპორტული მოღვაწეობა. რამდენიმე თვიანი პაუზის შემდეგ, მამამ ახლომდებარე ქალაქის ერთ-ერთ გუნდში მიმიყვანა. თუმცა, იქ ჩემი ასაკის ჯგუფი არ მუშაობდა და ჩემი მაშინდელი ფიზიკური მონაცემები ორი წლით უფროს მოთამაშეებთან კონკურენციისთვის საკმარისი არ იყო. საბოლოოდ, დედაჩემის დაჟინებული რჩევით, ყურადღება მათემატიკას მივაქციე — ასე დასრულდა ჩემი სპორტული კარიერისკენ სწრაფვა, თუმცა ფეხბურთისადმი სიყვარული დღემდე შემორჩა",
@@ -566,6 +579,18 @@ export const translations = {
     organizerRoleDescription: "საორგანიზაციო გუნდის წევრი.",
     brainHackTitle: "BrainHack_AI · GTU",
     brainHackDescription: "ტექნიკური მენტორი და საორგანიზაციო გუნდის წევრი. დავწერე ტექნიკური ამოცანები — Generative AI, Data Scraping, Business Intelligence, განვსაზღვრე შეფასების კრიტერიუმები და ვმენტორობდი მონაწილე გუნდებს.",
+
+    // AI კატეგორია: სექციები და პროექტები ჩემი GitHub-დან
+    aiVoiceAssistants: "ხმოვანი ასისტენტები",
+    aiAgentsAutomation: "აგენტები და ავტომატიზაცია",
+    voiceAvatarTitle: "ქართული ხმოვანი ავატარი — ჩემი AI კლონი",
+    voiceAvatarDescription: "ხმოვანი ასისტენტი, რომელსაც ქართულად ესაუბრები — სწორედ ის, რომელიც ამ გვერდზეა. Speech-to-Text → LLM → Text-to-Speech ციკლი: ბრაუზერი ხმას იწერს, სერვერი ტექსტად გარდაქმნის, Gemini მოკლე პასუხს წერს და თითოეული წინადადება მზადებისთანავე ჟღერდება; ტუჩების მოძრაობა ხმას მიჰყვება. პასუხობს მხოლოდ ამ საიტის შიგთავსიდან და საუბრისას გვერდს სასურველ კატეგორიაზე გადაიყვანს. ყოველი ხმოვანი სესია Langfuse-ში ჩაიწერება — ეტაპების დროებითა და მომხმარებლის შეფასებით. აგებულია TanStack Start-ით (React, TypeScript) და Lovable-ით.",
+    hotelAgentTitle: "Hotel Voice Agent — LangGraph + Claude",
+    hotelAgentDescription: "ქართულენოვანი სასტუმროს ხმოვანი ასისტენტი, აგებული LangGraph-ის გრაფად: input guard (ცარიელი ან ძალიან გრძელი შეტანა LLM-მდე არ მიდის), აგენტი ხელსაწყოებით (ნომრის სერვისის შეკვეთა და Wi-Fi ინფორმაცია იმიტირებულ PMS-ზე) და verifier, რომელიც ყოველ პასუხს ამოწმებს მოგონილ ფაქტებსა და prompt injection-ზე და უარყოფილ პასუხს გადასაწერად აბრუნებს. შეკვეთას სტუმრის დადასტურება სჭირდება (human-in-the-loop interrupt), ციკლის ლიმიტი ან განმეორებითი შეცდომები კი ზარს ადმინისტრატორზე გადამისამართებს. საუბრის მეხსიერება თითოეულ სტუმარზე, პასუხი TTS-ისთვის წინადადებებად იჭრება, 41 უსაფრთხოების სატესტო შემთხვევა და ეტაპობრივი სასწავლო notebook. ღია კოდი.",
+    hworkestratorTitle: "HWorkestrator — Telegram აგენტი უნივერსიტეტის დავალებებისთვის",
+    hworkestratorDescription: "ღია კოდის Telegram ბოტი, რომელიც დავალებას Claude-ით ბოლომდე ატარებს და ყოველ ნაბიჯს მომხმარებელი ამტკიცებს: ირჩევ საგანს, დავალებას, skill-სა და მოდელს (ფასის გათვლა წინასწარ ჩანს), ბოტი ამოცანას ჩამოტვირთავს, ამოხსნის და დასრულებულ ფაილს გამოგიგზავნის, ატვირთვა კი მხოლოდ შენი დადასტურების შემდეგ ხდება. დავალებები მოდის მოდულური წყაროებიდან (Moodle, Google Drive), skill-ები კი რეალურ შედეგს აგებენ: რეალურად გაშვებული კოდი, LaTeX/PDF, Word და Jupyter notebook. მთელ გამართვას Claude Code-ის skill (/hw-setup) ასრულებს. ტესტები fake-ებით მუშაობს და GitHub Actions-ში ეშვება; MIT ლიცენზია. გამოიყენება პასუხისმგებლობით, უნივერსიტეტის წესების ფარგლებში.",
+    aiNewsTitle: "AI News Georgia — Telegram დაიჯესტ-ბოტი",
+    aiNewsDescription: "Telegram ბოტი, რომელიც 13 RSS წყაროდან (TechCrunch, MIT Technology Review, Wired, Google, Microsoft, Hugging Face, DeepMind და სხვა) აგროვებს AI სიახლეებს, Claude Haiku კი მათგან ქართულ მოკლე დაიჯესტს წერს. /news დღევანდელ დაიჯესტს გიგზავნის (/mokle — უფრო მოკლეს), /topic საკვანძო სიტყვით სრულ სტატიებს headless Playwright ბრაუზერით კითხულობს და ტენდენციას აჯამებს, /summary ნებისმიერ ბმულს აჯამებს, /subscribe კი ყოველდღე 09:00-ზე დაიჯესტს გამოგიგზავნის. Python, python-telegram-bot, Docker და Fly.io-ს კონფიგურაცია.",
     // New sub-category filters
     photos: "ფოტოები",
     topics: "თემები",
@@ -593,6 +618,7 @@ export const translations = {
     photoContestExhibit: "2024 წელს მონაწილეობა მივიღე KIU-ში გამართულ ფოტოკონკურსში, სადაც ჩემი 4 ნამუშევარი გამოიფინა.",
     morePhotosText: "მეტი ფოტოს სანახავად გადადით ჩემს ინსტაგრამზე",
     morePhotosButton: "ინსტაგრამი @gvaroph",
+    enlargeImage: "სურათის გადიდება",
     splashCursor: "კურსორის ეფექტი",
     reflectBackground: "ფონის არეკვლა",
     "project.tbc-concept-redesign.title": "TBC Concept რედიზაინი",
